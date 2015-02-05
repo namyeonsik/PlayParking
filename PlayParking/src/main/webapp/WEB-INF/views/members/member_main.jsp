@@ -55,10 +55,7 @@
 		</div>
 		
 		
-<<<<<<< HEAD
-=======
-		
->>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
+
 		 <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
