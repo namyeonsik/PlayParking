@@ -1,5 +1,5 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,22 +43,22 @@
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="#">Bootstrap 3</a>
+        <a class="navbar-brand" href="#">Play Parking</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="http://www.bootply.com" target="ext">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#">Search</a></li>
+            <!-- <li><a href="http://www.bootply.com" target="ext">About</a></li>
+            <li><a href="#contact">Contact</a></li> -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">내정보수정</a></li>
+                <li><a href="#">포인트확인</a></li>
+               <!--  <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">One more separated link</a></li> -->
               </ul>
             </li>
           </ul>
@@ -80,7 +80,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="item active">
-      <img src="http://placehold.it/1500X500" style="width:100%" class="img-responsive">
+      <img src="${pageContext.request.contextPath}/resources/0202.jpg" width="100%" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
           <h1>1번</h1>
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
+      <img src="${pageContext.request.contextPath}/resources/KakaoTalk_20150203_175007496.jpg" class="img-responsive" width="100%">
       <div class="container">
         <div class="carousel-caption">
           <h1>2번</h1>
@@ -101,7 +101,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
+      <img src="${pageContext.request.contextPath}/resources/야경.jpg" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
           <h1>3번</h1>
@@ -126,9 +126,9 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container marketing">
+<!-- <div class="container marketing">
 
-  <!-- Three columns of text below the carousel -->
+  Three columns of text below the carousel
   <div class="row">
     <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
@@ -148,12 +148,12 @@
       <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
       <p><a class="btn btn-default" href="#">View details »</a></p>
     </div>
-  </div><!-- /.row -->
+  </div> --><!-- /.row -->
 
 
   <!-- START THE FEATURETTES -->
 
-  <hr class="featurette-divider">
+  <!-- <hr class="featurette-divider">
 
   <div class="featurette">
     <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
@@ -177,7 +177,7 @@
     <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
   </div>
 
-  <hr class="featurette-divider">
+  <hr class="featurette-divider"> -->
 
   <!-- /END THE FEATURETTES -->
 
