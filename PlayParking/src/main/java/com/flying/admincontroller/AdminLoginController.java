@@ -1,5 +1,12 @@
 package com.flying.admincontroller;
 
-public class AdminLoginController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+public class AdminLoginController {
+	@RequestMapping("/adminlogin.do")
+	public String adminLogin(){
+		return "admin/admin_login";
+	}
 }

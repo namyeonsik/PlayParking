@@ -10,5 +10,4 @@ public class MemberMainController {
 	public String test(){
 		return "members/member_main";
 	}
-	
 }
