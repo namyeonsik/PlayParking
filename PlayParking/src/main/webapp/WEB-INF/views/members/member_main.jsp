@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>사용자 메인</title>
 
-
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,6 +55,10 @@
 		</div>
 		
 		
+<<<<<<< HEAD
+=======
+		
+>>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
 		 <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
