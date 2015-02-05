@@ -32,42 +32,65 @@
 	<h3>마이포인트</h3>
 	<h5>관리자페이지로 가기</h5> --> 
 	
+	<!-- TOP BAR -->
+	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header responsive-logo">
+				<!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> -->
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<!-- </button> -->
+				<!-- <a href="./" class="navbar-brand">
+				<img src="images/logo.png" alt="Zerif">
+				</a> -->
+			</div>
+			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
+				<li><a href="#home">Join</a></li>
+				<li><a href="#focus">Login</a></li>
+				<li><a href="#works">Admin</a></li>
+			</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- / END TOP BAR -->
 	
 	
-	<div class="navbar-wrapper">
+	
+	
+	
+	<!-- <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
-      
         <div class="navbar-header">
 	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="#">Play Parking</a>
+        <a class="navbar-brand" href="membermain.do">Play Parking</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Search</a></li>
-            <!-- <li><a href="http://www.bootply.com" target="ext">About</a></li>
-            <li><a href="#contact">Contact</a></li> -->
+            <li class="active"><a href="membermain.do">Home</a></li>
+            <li class="active"><a href="search.do">Search</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">내정보수정</a></li>
-                <li><a href="#">포인트확인</a></li>
-               <!--  <li><a href="#">Something else here</a></li>
+                <li><a href="memberupdate.do">내정보수정</a></li>
+                <li><a href="reservecheck.do">예약확인</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li> -->
+                <li><a href="pointcheck.do">포인트확인</a></li>
+                <li><a href="charge.do">포인트충전</a></li>         
               </ul>
             </li>
           </ul>
         </div>
-
     </div>
-  </div><!-- /container -->
-</div><!-- /navbar wrapper -->
+  </div>
+</div> -->
 
 
 <!-- Carousel
@@ -186,7 +209,7 @@
   <!-- FOOTER -->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>This Bootstrap layout is compliments of Bootply. · <a href="http://www.bootply.com/62603">Edit on Bootply.com</a></p>
+    <p>안녕하세요 저희는 나는개발자에요!!!!!</p>
   </footer>
 
 </div><!-- /.container -->
