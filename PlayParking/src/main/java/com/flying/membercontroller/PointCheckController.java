@@ -9,5 +9,4 @@ public class PointCheckController {
 	public String test(){
 		return "members/myparking/pointcheck";
 	}
-
 }

@@ -10,4 +10,5 @@ public class ReserveController {
 	public String test(){
 		return "members/reserve";
 	}
+	
 }

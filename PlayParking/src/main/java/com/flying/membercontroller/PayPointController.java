@@ -10,5 +10,4 @@ public class PayPointController {
 	public String test(){
 		return "members/myparking/paypoint";
 	}
-
 }

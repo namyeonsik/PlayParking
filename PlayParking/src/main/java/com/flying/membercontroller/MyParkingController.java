@@ -11,5 +11,4 @@ public class MyParkingController {
 	public String test(){
 		return "members/myparking";
 	}
-	
 }

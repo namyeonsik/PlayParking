@@ -9,4 +9,5 @@ public class MemberUpdateController {
 	public String test(){
 		return "members/myparking/memberupdate";
 	}
+	
 }

@@ -10,4 +10,5 @@ public class ReserveCheckController {
 	public String test(){
 		return "members/myparking/reservecheck";
 	}
+	
 }
