@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>주차장 검색페이지</title>
 
-
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -84,6 +83,20 @@
 </div>
 </div>
 
+<!-- 위치 선택 -->
+<form name="f">
+<select name="lo" onchange="change()">
+			<option value="강남구" >강남구</option>
+			<option value="종로구" >종로구</option>
+			<option value="마포구" >마포구</option>
+			<option value="서대문구" >서대문구</option>
+</select></form>
+
+<!-- 옵션 선택 -->
+<input type="radio" name="name" value="절약형">절약형
+<input type="radio" name="name" value="지각형">지각형
+<input type="radio" name="name" value="안전형" checked="checked">안전형
+		
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:50%;height:350px;"></div>
 
@@ -91,6 +104,8 @@
 
 
 <script>
+
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -99,6 +114,9 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 var map = new daum.maps.Map(mapContainer, mapOption); 
+var ps = new daum.maps.services.Places(); 
+
+
 </script>
 
 
