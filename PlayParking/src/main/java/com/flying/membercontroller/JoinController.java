@@ -10,4 +10,5 @@ public class JoinController {
 	public String test(){
 		return "members/join";
 	}
+	
 }

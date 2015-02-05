@@ -10,4 +10,5 @@ public class MemberLoginController {
 	public String test(){
 		return "members/member_login";
 	}
+	
 }

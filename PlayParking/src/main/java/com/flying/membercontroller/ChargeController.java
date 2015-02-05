@@ -10,4 +10,5 @@ public class ChargeController {
 	public String test(){
 		return "members/charge";
 	}
+	
 }

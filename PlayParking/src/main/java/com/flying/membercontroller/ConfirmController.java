@@ -10,4 +10,5 @@ public class ConfirmController {
 	public String test(){
 		return "members/confirm";
 	}
+
 }
