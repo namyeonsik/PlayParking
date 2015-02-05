@@ -82,13 +82,7 @@
     </div>
   </div>
 </div>
-
-<head>
-    <meta charset="utf-8">
-    <title>지도 생성하기</title>
-    
-</head>
-<body>
+</div>
 
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:50%;height:350px;"></div>
