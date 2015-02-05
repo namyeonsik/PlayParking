@@ -53,8 +53,6 @@
 			</ul>
 			</nav>
 		</div>
-		
-		
 
 		 <div class="navbar-wrapper">
   <div class="container">

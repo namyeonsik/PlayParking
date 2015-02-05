@@ -10,7 +10,10 @@
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">		
+<script src="//code.jquery.com/jquery.js"></script>   
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 <div class="navbar-wrapper">
@@ -63,8 +66,8 @@
       <img src="/assets/example/bg_suburb.jpg" style="width:100%" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
-          <h1>1번</h1>
-          <p>부트스트랩 어렵당</p>
+          <h1>1ë²</h1>
+          <p>ë¶í¸ì¤í¸ë© ì´ë µë¹</p>
           <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a>
         </p>
         </div>
@@ -74,7 +77,7 @@
       <img src="http://lorempixel.com/2000/600/abstract/1" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
-          <h1>2번</h1>
+          <h1>2ë²</h1>
           <p>Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.</p>
           <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
         </div>
@@ -84,7 +87,7 @@
       <img src="http://placehold.it/1500X500" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
-          <h1>3번</h1>
+          <h1>3ë²</h1>
           <p>With "mobile-first" there is now only one percentage-based grid.</p>
           <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
         </div>
@@ -114,19 +117,19 @@
       <img class="img-circle" src="http://placehold.it/140x140">
       <h2>Mobile-first</h2>
       <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><a class="btn btn-default" href="#">View details Â»</a></p>
     </div>
     <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
       <h2>One Fluid Grid</h2>
       <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><a class="btn btn-default" href="#">View details Â»</a></p>
     </div>
     <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
       <h2>LESS is More</h2>
       <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><a class="btn btn-default" href="#">View details Â»</a></p>
     </div>
   </div><!-- /.row -->
 
@@ -165,7 +168,7 @@
   <!-- FOOTER -->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>This Bootstrap layout is compliments of Bootply. · <a href="http://www.bootply.com/62603">Edit on Bootply.com</a></p>
+    <p>This Bootstrap layout is compliments of Bootply. Â· <a href="http://www.bootply.com/62603">Edit on Bootply.com</a></p>
   </footer>
 
 </div><!-- /.container -->
