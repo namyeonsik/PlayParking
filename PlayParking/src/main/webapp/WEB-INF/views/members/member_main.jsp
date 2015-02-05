@@ -48,20 +48,16 @@
 			</div>
 			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
 			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href="#home">Join</a></li>
-				<li><a href="#focus">Login</a></li>
-				<li><a href="#works">Admin</a></li>
+				<li><a href="join.do">Join</a></li>
+				<li><a href="memberlogin.do">Login</a></li>
+				<li><a href="adminlogin.do">Admin</a></li>
 			</ul>
 			</nav>
 		</div>
-	</div>
-	<!-- / END TOP BAR -->
-	
-	
-	
-	
-	
-	<!-- <div class="navbar-wrapper">
+		
+		
+		
+		 <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-header">
@@ -90,11 +86,8 @@
         </div>
     </div>
   </div>
-</div> -->
+</div>
 
-
-<!-- Carousel
-================================================== -->
 <div id="myCarousel" class="carousel slide">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -143,6 +136,21 @@
     <span class="icon-next"></span>
   </a>  
 </div>
+
+
+	</div>
+	<!-- / END TOP BAR -->
+	
+	
+	
+	
+	
+
+
+
+<!-- Carousel
+================================================== -->
+
 <!-- /.carousel -->
 
 
