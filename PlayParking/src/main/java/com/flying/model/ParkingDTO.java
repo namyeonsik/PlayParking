@@ -13,6 +13,7 @@ public class ParkingDTO {
 	private double x;
 	private double y;	
 	
+	public ParkingDTO(){};
 	public ParkingDTO(int pid, int pfare, int pwidth, int plength,
 			int platefare, int pamount, String pname, String plocation,
 			String pphone, double x, double y) {
