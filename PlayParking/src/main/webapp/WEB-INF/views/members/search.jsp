@@ -85,15 +85,17 @@
 
 </div>
 
+ 
+
 <form name="f" method="get" action="search.do" >
     <select onchange="submit()" name="plocation">
-		<option>지역 선택</option>
-			<option value="강북구" selected=${plocation=='강북구'}?'selected':''>강북구</option>
-            <option value="강남구" selected=${plocation=='강남구'}?'selected':''>강남구</option>
-            <option value="마포구" selected=${plocation=='마포구'}?'selected':''>마포구</option>
-            <option value="종로구" selected=${plocation=='종로구'}?'selected':''>종로구</option>
-            <option value="은평구" selected=${plocation=='은평구'}?'selected':''>은평구</option>
-            <option value="서대문구" selected=${plocation=='서대문구'}?'selected':''>서대문구</option>
+		<option >지역 선택</option>
+			<option value="강북구" ${selected[0]}>강북구</option>
+            <option value="강남구" ${selected[1]}>강남구</option>
+            <option value="마포구" ${selected[2]}>마포구</option>
+            <option value="종로구" ${selected[3]}>종로구</option>
+            <option value="은평구" ${selected[4]}>은평구</option>
+            <option value="서대문구" ${selected[5]}>서대문구</option>
     </select>
     <%-- <input type="button" value="검색" onclick="location.href='search.do?plocation=${}'"> --%>
 </form> 
