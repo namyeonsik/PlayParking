@@ -85,34 +85,18 @@
 
 </div>
 
-<form name="f">
-    <select onchange="change(value)" name="lo">
+<form name="f" method="get" action="search.do" >
+    <select onchange="submit()" name="plocation">
 		<option>지역 선택</option>
-			<option value="지역 선택" selected="selected">지역 선택</option>
-			<option value="강북구">강북구</option>
-            <option value="강남구">강남구</option>
-            <option value="마포구">마포구</option>
-            <option value="종로구">종로구</option>
-            <option value="은평구">은평구</option>
-            <option value="서대문구">서대문구</option>
+			<option value="강북구" selected=${plocation=='강북구'}?'selected':''>강북구</option>
+            <option value="강남구" selected=${plocation=='강남구'}?'selected':''>강남구</option>
+            <option value="마포구" selected=${plocation=='마포구'}?'selected':''>마포구</option>
+            <option value="종로구" selected=${plocation=='종로구'}?'selected':''>종로구</option>
+            <option value="은평구" selected=${plocation=='은평구'}?'selected':''>은평구</option>
+            <option value="서대문구" selected=${plocation=='서대문구'}?'selected':''>서대문구</option>
     </select>
     <%-- <input type="button" value="검색" onclick="location.href='search.do?plocation=${}'"> --%>
 </form> 
-
-<table border='1'>
-	<tr>
-		<td>주차장 이름</td>
-		<td>요금</td>
-	</tr>
-	
-	<c:forEach items="${parkinglist}" var="p">
-	<tr>
-		<td>${p.pname}</td>
-		<td>${p.pfare}</td>
-	</tr>
-	</c:forEach>
-</table>
-
 
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:50%;height:550px;"></div>
@@ -130,14 +114,19 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new daum.maps.Map(mapContainer, mapOption); 
 
 var str;
-function change(val){
-    if(document.f.lo.selectedIndex != 0){
-        str = document.f.lo.value; 
-        change2();
+/* function change(val){
+    if(document.f.aa.selectedIndex != 0){
+        //str = document.f.lo.value; 
+        //alert(val);
+        var fm = document.f;
+        fm.action = 'search.do';
+        fm.submit();
+        
+       // change2();
     }else{
         return;
     }        
-}
+} */
 
 function change2(){
 //마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
@@ -237,7 +226,19 @@ function displayMarker(place) {
 }
 </script>
 
-
+<table border='1'>
+	<tr>
+		<td>주차장 이름</td>
+		<td>요금</td>
+	</tr>
+	
+	<c:forEach items="${parkinglist}" var="p">
+	<tr>
+		<td>${p.pname}</td>
+		<td>${p.pfare}</td>
+	</tr>
+	</c:forEach>
+</table>
 
 
 
