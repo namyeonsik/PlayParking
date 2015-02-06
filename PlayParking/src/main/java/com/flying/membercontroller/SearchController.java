@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.ParkingDTO;
@@ -20,7 +19,10 @@ public class SearchController {
 	
 	@RequestMapping("/search.do")
 	public ModelAndView getMaplist(HttpServletRequest request){
+		
 		String plocation = request.getParameter("plocation");
+		if(plocation==null)
+	         plocation="";
 		System.out.println(plocation+"!!!");
 		ModelAndView mv = new ModelAndView();
 		List<ParkingDTO> parkinglist = service.selectByplocation(plocation);

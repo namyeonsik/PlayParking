@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="flying.members">
+
+  <select id="selectBymid" 
+  	parameterType="String"
+  	resultType="com.flying.model.MembersDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from members where mid = #{aa:VARCHAR}
+  </select>
+ 
+  <update id="updateMembers">
+  	update members 
+  	set cid=#{cid:INTEGER},mpwd=#{mpwd:VARCHAR},mname=#{mname:VARCHAR},mphone=#{mphone:VARCHAR}
+  	where mid=#{mid:VARCHAR} 
+  </update>
+  
+</mapper>

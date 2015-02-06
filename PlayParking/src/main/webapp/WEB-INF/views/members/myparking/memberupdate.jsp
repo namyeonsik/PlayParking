@@ -82,6 +82,16 @@
   </div>
 </div>
 
-	<h1>회원정보수정페이지입니다.</h1>
+	<h1>회 원 수 정</h1>
+	<form action="memberupdate.do" method="post">
+		<input type="hidden" name="mno" value="${members.mno}"><br>
+		이름:<input type="text" name="mname" value="${members.mname}"><br>
+		패스워드:<input type="text" name="mpwd" value="${members.mpwd}"><br>
+		핸드폰번호:<input type="text" name="mphone" value="${members.mphone}"><br>
+		차종류:<input type="text" name="cid" value="${members.cid}"><br>
+		<input type="submit" value="수정하기">
+		<input type="reset" value="취소">
+	</form>
+	
 </body>
 </html>

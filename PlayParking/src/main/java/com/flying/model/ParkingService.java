@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("service")
+@Component("parkingservice")
 public class ParkingService implements ParkingServiceInterface{
 
 	@Autowired
