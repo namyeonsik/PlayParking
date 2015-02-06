@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>주차장 검색페이지!!!!!!!!!!</title>
-
+<title>주차장 검색페이지</title>
 
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -86,17 +86,32 @@
 </div>
 
 <form name="f">
-    <select onchange="change()" name="lo">
+    <select onchange="change(value)" name="lo">
 		<option>지역 선택</option>
+			<option value="지역 선택" selected="selected">지역 선택</option>
 			<option value="강북구">강북구</option>
             <option value="강남구">강남구</option>
             <option value="마포구">마포구</option>
             <option value="종로구">종로구</option>
             <option value="은평구">은평구</option>
             <option value="서대문구">서대문구</option>
-        </select>
+    </select>
+    <%-- <input type="button" value="검색" onclick="location.href='search.do?plocation=${}'"> --%>
 </form> 
 
+<table border='1'>
+	<tr>
+		<td>주차장 이름</td>
+		<td>요금</td>
+	</tr>
+	
+	<c:forEach items="${parkinglist}" var="p">
+	<tr>
+		<td>${p.pname}</td>
+		<td>${p.pfare}</td>
+	</tr>
+	</c:forEach>
+</table>
 
 
 <!-- 지도를 표시할 div 입니다 -->
@@ -115,9 +130,9 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new daum.maps.Map(mapContainer, mapOption); 
 
 var str;
-function change(){
+function change(val){
     if(document.f.lo.selectedIndex != 0){
-        str = document.f.lo.value; //SALESMAN,MANAGER,ANALYST
+        str = document.f.lo.value; 
         change2();
     }else{
         return;
