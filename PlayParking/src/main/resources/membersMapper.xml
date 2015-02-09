@@ -29,4 +29,11 @@
     where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
   </select>
   
+  <select id="selectByCbrand" 
+  	parameterType="String"
+  	resultType="com.flying.model.CarDTO">
+    select * from CAR where cbrand= #{cbrand:VARCHAR}
+  </select>
+
+  
 </mapper>

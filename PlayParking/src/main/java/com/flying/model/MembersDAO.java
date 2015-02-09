@@ -1,6 +1,7 @@
 package com.flying.model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -34,6 +35,10 @@ public class MembersDAO implements MembersDAOInterface{
 		member = session.selectOne
 				("flying.members.selectByUser",map);
 		return member;
+	}
+	
+	public List<CarDTO> selectByCbrand(String cbrand) {
+		return session.selectList("flying.members.selectByCbrand", cbrand);
 	}
 
 }
