@@ -3,6 +3,7 @@ package com.flying.membercontroller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,13 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value="/search.do", method=RequestMethod.POST)
-	public ModelAndView searchPost(HttpServletRequest request){
+	public ModelAndView searchPost(HttpServletRequest request, HttpSession session){
+		if(session.getAttribute("memcheck")==null){
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("members/member_login");
+			return mv;
+		}else{
+		
 		String plocation = request.getParameter("plocation");
 		if(plocation==null)
 			plocation="";
@@ -51,6 +58,7 @@ public class SearchController {
 		
 		mv.setViewName("/members/search");
 		return mv;
+		}
 	}
 }
 
