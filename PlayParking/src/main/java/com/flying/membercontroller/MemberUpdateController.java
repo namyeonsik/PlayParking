@@ -40,6 +40,5 @@ public class MemberUpdateController {
 		int ret = service.updateMembers(mem);
 		System.out.println(ret+"°Ç ¼öÁ¤.."+mem);
 		return "redirect:/membermain.do";
-	}
-	
+	}	
 }

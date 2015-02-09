@@ -5,7 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원정보수정</title>
+<style>
 
+#updateform { float: left; margin-left: 10%; margin-top:10%; width: 50%;}
+
+</style>
 
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,16 +31,60 @@
 <body>
 <%@ include file="../../Header.jsp" %>
 
-	<h1>회 원 수 정</h1>
+	<%-- <h1>회 원 수 정</h1>
 	<form action="memberupdate.do" method="post">
 		<input type="hidden" name="mno" value="${members.mno}"><br>
-		이름:<input type="text" name="mname" value="${members.mname}"><br>
-		패스워드:<input type="text" name="mpwd" value="${members.mpwd}"><br>
-		핸드폰번호:<input type="text" name="mphone" value="${members.mphone}"><br>
-		차종류:<input type="text" name="cid" value="${members.cid}"><br>
+		이름:<input type="text" name="mname" value="${memcheck.mname}"><br>
+		패스워드:<input type="text" name="mpwd" value="${memcheck.mpwd}"><br>
+		핸드폰번호:<input type="text" name="mphone" value="${memcheck.mphone}"><br>
+		차종류:<input type="text" name="cid" value="${memcheck.cid}"><br>
 		<input type="submit" value="수정하기">
 		<input type="reset" value="취소">
-	</form>
-	
+	</form> --%>
+
+<!-- 회원정보수정 -->
+<div id="updateform">
+<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 50%">
+  <fieldset>
+    <legend>Update Information</legend>
+    <div class="form-group">
+      <label for="inputId" class="col-lg-2 control-label"></label>
+      <div class="col-lg-10">
+        <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mname" placeholder="Name" value="${memcheck.mname}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mpwd" placeholder="Password" value="${memcheck.mpwd}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mphone" placeholder="Phone" value="${memcheck.mphone}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Complete</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+<!-- 회원정보수정 -->
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,8 +26,26 @@
 
 </head>
 <body>
-
 <%@ include file="../../Header.jsp" %>
+
 	<h1>예약확인 페이지입니다.</h1>
+
+	<br>
+		<table border = '1'>
+		<tr>
+			<td>예약날짜</td>
+			<td>이용시간</td>
+			<td>주차장</td>
+		</tr>
+		
+		<c:forEach items="${reservationlist}" var="reservation">
+		<tr>
+			<td>${reservation.rstart}</td>
+			<td>${reservation.rtime}</td>
+			<td>${reservation.pid}</td>
+		</tr>
+		</c:forEach>		
+		</table>
+
 </body>
 </html>
