@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
 <html>
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <title>멤버 로그인</title>
-
+<style>
+#layout{ width: 100%;}
+#loginform { float: left; margin-left: 6%; margin-top:10%; width: 35%;}
+#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 2%}
+</style>
 
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,7 +25,7 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
-
+	
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -23,65 +34,149 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
+
+
+
+
+<script type="text/javascript">
+
+function validationcheck(){
+	var mid = myfrm.mid.value;
+	var mname = myfrm.mname.value;
+	var mpwd = myfrm.mpwd.value;
+	if(mid ==""||mid==null){
+		alert("아이디을 입력하세용");
+		myfrm.mid.focus();
+		return false; //list로 넘어가지마!
+		
+	}else if(mname==""||mname==null){
+		alert("이름을 입력해야해용~~");
+		myfrm.mname.focus();
+		return false;
+	}else if(mpwd==""||mpwd==null){
+		alert("비밀번호 필수!!!!");
+		myfrm.mpwd.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+
+function validationlogin(){
+	var mid = loginfrm.mid.value;
+	var mpwd = loginfrm.mpwd.value;
+	if(mid ==""||mid==null){
+		alert("아이디을 입력하세용");
+		loginfrm.mid.focus();
+		return false; //list로 넘어가지마!
+		
+	}else if(mpwd==""||mpwd==null){
+		alert("비밀번호 필수!!!!");
+		loginfrm.mpwd.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+</script>
 </head>
 <body>
+<%@ include file="../Header.jsp" %>
 
-<!-- TOP BAR -->
-	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
-		<div class="container">
-			<div class="navbar-header responsive-logo">
-				<!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> -->
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<!-- </button> -->
-				<!-- <a href="./" class="navbar-brand">
-				<img src="images/logo.png" alt="Zerif">
-				</a> -->
-			</div>
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href="join.do">Join</a></li>
-				<li><a href="memberlogin.do">Login</a></li>
-				<li><a href="adminlogin.do">Admin</a></li>
-			</ul>
-			</nav>
-		</div>
-		
-		
-		
-		 <div class="navbar-wrapper">
-  <div class="container">
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="navbar-header">
-	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
-        <a class="navbar-brand" href="membermain.do">Play Parking</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="membermain.do">Home</a></li>
-            <li><a href="search.do">Search</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="memberupdate.do">내정보수정</a></li>
-                <li><a href="reservecheck.do">예약확인</a></li>
-                <li class="divider"></li>
-                <li><a href="pointcheck.do">포인트확인</a></li>
-                <li><a href="charge.do">포인트충전</a></li>         
-              </ul>
-            </li>
-          </ul>
-        </div>
+<div id="layout">
+<!-- 로그인 -->
+<div id="loginform">
+<form class="form-horizontal" action="memberlogin.do" method="post" 
+     onsubmit="return validationlogin();" name="loginfrm" style="width: 90%">
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">ID</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mid" placeholder="ID">
+        <br>
+      </div>
     </div>
-  </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mpwd" placeholder="Password">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
 </div>
+<!-- 로그인끝 -->
 
-	<h1>멤버 로그인페이지입니다!</h1>
+<!-- 회원가입 -->
+<div id="joinform">
+<form class="form-horizontal" action="join.do" method="post" 
+     onsubmit="return validationcheck();" name="myfrm" style="width: 90%">
+  <fieldset>
+    <legend>Join</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">ID</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mid" placeholder="ID">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mpwd" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mname" placeholder="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mphone" placeholder="phone">
+      </div>
+      <span class="help-block" style="margin-left: 20%; margin-top: 8%;">'-'없이 입력해주세요.</span>
+    </div>
+   
+
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Car Model</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="cid" style="float: left;width:40%;">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <select class="form-control" id="cid2" style="float: right;width:40%; padding-left: cid">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div><br><br>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Join</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+<!-- 회원가입끝 -->
+</div>
 </body>
 </html>

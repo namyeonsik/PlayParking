@@ -16,4 +16,8 @@ public class MembersService implements MembersServiceInterface{
 	public int updateMembers(MembersDTO mem) {
 		return dao.updateMembers(mem);
 	}
+
+	public int insertMembers(MembersDTO member) {
+		return dao.insertMembers(member);
+	}
 }

@@ -18,4 +18,8 @@ public class MembersDAO implements MembersDAOInterface{
 		return session.selectOne("flying.members.updateMembers", mem);
 	}
 
+	public int insertMembers(MembersDTO member) {
+		return session.insert("flying.members.insertMembers",member);
+	}
+
 }
