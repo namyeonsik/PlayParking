@@ -23,10 +23,10 @@
 	       #{mname:VARCHAR},#{mphone:VARCHAR},0,0)
   </insert>
   
-  <select id="selectByUser" parameterType="String"
+  <select id="selectByUser" parameterType="map"
   	resultType="com.flying.model.MembersDTO">
     select * from Members 
-    where mid = #{aa:VARCHAR} and mpwd = #{mpwd:VARCHAR}
+    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
   </select>
   
 </mapper>
