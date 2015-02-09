@@ -23,10 +23,12 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
 
+
+
 </head>
 <body>
-<h1>${memcheck.mid}님</h1>
-<div class="modal">
+<%-- <h1>${memcheck.mid}님</h1> --%>
+<%-- <div class="modal" id="Modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -34,21 +36,16 @@
         <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
+        <p>${memcheck.mid}님</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">check</button>
       </div>
     </div>
   </div>
 </div>
-	<!-- <h1>사용자 메인페이지입니다!!</h1>
-	<h3>메뉴</h3>
-	<h3>검색</h3>
-	<h3>마이페이지</h3>
-	<h3>마이포인트</h3>
-	<h5>관리자페이지로 가기</h5> --> 
+ --%>
 	
 	<!-- TOP BAR -->
 	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">

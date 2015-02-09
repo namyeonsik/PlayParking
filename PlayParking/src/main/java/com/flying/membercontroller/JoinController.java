@@ -37,4 +37,11 @@ public class JoinController {
 		return "redirect:/membermain.do";
 	}
 	
+/*	@RequestMapping(value="/carname.do", method=RequestMethod.POST)
+	public String carnamePost(HttpServletRequest request){
+		
+		request.setAttribute("car", car);
+		return "/members/cname.jsp";
+	}*/
+	
 }

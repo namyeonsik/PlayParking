@@ -8,6 +8,6 @@ public class PayPointController {
 	
 	@RequestMapping("/paypoint.do")
 	public String test(){
-		return "members/myparking/paypoint";
+		return "members/myparking/paypoint.html";
 	}
 }

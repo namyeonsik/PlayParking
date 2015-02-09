@@ -13,7 +13,7 @@
  
   <update id="updateMembers">
   	update members 
-  	set cid=#{cid:INTEGER},mpwd=#{mpwd:VARCHAR},mname=#{mname:VARCHAR},mphone=#{mphone:VARCHAR}
+  	set mname=#{mname:VARCHAR},mpwd=#{mpwd:VARCHAR},mphone=#{mphone:VARCHAR}
   	where mid=#{mid:VARCHAR} 
   </update>
 

@@ -25,9 +25,8 @@
 
 </head>
 <body>
+<%@ include file="../../Header.jsp" %>
 
 	<h1>포인트 충전페이지</h1>
-	
-	<input type="reset" value="Close" onclick="window.close();">
 </body>
 </html>

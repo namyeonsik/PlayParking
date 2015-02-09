@@ -18,7 +18,7 @@ public class MembersDAO implements MembersDAOInterface{
 	}
 
 	public int updateMembers(MembersDTO mem) {
-		return session.selectOne("flying.members.updateMembers", mem);
+		return session.update("flying.members.updateMembers", mem);
 	}
 
 	public int insertMembers(MembersDTO member) {
