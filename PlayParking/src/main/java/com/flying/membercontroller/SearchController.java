@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.ParkingDTO;
@@ -18,10 +18,17 @@ public class SearchController {
 	@Autowired
 	ParkingServiceInterface service;
 	
-	@RequestMapping("/search.do")
-	public ModelAndView getMaplist(HttpServletRequest request){
+	@RequestMapping(value="/search.do", method=RequestMethod.GET)
+	public String searchGet(){
+		return "members/search_get";
+	}
+	
+	@RequestMapping(value="/search.do", method=RequestMethod.POST)
+	public ModelAndView searchPost(HttpServletRequest request){
 		String plocation = request.getParameter("plocation");
-		System.out.println(plocation+"!!!");
+		if(plocation==null)
+			plocation="";
+		
 		ModelAndView mv = new ModelAndView();
 		List<ParkingDTO> parkinglist = service.selectByplocation(plocation);
 		
@@ -37,7 +44,7 @@ public class SearchController {
 		if(plocation.equals("서대문구")) selected[5]="selected";
 		mv.addObject("pp", plocation);
 		mv.addObject("selected", selected);
-		
+		mv.addObject("parklistsize", parkinglist.size());		
 		for(String s : selected){
 			System.out.println(s);
 		}
@@ -47,11 +54,3 @@ public class SearchController {
 	}
 }
 
-/*
-<option value="강북구" selected=${pp=='강북구'?"selected":''}>강북구</option>
-<option value="강남구" selected=${pp=='강남구'?"selected":''}>강남구</option>
-<option value="마포구" selected=${pp=='마포구'?"selected":''}>마포구</option>
-<option value="종로구" selected=${pp=='종로구'?"selected":''}>종로구</option>
-<option value="은평구" selected=${pp=='은평구'?"selected":''}>은평구</option>
-<option value="서대문구" 
-*/
