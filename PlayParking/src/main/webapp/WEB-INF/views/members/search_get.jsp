@@ -6,39 +6,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>(html)주차장 검색페이지</title>
 
-<!-- 부트스트랩 -->
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<script src="//code.jquery.com/jquery.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+<style>
+#listform { float : right; width: 30%; }
+</style> 
 
 </head>
 
 <body>
-	<%@ include file="../Header.jsp"%>
+<%@ include file="../Header.jsp"%>
 
-<!-- 지역선택 select box -->
-<form name="f">
-    <select onchange="change(value);" name="plocation">
-		<option >지역 선택</option>
-			<option value="강북구" ${selected[0]}>강북구</option>
-            <option value="강남구" ${selected[1]}>강남구</option>
-            <option value="마포구" ${selected[2]}>마포구</option>
-            <option value="종로구" ${selected[3]}>종로구</option>
-            <option value="은평구" ${selected[4]}>은평구</option>
-            <option value="서대문구" ${selected[5]}>서대문구</option>
-    </select>
-</form> 
+<div id="listform" style="border:#6B71BD solid 1px">
+	<h2>지역(구) 선택</h2>
+	<!-- 지역선택 select box -->
+	<form name="f">
+	    <select onchange="change(value);" name="plocation">
+			<option>선택하시오</option>
+				<option value="강북구" ${selected[0]}>강북구</option>
+	            <option value="강남구" ${selected[1]}>강남구</option>
+	            <option value="마포구" ${selected[2]}>마포구</option>
+	            <option value="종로구" ${selected[3]}>종로구</option>
+	            <option value="은평구" ${selected[4]}>은평구</option>
+	            <option value="서대문구" ${selected[5]}>서대문구</option>
+	    </select>
+	</form> 
+
+	<!-- 주차장 검색 후 리스트 -->
+	
+	<p id="t1"></p>
+</div>
 
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:50%;height:550px;"></div>
-<script type="text/javascript" 
-src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libraries=services"></script>
+<div id="map" style="width:70%;height:550px;"></div>
 
-<script>
+	<script type="text/javascript" 
+	src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libraries=services">	
+	</script>
+
+	<script>
+	
 	/*----------------------------지도-------------------------------*/
 	
 	var infowindow = new daum.maps.InfoWindow({zIndex:1});	
@@ -81,7 +86,7 @@ src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libra
 		httpRequest.open("POST", "search.do", true); 
 		httpRequest.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 		httpRequest.send(params);
-} 
+	} 
 	
 	function viewTable(){
 		 if(httpRequest.readyState==4){//서버에서 전송이 끝났니?
@@ -169,45 +174,11 @@ src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libra
 					         infowindow[this.index].open(map, marker[this.index]);					       	
 					     });
 				    }
-			 		
-					/*
-					// 인포윈도우를 생성합니다
-					var infowindow = new daum.maps.InfoWindow({
-					    position : maker.position,
-					    content : '<div style="padding:5px;">Hello World!</div>',
-					    removable : true
-					});
-					
-					// 마커에 클릭이벤트를 등록합니다
-					daum.maps.event.addListener(marker, 'click', function() {
-					      // 마커 위에 인포윈도우를 표시합니다
-					      infowindow.open(map, marker);  
-					}); */
-				    
 				  
 				 }
 			 }
-			
+
+	</script>
 	
-	
-</script>
-
-<!-- 주차장 검색 후 리스트 -->
-<table border='1'>
-	<tr>
-		<th>주차장 이름</th>
-		<th>요금</th>
-	</tr>	
-	
-	<tr>
-		<p id="t1"></p>
-	</tr>	
-	
-</table>
-
-
-
-
-
 </body>
 </html>
