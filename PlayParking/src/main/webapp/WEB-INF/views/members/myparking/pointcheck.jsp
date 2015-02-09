@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,9 +26,28 @@
 
 </head>
 <body>
-
 <%@ include file="../../Header.jsp" %>
+	<h1>내 포인트 : ${memcheck.mpoint} P</h1>
+	<h1>충전하기</h1>
+	<input type="button" value="충전하기" onclick="window.open('paypoint.jsp', 'window팝업', 'width=400, height=200, menubar=no, status=no, toolbar=no');">
+	
+	
+	<h1>포인트 사용내역</h1>
+		<br>
+		<table border = '1'>
+		<tr>
+			<td>날짜</td>
+			<td>사용내역</td>
+		</tr>
+		
+		<c:forEach items="${usepoint}" var="usepoint">
+		<tr>
+			<td><${usepoint.usedate}</td>
+			<td>${usepoint.usepoint}</td>
+		</tr>
+		</c:forEach>
+		
+		</table>
 
-	<h1>포인트 이용내역입니다</h1>
 </body>
 </html>
