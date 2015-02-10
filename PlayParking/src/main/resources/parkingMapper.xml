@@ -15,7 +15,7 @@
   	parameterType="String"
   	resultType="com.flying.model.ParkingDTO">
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where pid = #{aa:INTEGER}
+    select * from parking where pid = #{pid:INTEGER}
   </select>
  
   <update id="updateParking">

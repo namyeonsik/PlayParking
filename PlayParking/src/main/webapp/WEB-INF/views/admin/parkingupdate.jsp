@@ -14,21 +14,19 @@
 <meta name="generator" content="Bootply" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
+<link href="css/styles.css" rel="stylesheet">
+<script src="//code.jquery.com/jquery.js"></script>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/cosmo/bootstrap.min.css" rel="stylesheet">
+ 
 
 
 </head>
 <body>
-<%@ include file="../Header.jsp" %>
+<%@ include file="AdminHeader.jsp" %>
 
 <!-- 주차장정보수정 -->
 <div id="updateform">

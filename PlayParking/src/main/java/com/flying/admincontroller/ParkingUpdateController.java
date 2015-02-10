@@ -14,43 +14,43 @@ import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
 @Controller
 public class ParkingUpdateController {
-	
-	@Autowired
-	ParkingServiceInterface service;
-	
-	@RequestMapping("/parkingupdate.do")
-	public String parkingUpdate(){
-		return "/admin/parkingupdate";
-	}
-	
-	@RequestMapping(value="/parkingupdate.do", method=RequestMethod.GET)
-	public ModelAndView updateGet(HttpServletRequest request, HttpSession session){
-		ModelAndView mv = new ModelAndView();
-		if(session.getAttribute("admincheck")==null){			
-			mv.setViewName("admin/admin_login");
-			return mv;
-		}else{
-		
-		session = request.getSession();
-		AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");
-//		ParkingDTO admincheck = (ParkingDTO)session.getAttribute("admincheck");
-		System.out.println("정보수정pid:"+admincheck);
-			
-		ParkingDTO parking = service.selectBypid(admincheck.getPid());
+   
+   @Autowired
+   ParkingServiceInterface service;
+   
+   @RequestMapping("/parkingupdate.do")
+   public String parkingUpdate(){
+      return "/admin/parkingupdate";
+   }
+   
+   @RequestMapping(value="/parkingupdate.do", method=RequestMethod.GET)
+   public ModelAndView updateGet(HttpServletRequest request, HttpSession session){
+      ModelAndView mv = new ModelAndView();
+      if(session.getAttribute("admincheck")==null){         
+         mv.setViewName("admin/admin_login");
+         return mv;
+      }else{
+      
+      session = request.getSession();
+      AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");
+//      ParkingDTO admincheck = (ParkingDTO)session.getAttribute("admincheck");
+      System.out.println("정보수정pid:"+admincheck);
+         
+      ParkingDTO parking = service.selectBypid(admincheck.getPid());
 
-		mv.addObject("parking", parking);
-		session.setAttribute("admincheck", parking);
-		mv.setViewName("/admin/parkingupdate");
-		return mv;
-		}
-	}
-	
-	@RequestMapping(value="/parkingupdate.do", method=RequestMethod.POST)
-	public String updatePost(ParkingDTO parking){
-		System.out.println("parking값은?"+parking);
-		int ret = service.updateParking(parking);
-		System.out.println(ret+"건 수정.."+parking);
-		return "redirect:/adminmain.do";
-	}	
-	
+      mv.addObject("parking", parking);
+      session.setAttribute("parking", parking);
+      mv.setViewName("/admin/parkingupdate");
+      return mv;
+      }
+   }
+   
+   @RequestMapping(value="/parkingupdate.do", method=RequestMethod.POST)
+   public String updatePost(ParkingDTO parking){
+      System.out.println("parking값은?"+parking);
+      int ret = service.updateParking(parking);
+      System.out.println(ret+"건 수정.."+parking);
+      return "redirect:/adminmain.do";
+   }   
+   
 }
