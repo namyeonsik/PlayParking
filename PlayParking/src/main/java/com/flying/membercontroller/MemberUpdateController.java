@@ -18,19 +18,24 @@ public class MemberUpdateController {
 	MembersServiceInterface service;
 	
 	@RequestMapping(value="/memberupdate.do", method=RequestMethod.GET)
-	public ModelAndView updateGet(HttpServletRequest request){
+	public ModelAndView updateGet(HttpServletRequest request, HttpSession session){
+		ModelAndView mv = new ModelAndView();
+		if(session.getAttribute("memcheck")==null){			
+			mv.setViewName("members/member_login");
+			return mv;
+		}else{
 		
-		HttpSession session = request.getSession();
+		session = request.getSession();
 		MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
 		System.out.println("정보수정mid:"+memcheck);
-		
-		ModelAndView mv = new ModelAndView();	
+			
 		MembersDTO members = service.selectBymid(memcheck.getMid());
 
 		mv.addObject("mem", members);
 		session.setAttribute("memcheck", members);
 		mv.setViewName("/members/myparking/memberupdate");
 		return mv;
+		}
 	}
 	
 	@RequestMapping(value="/memberupdate.do", method=RequestMethod.POST)
