@@ -26,9 +26,6 @@
 <body>
 <%@ include file="../../Header.jsp" %>
 
-	
-	<!-- <input type="button" value="Close" onClick="window.close()"> -->
-	
 	<!-- 포인트충전 -->
 <div id="paypointform">
 <form class="form-horizontal" action="paypoint.do" method="post" style="width: 50%">

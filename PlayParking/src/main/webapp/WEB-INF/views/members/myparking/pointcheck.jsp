@@ -24,7 +24,7 @@
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
-	<h1>내 포인트 : ${memcheck.mpoint} P</h1>
+	<h1>내 포인트 : ${point.mpoint} P</h1>
 	<h1>충전하기</h1>
 	<input type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
 	
@@ -38,10 +38,10 @@
 			<td>사용내역</td>
 		</tr>
 		
-		<c:forEach items="${usepoint}" var="usepoint">
+		<c:forEach items="${paypointlist}" var="paypointlist">
 		<tr>
-			<td>${usepoint.usedate}</td>
-			<td>${usepoint.usepoint}</td>
+			<td>${paypointlist.paydate}</td>
+			<td>${paypointlist.paypoint}</td>
 		</tr>
 		</c:forEach>
 		
