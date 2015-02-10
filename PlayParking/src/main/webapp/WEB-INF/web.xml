@@ -9,7 +9,7 @@
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
-	<listener>
+   <listener>
          <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
    </listener>
    <context-param>
