@@ -25,4 +25,8 @@ public class MembersService implements MembersServiceInterface{
 		return dao.selectByUser(mid, mpwd);
 	}
 
+	public int updatePoint(MembersDTO point) {
+		return dao.updatePoint(point);
+	}
+
 }

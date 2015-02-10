@@ -20,7 +20,6 @@ public class MemberUpdateController {
 	@RequestMapping(value="/memberupdate.do", method=RequestMethod.GET)
 	public ModelAndView updateGet(HttpServletRequest request){
 		
-		//System.out.println("정보수정:"+member.getMid());
 		HttpSession session = request.getSession();
 		MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
 		System.out.println("정보수정mid:"+memcheck);

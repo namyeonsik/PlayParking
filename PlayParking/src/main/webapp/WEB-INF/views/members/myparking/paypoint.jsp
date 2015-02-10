@@ -27,6 +27,39 @@
 <body>
 <%@ include file="../../Header.jsp" %>
 
-	<h1>포인트 충전페이지</h1>
+	
+	<!-- <input type="button" value="Close" onClick="window.close()"> -->
+	
+	<!-- 포인트충전 -->
+<div id="paypointform">
+<form class="form-horizontal" action="paypoint.do" method="post" style="width: 50%">
+  <fieldset>
+    <legend>포인트 충전</legend>
+   <div class="form-group">
+      <label for="inputId" class="col-lg-2 control-label"></label>
+      <div class="col-lg-10">
+        <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">충전할금액</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mpoint" placeholder="금액을 입력하세요(단위:천원)">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">충전</button>
+      </div>
+    </div>
+    
+  </fieldset>
+</form>
+</div>
+<!-- 포인트충전 -->
+
+
 </body>
 </html>
