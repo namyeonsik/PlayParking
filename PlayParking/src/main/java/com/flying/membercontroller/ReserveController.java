@@ -29,9 +29,16 @@ public class ReserveController {
 	ReservationServiceInterface service;
 
 	@RequestMapping(value = "/reserve.do", method = RequestMethod.GET)
-	public String test() {
-		System.out.println("get방식");
-		return "members/reserve";
+	public ModelAndView test(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		if(session.getAttribute("memcheck")==null){
+			mv.setViewName("members/member_login");
+			return mv;
+		}else{
+			System.out.println("get방식");
+			mv.setViewName("members/reserve");
+			return mv;
+		}		
 	}
 
 	@RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)

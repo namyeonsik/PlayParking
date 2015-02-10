@@ -30,7 +30,9 @@ public class ReserveCheckController {
 			return mv;
 		} else {
 			session = request.getSession();
-			String mid = (String) session.getAttribute("mid");
+			MembersDTO memcheck = 
+					     (MembersDTO)session.getAttribute("memcheck");
+			String mid = memcheck.getMid();
 			System.out.println("예약확인mid:" + mid);
 
 			List<ReservationDTO> reservationlist = service.selectBymid(mid);
