@@ -22,16 +22,22 @@ public class ReserveCheckController {
 	ReservationServiceInterface service;
 	
 	@RequestMapping("/reservecheck.do")
-	public ModelAndView getMaplist(HttpServletRequest request){
+	public ModelAndView getMaplist(HttpServletRequest request,
+			                                  HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		if (session.getAttribute("memcheck") == null) {
+			mv.setViewName("members/member_login");
+			return mv;
+		} else {
+			session = request.getSession();
+			String mid = (String) session.getAttribute("mid");
+			System.out.println("예약확인mid:" + mid);
 
-		HttpSession session = request.getSession();
-		String mid = (String)session.getAttribute("mid");
-		System.out.println("예약확인mid:"+mid);
-		ModelAndView mv = new ModelAndView();	
-		List<ReservationDTO> reservationlist = service.selectBymid(mid);
-		
-		mv.addObject("reservationlist", reservationlist);
-		mv.setViewName("/members/myparking/reservecheck");
-		return mv;
+			List<ReservationDTO> reservationlist = service.selectBymid(mid);
+
+			mv.addObject("reservationlist", reservationlist);
+			mv.setViewName("/members/myparking/reservecheck");
+			return mv;
+		}
 	}	
 }
