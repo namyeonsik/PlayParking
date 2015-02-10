@@ -18,7 +18,7 @@ public class MemberLoginController {
 	MembersServiceInterface service; 
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String loginGet(){
+	public String loginGet(MembersDTO member){
 		return "members/member_login";
 	}
 

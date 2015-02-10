@@ -4,9 +4,78 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="Bootply" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- [if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif] -->
+<link href="css/styles.css" rel="stylesheet"> 
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+ <script src="//code.jquery.com/jquery.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+ <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+
+function validationlogin(){
+	var aid = adminloginfrm.aid.value;
+	var apwd = loginfrm.apwd.value;
+	if(aid ==""||aid==null){
+		alert("아이디을 입력하세요");
+		adminloginfrm.aid.focus();
+		return false; //list로 넘어가지마!
+		
+	}else if(apwd==""||apwd==null){
+		alert("비밀번호를 입력하세요");
+		adminloginfrm.apwd.focus();
+		return false;
+	}else{
+		return true;
+	}
+
+</script>
+
+
+
 <title>관리자 로그인</title>
 </head>
 <body>
-	<h1>관리자 로그인페이지입니다!</h1>
+<!-- <h1>관리자 로그인페이지입니다!</h1> -->
+	
+<!-- 로그인 -->
+<div id="loginform">
+<form class="form-horizontal" action="adminlogin.do" method="post" 
+     onsubmit="return validationlogin();" name="adminloginfrm" style="width: 90%">
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-group">
+      <label for="inputAid" class="col-lg-2 control-label">ID</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="aid" placeholder="ID">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="apwd" placeholder="Password">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+<!-- 로그인끝 -->
+
 </body>
 </html>
