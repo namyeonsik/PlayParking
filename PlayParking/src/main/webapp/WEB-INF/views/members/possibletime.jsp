@@ -18,9 +18,24 @@
   <option value="1430">14:30~15:00 ${check}</option>
   <option value="1500">15:00~15:30 ${check}</option>
   <option value="1530">15:30~16:00 ${check}</option>
+  <option value="1600">16:00~16:30 ${check}</option>
+  <option value="1630">16:30~17:00 ${check}</option>
+  <option value="1700">17:00~17:30 ${check}</option>
+  <option value="1730">17:30~18:00 ${check}</option>
+  <option value="1800">18:00~18:30 ${check}</option>
+  <option value="1830">18:30~19:00 ${check}</option>
+  <option value="1900">19:00~19:30 ${check}</option>
+  <option value="1930">19:30~20:00 ${check}</option>
+  <option value="2000">20:00~20:30 ${check}</option>
+  <option value="2030">20:30~21:00 ${check}</option>
+  <option value="2100">21:00~21:30 ${check}</option>
+  <option value="2130">21:30~22:00 ${check}</option>
+  <option value="2200">22:00~22:30 ${check}</option>
+  <option value="2230">22:30~23:00 ${check}</option>
+  
    
 </select>
-
+<br>
 <input type = "button" value = "선택" onclick="getsDate()"/>
 <input type = "reset" value = "reset"/><br><br>
   

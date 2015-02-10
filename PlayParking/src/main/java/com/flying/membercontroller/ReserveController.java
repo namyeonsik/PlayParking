@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,7 +61,12 @@ public class ReserveController {
 	}
 
 	@RequestMapping(value = "/reserve2.do", method = RequestMethod.POST)
-	public ModelAndView test3(String possibleTime) {
+	public ModelAndView test3(String possibleTime,HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
+		System.out.println(memcheck);
+		
 		// 가는시간을 조회해서 data를 저장
 		ModelAndView mv = new ModelAndView();
 		System.out.println("p"+possibleTime);
@@ -100,17 +106,21 @@ public class ReserveController {
 	int resultMpoint=0;
 	@RequestMapping(value="/insert.do", method=RequestMethod.POST)
 	public ModelAndView insert(String date, String possibleTime, String selectTime, HttpServletRequest request){
-	ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
+		
+		ModelAndView mv = new ModelAndView();
+		System.out.println(memcheck);
 		 possibleTime = request.getParameter("possibleTime");
 		System.out.println("possibleTime:" + possibleTime);
-		
+		System.out.println("아이디는="+memcheck.getMid()); //여기서 에러가난다.
 		
 		try {
 			SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = sf.parse(date);
 			System.out.println(d+"일"+possibleTime+"시"+selectTime+"시간");
 			
-			String mid = "k91311";
+			String mid = memcheck.getMid();
 			int pid = 178;
 			System.out.println(possibleTime);
 			

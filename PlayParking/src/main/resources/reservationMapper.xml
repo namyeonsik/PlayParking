@@ -43,6 +43,7 @@
   #{pid:INTEGER},
   #{usepoint:INTEGER}
   )
+  
   </insert>
   <update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
   update parking set
