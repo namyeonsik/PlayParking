@@ -155,6 +155,18 @@
   </footer>
 
 </div><!-- /.container -->
+
+<input id="mm" value="${msg}" type="text"> 
+
+
+<script type="text/javascript">
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+	alert("*"+dd+"*");
+}
+</script>
+
+
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
