@@ -16,4 +16,11 @@ public class ParkingDAO implements ParkingDAOInterface{
 		return session.selectList("flying.parking.selectByplocation", plocation);
 	}
 
+	public ParkingDTO selectBypid(int pid) {
+		return session.selectOne("flying.parking.selectBypid", pid);
+	}
+
+	public int updateParking(ParkingDTO parking) {
+		return session.update("flying.parking.updateParking", parking);
+	}
 }

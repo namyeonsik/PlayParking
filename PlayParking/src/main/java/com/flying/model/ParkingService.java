@@ -14,4 +14,12 @@ public class ParkingService implements ParkingServiceInterface{
 	public List<ParkingDTO> selectByplocation(String plocation) {
 		return dao.selectByplocation(plocation);
 	}
+
+	public ParkingDTO selectBypid(int pid) {
+		return dao.selectBypid(pid);
+	}
+
+	public int updateParking(ParkingDTO parking) {
+		return dao.updateParking(parking);
+	}
 }
