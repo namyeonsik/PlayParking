@@ -19,8 +19,8 @@
 
   <insert id="insertMembers" parameterType="com.flying.model.MembersDTO">
 	insert into Members(mid,mpwd,mname,mphone,mpoint,cid)
-	values(#{mid:VARCHAR},#{mpwd:VARCHAR},
-	       #{mname:VARCHAR},#{mphone:VARCHAR},0,0)
+	values(#{mid:VARCHAR},#{mpwd:VARCHAR}, #{mname:VARCHAR},
+	                  #{mphone:VARCHAR},0,#{cid:VARCHAR})
   </insert>
   
   <select id="selectByUser" parameterType="map"
@@ -33,6 +33,12 @@
   	parameterType="String"
   	resultType="com.flying.model.CarDTO">
     select * from CAR where cbrand= #{cbrand:VARCHAR}
+  </select>
+  
+   <select id="selectByCname" 
+  	parameterType="String"
+  	resultType="com.flying.model.CarDTO">
+    select * from CAR where cname= #{cname:VARCHAR}
   </select>
 
   

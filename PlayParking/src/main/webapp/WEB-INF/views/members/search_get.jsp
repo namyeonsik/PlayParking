@@ -6,16 +6,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>(html)주차장 검색페이지</title>
 
-<style>
-#listform { float : right; width: 30%; }
+<style type="text/css">
+#listform {float:right; width: 20%; }
 </style> 
+
+<meta name="generator" content="Bootply" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+
+
 
 </head>
 
 <body>
 <%@ include file="../Header.jsp"%>
 
-<div id="listform" style="border:#6B71BD solid 1px">
+<div id="listform" >
 	<h2>지역(구) 선택</h2>
 	<!-- 지역선택 select box -->
 	<form name="f">
@@ -36,7 +49,7 @@
 </div>
 
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:70%;height:550px;"></div>
+<div id="map" style="width:70%;height:550px;border:#6B71BD solid 1px;"></div>
 
 	<script type="text/javascript" 
 	src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libraries=services">	
