@@ -9,5 +9,6 @@
 <body>
 	<h1>관리자 메인페이지입니다.</h1>
 	<h3>현재상황 및 예약리스트</h3>
+	<a href="parkingupdate.do">주차장정보수정</a>
 </body>
 </html>
