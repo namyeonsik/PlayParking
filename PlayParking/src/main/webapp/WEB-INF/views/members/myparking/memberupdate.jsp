@@ -71,7 +71,7 @@
     <div class="form-group">
       <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" name="mphone" placeholder="Phone" value="${memcheck.mphone}">
+        <input type="text" class="form-control" name="mphone" placeholder="Phone" value="${memcheck.mphone}">
         <br>
       </div>
     </div>

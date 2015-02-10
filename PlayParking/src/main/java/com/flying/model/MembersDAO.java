@@ -41,4 +41,8 @@ public class MembersDAO implements MembersDAOInterface{
 		return session.selectList("flying.members.selectByCbrand", cbrand);
 	}
 
+	public int updatePoint(MembersDTO point) {
+		return session.update("flying.members.updatePoint", point);
+	}
+
 }
