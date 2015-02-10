@@ -20,12 +20,21 @@ public class SearchController {
 	ParkingServiceInterface service;
 	
 	@RequestMapping(value="/search.do", method=RequestMethod.GET)
-	public String searchGet(){
-		return "members/search_get";
+	public ModelAndView searchGet(HttpSession session){
+		ModelAndView mv = new ModelAndView();
+		if(session.getAttribute("memcheck")==null){
+			
+			mv.setViewName("members/member_login");
+			return mv;
+		}else{
+			mv.setViewName("members/search_get");
+			return mv;
+		}
 	}
 	
 	@RequestMapping(value="/search.do", method=RequestMethod.POST)
 	public ModelAndView searchPost(HttpServletRequest request, HttpSession session){
+		System.out.println(session.getAttribute("memcheck").toString());
 		if(session.getAttribute("memcheck")==null){
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("members/member_login");

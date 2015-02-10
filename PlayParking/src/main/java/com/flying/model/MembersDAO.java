@@ -40,8 +40,10 @@ public class MembersDAO implements MembersDAOInterface{
 	public List<CarDTO> selectByCbrand(String cbrand) {
 		return session.selectList("flying.members.selectByCbrand", cbrand);
 	}
-	
-	public CarDTO selectByCname(String cname){
-		return session.selectOne("flying.members.selectByCname", cname);
+
+	public int updatePoint(MembersDTO point) {
+		return session.update("flying.members.updatePoint", point);
 	}
+
+
 }

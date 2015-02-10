@@ -11,10 +11,18 @@ public class ReservationDTO {
 	Date rend;
 	int rtime;
 	int rextrafare;
+	String rstarttime;
+
 	
+	public String getRstarttime() {
+		return rstarttime;
+	}
+	public void setRstarttime(String rstarttime) {
+		this.rstarttime = rstarttime;
+	}
 	public ReservationDTO(){};
 	public ReservationDTO(int rid, int pid, String mid, Date rstart, Date rend,
-			int rtime, int rextrafare) {
+			int rtime, int rextrafare,String rstarttime) {
 		super();
 		this.rid = rid;
 		this.pid = pid;
@@ -23,6 +31,7 @@ public class ReservationDTO {
 		this.rend = rend;
 		this.rtime = rtime;
 		this.rextrafare = rextrafare;
+		this.rstarttime=rstarttime;
 	}
 	public int getRid() {
 		return rid;

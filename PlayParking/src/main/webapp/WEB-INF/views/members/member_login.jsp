@@ -3,40 +3,38 @@
 
 <!DOCTYPE html>
 <html>
-
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<meta name="generator" content="Bootply" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- [if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif] -->
+<link href="css/styles.css" rel="stylesheet"> 
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+ <script src="//code.jquery.com/jquery.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+ <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+
 <title>멤버 로그인</title>
 <style>
-#layout{ width: 100%;}
-#loginform { float: left; margin-left: 6%; margin-top:10%; width: 35%;}
-#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 2%}
+
+#loginform { float: left; margin-left: 6%; margin-top:14%; width: 35%;}
+#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 14%}
 </style>
 
 <meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
-	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
-    <script src="//code.jquery.com/jquery.js"></script>
-    <!-- 합쳐지고 최소화된 최신 CSS -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
-
-
-
 
 <script type="text/javascript">
 
@@ -84,7 +82,7 @@ function validationlogin(){
 <body>
 <%@ include file="../Header.jsp" %>
 
-<div id="layout">
+
 <!-- 로그인 -->
 <div id="loginform">
 <form class="form-horizontal" action="memberlogin.do" method="post" 
@@ -122,7 +120,7 @@ function validationlogin(){
   <fieldset>
     <legend>Join</legend>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">ID</label>
+      <label for="inputID" class="col-lg-2 control-label">ID</label>
       <div class="col-lg-10">
         <input type="text" class="form-control" name="mid" placeholder="ID">
       </div>
@@ -151,13 +149,13 @@ function validationlogin(){
     <div class="form-group">
       <label for="select" class="col-lg-2 control-label">Car Model</label>
       <div class="col-lg-10">
-        <select class="form-control" id="cbrand"  onchange="call();submit();" 
+        <select class="form-control" id="cbrand"  onchange="call();" 
                            style="float: left; width:40%;">
           <option value="브랜드선택" selected="selected">브랜드선택</option>
           <option value="현대">현대</option>
           <option value="기아">기아</option>
           <option value="쉐보레">쉐보레</option>
-          <option value="bmw">bmw</option>
+          <option value="BMW">BMW</option>
           <option value="아우디">아우디</option>
         </select>
         <div id="cnamediv">
@@ -174,7 +172,7 @@ function validationlogin(){
 </form>
 </div>
 <!-- 회원가입끝 -->
-</div>
+
 
 <script type="text/javascript">
 var xhr;//전역변수
@@ -189,12 +187,12 @@ var data = document.getElementById("cbrand").value;
 data="cbrand="+data;
 data.submit(); */
 
-xhr.open("POST", "/carname.do", true); //POST방식.비동기통식.
+xhr.open("POST", "carname.do", true); //POST방식.비동기통식.
 //POST일때는 아래추가.
 xhr.setRequestHeader("content-type", 
 		                   "application/x-www-form-urlencoded");
-xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
-alert("끝");
+xhr.send("cbrand="+data);//cbrand가 controller에게
+
 }
 
 //요청에 대한 응답을 받을때마다 호출됨. 콜백 함수 지정 속성.
@@ -212,6 +210,16 @@ function viewData4(data){
  //html
 	document.getElementById("cnamediv").innerHTML =data;
 }
+
+
+/* function callcid(){
+	var cname = document.getElementById("cname").value;
+	xhr.open("POST", "getcid.do", true); //POST방식.비동기통식.
+	//POST일때는 아래추가.
+	xhr.setRequestHeader("content-type", 
+			                   "application/x-www-form-urlencoded");
+	xhr.send("cname="+cname);
+} */
 </script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.flying.model;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +25,14 @@ public class MembersService implements MembersServiceInterface{
 
 	public MembersDTO selectByUser(String mid, String mpwd) {
 		return dao.selectByUser(mid, mpwd);
+	}
+
+	public int updatePoint(MembersDTO point) {
+		return dao.updatePoint(point);
+	}
+
+	public List<CarDTO> selectByCbrand(String cbrand) {
+		return dao.selectByCbrand(cbrand);
 	}
 
 }

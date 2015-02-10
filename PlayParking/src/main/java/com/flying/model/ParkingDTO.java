@@ -7,6 +7,15 @@ public class ParkingDTO {
 	private int plength;
 	private int platefare;
 	private int pamount;
+	private int pcount;
+	public int getPcount() {
+		return pcount;
+	}
+	public void setPcount(int pcount) {
+		this.pcount = pcount;
+	}
+	
+	
 	private String pname;
 	private String plocation;
 	private String pphone;
@@ -15,7 +24,7 @@ public class ParkingDTO {
 	
 	public ParkingDTO(){};
 	public ParkingDTO(int pid, int pfare, int pwidth, int plength,
-			int platefare, int pamount, String pname, String plocation,
+			int platefare, int pamount,int pcount, String pname, String plocation,
 			String pphone, double x, double y) {
 		super();
 		this.pid = pid;
@@ -24,6 +33,7 @@ public class ParkingDTO {
 		this.plength = plength;
 		this.platefare = platefare;
 		this.pamount = pamount;
+		this.pcount=pcount;
 		this.pname = pname;
 		this.plocation = plocation;
 		this.pphone = pphone;
