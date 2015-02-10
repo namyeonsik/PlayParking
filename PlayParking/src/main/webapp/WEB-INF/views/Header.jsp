@@ -57,8 +57,7 @@
                 <li><a href="memberupdate.do">내정보수정</a></li>
                 <li><a href="reservecheck.do">예약확인</a></li>
                 <li class="divider"></li>
-                <li><a href="pointcheck.do">포인트확인</a></li>
-                <li><a href="charge.do">포인트충전</a></li>         
+                <li><a href="pointcheck.do">포인트확인</a></li>       
               </ul>
             </li>
           </ul>
