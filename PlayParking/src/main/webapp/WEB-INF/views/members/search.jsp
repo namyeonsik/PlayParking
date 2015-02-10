@@ -15,6 +15,7 @@
 	</tr>
 	
 	
+	
 	<c:set var="cnt" value="0"></c:set>
 	<c:forEach items="${parkinglist}" var="p">
 	<c:set var="cnt" value="${cnt+1}"></c:set>

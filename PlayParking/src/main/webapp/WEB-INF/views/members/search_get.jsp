@@ -11,6 +11,7 @@
 </style> 
 
 
+
 <style>
 html, body {width:100%;height:100%;margin:0;padding:0;} 
 .map_wrap {position:relative;overflow:hidden;width:70%;height:550px;}
