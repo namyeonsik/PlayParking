@@ -13,8 +13,27 @@
  
   <update id="updateMembers">
   	update members 
-  	set cid=#{cid:INTEGER},mpwd=#{mpwd:VARCHAR},mname=#{mname:VARCHAR},mphone=#{mphone:VARCHAR}
+  	set mname=#{mname:VARCHAR},mpwd=#{mpwd:VARCHAR},mphone=#{mphone:VARCHAR}
   	where mid=#{mid:VARCHAR} 
   </update>
+
+  <insert id="insertMembers" parameterType="com.flying.model.MembersDTO">
+	insert into Members(mid,mpwd,mname,mphone,mpoint,cid)
+	values(#{mid:VARCHAR},#{mpwd:VARCHAR},
+	       #{mname:VARCHAR},#{mphone:VARCHAR},0,0)
+  </insert>
+  
+  <select id="selectByUser" parameterType="map"
+  	resultType="com.flying.model.MembersDTO">
+    select * from Members 
+    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
+  </select>
+  
+  <select id="selectByCbrand" 
+  	parameterType="String"
+  	resultType="com.flying.model.CarDTO">
+    select * from CAR where cbrand= #{cbrand:VARCHAR}
+  </select>
+
   
 </mapper>

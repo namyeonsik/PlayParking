@@ -4,4 +4,12 @@ import java.util.List;
 
 public interface ReservationServiceInterface {
 	public List<ReservationDTO> selectBymid(String mid);
+	public int insertReservation(ReservationDTO reserve);
+	public int checkCount(int pid);
+	public int checkAmount(int pid);
+	public ParkingDTO selectBypid(int pid);
+	public int updateParkingPcount(ParkingDTO parking);
+	public MembersDTO searchBymid(String mid);
+	public int updateMembersMpoint(MembersDTO members);
+	public int insertUsepoint(UsePointDTO usepoint);
 }

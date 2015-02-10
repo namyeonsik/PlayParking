@@ -8,7 +8,68 @@
   	parameterType="String"
   	resultType="com.flying.model.ReservationDTO">
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from reservation where mid = #{aa:VARCHAR}
+    select * from reservation where mid = #{aa}
+  </select>
+  <select id="selectBypid" parameterType="int" resultType="com.flying.model.ParkingDTO">
+  
+  select * from parking where pid = #{aa}
+  </select>
+   <select id="searchBymid" 
+  	parameterType="String"
+  	resultType="com.flying.model.MembersDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from members where mid = #{aa}
+  </select>
+  
+  <insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">
+  insert into reservation (rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime)
+  values(rid_seq.nextval,
+  #{pid:INTEGER},
+  #{rstart:DATE},
+  #{rtime:INTEGER},
+  #{mid:VARCHAR},
+  #{rend:DATE},
+  #{rextrafare:INTEGER},
+  #{rstarttime:VARCHAR}
+  
+  
+  )
+   
+  </insert>
+  <insert id="insertUsepoint" parameterType="com.flying.model.UsePointDTO">
+  insert into usepoint (usedate,mid,pid,usepoint)
+  values(sysdate,
+  #{mid:VARCHAR},
+  #{pid:INTEGER},
+  #{usepoint:INTEGER}
+  )
+  </insert>
+  <update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
+  update parking set
+  pcount = #{pcount:INTEGER}
+  where pid= #{pid:INTEGER}
+  
+  </update>
+  <update id="updateMembersMpoint" parameterType="com.flying.model.MembersDTO">
+  update members set
+  mpoint = #{mpoint:INTEGER}
+  where mid= #{mid:VARCHAR}
+  
+  </update>
+  
+    <select id="checkCount" 
+  	parameterType="int"
+  	resultType="int">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select pcount from parking where pid = #{aa}
+  </select>
+
+
+ <select id="checkAmount" 
+  	parameterType="int"
+  	resultType="int">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select pamount from parking where pid = #{aa}
   </select>
 
 </mapper>

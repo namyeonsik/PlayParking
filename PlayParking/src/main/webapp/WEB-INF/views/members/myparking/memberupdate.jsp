@@ -5,7 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원정보수정</title>
+<style>
 
+#updateform { float: left; margin-left: 10%; margin-top:10%; width: 50%;}
+
+</style>
 
 <meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,73 +29,62 @@
 
 </head>
 <body>
+<%@ include file="../../Header.jsp" %>
 
-<!-- TOP BAR -->
-	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
-		<div class="container">
-			<div class="navbar-header responsive-logo">
-				<!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> -->
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<!-- </button> -->
-				<!-- <a href="./" class="navbar-brand">
-				<img src="images/logo.png" alt="Zerif">
-				</a> -->
-			</div>
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href="join.do">Join</a></li>
-				<li><a href="memberlogin.do">Login</a></li>
-				<li><a href="adminlogin.do">Admin</a></li>
-			</ul>
-			</nav>
-		</div>
-		
-		
-		
-		 <div class="navbar-wrapper">
-  <div class="container">
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="navbar-header">
-	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
-        <a class="navbar-brand" href="membermain.do">Play Parking</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="membermain.do">Home</a></li>
-            <li><a href="search.do">Search</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="memberupdate.do">내정보수정</a></li>
-                <li><a href="reservecheck.do">예약확인</a></li>
-                <li class="divider"></li>
-                <li><a href="pointcheck.do">포인트확인</a></li>
-                <li><a href="charge.do">포인트충전</a></li>         
-              </ul>
-            </li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</div>
-
-	<h1>회 원 수 정</h1>
+	<%-- <h1>회 원 수 정</h1>
 	<form action="memberupdate.do" method="post">
 		<input type="hidden" name="mno" value="${members.mno}"><br>
-		이름:<input type="text" name="mname" value="${members.mname}"><br>
-		패스워드:<input type="text" name="mpwd" value="${members.mpwd}"><br>
-		핸드폰번호:<input type="text" name="mphone" value="${members.mphone}"><br>
-		차종류:<input type="text" name="cid" value="${members.cid}"><br>
+		이름:<input type="text" name="mname" value="${memcheck.mname}"><br>
+		패스워드:<input type="text" name="mpwd" value="${memcheck.mpwd}"><br>
+		핸드폰번호:<input type="text" name="mphone" value="${memcheck.mphone}"><br>
+		차종류:<input type="text" name="cid" value="${memcheck.cid}"><br>
 		<input type="submit" value="수정하기">
 		<input type="reset" value="취소">
-	</form>
-	
+	</form> --%>
+
+<!-- 회원정보수정 -->
+<div id="updateform">
+<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 50%">
+  <fieldset>
+    <legend>Update Information</legend>
+    <div class="form-group">
+      <label for="inputId" class="col-lg-2 control-label"></label>
+      <div class="col-lg-10">
+        <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="mname" placeholder="Name" value="${memcheck.mname}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mpwd" placeholder="Password" value="${memcheck.mpwd}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mphone" placeholder="Phone" value="${memcheck.mphone}">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Complete</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+<!-- 회원정보수정 -->
+
 </body>
 </html>
