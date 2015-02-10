@@ -13,7 +13,7 @@ public class PayPointDAO implements PayPointDAOInterface{
 	SqlSession session;
 	
 	public List<PayPointDTO> selectBymid(String mid) {
-		return session.selectOne("flying.paypoint.selectBymid", mid);
+		return session.selectList("flying.paypoint.selectBymid", mid);
 	}
 
 	public int insertPoint(PayPointDTO point) {

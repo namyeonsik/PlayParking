@@ -33,6 +33,7 @@ public class PointCheckController {
          session = request.getSession();
          MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
          MembersDTO point = mservice.selectBymid(memcheck.getMid());
+         System.out.println(point+"^&&^$^");
          List<PayPointDTO> paypointlist = service.selectBymid(memcheck.getMid());
          System.out.println("paypointlist:"+paypointlist);
          
