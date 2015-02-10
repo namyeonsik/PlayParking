@@ -31,17 +31,6 @@
 <body>
 <%@ include file="../../Header.jsp" %>
 
-	<%-- <h1>회 원 수 정</h1>
-	<form action="memberupdate.do" method="post">
-		<input type="hidden" name="mno" value="${members.mno}"><br>
-		이름:<input type="text" name="mname" value="${memcheck.mname}"><br>
-		패스워드:<input type="text" name="mpwd" value="${memcheck.mpwd}"><br>
-		핸드폰번호:<input type="text" name="mphone" value="${memcheck.mphone}"><br>
-		차종류:<input type="text" name="cid" value="${memcheck.cid}"><br>
-		<input type="submit" value="수정하기">
-		<input type="reset" value="취소">
-	</form> --%>
-
 <!-- 회원정보수정 -->
 <div id="updateform">
 <form class="form-horizontal" action="memberupdate.do" method="post" style="width: 50%">
