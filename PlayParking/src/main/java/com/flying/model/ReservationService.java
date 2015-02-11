@@ -44,7 +44,7 @@ public class ReservationService implements ReservationServiceInterface{
 		return dao.selectBypid(pid);
 	}
 
-	public MembersDTO searchBymid(String mid) {//mid로 mpoint를 확인하려 만든것.
+	public MembersDTO searchBymid(String mid) {//mid濡�mpoint瑜��뺤씤�섎젮 留뚮뱺寃�
 		// TODO Auto-generated method stub
 		return dao.searchBymid(mid);
 	}
@@ -57,5 +57,10 @@ public class ReservationService implements ReservationServiceInterface{
 	public int insertUsepoint(UsePointDTO usepoint) {
 		// TODO Auto-generated method stub
 		return dao.insertUsepoint(usepoint);
+	}
+
+	public ReservationDTO selectBymidone(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectBymidone(mid);
 	}
 }

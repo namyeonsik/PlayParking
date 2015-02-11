@@ -10,8 +10,6 @@
 #listform { float : right; width: 30%; }
 </style> 
 
-
-
 <style>
 html, body {width:100%;height:100%;margin:0;padding:0;} 
 .map_wrap {position:relative;overflow:hidden;width:70%;height:550px;}
@@ -29,10 +27,9 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 <script src="//code.jquery.com/jquery.js"></script>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/cosmo/bootstrap.min.css" rel="stylesheet">
- -->
+
+</head>
+
 <body>
 <%@ include file="../Header.jsp"%>
 
@@ -41,7 +38,7 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 	<h5>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</h5>
 	<!-- 지역선택 select box -->
 	<form name="f">
-	    <select onchange="change(value);" name="plocation">
+	    <select onchange="change(value);change2();" name="plocation">
 			<option>선택하시오</option>
 				<option value="강남구" ${selected[0]}>강남구</option>
 	            <option value="송파구" ${selected[1]}>송파구</option>
@@ -69,17 +66,16 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 	            <option value="금천구" ${selected[23]}>금천구</option>
 	            <option value="도봉구" ${selected[24]}>도봉구</option>   
 	    </select>
+	    
+	    <input type="radio" id="radio" name="radio" value="절약형" onclick="change();">절약형
+		<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">지각형
+		<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">안전형
 	</form> 
-	
-	
-	
-	<input type="radio" name="radio" value="절약형" data-toggle="tooltip" title="저렴한 가격의 주차장부터 보여집니다." onclick="">절약형
-	<input type="radio" name="radio" value="지각형" data-toggle="tooltip" title="추가요금이 저렴한 주차장부터 보여집니다.">지각형
-	<input type="radio" name="radio" value="안전형" data-toggle="tooltip" title="넓은 주차공간을 가진 주차장부터 보여집니다.">안전형
 
 	<!-- 주차장 검색 후 리스트 -->
 	
 	<p id="t1"></p>
+	<p id="t3"></p>
 </div>
 
 	<!-- ---------------------------**지도**--------------------------- -->
@@ -99,7 +95,6 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 	</script>
 
 	<script>	
-	
 	//지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
 	function zoomIn() {
 	    map.setLevel(map.getLevel() - 1);
@@ -118,8 +113,8 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 		        level: 4// 지도의 확대 레벨
 		    };  
 	
-	// 지도를 생성합니다    
-	var map = new daum.maps.Map(mapContainer, mapOption); 
+	// 지도를 생성합니다 
+	var map = new daum.maps.Map(mapContainer, mapOption);
 	
 	var tlist;
 	var t1;
@@ -159,22 +154,56 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 					tlist = httpRequest.responseText.split(';');
 					t1 = tlist[0];
 					t2 = tlist[1];
+					t3 = tlist[2];
 					
-					document.getElementById("t1").innerHTML = t1;
-					
+					if(t3.length>1000){
+							document.getElementById("t1").innerHTML ="";
+							document.getElementById("t3").innerHTML = t3;
+					}
+					else{
+						document.getElementById("t1").innerHTML = t1;
+					}
 					search();
 				}
 			}    	 
 	 }
 	
 	var str;
-	function change(){		
+	
+	var arr = [];
+	function setMarkers(map) {
+	    for (var i = 0; i < arr.length-10; i++) {
+	        arr[i].setMap(map);
+	    }            
+	}
+	function change2(){		
+		var radio = document.getElementsByName("radio");
+        for(var i=0;i<radio.length;i++){	
+             if(radio[i].checked == true){
+            	 radio[i].checked = false;
+             }
+		 }
+	}
+	function change(){			
 	    if(document.f.plocation.selectedIndex != 0){
-	        str = document.f.plocation.value; //구이름 받기
-	    }else{
+	        str = document.f.plocation.value; //구이름 받기	
+	   	}else{
 	        return;
-	    }        
-		var param = "plocation=" + str;
+	    }
+	    
+	   	str2 = document.f.radio.value; //맞춤형 받기      
+	    if(str2 == null)
+	   		str2 = "";
+	    
+	    var param = null;
+	    
+	    if(str2==""){
+	    	param = "plocation=" + str;
+	    }
+	    else{
+	    	param = "plocation=" + str + "&makchum="+str2;
+	    }
+	    
 		sendRequest(param);		
 	 }
 	
@@ -191,7 +220,7 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 		/*----------------------------마커 객체 변환----------------------------*/
 		
 		var markers = eval("(["+t2+"])");
-			
+					
 		/*----------------------------검색-------------------------------*/
 			// 장소 검색 객체를 생성합니다
 			 var ps = new daum.maps.services.Places(); 
@@ -217,21 +246,25 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 			 }		 
 						 
 			 // 지도에 마커를 표시하는 함수입니다 positions.length
-			 function displayMarker() {		
+			 function displayMarker() {
+				
 				var marker = new Array();
 				var infowindow = new Array();
-			 	for (var i = 0; i < markers.length; i ++) {			 			
-				     	
-			 			// 마커를 생성하고 지도에 표시합니다
-					     marker[i] = new daum.maps.Marker({
-					         map: map,
+										
+			 	for (var i = 0; i < markers.length; i ++) {				 		
+			 			
+			 		   // 마커를 생성하고 지도에 표시합니다
+					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
 					         title:markers[i].title,
 					         image:markerImage
 					     });
-			 			
-					    marker[i].index = i;
-				     
+					    marker[i].setMap(map);			 			
+					    
+					    arr.push(marker[i]); //arr에 총 마커 개수 구하기
+					    
+					    marker[i].index = i;				     
+					   
 			 			//인포윈도우 생성
 					     infowindow[i] = new daum.maps.InfoWindow({
 					         content: '<div style="padding:5px;font-size:12px;">' + markers[i].title + '</div>',
@@ -248,8 +281,12 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 					   		 /****** 클릭한 마커의 좌표를 받아와서 그 좌표의 이름을 뿌려줘라! ******/	
 					         infowindow[this.index].open(map, marker[this.index]);					       	
 					     });
-			 		}				  
-				 }
+					 	
+			 		}
+			 	if(arr.length>=20){ 
+			 		setMarkers(null);
+			 	}
+			}
 	}
 
 	</script>
