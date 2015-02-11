@@ -46,7 +46,6 @@
 		        <div class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
 		            <li><a href="search.do">Search</a></li>
-		            <li><a href="reserve.do">예약</a></li>
 		            <li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
 		              <ul class="dropdown-menu">
@@ -56,7 +55,7 @@
 		                <li><a href="pointcheck.do">포인트확인</a></li>       
 		              </ul>
 		            </li>
-		            <li><a href="notice.do">Notice</a></li>
+		            <li><a href="noticelist.do">Notice</a></li>
 		          </ul>
 		        </div>
 		    </div>

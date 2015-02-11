@@ -5,6 +5,7 @@ import java.util.List;
 public interface ReservationDAOInterface {
 	
 	public List<ReservationDTO> selectBymid(String mid);
+	public ReservationDTO selectBymidone(String mid);
 	public int insertReservation(ReservationDTO reserve);
 	public int checkCount(int pid);
 	public int checkAmount(int pid);

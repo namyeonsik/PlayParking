@@ -10,6 +10,7 @@
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select * from parking where plocation = #{aa:VARCHAR}
   </select>
+  
 
 <select id="selectBymakchum_1" 
   	parameterType="String"
@@ -46,5 +47,29 @@
   	where pid=#{pid:INTEGER} 
   </update>
  
- 
+ <update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
+  update parking set
+  pcount = #{pcount:INTEGER}
+  where pid= #{pid:INTEGER}
+  
+  </update>
+   <select id="checkCount" 
+  	parameterType="int"
+  	resultType="int">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select pcount from parking where pid = #{aa}
+  </select>
+
+
+ <select id="checkAmount" 
+  	parameterType="int"
+  	resultType="int">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select pamount from parking where pid = #{aa}
+  </select>
+ <select id="seachReservationBypid"
+ parameterType="int"
+ resultType="com.flying.model.ReservationDTO">
+ select * from reservation where pid=#{pid:INTEGER}
+ </select>
 </mapper>

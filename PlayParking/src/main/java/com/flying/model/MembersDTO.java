@@ -7,17 +7,19 @@ public class MembersDTO {
 	private String mpwd;
 	private String mname;
 	private String mphone;
+	private String memail;
 	private int mpoint;
 	
 	public MembersDTO(){};
 	public MembersDTO(String mid, int cid, String mpwd, String mname,
-			String mphone, int mpoint) {
+			String mphone, String memail, int mpoint) {
 		super();
 		this.mid = mid;
 		this.cid = cid;
 		this.mpwd = mpwd;
 		this.mname = mname;
 		this.mphone = mphone;
+		this.memail = memail;
 		this.mpoint = mpoint;
 	}
 	public String getMid() {
@@ -56,10 +58,17 @@ public class MembersDTO {
 	public void setMpoint(int mpoint) {
 		this.mpoint = mpoint;
 	}
+	public String getMemail() {
+		return memail;
+	}
+	public void setMemail(String memail) {
+		this.memail = memail;
+	}
 	@Override
 	public String toString() {
 		return "MembersDTO [mid=" + mid + ", cid=" + cid + ", mpwd=" + mpwd
-				+ ", mname=" + mname + ", mphone=" + mphone + ", mpoint="
-				+ mpoint + "]";
+				+ ", mname=" + mname + ", mphone=" + mphone + ", memail="
+				+ memail + ", mpoint=" + mpoint + "]";
 	}
+	
 }
