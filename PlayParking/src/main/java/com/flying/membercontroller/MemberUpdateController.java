@@ -1,5 +1,7 @@
 package com.flying.membercontroller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.flying.model.CarDTO;
 import com.flying.model.MembersDTO;
 import com.flying.model.MembersServiceInterface;
 @Controller
@@ -45,4 +48,14 @@ public class MemberUpdateController {
 		System.out.println(ret+"°Ç ¼öÁ¤.."+mem);
 		return "redirect:/membermain.do";
 	}	
+	
+	@RequestMapping(value="/carname_update.do", method=RequestMethod.POST)
+	public ModelAndView carnamePost(String cbrand){
+		
+		List<CarDTO> car = service.selectByCbrand(cbrand);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("car", car);
+		mv.setViewName("/members/myparking/cname_update");
+		return mv;
+	}
 }
