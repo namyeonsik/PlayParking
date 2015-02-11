@@ -55,7 +55,7 @@
 		                <li><a href="pointcheck.do">포인트확인</a></li>       
 		              </ul>
 		            </li>
-		            <li><a href="noticelist.do">Notice</a></li>
+		            <li><a href="noticelist1.do">Notice</a></li>
 		          </ul>
 		        </div>
 		    </div>
