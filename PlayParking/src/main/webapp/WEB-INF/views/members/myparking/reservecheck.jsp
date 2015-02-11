@@ -6,7 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예약확인</title>
-
+<style>
+#check {margin-left: 5%; margin-top:5%; width: 80%;}
+</style>
 
 <meta name="generator" content="Bootply" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,25 +27,27 @@
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
-
-	<h1>예약확인 페이지입니다.</h1>
-
-	<br>
-		<table border = '1'>
-		<tr>
-			<td>예약날짜</td>
-			<td>이용시간</td>
-			<td>주차장</td>
-		</tr>
-		
-		<c:forEach items="${reservationlist}" var="reservation">
-		<tr>
-			<td>${reservation.rstart}</td>
-			<td>${reservation.rtime}</td>
-			<td>${reservation.pid}</td>
-		</tr>
-		</c:forEach>		
-		</table>
-
+<div id="check">
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>예약날짜</th>
+      <th>이용시간</th>
+      <th>주차장</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach items="${reservationlist}" var="reservation">
+    <tr>
+      <td>1</td>
+      <td>${reservation.rstart}</td>
+	  <td>${reservation.rtime}</td>
+	  <td>${reservation.pid}</td>
+    </tr>
+    </c:forEach>
+  </tbody>
+</table> 
+</div>
 </body>
 </html>
