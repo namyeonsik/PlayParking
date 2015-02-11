@@ -3,22 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자</title>
+<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/theme.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
+	rel="stylesheet">
+<link type="text/css"
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+	rel='stylesheet'>
 
 <script type="text/javascript">
 
@@ -47,34 +48,26 @@ function validationlogin(){
 <body>
 <!-- <h1>관리자 로그인페이지입니다!</h1> -->
 	
-<!-- 로그인 -->
-<div id="loginform">
-<form class="form-horizontal" action="adminlogin.do" method="post" 
-     onsubmit="return validationlogin();" name="adminloginfrm" style="width: 90%">
-  <fieldset>
-    <legend>Login</legend>
-    <div class="form-group">
-      <label for="inputAid" class="col-lg-2 control-label">ID</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="aid" placeholder="ID">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input type="password" class="form-control" name="apwd" placeholder="Password">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="submit" class="btn btn-primary">Login</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+<!-- 로그인폼 -->
+
+<form class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
+onsubmit="return validationlogin();" name="adminloginfrm" style="width: 80%">
+<label class="control-label" for="basicinput" style="margin-top: 6%">Id</label>
+<div class="controls">
+<input type="text" name="aid" style="margin-bottom: 5%;margin-top: 8%" placeholder="Id" class="span8">
 </div>
+<label class="control-label" for="pwdinput">Password</label>
+<div class="controls">
+<input type="text" name="apwd" style="margin-bottom: 5%" placeholder="Password" class="span8">
+</div>
+
+<div class="form-group">
+<div class="col-lg-10 col-lg-offset-2">
+    <button type="submit" class="btn btn-primary" style="margin-left: 33%;margin-right: 5%;margin-bottom: 5% ">Login</button>
+</div>
+</div>
+</form>
+	
 <!-- 로그인끝 -->
 
 </body>

@@ -7,7 +7,7 @@
 <title>주차장 정보 수정</title>
 <style>
 
-#updateform { float: left; margin-left: 10%; margin-top:10%; width: 60%;}
+#updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 10%; width: 55%; height: 50%}
 
 </style>
 
@@ -72,67 +72,36 @@
 <h3>Parking Info Update</h3>
 </div>
 <form class="form-horizontal row-fluid" action="parkingupdate.do" method="post" style="width: 80%">
-   <div class="control-group"> 
-					<label class="control-label" for="basicinput">Basic Input</label>
-					<div class="controls">
-						<input type="text" id="basicinput"
-							placeholder="Type something here..." class="span8"> <span
-							class="help-inline">Minimum 5 Characters</span>
-					</div>
-				</div>
-  
-  <fieldset>
- 				
+<!-- 주차장정보수정 -->
+<label class="control-label" for="basicinput" style="margin-top: 6%">Name</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pname}"	class="span8">
+</div>
+<label class="control-label" for="basicinput">Fare</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pfare}"	class="span8">
+</div>
+<label class="control-label" for="basicinput">Additional Fee</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.platefare}" class="span8">
+</div>
+<label class="control-label" for="basicinput">Phone</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pphone}" class="span8">
+</div>
+<label class="control-label" for="basicinput">Capacity</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 10%" value="${parking.pamount}" class="span8">
+</div>
+<div class="form-group">
+<div class="col-lg-10 col-lg-offset-2">
+    <button type="submit" class="btn btn-primary" style="margin-left: 33%;margin-right: 5%;margin-bottom: 5% ">Complete</button>
+	<button type="reset" onclick="adminmain.do" class="btn btn-default" style="margin-bottom: 5% ">Cancel</button>
+ </div>
+</div>
 
-				<div class="form-group">
-      <label for="inputId" class="col-lg-2 control-label"></label>
-      <div class="col-lg-10">
-        <input type="hidden" class="form-control" name="pid" placeholder="Id" value="${parking.pid}">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputName" class="col-lg-2 control-label">Name</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="pname" placeholder="Name" value="${parking.pname}">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputName" class="col-lg-2 control-label">Fare</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="pfare" placeholder="Fare" value="${parking.pfare}">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Phone</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="pphone" placeholder="Phone" value="${parking.pphone}">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPhone" class="col-lg-2 control-label">Count</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="pcount" placeholder="수용가능한 대수" value="${parking.pcount}">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Complete</button>
-      </div>
-    </div>
 
-	<div class="control-group">
-	<div class="controls">
-			<button type="submit" class="btn">Complete</button>
-	</div>
-	</div>
 
-			</fieldset>
 </form>
 </div>
 <!-- 주차장정보수정 -->
