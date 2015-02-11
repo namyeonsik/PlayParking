@@ -156,7 +156,7 @@
 
 </div><!-- /.container -->
 
-<input id="mm" value="${msg}" type="text"> 
+<input id="mm" value="${msg}" type="hidden"> 
 
 
 <script type="text/javascript">

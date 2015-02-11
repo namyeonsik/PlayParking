@@ -16,7 +16,7 @@ public class AdminLogoutController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String loginGet(HttpSession session){
 		session.invalidate();
-		return "admin/admin_main";
+		return "admin/admin_login";
 	}
 
 }
