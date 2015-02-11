@@ -229,9 +229,9 @@ public class ReserveController {
     
           MailMail mm = (MailMail) context.getBean("mailMail");
            mm.sendMail("playingparking@gmail.com",
-                "dustlr92@gmail.com",
-                members.getMid()+"님 예약완료", 
-                "Testing only \n\n Hello Spring Email Sender");
+                members.getMemail(),
+                "[노는주차장]"+members.getMid()+"님 예약완료", 
+                parking.getPname()+"주차장 예약완료되었습니다:-)");
        //예약완료문자발송 끝
       
       return "members/confirm";
