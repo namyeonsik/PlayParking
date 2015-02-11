@@ -21,8 +21,11 @@
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
 
-<script type="text/javascript">
 
+
+
+<script type="text/javascript">
+var adminmsg = ${adminmsg}
 function validationlogin(){
 	var aid = adminloginfrm.aid.value;
 	var apwd = loginfrm.apwd.value;
@@ -39,6 +42,11 @@ function validationlogin(){
 		return true;
 	}
 
+	function logincheck(){
+		if(${adminmsg}==null){
+			}
+		}
+	}
 </script>
 
 
@@ -50,8 +58,8 @@ function validationlogin(){
 	
 <!-- 로그인폼 -->
 
-<form class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
-onsubmit="return validationlogin();" name="adminloginfrm" style="width: 80%">
+<form id="loginform" class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
+onsubmit="return validationlogin();" name="adminloginfrm" style="width: 80%; margin-top: 8%; margin-left: 15%">
 <label class="control-label" for="basicinput" style="margin-top: 6%">Id</label>
 <div class="controls">
 <input type="text" name="aid" style="margin-bottom: 5%;margin-top: 8%" placeholder="Id" class="span8">
@@ -63,12 +71,24 @@ onsubmit="return validationlogin();" name="adminloginfrm" style="width: 80%">
 
 <div class="form-group">
 <div class="col-lg-10 col-lg-offset-2">
-    <button type="submit" class="btn btn-primary" style="margin-left: 33%;margin-right: 5%;margin-bottom: 5% ">Login</button>
+    <button type="submit" onclick="logincheck();" class="btn btn-primary" style="margin-top:5%;margin-left: 33%;margin-right: 5%;margin-bottom: 5% ">Login</button>
 </div>
 </div>
 </form>
 	
 <!-- 로그인끝 -->
+
+
+<input id="mm" value="${adminmsg}" type="hidden"> 
+<script type="text/javascript">
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+	alert(dd);
+}
+</script>
+
+
+
 
 </body>
 </html>

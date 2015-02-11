@@ -216,15 +216,6 @@ function viewData4(data){
 	document.getElementById("cnamediv").innerHTML =data;
 }
 
-
-/* function callcid(){
-	var cname = document.getElementById("cname").value;
-	xhr.open("POST", "getcid.do", true); //POST방식.비동기통식.
-	//POST일때는 아래추가.
-	xhr.setRequestHeader("content-type", 
-			                   "application/x-www-form-urlencoded");
-	xhr.send("cname="+cname);
-} */
 </script>
 </body>
 </html>

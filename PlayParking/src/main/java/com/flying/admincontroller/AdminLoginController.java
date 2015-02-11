@@ -38,14 +38,13 @@ public class AdminLoginController {
 		System.out.println(admincheck);
 		session.setAttribute("admincheck", admincheck); //jsp에서 넘겨받기위함
 		if(admincheck!=null){
-
-			//return "redirect:adminmain.do";
-
-			mv.setViewName("admin/admin_main");
+			//로그인 성공
+			mv.setViewName("redirect:/adminmain.do");
 
 		}else{
+			
 			mv.setViewName("admin/admin_login");
-			mv.addObject("adminmsg", "관리자로그인실패입니다.");
+			mv.addObject("adminmsg", "아이디와 로그인을 확인해주세요!");
 		}
 		return mv;
 	}

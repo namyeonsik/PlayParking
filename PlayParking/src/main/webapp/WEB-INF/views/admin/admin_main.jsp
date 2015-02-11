@@ -25,6 +25,8 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+	
+
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
@@ -274,6 +276,25 @@
 			reserved.
 		</div>
 	</div>
+<input id="mm" value="${adminmsg}" type="hidden"> 	
+	
+<!-- <script type="text/javascript">
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+		alert("*"+dd+"*");
+		loginfail();
+}
+
+
+function loginfail(){
+	if(adminmsg==null){
+		window.showModalDialog("loginfail.jsp","","dialogTop=50px;dialogLeft=100px; dialogHeight=10em;dialogWidth=30em;");
+	}
+}
+</script> -->
+	
+	
+	
 	<script
 		src="${pageContext.request.contextPath}/resources/scripts/jquery-1.9.1.min.js"
 		type="text/javascript"></script>
