@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.flying.model.MailMail;
 import com.flying.model.MembersDTO;
 import com.flying.model.ParkingDTO;
 import com.flying.model.ReservationDTO;
@@ -199,6 +202,18 @@ public class ReserveController {
 		System.out.println(ret2+"건의 pcount수정했습니다.");
 		System.out.println(ret3+"건의 mpoint수정했습니다.");
 		System.out.println(ret4+"건의 usepoint수정했습니다.");
+		
+		//예약완료문자발송 시작
+		ApplicationContext context = 
+	             new ClassPathXmlApplicationContext("Spring-Mail.xml");
+	 
+	    	MailMail mm = (MailMail) context.getBean("mailMail");
+	        mm.sendMail("playingparking@gmail.com",
+	    		   "dustlr92@gmail.com",
+	    		   members.getMid()+"님 예약완료", 
+	    		   "Testing only \n\n Hello Spring Email Sender");
+	    //예약완료문자발송 끝
+	        
 		return "members/confirm";
 	}
 	
