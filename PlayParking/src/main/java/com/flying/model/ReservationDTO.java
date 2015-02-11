@@ -12,8 +12,15 @@ public class ReservationDTO {
 	int rtime;
 	int rextrafare;
 	String rstarttime;
+	String rstarttimeback;
 
 	
+	public String getRstarttimeback() {
+		return rstarttimeback;
+	}
+	public void setRstarttimeback(String rstarttimeback) {
+		this.rstarttimeback = rstarttimeback;
+	}
 	public String getRstarttime() {
 		return rstarttime;
 	}
@@ -22,7 +29,7 @@ public class ReservationDTO {
 	}
 	public ReservationDTO(){};
 	public ReservationDTO(int rid, int pid, String mid, Date rstart, Date rend,
-			int rtime, int rextrafare,String rstarttime) {
+			int rtime, int rextrafare,String rstarttime,String rstarttimeback) {
 		super();
 		this.rid = rid;
 		this.pid = pid;
@@ -32,6 +39,7 @@ public class ReservationDTO {
 		this.rtime = rtime;
 		this.rextrafare = rextrafare;
 		this.rstarttime=rstarttime;
+		this.rstarttimeback = rstarttimeback;
 	}
 	public int getRid() {
 		return rid;
@@ -79,6 +87,6 @@ public class ReservationDTO {
 	public String toString() {
 		return "ReservationDTO [rid=" + rid + ", pid=" + pid + ", mid=" + mid
 				+ ", rstart=" + rstart + ", rend=" + rend + ", rtime=" + rtime
-				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+ "]";
+				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+"rstarttimeback=" + rstarttimeback+ "]";
 	}
 }
