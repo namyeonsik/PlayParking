@@ -32,8 +32,7 @@
   #{rextrafare:INTEGER},
   #{rstarttime:VARCHAR},
   #{rstarttimeback:VARCHAR}
-  
-  )
+    )
    
   </insert>
   <insert id="insertUsepoint" parameterType="com.flying.model.UsePointDTO">

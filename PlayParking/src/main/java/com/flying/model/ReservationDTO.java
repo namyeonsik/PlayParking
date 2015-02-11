@@ -88,5 +88,6 @@ public class ReservationDTO {
 		return "ReservationDTO [rid=" + rid + ", pid=" + pid + ", mid=" + mid
 				+ ", rstart=" + rstart + ", rend=" + rend + ", rtime=" + rtime
 				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+"rstarttimeback=" + rstarttimeback+ "]";
+	
 	}
 }

@@ -235,6 +235,7 @@ public class ReserveController {
        //예약완료문자발송 끝
       
       return "members/confirm";
+      
    }
    
 }
