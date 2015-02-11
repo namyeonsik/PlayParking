@@ -7,33 +7,84 @@
 <title>주차장 정보 수정</title>
 <style>
 
-#updateform { float: left; margin-left: 10%; margin-top:10%; width: 50%;}
+#updateform { float: left; margin-left: 10%; margin-top:10%; width: 60%;}
 
 </style>
 
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<script src="//code.jquery.com/jquery.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/cosmo/bootstrap.min.css" rel="stylesheet">
- 
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자</title>
+<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/theme.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
+	rel="stylesheet">
+<link type="text/css"
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+	rel='stylesheet'>
 
 </head>
 <body>
-<%@ include file="AdminHeader.jsp" %>
+ <div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container" style="margin-top: 50px;">
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".navbar-inverse-collapse"> <i
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+				<div class="nav-collapse collapse navbar-inverse-collapse">
+					<ul class="nav nav-icons">
+						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
+						<li><a href="#"><i class="icon-eye-open"></i></a></li>
+						<li><a href="#"><i class="icon-bar-chart"></i></a></li>
+					</ul>
+				 <ul class="nav pull-right"> 
+						 
+						<li><a href="membermain.do">UserPage</a></li>
+						<li class="nav-user dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								src="resources/images/user.png" class="nav-avatar" /> <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">YourParking Profile</a></li>
+								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="adminlogout.do">Logout</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<!-- /.nav-collapse -->
+			</div>
+		</div>
+		<!-- /navbar-inner -->
+	</div> 
+	<!-- /navbar -->
 
 <!-- 주차장정보수정 -->
-<div id="updateform">
-<form class="form-horizontal" action="parkingupdate.do" method="post" style="width: 50%">
+
+<div class="module" id="updateform">
+<div class="module-head">
+<h3>Parking Info Update</h3>
+</div>
+<form class="form-horizontal row-fluid" action="parkingupdate.do" method="post" style="width: 80%">
+   <div class="control-group"> 
+					<label class="control-label" for="basicinput">Basic Input</label>
+					<div class="controls">
+						<input type="text" id="basicinput"
+							placeholder="Type something here..." class="span8"> <span
+							class="help-inline">Minimum 5 Characters</span>
+					</div>
+				</div>
+  
   <fieldset>
-    <legend>Update Information</legend>
-    <div class="form-group">
+ 				
+
+				<div class="form-group">
       <label for="inputId" class="col-lg-2 control-label"></label>
       <div class="col-lg-10">
         <input type="hidden" class="form-control" name="pid" placeholder="Id" value="${parking.pid}">
@@ -74,7 +125,14 @@
         <button type="submit" class="btn btn-primary">Complete</button>
       </div>
     </div>
-  </fieldset>
+
+	<div class="control-group">
+	<div class="controls">
+			<button type="submit" class="btn">Complete</button>
+	</div>
+	</div>
+
+			</fieldset>
 </form>
 </div>
 <!-- 주차장정보수정 -->
