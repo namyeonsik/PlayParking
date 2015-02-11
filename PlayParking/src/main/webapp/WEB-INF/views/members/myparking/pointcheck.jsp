@@ -28,12 +28,12 @@
 	<h1>충전하기</h1>
 	<input type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
 		
-	<h1>포인트 사용내역</h1>
+	<h1>포인트 충전내역</h1>
 		<br>
 		<table border = '1'>
 		<tr>
 			<td>날짜</td>
-			<td>사용내역</td>
+			<td>충전내역</td>
 		</tr>
 		
 		<c:forEach items="${paypointlist}" var="paypointlist">
@@ -44,6 +44,23 @@
 		</c:forEach>
 		
 		</table>
+		
+	<h1>포인트 사용내역</h1>
+		<br>
+		<table border = '1'>
+		<tr>
+			<td>날짜</td>
+			<td>사용내역</td>
+		</tr>
+		
+		<c:forEach items="${usepointlist}" var="usepointlist">
+		<tr>
+			<td>${usepointlist.usedate}</td>
+			<td>${usepointlist.usepoint}</td>
+		</tr>
+		</c:forEach>
+		
+		</table>	
 
 </body>
 </html>

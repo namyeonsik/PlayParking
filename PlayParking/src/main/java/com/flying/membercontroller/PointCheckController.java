@@ -14,6 +14,8 @@ import com.flying.model.MembersDTO;
 import com.flying.model.MembersServiceInterface;
 import com.flying.model.PayPointDTO;
 import com.flying.model.PayPointServiceInterface;
+import com.flying.model.UsePointDTO;
+import com.flying.model.UsePointServiceInterface;
 @Controller
 public class PointCheckController {
    
@@ -22,6 +24,9 @@ public class PointCheckController {
    
    @Autowired
    MembersServiceInterface mservice;
+   
+   @Autowired
+   UsePointServiceInterface uservice;
    
    @RequestMapping("/pointcheck.do")
    public ModelAndView test(HttpServletRequest request, HttpSession session){
@@ -33,12 +38,15 @@ public class PointCheckController {
          session = request.getSession();
          MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
          MembersDTO point = mservice.selectBymid(memcheck.getMid());
-         System.out.println(point+"^&&^$^");
+         System.out.println("point:"+point);
          List<PayPointDTO> paypointlist = service.selectBymid(memcheck.getMid());
          System.out.println("paypointlist:"+paypointlist);
+         List<UsePointDTO> usepointlist = uservice.selectBymid(memcheck.getMid());
+         System.out.println("usepointlist:"+usepointlist);
          
          mv.addObject("point", point);
          mv.addObject("paypointlist", paypointlist);
+         mv.addObject("usepointlist", usepointlist);
       
          mv.setViewName("members/myparking/pointcheck");
          return mv;
