@@ -9,6 +9,6 @@
     select * from Admin
     where aid = #{aid:VARCHAR} and apwd = #{apwd:VARCHAR}
   </select>
-  
+ 
 
 </mapper>

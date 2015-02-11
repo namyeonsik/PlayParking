@@ -12,5 +12,13 @@ public interface ParkingServiceInterface {
 
 	public ParkingDTO selectBypid(int pid);
 	public int updateParking(ParkingDTO parking);
+	
+	public List<ReservationDTO> seachReservationBypid(int pid);
+	
+	public int updateParkingPcount(ParkingDTO parking);
+	public int checkCount(int pid);
+		public int checkAmount(int pid);
+	
+		
 
 }

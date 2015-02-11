@@ -79,6 +79,6 @@ public class ReservationDTO {
 	public String toString() {
 		return "ReservationDTO [rid=" + rid + ", pid=" + pid + ", mid=" + mid
 				+ ", rstart=" + rstart + ", rend=" + rend + ", rtime=" + rtime
-				+ ", rextrafare=" + rextrafare + "]";
+				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+ "]";
 	}
 }
