@@ -31,6 +31,20 @@
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select * from parking where plocation = #{aa:VARCHAR} order by pwidth desc, plength desc
   </select> 
+
+ 
+  <select id="selectBypid" 
+  	parameterType="String"
+  	resultType="com.flying.model.ParkingDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from parking where pid = #{pid:INTEGER}
+  </select>
+ 
+  <update id="updateParking">
+  	update parking
+  	set pname=#{pname:VARCHAR},pfare=#{pfare:INTEGER},pphone=#{pphone:VARCHAR},pcount=#{pcount:INTEGER}
+  	where pid=#{pid:INTEGER} 
+  </update>
  
  
 </mapper>

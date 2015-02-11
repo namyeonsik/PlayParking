@@ -18,7 +18,6 @@ public class ParkingDAO implements ParkingDAOInterface{
 	
 	//절약형지각형안전형
 	public List<ParkingDTO> selectBymakchum_1(String plocation) {
-		System.out.println("왓죠?");
 		return session.selectList("flying.parking.selectBymakchum_1", plocation);
 	}
 	
@@ -32,4 +31,11 @@ public class ParkingDAO implements ParkingDAOInterface{
 		return session.selectList("flying.parking.selectBymakchum_3", plocation);
 	}
 
+	public ParkingDTO selectBypid(int pid) {
+		return session.selectOne("flying.parking.selectBypid", pid);
+	}
+
+	public int updateParking(ParkingDTO parking) {
+		return session.update("flying.parking.updateParking", parking);
+	}
 }

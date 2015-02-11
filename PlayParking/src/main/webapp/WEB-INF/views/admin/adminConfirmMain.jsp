@@ -4,8 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
 <meta name="generator" content="Bootply" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +21,8 @@
 </head>
 <body>
 <%@ include file="AdminHeader.jsp" %>
-	<h1>관리자 메인페이지입니다.</h1>
+<!-- <h1>로그아웃할 수 있는 버튼 구성</h1> -->
+	<h1>로그인 하면 관리자 메인페이지입니다.</h1>
 	<h3>현재상황 및 예약리스트</h3>
 	<a href="parkingupdate.do">주차장정보수정</a>
 </body>
