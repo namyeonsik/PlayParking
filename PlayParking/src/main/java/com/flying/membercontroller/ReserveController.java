@@ -1,9 +1,7 @@
 package com.flying.membercontroller;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.MembersDTO;
@@ -27,15 +24,19 @@ public class ReserveController {
 
 	@Autowired
 	ReservationServiceInterface service;
-
-	@RequestMapping(value = "/reserve.do", method = RequestMethod.GET)
-	public ModelAndView test(HttpSession session) {
+	int pid=0;
+	
+	@RequestMapping(value = "/reserve.do", method = RequestMethod.POST)
+	public ModelAndView test(HttpSession session, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		if(session.getAttribute("memcheck")==null){
 			mv.setViewName("members/member_login");
 			return mv;
 		}else{
-			System.out.println("get방식");
+			pid = Integer.parseInt(request.getParameter("pid"));		
+			System.out.println("pid값:"+pid);
+			
+			System.out.println("get방식**");
 			mv.setViewName("members/reserve");
 			return mv;
 		}		
@@ -44,8 +45,9 @@ public class ReserveController {
 	@RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)
 	public ModelAndView test2() {
 		// 가는시간을 조회해서 data를 저장
-		// 원래는 pid값을 받아와야한다.
-		int pid = 178;
+		// 원래는 pid값을 받아와야한다.		
+		
+		
 		ModelAndView mv = new ModelAndView();
 		int pcountcheck = service.checkCount(pid);
 		int pamountcheck = service.checkAmount(pid);
@@ -128,7 +130,8 @@ public class ReserveController {
 			System.out.println(d+"일"+possibleTime+"시"+selectTime+"시간");
 			
 			String mid = memcheck.getMid();
-			int pid = 178;
+			
+			
 			System.out.println(possibleTime);
 			
 			// ReservationDTO에 값을 입력해주는 부분

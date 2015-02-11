@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!-- 주차장 검색 후 리스트! -->
-<br>
 <form method="post" action="reserve.do">
-<input type="hidden" name="${p.pid}">
 <table border='1'>
 	<tr>
 		<th>번호</th>
@@ -20,6 +17,7 @@
 	<c:set var="cnt" value="0"></c:set>
 	<c:forEach items="${parkinglist}" var="p">
 	<c:set var="cnt" value="${cnt+1}"></c:set>
+		<input type="hidden" name="pid" id="pid" value="${p.pid}">
 		<tr>
 			<td>${cnt}</td>
 			<td>${p.pname}</td>
@@ -28,8 +26,8 @@
 			<td>${p.pwidth}</td>
 			<td>${p.plength }</td>
 			<td><input type="submit" value="예약"></td>
-		</tr>
-	</c:forEach>
+		</tr>		
+	</c:forEach>	
 </table>
 </form>
 ;
@@ -43,6 +41,7 @@
 <c:if test="${parklistsize!=cnt}">,</c:if>
 </c:forEach>
 ;
+<form method="post" action="reserve.do">
 <table border='1'>
 	<tr>
 		<th>번호</th>
@@ -55,20 +54,21 @@
 	</tr>
 
 	<c:set var="cnt" value="0"></c:set>
-	<c:forEach items="${parkinglist2}" var="p">
+	<c:forEach items="${parkinglist2}" var="p3">
 	<c:set var="cnt" value="${cnt+1}"></c:set>
 		<tr>
 			<td>${cnt}</td>
-			<td>${p.pname}</td>
-			<td>${p.pfare}</td>
-			<td>${p.platefare}</td>
-			<td>${p.pwidth}</td>
-			<td>${p.plength }</td>
-			<td><input type="button" value="예약2"></td>
+			<td>${p3.pname}</td>
+			<td>${p3.pfare}</td>
+			<td>${p3.platefare}</td>
+			<td>${p3.pwidth}</td>
+			<td>${p3.plength }</td>
+			<td><input type="submit" value="예약"></td>
 		</tr>
-	</c:forEach>
+		<input type="hidden" name="pid" id="pid" value="${p3.pid}">
+	</c:forEach>	
 </table>
-
+</form>
 
 
 
