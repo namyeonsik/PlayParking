@@ -54,18 +54,18 @@
 	</tr>
 
 	<c:set var="cnt" value="0"></c:set>
-	<c:forEach items="${parkinglist2}" var="p3">
+	<c:forEach items="${parkinglist2}" var="p">
 	<c:set var="cnt" value="${cnt+1}"></c:set>
 		<tr>
 			<td>${cnt}</td>
-			<td>${p3.pname}</td>
-			<td>${p3.pfare}</td>
-			<td>${p3.platefare}</td>
-			<td>${p3.pwidth}</td>
-			<td>${p3.plength }</td>
+			<td>${p.pname}</td>
+			<td>${p.pfare}</td>
+			<td>${p.platefare}</td>
+			<td>${p.pwidth}</td>
+			<td>${p.plength }</td>
 			<td><input type="submit" value="예약"></td>
 		</tr>
-		<input type="hidden" name="pid" id="pid" value="${p3.pid}">
+		<input type="hidden" name="pid" id="pid" value="${p.pid}">
 	</c:forEach>	
 </table>
 </form>
