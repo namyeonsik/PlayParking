@@ -87,9 +87,32 @@ public class AdminMainController {
 		//	System.out.println(reserveday);
 			if(today.equals(reserveday)){
 				reservelist2.add(reservelist.get(a));
+			
 			}
 			
 		}
+		//rstarttimeback 啊 900捞芭唱 930老锭 贸府规过
+		String s1="900";
+		String s2="930";
+		for(int a=0;a<i;a++){
+			String temps = reservelist2.get(a).getRstarttimeback();
+			temps=temps.trim();
+			if(temps.equals(s1)){
+				temps = "0"+temps;
+				System.out.println(temps);
+				reservelist2.get(a).setRstarttimeback(temps);
+				
+			}
+			else if(temps.equals(s2)){
+				temps = "0"+temps;
+				System.out.println(temps);
+				reservelist2.get(a).setRstarttimeback(temps);
+				
+			}
+		
+			
+		}
+		
 		todaycount = reservelist2.size();
 		for(int a = 0;a<todaycount;a++){
 			
@@ -115,8 +138,9 @@ public class AdminMainController {
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);
 	//	mv.addObject("plus30", reservelist3);
+System.out.println(todaycount);
 
-		mv.setViewName("/admin/admin_main");
+		mv.setViewName("admin/admin_main");
 		return mv;
 	}
 	
