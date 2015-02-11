@@ -19,6 +19,12 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/less/bootswatch.less"></script>
+<script src="${pageContext.request.contextPath}/resources/less/variables.less"></script>
+<script src="${pageContext.request.contextPath}/resources/css/bootstrap.css"></script>
+<script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
+<script src="${pageContext.request.contextPath}/resources/scss/_bootstrap.scss"></script>
+<script src="${pageContext.request.contextPath}/resources/scss/_variables.scss"></script>
 
 </head>
 <body>

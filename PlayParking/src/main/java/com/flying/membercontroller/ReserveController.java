@@ -26,8 +26,21 @@ public class ReserveController {
 	ReservationServiceInterface service;
 	int pid=0;
 	
+	@RequestMapping(value = "/reserve.do", method = RequestMethod.GET)
+	public ModelAndView testget(HttpSession session, HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		if(session.getAttribute("memcheck")==null){
+			mv.setViewName("members/member_login");
+			return mv;
+		}else{
+			System.out.println("get방식****");
+			mv.setViewName("members/reserve");
+			return mv;
+		}		
+	}
+	
 	@RequestMapping(value = "/reserve.do", method = RequestMethod.POST)
-	public ModelAndView test(HttpSession session, HttpServletRequest request) {
+	public ModelAndView testpost(HttpSession session, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		if(session.getAttribute("memcheck")==null){
 			mv.setViewName("members/member_login");
@@ -36,7 +49,7 @@ public class ReserveController {
 			pid = Integer.parseInt(request.getParameter("pid"));		
 			System.out.println("pid값:"+pid);
 			
-			System.out.println("get방식****");
+			System.out.println("POST방식****");
 			mv.setViewName("members/reserve");
 			return mv;
 		}		
