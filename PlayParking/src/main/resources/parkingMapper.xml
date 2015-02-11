@@ -10,7 +10,27 @@
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select * from parking where plocation = #{aa:VARCHAR}
   </select>
- 
+
+<select id="selectBymakchum_1" 
+  	parameterType="String"
+  	resultType="com.flying.model.ParkingDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from parking where plocation = #{aa:VARCHAR} order by pfare
+  </select> 
+  
+  <select id="selectBymakchum_2" 
+  	parameterType="String"
+  	resultType="com.flying.model.ParkingDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from parking where plocation = #{aa:VARCHAR} order by platefare
+  </select> 
+  
+   <select id="selectBymakchum_3" 
+  	parameterType="String"
+  	resultType="com.flying.model.ParkingDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from parking where plocation = #{aa:VARCHAR} order by pwidth desc, plength desc
+  </select> 
  
  
 </mapper>

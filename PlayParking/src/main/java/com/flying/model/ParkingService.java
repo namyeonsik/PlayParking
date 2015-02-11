@@ -14,4 +14,16 @@ public class ParkingService implements ParkingServiceInterface{
 	public List<ParkingDTO> selectByplocation(String plocation) {
 		return dao.selectByplocation(plocation);
 	}
+	
+	public List<ParkingDTO> selectBymakchum_1(String plocation) {
+		return dao.selectBymakchum_1(plocation);
+	}
+	
+	public List<ParkingDTO> selectBymakchum_2(String plocation) {
+		return dao.selectBymakchum_2(plocation);
+	}
+	
+	public List<ParkingDTO> selectBymakchum_3(String plocation) {
+		return dao.selectBymakchum_3(plocation);
+	}
 }
