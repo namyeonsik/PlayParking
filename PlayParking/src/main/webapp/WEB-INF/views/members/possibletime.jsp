@@ -4,7 +4,7 @@
  
   
 <select name="possibleTime" id="possibleTime" multiple="multiple">
-  <option value="930">09:00~09:30 ${check}</option>
+  <option value="0930">09:00~09:30 ${check}</option>
   <option value="1000">09:30~10:00 ${check}</option>
   <option value="1030">10:00~10:30 ${check}</option>
   <option value="1100">10:30~11:00 ${check}</option>

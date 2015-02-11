@@ -34,9 +34,15 @@ public class AdminLoginController {
 		System.out.println(admin.getAid());
 		AdminDTO admincheck = 
 				adminservice.selectByAdmin(admin.getAid(), admin.getApwd());
+		
+		System.out.println(admincheck);
 		session.setAttribute("admincheck", admincheck); //jsp에서 넘겨받기위함
 		if(admincheck!=null){
+
+			//return "redirect:adminmain.do";
+
 			mv.setViewName("admin/admin_main");
+
 		}else{
 			mv.setViewName("admin/admin_login");
 			mv.addObject("adminmsg", "관리자로그인실패입니다.");

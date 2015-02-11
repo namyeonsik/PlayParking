@@ -138,9 +138,25 @@ public class ReserveController {
          
          String mid = memcheck.getMid();
          
-         
+         int testtimeint=0;
          System.out.println(possibleTime);
+         String testtime = possibleTime.substring(2);
+         System.out.println("testtime="+testtime);
+         if(testtime.equals("30"))
+         {
+        	 testtimeint=Integer.parseInt(possibleTime)-30;
+        	 
+        	 
+         }
+         else{
+        	 
+        	testtimeint=Integer.parseInt(possibleTime)-70;
+         }
+         //int testtimeint = Integer.parseInt(testtime);
          
+         System.out.println("rstarttimeback="+testtimeint);
+         reserve.setRstarttimeback(String.valueOf(testtimeint));
+        // reserve.setRstarttimeback(testtimeint);
          // ReservationDTO에 값을 입력해주는 부분
          reserve.setMid(mid);  // request에서 받아와야한다.
          reserve.setPid(pid);   //request에서 받아와야한다.
@@ -219,6 +235,7 @@ public class ReserveController {
        //예약완료문자발송 끝
       
       return "members/confirm";
+      
    }
    
 }
