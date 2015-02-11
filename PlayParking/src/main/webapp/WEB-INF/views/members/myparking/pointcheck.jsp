@@ -7,6 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>포인트 확인 및 이용내역</title>
 
+<style>
+#point {margin-left: 5%; margin-top:5%; width: 80%;}
+</style>
+
 <meta name="generator" content="Bootply" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,43 +28,56 @@
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
-	<h1>내 포인트 : ${point.mpoint} P</h1>
-	<h1>충전하기</h1>
-	<input type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
-		
-	<h1>포인트 충전내역</h1>
-		<br>
-		<table border = '1'>
-		<tr>
-			<td>날짜</td>
-			<td>충전내역</td>
-		</tr>
-		
-		<c:forEach items="${paypointlist}" var="paypointlist">
-		<tr>
-			<td>${paypointlist.paydate}</td>
-			<td>${paypointlist.paypoint}</td>
-		</tr>
-		</c:forEach>
-		
-		</table>
-		
-	<h1>포인트 사용내역</h1>
-		<br>
-		<table border = '1'>
-		<tr>
-			<td>날짜</td>
-			<td>사용내역</td>
-		</tr>
-		
-		<c:forEach items="${usepointlist}" var="usepointlist">
-		<tr>
-			<td>${usepointlist.usedate}</td>
-			<td>${usepointlist.usepoint}</td>
-		</tr>
-		</c:forEach>
-		
-		</table>	
+<div id="point">
+<legend>My Point</legend>	
+	<h1>${point.mpoint} P</h1>
 
+<legend>Charge</legend>	
+	<input type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+	
+<!--  포인트 충전내역 -->	
+<legend>Charging Point History</legend>		
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>날짜</th>
+      <th>충전내역</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach items="${paypointlist}" var="paypointlist">
+    <tr>
+      <td>1</td>
+      <td>${paypointlist.paydate}</td>
+	  <td>${paypointlist.paypoint}</td>
+    </tr>
+    </c:forEach>
+  </tbody>
+</table> 
+<!--  포인트 충전내역 끝 -->	
+
+<!--  포인트 사용내역 -->
+<legend>Using Point History</legend>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>날짜</th>
+      <th>사용내역</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach items="${usepointlist}" var="usepointlist">
+    <tr>
+      <td>1</td>
+      <td>${usepointlist.usedate}</td>
+	  <td>${usepointlist.usepoint}</td>
+    </tr>
+    </c:forEach>
+  </tbody>
+</table> 
+<!--  포인트 사용내역 끝 -->	
+</div>
 </body>
 </html>
