@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="flying.usepoint">
+
+ <select id="selectBymid" 
+  	parameterType="String"
+  	resultType="com.flying.model.UsePointDTO">
+    select * from usepoint where mid = #{aa:VARCHAR}
+  </select>
+ 
+  <insert id="insertUsePoint" parameterType="com.flying.model.UsePointDTO">
+	insert into PayPoint(usedate,mid,pid,usepoint)
+	values(sysdate,#{mid:VARCHAR},#{pid:INTEGER},
+	       #{paypoint:INTEGER})
+  </insert>
+  
+</mapper>
