@@ -144,7 +144,12 @@ function validationlogin(){
       </div>
       <span class="help-block" style="margin-left: 20%; margin-top: 8%;">'-'없이 입력해주세요.</span>
     </div>
-   
+   <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="memail" placeholder="email">
+      </div>
+    </div>
 
     <div class="form-group">
       <label for="select" class="col-lg-2 control-label">Car Model</label>
