@@ -28,9 +28,9 @@ public class AdminMainController {
 	@Autowired
 	ReservationServiceInterface rservice;
 
-	@RequestMapping("/adminmain.do")
+	@RequestMapping(value="/adminmain.do", method=RequestMethod.GET)
 	public ModelAndView adminMain(HttpServletRequest request,
-			HttpSession session) {
+		                          	HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("여기는 메인");
 		session = request.getSession();
@@ -116,7 +116,7 @@ public class AdminMainController {
 		mv.addObject("reservelist", reservelist2);
 	//	mv.addObject("plus30", reservelist3);
 
-		mv.setViewName("/admin/adminConfirmMain");
+		mv.setViewName("/admin/admin_main");
 		return mv;
 	}
 	
@@ -125,8 +125,6 @@ public class AdminMainController {
 	public ModelAndView update(String mid){
 		ModelAndView mv = new ModelAndView();
 	//	ReservationDTO reserve1 = rservice.s
-		
-		
 		
 		return mv;
 	}
