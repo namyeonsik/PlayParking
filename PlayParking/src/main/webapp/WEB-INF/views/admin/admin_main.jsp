@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 
@@ -115,8 +118,8 @@
 								<i class="icon-edit"></i><b>Notice</b>
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">
-								<i class="icon-user"></i><b>15</b>
-								<p class="text-muted">New Users</p></a>
+								<i class="icon-user"></i><b>${todaycount}</b>
+								<p class="text-muted">오늘의예약자</p></a>
 								<a href="#"	class="btn-box big span4">
 								<i class="icon-money"></i><b>15,152</b>
 									<p class="text-muted">Profit</p> </a>
@@ -206,24 +209,27 @@
 								<div class="slider-range"></div>
 							</div>
 						</div>
+						<form action="adminmain.do">
 						<div class="module">
 							<div class="module-head">
-								<h3>surroundings parking lot</h3>
+							
+								<h3>오늘의 주차 에약자는 ${todaycount }명입니다.</h3>
 							</div>
 							<div class="module-body table">
+							/
 								<table cellpadding="0" cellspacing="0" border="0"
 									class="datatable-1 table table-bordered table-striped	 display"
-									width="100%">
+									width="100%" >
 									<thead>
 										<tr>
-											<th>Rendering engine</th>
-											<th>Browser</th>
-											<th>Platform(s)</th>
-											<th>Engine version</th>
-											<th>CSS grade</th>
+											<th>예약번호</th>
+											<th>예약자ID</th>
+											<th>예약 입차시간</th>
+											<th>사용시간</th>
+											<th>입,출차관리</th>
 										</tr>
 									</thead>
-									<tbody>
+									<!-- <tbody>
 										<tr class="odd gradeX">
 											<td>Trident</td>
 											<td>Internet Explorer 4.0</td>
@@ -254,10 +260,35 @@
 											<th>Engine version</th>
 											<th>CSS grade</th>
 										</tr>
-									</tfoot>
+									</tfoot> -->
+									<tbody>
+									
+									 <c:forEach items="${reservelist}" var="num">
+									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
+									<c:set var="TextValue2" value="${num.rstarttime}"/>
+									<c:set var="testval1" value=""/>
+									<c:if test=""></c:if>
+									<tr class="odd gradeX">
+			
+									<td>${num.rid}</td>
+									<td>${num.mid}</td>
+									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>
+									<td>${num.rtime}</td>
+									<td><a href="reservationupdate.do?mno=${num.mid}">정보수정</a></td>
+									</tr>
+	
+									</c:forEach>
+									
+									</tbody>
+									
 								</table>
+								</form>
 							</div>
+							
+							
 						</div>
+						
+						
 						<!--/.module-->
 					</div>
 					<!--/.content-->
