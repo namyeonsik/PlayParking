@@ -32,6 +32,7 @@ public class AdminLoginController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(admin);
 		System.out.println(admin.getAid());
+		
 		AdminDTO admincheck = 
 				adminservice.selectByAdmin(admin.getAid(), admin.getApwd());
 		

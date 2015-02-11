@@ -78,7 +78,6 @@ onsubmit="return validationlogin();" name="adminloginfrm" style="width: 80%; mar
 	
 <!-- 로그인끝 -->
 
-
 <input id="mm" value="${adminmsg}" type="hidden"> 
 <script type="text/javascript">
 var dd = document.getElementById("mm").value;
