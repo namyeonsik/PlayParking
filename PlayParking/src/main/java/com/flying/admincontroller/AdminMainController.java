@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.AdminDTO;
+import com.flying.model.MembersDTO;
 import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
 import com.flying.model.ReservationDTO;
@@ -25,6 +26,7 @@ public class AdminMainController {
 
 	@Autowired
 	ParkingServiceInterface service;
+	
 	@Autowired
 	ReservationServiceInterface rservice;
 
@@ -65,6 +67,7 @@ public class AdminMainController {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		//SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 		//Date d2 = sf.parse(d1);
+		System.out.println("전체 예약개수는="+i);
 		String today = format.format(d1);
 		String reserveday=null;
 		System.out.println("오늘날짜는"+today);
@@ -87,14 +90,17 @@ public class AdminMainController {
 		//	System.out.println(reserveday);
 			if(today.equals(reserveday)){
 				reservelist2.add(reservelist.get(a));
-			
+			System.out.println("reserveday="+reserveday);
 			}
 			
 		}
 		//rstarttimeback 가 900이거나 930일때 처리방법
 		String s1="900";
 		String s2="930";
-		for(int a=0;a<i;a++){
+		for(int a=0;a<reservelist2.size();a++){
+			System.out.println("확인용="+reservelist2.get(a).getRstarttimeback());
+		}
+		for(int a=0;a<reservelist2.size();a++){
 			String temps = reservelist2.get(a).getRstarttimeback();
 			temps=temps.trim();
 			if(temps.equals(s1)){
@@ -134,7 +140,16 @@ public class AdminMainController {
 				// reservelist2=(List<ReservationDTO>) reservelist.get(a);
 				System.out.println(reservelist.get(a));
 		}*/
-
+		String end=null;//출차안함,출차함 표시 String
+		for (int z=0;z<reservelist2.size();z++){
+			if(reservelist2.get(z).getRend()==null){
+				end = "출차안함";
+			}else{
+				end="출차함";
+			}
+			
+		}
+		mv.addObject("end", end);
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);
 	//	mv.addObject("plus30", reservelist3);
@@ -146,10 +161,74 @@ System.out.println(todaycount);
 	
 	
 	@RequestMapping(value="reservationupdate.do", method=RequestMethod.GET)
-	public ModelAndView update(String mid){
-		ModelAndView mv = new ModelAndView();
-	//	ReservationDTO reserve1 = rservice.s
+	public ModelAndView update(int rid){
 		
+		
+		      /*
+		      HttpSession session = request.getSession();
+		      AdminDTO admin = (AdminDTO)session.getAttribute("admincheck");*/
+		//ReservationDTO reserve4 = rservice.
+		
+		ModelAndView mv = new ModelAndView();
+	System.out.println("rid="+rid);
+		ReservationDTO reserve1 = rservice.searchReservationByrid(rid);
+		Date d = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("HHmm");
+		//String test2 = sf.format(d);
+		System.out.println(d.getHours());
+		String temp1=null;
+		String temp2=null;
+		System.out.println("d의 시간"+d.getHours());
+		System.out.println("d의 분"+d.getMinutes());
+		temp1 = temp1.valueOf(d.getHours());
+		temp2 = temp2.valueOf(d.getMinutes());
+		System.out.println("temp2"+temp2);//이걸로 확인하자.
+		String tempresult = temp1+temp2;//계산할 근거 찾음 (출차시간)
+		System.out.println("몇시간 쓰냐면="+reserve1);
+		//int tempint1 = reserve1.getRtime();
+		System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
+		String tempstring1 = reserve1.getRstarttime();//db에있는 입차예약시간
+		int starttime1 = Integer.parseInt(tempstring1);//db에있는 입차예약시간 int형으로 전환
+		System.out.println(tempresult);
+		System.out.println(starttime1);
+		System.out.println(tempresult.length()); // 현재 시간이 0~9분일때의 예외처리를 위한 구문
+		if(tempresult.length()==3){
+			String faketemp3 = tempresult.substring(0, 2);
+			String faketemp4 = tempresult.substring(2, 3);
+			tempresult=faketemp3+"0"+faketemp4;
+			
+			
+		}
+		//starttime1 = 
+		int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // 현재 시간에서 시 만 떼어냄
+		int temp4 = Integer.parseInt(tempresult.substring(2, 4));
+		int temp5 = Integer.parseInt(reserve1.getRstarttime().substring(0, 2));
+		int temp6 = Integer.parseInt(reserve1.getRstarttime().substring(2, 4));
+		int rstarttime = Integer.parseInt(tempstring1);
+		int endtime = Integer.parseInt(tempresult);//출차때의 시간을 int형으로 전환
+	temp5 = temp5+reserve1.getRtime();
+		int cnth = 0;//시간단위 계산할 cnth
+		int cntm = 0;//분단위 계산할 cntm
+		int cal =0;
+		if(endtime>rstarttime){
+			cnth = temp3-temp5;
+			cntm = temp4-temp6;
+			
+		}
+		System.out.println("cnth="+cnth);
+		/*
+		System.out.println("temp7="+rstarttime);
+		System.out.println(temp3);
+		*/
+		if(cntm>0){
+		cal = ((cnth+1)*service.selectBypid(reserve1.getPid()).getPlatefare());
+		}
+		else{
+			cal = (cnth*service.selectBypid(reserve1.getPid()).getPlatefare());
+			
+		}
+		mv.addObject("naga", cal);
+		mv.setViewName("admin/chulcha");
 		return mv;
 	}
 	

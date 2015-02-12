@@ -4,6 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.reservation">
 
+<select id="searchReservationByrid" 
+parameterType="int"
+resultType="com.flying.model.ReservationDTO">
+select * from reservation where rid= #{aa}
+
+</select>
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.ReservationDTO">
