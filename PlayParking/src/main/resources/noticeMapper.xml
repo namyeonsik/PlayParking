@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="flying.notice">
+
+  <select id="selectnoticeAll"
+  	resultType="com.flying.model.NoticeDTO">
+  	select nno,ntitle,ntext,ndate,aid from notice
+  </select>
+  
+  <select id="selectBynno" 
+  	parameterType="Map"
+  	resultType="com.flying.model.NoticeDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from notice where aid = #{aid:VARCHAR} and nno = #{nno:INTEGER}
+  </select>
+ 
+  <update id="updateNotice">
+  	update notice 
+  	set ndate=sysdate, ntitle=#{ntitle:VARCHAR}, ntext=#{ntext:VARCHAR}
+  	where aid = #{aid:INTEGER} and nno = #{nno:INTEGER}
+  </update>
+
+  <delete id="deleteNotice" parameterType="Integer">
+  	delete from notice
+ 	where nno = #{nno:INTEGER}
+  </delete>
+   
+  <insert id="insertNotice" parameterType="com.flying.model.NoticeDTO">
+	insert into Notice(nno,ntitle,ntext,ndate,aid)
+	values(#{nno:INTEGER},#{ntitle:VARCHAR}, #{ntext:VARCHAR},sysdate,#{aid:VARCHAR})
+  </insert>
+  
+ 
+  
+</mapper>
