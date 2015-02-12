@@ -9,6 +9,7 @@ parameterType="int"
 resultType="com.flying.model.ReservationDTO">
 select * from reservation where rid= #{aa}
 
+
 </select>
   <select id="selectBymid" 
   	parameterType="String"

@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <h1>${naga}원 더 내라</h1>
 
 <input type="button" value="출차확인" onclick="call()">

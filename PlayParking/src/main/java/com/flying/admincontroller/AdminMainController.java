@@ -153,6 +153,7 @@ public class AdminMainController {
 			}
 			
 		}
+		
 		mv.addObject("end", end);
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);

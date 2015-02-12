@@ -270,6 +270,7 @@ function loginfail(){
 	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
 		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->
 	<!--Dynamically creates analytics markup-->
+	
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 

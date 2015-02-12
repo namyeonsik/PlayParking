@@ -13,4 +13,6 @@ public interface ReservationServiceInterface {
 	public MembersDTO searchBymid(String mid);
 	public int updateMembersMpoint(MembersDTO members);
 	public int insertUsepoint(UsePointDTO usepoint);
+	
+	public ReservationDTO searchReservationByrid(int rid);
 }
