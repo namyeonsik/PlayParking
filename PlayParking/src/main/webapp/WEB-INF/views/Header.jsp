@@ -6,13 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>헤더</title>
-
-
-
 </head>
 <body>
 <!-- TOP BAR -->
-	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
+<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
 		<div class="container">
 			<div class="navbar-header responsive-logo">
 				<!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> -->
@@ -35,36 +32,35 @@
 		</div>
 				
 				
-<div class="navbar-wrapper">
-  <div class="container">
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="navbar-header">
-	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
-        <a class="navbar-brand" href="membermain.do">Play Parking</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="membermain.do">Home</a></li>
-            <li><a href="search.do">Search</a></li>
-            <li><a href="reserve.do">예약</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="memberupdate.do">내정보수정</a></li>
-                <li><a href="reservecheck.do">예약확인</a></li>
-                <li class="divider"></li>
-                <li><a href="pointcheck.do">포인트확인</a></li>       
-              </ul>
-            </li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</div>
+		<div class="navbar-wrapper">
+		  <div class="container">
+		    <div class="navbar navbar-inverse navbar-static-top">
+		        <div class="navbar-header">
+			    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </a>
+		        <a class="navbar-brand" href="membermain.do">Play Parking</a>
+		        </div>
+		        <div class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav">
+		            <li><a href="search.do">Search</a></li>
+		            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
+		              <ul class="dropdown-menu">
+		                <li><a href="memberupdate.do">내정보수정</a></li>
+		                <li><a href="reservecheck.do">예약확인</a></li>
+		                <li class="divider"></li>
+		                <li><a href="pointcheck.do">포인트확인</a></li>       
+		              </ul>
+		            </li>
+		            <li><a href="noticelist1.do">Notice</a></li>
+		          </ul>
+		        </div>
+		    </div>
+		  </div>
+		</div>		
 </div>
 
 

@@ -1,0 +1,50 @@
+package com.flying.model;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("noticedao")
+public class NoticeDAO implements NoticeDAOInterface{
+
+	@Autowired
+	SqlSession session;
+
+	public int insertNotice(NoticeDTO notice) {
+		return session.insert("flying.notice.insertNotice", notice);
+	}
+	
+	public int updateNotice(NoticeDTO notice) {
+		return session.update("flying.notice.updateNotice", notice);
+	}
+	
+	public int deleteNotice(NoticeDTO notice) {
+		System.out.println("delete 葛銅什!!!!!!!!!!"+notice);
+		return session.delete("flying.notice.deleteNotice", notice);
+	}
+	
+	public NoticeDTO selectByNno(int nno, String aid) {
+		System.out.println("甚走????????????ばばばばばばばばばばばばばば");		
+		Map<String,Object> map = new HashMap<String,Object>();			
+		map.put("nno", nno); 
+		map.put("aid", aid);		
+		System.out.println("map!!!!!!!!"+map);
+		return session.selectOne("flying.notice.selectBynno",map);
+	}
+	
+	public List<NoticeDTO> selectAll(String aid) {
+		return session.selectList("flying.notice.selectAll",aid);
+	}
+	
+	public List<NoticeDTO> selectnoticeAll(){
+		return session.selectList("flying.notice.selectnoticeAll");
+	}
+	
+	
+
+
+}

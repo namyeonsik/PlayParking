@@ -7,17 +7,24 @@
 <title>(html)주차장 검색페이지</title>
 
 <style>
-#listform { float : right; width: 30%; }
+#listform { float : right; width: 40%; }
 </style> 
 
 <style>
 html, body {width:100%;height:100%;margin:0;padding:0;} 
-.map_wrap {position:relative;overflow:hidden;width:70%;height:550px;}
+.map_wrap {position:relative;overflow:hidden;width:60%;height:100%;}
 .radius_border{border:1px solid #919191;border-radius:5px;}     
 .custom_zoomcontrol {position:absolute;top:10px;right:5px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
 .custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
 .custom_zoomcontrol span img {width:20px;height:42px;padding:12px 0;border:none;}             
-.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}            
+.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}    
+@import url("bootswatch.less");
+@import url("variables.less");
+@import url("_bootswatch.scss");
+@import url("_variables.scss");
+h2{  
+  text-align: center;
+}
 </style> 
 
 <meta name="generator" content="Bootply" />
@@ -27,18 +34,26 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 <script src="//code.jquery.com/jquery.js"></script>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
+<script src="${pageContext.request.contextPath}/resources/less/bootswatch.less"></script>
+<script src="${pageContext.request.contextPath}/resources/less/variables.less"></script>
+<script src="${pageContext.request.contextPath}/resources/css/bootstrap.css"></script>
+<script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
+<script src="${pageContext.request.contextPath}/resources/scss/_bootstrap.scss"></script>
+<script src="${pageContext.request.contextPath}/resources/scss/_variables.scss"></script>
 </head>
 
 <body>
 <%@ include file="../Header.jsp"%>
-
-<div id="listform" style="border:#6B71BD solid 1px">
-	<h2>지역(구) 선택</h2>
-	<h5>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</h5>
+<!-- style="border:#6B71BD solid 1px" -->
+<div id="listform">	
+	<div id="gu" class="alert alert-info">
+	    <h2>지역(구) 선택</h2>
+	    <p>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</p>
+  	</div>
+	
 	<!-- 지역선택 select box -->
 	<form name="f">
-	    <select onchange="change(value);change2();" name="plocation">
+	    <select onchange="change(value);change2();" name="plocation" class="form-control">
 			<option>선택하시오</option>
 				<option value="강남구" ${selected[0]}>강남구</option>
 	            <option value="송파구" ${selected[1]}>송파구</option>
@@ -67,9 +82,17 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 	            <option value="도봉구" ${selected[24]}>도봉구</option>   
 	    </select>
 	    
+	    <div class="col-lg-10">
+        <div class="radio">
 	    <input type="radio" id="radio" name="radio" value="절약형" onclick="change();">절약형
+		</div>
+		<div class="radio">
 		<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">지각형
+		</div>
+		<div class="radio">
 		<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">안전형
+		</div>
+		</div>
 	</form> 
 
 	<!-- 주차장 검색 후 리스트 -->
@@ -80,7 +103,7 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 
 	<!-- ---------------------------**지도**--------------------------- -->
 	
-	<div class="map_wrap" style="border:#6B71BD solid 1px">
+	<div class="map_wrap" >
 		<!-- 지도를 표시할 div 입니다 -->
 	    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
 	    <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
@@ -161,6 +184,7 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 							document.getElementById("t3").innerHTML = t3;
 					}
 					else{
+						document.getElementById("t3").innerHTML ="";
 						document.getElementById("t1").innerHTML = t1;
 					}
 					search();
@@ -252,7 +276,6 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 				var infowindow = new Array();
 										
 			 	for (var i = 0; i < markers.length; i ++) {				 		
-			 			
 			 		   // 마커를 생성하고 지도에 표시합니다
 					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
@@ -265,11 +288,26 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
 					    
 					    marker[i].index = i;				     
 					   
-			 			//인포윈도우 생성
+			 			 //인포윈도우 생성
 					     infowindow[i] = new daum.maps.InfoWindow({
-					         content: '<div style="padding:5px;font-size:12px;">' + markers[i].title + '</div>',
+					         content: '<div style="padding:5px;font-size:12px;">' + markers[i].title + '<br>' + '요금' + '</div>',
 					         removable : true
-					     });
+					     }); 
+			 			 
+					  	 /* // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+				 			var content = '<div class="customoverlay">' +
+				 		    '  <a href="http://map.daum.net/link/map/11394059" target="_blank">' +
+				 		    '    <span class="title">구의야구공원</span>' +
+				 		    '  </a>' +
+				 		    '</div>';
+				 		    
+				 			// 커스텀 오버레이를 생성합니다
+				 		   var customOverlay = new daum.maps.CustomOverlay({
+				 		       map: map,
+				 		       position: position,
+				 		       content: content,
+				 		       yAnchor: 1 
+				 		   });  */
 					     
 					 	// 마커에 클릭이벤트를 등록합니다
 					     daum.maps.event.addListener(marker[i], 'click', function() {

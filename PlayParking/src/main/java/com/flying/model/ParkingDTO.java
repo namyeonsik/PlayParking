@@ -8,19 +8,20 @@ public class ParkingDTO {
 	private int platefare;
 	private int pamount;
 	private int pcount;
+	private String pname;
+	private String plocation;
+	private String pphone;
+	private double x;
+	private double y;	
+	
+	
+	
 	public int getPcount() {
 		return pcount;
 	}
 	public void setPcount(int pcount) {
 		this.pcount = pcount;
 	}
-	
-	
-	private String pname;
-	private String plocation;
-	private String pphone;
-	private double x;
-	private double y;	
 	
 	public ParkingDTO(){};
 	public ParkingDTO(int pid, int pfare, int pwidth, int plength,

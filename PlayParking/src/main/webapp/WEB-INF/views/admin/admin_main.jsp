@@ -28,6 +28,22 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+
+<%-- <!-- 스크롤 -->
+ <!-- BOOTSTRAP STYLE SHEET -->
+ <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONT AWESOME ICONS STYLE SHEET -->
+<link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
+<!-- CUSTOM STYLES -->
+ <link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet" />
+<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]--> --%>
+	
+
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
@@ -40,8 +56,8 @@
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					<ul class="nav nav-icons">
 						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-						<li><a href="#"><i class="icon-eye-open"></i></a></li>
-						<li><a href="#"><i class="icon-bar-chart"></i></a></li>
+						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
+						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
 					</ul>
 				 <ul class="nav pull-right"> 
 						 
@@ -67,134 +83,21 @@
 	<div class="wrapper">
 		<div class="container">
 			<div class="row" style="margin-right: 3%; margin-left: 8%">
-				<div class="span3" >
-					<!--  <div class="sidebar">
-						<ul class="widget widget-menu unstyled">
-							<li class="active"><a href="index.html"><i
-									class="menu-icon icon-dashboard"></i>Dashboard </a></li>
-							<li><a href="activity.html"><i
-									class="menu-icon icon-bullhorn"></i>News Feed </a></li>
-							<li><a href="message.html"><i
-									class="menu-icon icon-inbox"></i>Inbox <b
-									class="label green pull-right"> 11</b> </a></li>
-							<li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks
-									<b class="label orange pull-right"> 19</b> </a></li>
-							<li><a href="charts.html"><i
-									class="menu-icon icon-bar-chart"></i>Charts </a></li>
-						</ul>
-						/.widget-nav
-
-
-						<ul class="widget widget-menu unstyled">
-							<li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-
-						</ul>
-						/.widget-nav
-						<ul class="widget widget-menu unstyled">
-							<li><a class="collapsed" data-toggle="collapse"
-								href="#togglePages"><i class="menu-icon icon-cog"> </i><i
-									class="icon-chevron-down pull-right"></i><i
-									class="icon-chevron-up pull-right"> </i>More Pages </a>
-								<ul id="togglePages" class="collapse unstyled">
-									<li><a href="other-login.html"><i class="icon-inbox"></i>Login
-									</a></li>
-									<li><a href="other-user-profile.html"><i
-											class="icon-inbox"></i>Profile </a></li>
-									<li><a href="other-user-listing.html"><i
-											class="icon-inbox"></i>All Users </a></li>
-								</ul></li>
-							<li><a href="#"><i class="menu-icon icon-signout"></i>Logout
-							</a></li>
-						</ul>
-					</div> -->
-					<!-- /.sidebar  -->
-				</div> 
-				<!--/.span3-->
 				<div class="span9">
 					<div class="content">
 						<div class="btn-controls">
 							<div class="btn-box-row row-fluid">
-								<a href="#" class="btn-box big span4">
+								<a href="noticelist2.do" class="btn-box big span4">
 								<i class="icon-edit"></i><b>Notice</b>
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">
-								<i class="icon-user"></i><b>${todaycount}</b>
+								<i class="icon-group"></i><b>${todaycount}</b>
 								<p class="text-muted">오늘의예약자</p></a>
 								<a href="#"	class="btn-box big span4">
 								<i class="icon-money"></i><b>15,152</b>
 									<p class="text-muted">Profit</p> </a>
 							</div>
-							<div class="btn-box-row row-fluid">
-								<div class="span8">
-									<div class="row-fluid">
-										<div class="span12">
-											<a href="#" class="btn-box small span4"><i
-												class="icon-envelope"></i><b>Messages</b> </a><a href="#"
-												class="btn-box small span4"><i class="icon-group"></i><b>Clients</b>
-											</a><a href="#" class="btn-box small span4"><i
-												class="icon-exchange"></i><b>Expenses</b> </a>
-										</div>
-									</div>
-									<div class="row-fluid">
-										<div class="span12">
-											<a href="#" class="btn-box small span4"><i
-												class="icon-save"></i><b>Total Sales</b> </a><a href="#"
-												class="btn-box small span4"><i class="icon-bullhorn"></i><b>Social
-													Feed</b> </a><a href="#" class="btn-box small span4"><i
-												class="icon-sort-down"></i><b>Bounce Rate</b> </a>
-										</div>
-									</div>
-								</div>
-								<ul class="widget widget-usage unstyled span4">
-									<li>
-										<p>
-											<strong>Windows 8</strong> <span
-												class="pull-right small muted">78%</span>
-										</p>
-										<div class="progress tight">
-											<div class="bar" style="width: 78%;"></div>
-										</div>
-									</li>
-									<li>
-										<p>
-											<strong>Mac</strong> <span class="pull-right small muted">56%</span>
-										</p>
-										<div class="progress tight">
-											<div class="bar bar-success" style="width: 56%;"></div>
-										</div>
-									</li>
-									<li>
-										<p>
-											<strong>Linux</strong> <span class="pull-right small muted">44%</span>
-										</p>
-										<div class="progress tight">
-											<div class="bar bar-warning" style="width: 44%;"></div>
-										</div>
-									</li>
-									<li>
-										<p>
-											<strong>iPhone</strong> <span class="pull-right small muted">67%</span>
-										</p>
-										<div class="progress tight">
-											<div class="bar bar-danger" style="width: 67%;"></div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<!--/#btn-controls-->
-						<div class="module">
-							<div class="module-head">
-								<h3>Sales Chart</h3>
-							</div>
-							<div class="module-body">
-								<div class="chart inline-legend grid">
-									<div id="placeholder2" class="graph" style="height: 500px">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--/.module-->
+						</div><!--상단btn-controls-->
 						<div class="module hide">
 							<div class="module-head">
 								<h3>Adjust Budget Range</h3>
@@ -210,13 +113,12 @@
 							</div>
 						</div>
 						<form action="adminmain.do">
-						<div class="module">
+						 <div class="module">
 							<div class="module-head">
 							
 								<h3>오늘의 주차 에약자는 ${todaycount }명입니다.</h3>
 							</div>
 							<div class="module-body table">
-							/
 								<table cellpadding="0" cellspacing="0" border="0"
 									class="datatable-1 table table-bordered table-striped	 display"
 									width="100%" >
@@ -230,40 +132,7 @@
 											<th>입,출차관리</th>
 										</tr>
 									</thead>
-									<!-- <tbody>
-										<tr class="odd gradeX">
-											<td>Trident</td>
-											<td>Internet Explorer 4.0</td>
-											<td>Win 95+</td>
-											<td class="center">4</td>
-											<td class="center">X</td>
-										</tr>
-										<tr class="even gradeC">
-											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
-											<td>Win 95+</td>
-											<td class="center">5</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeU">
-											<td>Other browsers</td>
-											<td>All others</td>
-											<td>-</td>
-											<td class="center">-</td>
-											<td class="center">U</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<th>Rendering engine</th>
-											<th>Browser</th>
-											<th>Platform(s)</th>
-											<th>Engine version</th>
-											<th>CSS grade</th>
-										</tr>
-									</tfoot> -->
-									<tbody>
-									
+									<tbody>									
 									 <c:forEach items="${reservelist}" var="num">
 									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
 									<c:set var="TextValue2" value="${num.rstarttime}"/>
@@ -279,35 +148,104 @@
 									<td>${endcheck }</td>
 									<td><a onclick="window.open('reservationupdate.do?rid=${num.rid}', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200')" >정보수정</a></td>
 									</tr>
-	
 									</c:forEach>
-									
-									</tbody>
-									
-								</table>
-								</form>
+						       	 </tbody>
+				              </table>
+				              </div><!-- table -->
+				              </div><!--/.module-->
+							</form>
+							 <section id="saleschart">
+							 <div class="module">
+							<div class="module-head">
+								<h3>Sales Chart</h3>
 							</div>
+							<div class="module-body">
+								<div class="chart inline-legend grid">
+									<div id="placeholder2" class="graph" style="height: 500px">
+									</div>
+								</div>
+							</div>
+						</div><!-- salechart -->
+						</section>
+				<div class="btn-box-row row-fluid">
+					  <div class="btn-controls"> 
+						<!-- <div style="width: 100%"> -->
+						<!--  <div class="btn-box-row row-fluid"> -->
+						<section id="myfare">
+								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<i class="icon-user"></i><b>${parking.pfare}</b>
+								<p class="text-muted">나의 주차장 요금</p></a>								
+						</section>
+						<!--</div>상단btn-controls-->
+						 <form action="adminmain.do">
+						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
+							<div class="module-head">
 							
-							
+								<h3>주변 주차장 정보</h3>
+							</div>
+							<div class="module-body table">
+								<table cellpadding="0" cellspacing="0" border="0"
+									class="datatable-1 table table-bordered table-striped	 display"
+									width="100%" >
+									<thead>
+										<tr>
+											<th>예약번호</th>
+											<th>예약자ID</th>
+											<th>예약 입차시간</th>
+											<th>입,출차관리</th>
+										</tr>
+									</thead>
+									<tbody>									
+									 <c:forEach items="${reservelist}" var="num">
+									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
+									<c:set var="TextValue2" value="${num.rstarttime}"/>
+									<c:set var="testval1" value=""/>
+									<c:if test=""></c:if>
+									<tr class="odd gradeX">
+			
+									<td>${num.rid}</td>
+									<td>${num.mid}</td>
+									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>
+									<td><a href="reservationupdate.do?mno=${num.mid}">정보수정</a></td>
+									</tr>
+									</c:forEach>
+						       	 </tbody>
+				              </table>
+				              </div><!-- table -->
+				              </div><!--/.module-->
+							</form></div>
 						</div>
-						
-						
-						<!--/.module-->
-					</div>
-					<!--/.content-->
-				</div>
-				<!--/.span9-->
-			</div>
-		</div>
-		<!--/.container-->
-	</div>
-	<!--/.wrapper-->
+						</div><!--/.content-->
+						</div><!--/.span9-->
+					</div><!-- row class -->			
+				</div><!--/.container-->
+			</div><!--/.wrapper-->
+
 	<div class="footer">
 		<div class="container">
 			<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights
 			reserved.
 		</div>
 	</div>
+<input id="mm" value="${adminmsg}" type="hidden"> 	
+	
+<!-- <script type="text/javascript">
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+		alert("*"+dd+"*");
+		loginfail();
+}
+
+
+function loginfail(){
+	if(adminmsg==null){
+		window.showModalDialog("loginfail.jsp","","dialogTop=50px;dialogLeft=100px; dialogHeight=10em;dialogWidth=30em;");
+	}
+}
+</script> -->
+	
+	
+	
 	<script
 		src="${pageContext.request.contextPath}/resources/scripts/jquery-1.9.1.min.js"
 		type="text/javascript"></script>
