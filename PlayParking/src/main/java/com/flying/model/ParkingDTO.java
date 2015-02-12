@@ -14,6 +14,8 @@ public class ParkingDTO {
 	private double x;
 	private double y;	
 	
+	
+	
 	public int getPcount() {
 		return pcount;
 	}
