@@ -170,7 +170,7 @@
 						<!--  <div class="btn-box-row row-fluid"> -->
 						<section id="myfare">
 								<a href="#"	class="btn-box big span4" style="width: 25%">
-								<i class="icon-user"></i><b>5000원(가변)</b>
+								<i class="icon-user"></i><b>${parking.pfare}</b>
 								<p class="text-muted">나의 주차장 요금</p></a>								
 						</section>
 						<!--</div>상단btn-controls-->
