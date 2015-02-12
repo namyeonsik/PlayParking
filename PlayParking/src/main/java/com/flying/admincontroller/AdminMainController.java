@@ -35,12 +35,16 @@ public class AdminMainController {
 		System.out.println("여기는 메인");
 		session = request.getSession();
 		AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
+		
+	
+		
 		// ParkingDTO admincheck =
 		// (ParkingDTO)session.getAttribute("admincheck");
 		System.out.println("정보수정pid:" + admincheck);
 
 		System.out.println(admincheck.getPid());
 		ParkingDTO parking = service.selectBypid(admincheck.getPid());
+		mv.addObject("parking", parking);//parking정보들
 		System.out.println(parking.getPcount());
 		int resultcount = parking.getPamount() - parking.getPcount();
 		int todaycount=0;
@@ -138,7 +142,7 @@ public class AdminMainController {
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);
 	//	mv.addObject("plus30", reservelist3);
-System.out.println(todaycount);
+		System.out.println(todaycount);
 
 		mv.setViewName("admin/admin_main");
 		return mv;

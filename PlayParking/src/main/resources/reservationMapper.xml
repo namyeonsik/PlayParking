@@ -10,10 +10,11 @@
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select * from reservation where mid = #{aa}
   </select>
-  <select id="selectBypid" parameterType="int" resultType="com.flying.model.ParkingDTO">
-  
+ 
+  <select id="selectBypid" parameterType="int" resultType="com.flying.model.ParkingDTO"> 
   select * from parking where pid = #{aa}
   </select>
+  
    <select id="searchBymid" 
   	parameterType="String"
   	resultType="com.flying.model.MembersDTO">
