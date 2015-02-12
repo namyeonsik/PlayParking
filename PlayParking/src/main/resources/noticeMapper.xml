@@ -9,6 +9,12 @@
   	select nno,ntitle,ntext,ndate,aid from notice
   </select>
   
+  <select id="selectByaid" 
+  	parameterType="String"
+  	resultType="com.flying.model.NoticeDTO">
+    select * from notice where aid = #{aid:VARCHAR}
+  </select>
+  
   <select id="selectBynno" 
   	parameterType="Map"
   	resultType="com.flying.model.NoticeDTO">
@@ -16,6 +22,12 @@
     select * from notice where aid = #{aid:VARCHAR} and nno = #{nno:INTEGER}
   </select>
  
+  <select id="selectText" 
+  	parameterType="Map"
+  	resultType="com.flying.model.NoticeDTO">
+    select ntext from notice where aid = #{aid:VARCHAR} and nno = #{nno:INTEGER}
+  </select>
+  
   <update id="updateNotice">
   	update notice 
   	set ndate=sysdate, ntitle=#{ntitle:VARCHAR}, ntext=#{ntext:VARCHAR}
