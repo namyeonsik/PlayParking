@@ -45,6 +45,9 @@ public class AdminMainController {
 		System.out.println(admincheck.getPid());
 		ParkingDTO parking = service.selectBypid(admincheck.getPid());
 		mv.addObject("parking", parking);//parking정보들
+		List<ParkingDTO> aroundpark = 
+				    service.selectByplocation(parking.getPlocation()); //주변 주차장 리스트
+		mv.addObject("aroundpark", aroundpark);
 		System.out.println(parking.getPcount());
 		int resultcount = parking.getPamount() - parking.getPcount();
 		int todaycount=0;
