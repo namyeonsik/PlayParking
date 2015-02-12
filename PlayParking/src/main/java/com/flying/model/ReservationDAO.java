@@ -82,7 +82,14 @@ public class ReservationDAO implements ReservationDAOInterface {
 
 	public ReservationDTO selectBymidone(String mid) {
 		// TODO Auto-generated method stub
-		return session.selectOne("flying.reservation.selectBymid", mid);
+		return session.selectOne("flying.reservation.selectBymidone", mid);
+	}
+
+
+
+	public ReservationDTO searchReservationByrid(int rid) {
+		// TODO Auto-generated method stub
+		return session.selectOne("flying.reservation.searchReservationByrid", rid);
 	}
 	
 	

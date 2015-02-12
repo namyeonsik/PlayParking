@@ -26,7 +26,7 @@ import com.flying.model.UsePointDTO;
 @Controller
 public class ReserveController {
 
-   @Autowired
+	@Autowired
    ReservationServiceInterface service;
    
    @Autowired

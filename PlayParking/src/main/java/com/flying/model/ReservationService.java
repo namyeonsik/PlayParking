@@ -63,4 +63,9 @@ public class ReservationService implements ReservationServiceInterface{
 		// TODO Auto-generated method stub
 		return dao.selectBymidone(mid);
 	}
+
+	public ReservationDTO searchReservationByrid(int rid) {
+		// TODO Auto-generated method stub
+		return dao.searchReservationByrid(rid);
+	}
 }

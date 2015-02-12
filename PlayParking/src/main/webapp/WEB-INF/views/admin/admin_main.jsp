@@ -87,7 +87,7 @@
 					<div class="content">
 						<div class="btn-controls">
 							<div class="btn-box-row row-fluid">
-								<a href="#" class="btn-box big span4">
+								<a href="noticelist2.do" class="btn-box big span4">
 								<i class="icon-edit"></i><b>Notice</b>
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">
@@ -128,6 +128,7 @@
 											<th>예약자ID</th>
 											<th>예약 입차시간</th>
 											<th>사용시간</th>
+											<th>출차여부</th>
 											<th>입,출차관리</th>
 										</tr>
 									</thead>
@@ -135,6 +136,7 @@
 									 <c:forEach items="${reservelist}" var="num">
 									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
 									<c:set var="TextValue2" value="${num.rstarttime}"/>
+									<c:set var="endcheck" value="${end }"/>
 									<c:set var="testval1" value=""/>
 									<c:if test=""></c:if>
 									<tr class="odd gradeX">
@@ -143,7 +145,8 @@
 									<td>${num.mid}</td>
 									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>
 									<td>${num.rtime}</td>
-									<td><a href="reservationupdate.do?mno=${num.mid}">정보수정</a></td>
+									<td>${endcheck }</td>
+									<td><a onclick="window.open('reservationupdate.do?rid=${num.rid}', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200')" >정보수정</a></td>
 									</tr>
 									</c:forEach>
 						       	 </tbody>
@@ -269,6 +272,7 @@ function loginfail(){
 	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
 		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->
 	<!--Dynamically creates analytics markup-->
+	
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 
