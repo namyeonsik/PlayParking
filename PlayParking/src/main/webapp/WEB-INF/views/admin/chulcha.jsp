@@ -17,6 +17,7 @@
 <input type="submit" value="출차확인" onclick="call()">
 <!-- <input type="hidden" value="call()"> -->
 <script type="text/javascript">
+
 function call(){
 window.opener.location.reload();
 window.close();

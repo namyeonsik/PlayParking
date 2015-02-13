@@ -148,7 +148,7 @@ public class AdminMainController {
 				System.out.println(reservelist.get(a));
 		}*/
 		String end=null;//출차안함,출차함 표시 String
-		for (int z=0;z<reservelist2.size();z++){
+		/*for (int z=0;z<reservelist2.size();z++){
 			System.out.println("end여부=="+reservelist2.get(z).getRend());
 			if(reservelist2.get(z).getRend()==null){
 				end = "출차안함";
@@ -156,11 +156,21 @@ public class AdminMainController {
 				end="출차함";
 			}
 			
+		}*/
+		int todaypoint=0;
+		
+		for(int c=0; c<reservelist2.size();c++){
+			
+		
+		todaypoint=todaypoint+(rservice.searchReservationByrid(reservelist2.get(c).getRid()).getRtime()*
+			service.selectBypid(reservelist2.get(c).getPid()).getPfare());
 		}
 		
-		mv.addObject("end", end);
+		
+	//	mv.addObject("end", end);
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);
+		mv.addObject("todaypoint",todaypoint);
 	//	mv.addObject("plus30", reservelist3);
 		System.out.println(todaycount);
 
@@ -261,8 +271,15 @@ public class AdminMainController {
 		*/
 	reserve.setRextrafare(naga);
 	
-	int ret = rservice.updateReservationEndByrid(reserve);
+	//출차해서 parking table의 pcount수 +1 해주는 구문.
+	ParkingDTO parking =  service.selectBypid(rservice.searchReservationByrid(rid).getPid());
+	int countTemp = parking.getPcount()+1;
+    parking.setPcount(countTemp);
+    int ret = rservice.updateReservationEndByrid(reserve);
+    int ret2 = service.updateParkingPcount(parking);
+	System.out.println("출차확인용  reserve==="+reserve);
 		System.out.println(ret+"건의 업데이트가 성공했습니다.");
+		System.out.println(ret2+"건의 pcount 수정 성공");
 		mv.setViewName("redirect:/adminmain.do");
 		return mv;
 		
