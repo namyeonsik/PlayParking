@@ -64,6 +64,13 @@ select * from reservation where rid= #{aa}
   where mid= #{mid:VARCHAR}
   
   </update>
+  <update id="updateReservationEndByrid" parameterType="com.flying.model.ReservationDTO">
+  update reservation set
+  rextrafare = #{rextrafare:INTEGER},
+  rend = sysdate
+  where rid=#{rid:INTEGER}
+  
+  </update>
   
     <select id="checkCount" 
   	parameterType="int"

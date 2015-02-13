@@ -91,6 +91,13 @@ public class ReservationDAO implements ReservationDAOInterface {
 		// TODO Auto-generated method stub
 		return session.selectOne("flying.reservation.searchReservationByrid", rid);
 	}
+
+
+
+	public int updateReservationEndByrid(ReservationDTO reserve) {
+		// TODO Auto-generated method stub
+		return session.update("flying.reservation.updateReservationEndByrid", reserve);
+	}
 	
 	
 	

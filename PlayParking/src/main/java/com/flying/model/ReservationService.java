@@ -68,4 +68,9 @@ public class ReservationService implements ReservationServiceInterface{
 		// TODO Auto-generated method stub
 		return dao.searchReservationByrid(rid);
 	}
+
+	public int updateReservationEndByrid(ReservationDTO reserve) {
+		// TODO Auto-generated method stub
+		return dao.updateReservationEndByrid(reserve);
+	}
 }
