@@ -7,7 +7,8 @@
 <title>(html)주차장 검색페이지</title>
 
 <style>
-#listform { float : right; width: 40%; }
+#selectform { float:left; width: 25%; height:40%;}
+#listform { float:right; width: 75%; height:40%;}
 </style> 
 
 <style>
@@ -45,62 +46,6 @@ h2{
 <body>
 <%@ include file="../Header.jsp"%>
 <!-- style="border:#6B71BD solid 1px" -->
-<div id="listform">	
-	<div id="gu" class="alert alert-info">
-	    <h2>지역(구) 선택</h2>
-	    <p>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</p>
-  	</div>
-	
-	<!-- 지역선택 select box -->
-	<form name="f">
-	    <select onchange="change(value);change2();" name="plocation" class="form-control">
-			<option>선택하시오</option>
-				<option value="강남구" ${selected[0]}>강남구</option>
-	            <option value="송파구" ${selected[1]}>송파구</option>
-	            <option value="서초구" ${selected[2]}>서초구</option>
-	            <option value="중구" ${selected[3]}>중구</option>
-	            <option value="영등포구" ${selected[4]}>영등포구</option>
-	            <option value="마포구" ${selected[5]}>마포구</option>
-	            <option value="종로구" ${selected[6]}>종로구</option>
-	            <option value="강동구" ${selected[7]}>강동구</option>
-	            <option value="관악구" ${selected[8]}>관악구</option>
-	            <option value="광진구" ${selected[9]}>광진구</option>
-	            <option value="구로구" ${selected[10]}>구로구</option>
-	            <option value="강서구" ${selected[11]}>강서구</option>
-	            <option value="동대문구" ${selected[12]}>동대문구</option>
-	            <option value="노원구" ${selected[13]}>노원구</option>
-	            <option value="서대문구" ${selected[14]}>서대문구</option>
-	            <option value="은평구" ${selected[15]}>은평구</option>
-	            <option value="용산구" ${selected[16]}>용산구</option>
-	            <option value="동작구" ${selected[17]}>동작구</option>
-	             <option value="성북구" ${selected[18]}>성북구</option>
-	            <option value="양천구" ${selected[19]}>양천구</option>
-	            <option value="강북구" ${selected[20]}>강북구</option>
-	            <option value="중랑구" ${selected[21]}>중랑구</option>
-	            <option value="성동구" ${selected[22]}>성동구</option>
-	            <option value="금천구" ${selected[23]}>금천구</option>
-	            <option value="도봉구" ${selected[24]}>도봉구</option>   
-	    </select>
-	    
-	    <div class="col-lg-10">
-        <div class="radio">
-	    <input type="radio" id="radio" name="radio" value="절약형" onclick="change();">절약형
-		</div>
-		<div class="radio">
-		<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">지각형
-		</div>
-		<div class="radio">
-		<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">안전형
-		</div>
-		</div>
-	</form> 
-
-	<!-- 주차장 검색 후 리스트 -->
-	
-	<p id="t1"></p>
-	<p id="t3"></p>
-</div>
-
 	<!-- ---------------------------**지도**--------------------------- -->
 	
 	<div class="map_wrap" >
@@ -178,7 +123,9 @@ h2{
 					t1 = tlist[0];
 					t2 = tlist[1];
 					t3 = tlist[2];
-										
+									
+					alert(t2);
+					
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML ="";
 							document.getElementById("t3").innerHTML = t3;
@@ -254,6 +201,7 @@ h2{
 			
 			 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 			 function placesSearchCB (status, data, pagination) {
+				
 			     if (status === daum.maps.services.Status.OK) {
 					
 			    	 displayMarker();
@@ -271,32 +219,42 @@ h2{
 						 
 			 // 지도에 마커를 표시하는 함수입니다 positions.length
 			 function displayMarker() {
-				
+				alert( "*****"+markers[0].parkingimage);
+						
 				var marker = new Array();
 				var infowindow = new Array();
 										
 			 	for (var i = 0; i < markers.length; i ++) {				 		
 			 		   // 마커를 생성하고 지도에 표시합니다
+			 		  			 		   
 					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
 					         title:markers[i].title,
 					         fare:markers[i].fare,
+					         parkingimage:markers[i].parkingimage,
 					         image:markerImage
 					     });
-			 		   			 		   
+			 		   
 					    marker[i].setMap(map);			 			
 					    
 					    arr.push(marker[i]); //arr에 총 마커 개수 구하기
 					    
 					    marker[i].index = i;				     
 					   
+				         var realcontent = '<div style="padding:10px;font-size:15px;">'+
+				         '이름 : ' + markers[i].title + '<br>'
+				         +'요금 : ' + markers[i].fare + '<br>'
+				         +'<img src='+markers[i].parkingimage+' width=500 heigth=500>'
+				         +'</div>';
+				         
 			 			 //인포윈도우 생성
 					     infowindow[i] = new daum.maps.InfoWindow({
-					         content: '<div style="padding:5px;font-size:12px;">' + '이름 : ' + markers[i].title + '<br>' + '요금 : ' + markers[i].fare + '</div>',
+					         content: realcontent,
 					         removable : true
 					     }); 
 			 			 
-					  	 /* // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+					  	 /* 
+					  	 // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 				 			var content = '<div class="customoverlay">' +
 				 		    '  <a href="http://map.daum.net/link/map/11394059" target="_blank">' +
 				 		    '    <span class="title">구의야구공원</span>' +
@@ -347,6 +305,65 @@ h2{
 		}
 	}
 	</script>
+
+<div id="selectform">	
+	<div id="gu" class="alert alert-info">
+	    <h2>지역(구) 선택</h2>
+	    <p>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</p>
+  	</div>
+  	
+  	<div>
+	<!-- 지역선택 select box -->
+	<form name="f">
+	    <select onchange="change(value);change2();" name="plocation" class="form-control">
+			<option>선택하시오</option>
+				<option value="강남구" ${selected[0]}>강남구</option>
+	            <option value="송파구" ${selected[1]}>송파구</option>
+	            <option value="서초구" ${selected[2]}>서초구</option>
+	            <option value="중구" ${selected[3]}>중구</option>
+	            <option value="영등포구" ${selected[4]}>영등포구</option>
+	            <option value="마포구" ${selected[5]}>마포구</option>
+	            <option value="종로구" ${selected[6]}>종로구</option>
+	            <option value="강동구" ${selected[7]}>강동구</option>
+	            <option value="관악구" ${selected[8]}>관악구</option>
+	            <option value="광진구" ${selected[9]}>광진구</option>
+	            <option value="구로구" ${selected[10]}>구로구</option>
+	            <option value="강서구" ${selected[11]}>강서구</option>
+	            <option value="동대문구" ${selected[12]}>동대문구</option>
+	            <option value="노원구" ${selected[13]}>노원구</option>
+	            <option value="서대문구" ${selected[14]}>서대문구</option>
+	            <option value="은평구" ${selected[15]}>은평구</option>
+	            <option value="용산구" ${selected[16]}>용산구</option>
+	            <option value="동작구" ${selected[17]}>동작구</option>
+	             <option value="성북구" ${selected[18]}>성북구</option>
+	            <option value="양천구" ${selected[19]}>양천구</option>
+	            <option value="강북구" ${selected[20]}>강북구</option>
+	            <option value="중랑구" ${selected[21]}>중랑구</option>
+	            <option value="성동구" ${selected[22]}>성동구</option>
+	            <option value="금천구" ${selected[23]}>금천구</option>
+	            <option value="도봉구" ${selected[24]}>도봉구</option>   
+	    </select>
+	    
+	    <div class="col-lg-10">
+        <div class="radio">
+	    <input type="radio" id="radio" name="radio" value="절약형" onclick="change();">절약형
+		</div>
+		<div class="radio">
+		<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">지각형
+		</div>
+		<div class="radio">
+		<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">안전형
+		</div>
+		</div>
+	</form> 
 	
+	</div>
+</div>
+
+<div id="listform">
+	<!-- 주차장 검색 후 리스트 -->	
+	<p id="t1"></p>
+	<p id="t3"></p>
+</div>	
 </body>
 </html>

@@ -13,8 +13,7 @@ public class ParkingDTO {
 	private String pphone;
 	private double x;
 	private double y;	
-	
-	
+	private String pimage;	
 	
 	public int getPcount() {
 		return pcount;
@@ -26,7 +25,7 @@ public class ParkingDTO {
 	public ParkingDTO(){};
 	public ParkingDTO(int pid, int pfare, double pwidth, double plength,
 			int platefare, int pamount,int pcount, String pname, String plocation,
-			String pphone, double x, double y) {
+			String pphone, double x, double y, String pimage) {
 		super();
 		this.pid = pid;
 		this.pfare = pfare;
@@ -40,8 +39,15 @@ public class ParkingDTO {
 		this.pphone = pphone;
 		this.x = x;
 		this.y = y;
+		this.pimage = pimage;
 	}
-	
+		
+	public String getPimage() {
+		return pimage;
+	}
+	public void setPimage(String pimage) {
+		this.pimage = pimage;
+	}	
 	public int getPid() {
 		return pid;
 	}
@@ -112,8 +118,8 @@ public class ParkingDTO {
 	public String toString() {
 		return "ParkingDTO [pid=" + pid + ", pfare=" + pfare + ", pwidth="
 				+ pwidth + ", plength=" + plength + ", platefare=" + platefare
-				+ ", pamount=" + pamount + ", pname=" + pname + ", plocation="
-				+ plocation + ", pphone=" + pphone + ", x=" + x + ", y=" + y
-				+ "]";
-	}	
+				+ ", pamount=" + pamount + ", pcount=" + pcount + ", pname="
+				+ pname + ", plocation=" + plocation + ", pphone=" + pphone
+				+ ", x=" + x + ", y=" + y + ", pimage=" + pimage + "]";
+	}
 }

@@ -4,7 +4,7 @@
 
 <!-- 주차장 검색 후 리스트! -->
 <form method="post" action="reserve.do">
-<table border='1' class="table table-striped table-hover ">
+<table class="table table-striped table-hover ">
 	<thead>
 	<tr class="info">
 		<th>번호</th>
@@ -42,13 +42,14 @@
 {
 	latlng: new daum.maps.LatLng(${p2.x}, ${p2.y}),
 	title:'${p2.pname}',
-	fare:${p2.pfare}
+	fare:${p2.pfare},
+	parkingimage:'${p2.pimage}'
 }
 <c:if test="${parklistsize!=cnt}">,</c:if>
 </c:forEach>
 ;
 <form method="post" action="reserve.do">
-<table border='1' class="table table-striped table-hover ">
+<table class="table table-striped table-hover ">
 	<thead>
 	<tr class="info">
 		<th>번호</th>
@@ -72,7 +73,7 @@
 			<td>${p.pfare}</td>
 			<td>${p.platefare}</td>
 			<td>${p.pwidth}</td>
-			<td>${p.plength }</td>
+			<td>${p.plength}</td>
 			<td><input type="submit" value="예약"></td>
 		</tr>		
 	</c:forEach>	
