@@ -15,14 +15,10 @@ public class ReservationDAO implements ReservationDAOInterface {
 	@Autowired
 	SqlSession session;
 	
-	
-	
-	
 	public int insertReservation(ReservationDTO reserve) {
 		// TODO Auto-generated method stub
 		return session.insert("flying.reservation.insertReservation", reserve);
 	}
-
 
 
 	public List<ReservationDTO> selectBymid(String mid) {
@@ -91,9 +87,18 @@ public class ReservationDAO implements ReservationDAOInterface {
 		// TODO Auto-generated method stub
 		return session.selectOne("flying.reservation.searchReservationByrid", rid);
 	}
-	
-	
-	
-	
-	
+
+
+
+	public ReservationDTO selectMaxrid(String mid) {
+		// TODO Auto-generated method stub
+		return session.selectOne("flying.reservation.selectMaxrid", mid);
+	}
+
+
+	public List<ReservationDTO> selectReservation(String mid) {
+		// TODO Auto-generated method stub
+		return session.selectList("flying.reservation.selectReservation", mid);
+	}
+
 }

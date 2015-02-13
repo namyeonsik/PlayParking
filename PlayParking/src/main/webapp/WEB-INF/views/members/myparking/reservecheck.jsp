@@ -40,10 +40,10 @@
   <tbody>
     <c:forEach items="${reservationlist}" var="reservation">
     <tr>
-      <td>1</td>
+      <td>${reservation.rid}</td>
       <td>${reservation.rstart}</td>
 	  <td>${reservation.rtime}</td>
-	  <td>${reservation.pid}</td>
+	  <td>${reservation.pname}</td>
     </tr>
     </c:forEach>
   </tbody>

@@ -1,5 +1,7 @@
 package com.flying.membercontroller;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.MembersDTO;
+import com.flying.model.ParkingDTO;
 import com.flying.model.ReservationDTO;
 import com.flying.model.ReservationServiceInterface;
 @Controller
@@ -34,9 +37,16 @@ public class ReserveCheckController {
 					     (MembersDTO)session.getAttribute("memcheck");
 			String mid = memcheck.getMid();
 			System.out.println("예약확인mid:" + mid);
-
-			List<ReservationDTO> reservationlist = service.selectBymid(mid);
-
+			
+//			List<ParkingDTO> pnamelist=null;
+//			List<ReservationDTO> reservationlist = service.selectBymid(mid);
+			List<ReservationDTO> reservationlist = service.selectReservation(mid);
+//			for(ReservationDTO dto: reservationlist){
+//				pnamelist.add(service.selectBypid(dto.getPid()));
+//			}
+//			
+//			mv.addObject("pnamelist", pnamelist);
+//			System.out.println(pname);
 			mv.addObject("reservationlist", reservationlist);
 			mv.setViewName("/members/myparking/reservecheck");
 			return mv;
