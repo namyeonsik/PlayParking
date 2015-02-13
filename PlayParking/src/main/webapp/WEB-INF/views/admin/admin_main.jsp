@@ -142,6 +142,7 @@
 									<c:if test=""></c:if>
 									<tr class="odd gradeX">
 			
+			
 									<td>${num.rid}</td>
 									<td>${num.mid}</td>
 									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>

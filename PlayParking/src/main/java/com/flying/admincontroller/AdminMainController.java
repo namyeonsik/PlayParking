@@ -166,6 +166,7 @@ public class AdminMainController {
 			service.selectBypid(reservelist2.get(c).getPid()).getPfare());
 		}
 		
+		
 	//	mv.addObject("end", end);
 		mv.addObject("todaycount", todaycount);
 		mv.addObject("reservelist", reservelist2);
