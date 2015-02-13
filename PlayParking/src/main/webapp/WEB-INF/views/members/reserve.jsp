@@ -76,10 +76,7 @@
 		xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
  
 	
-/*    frm.action="insert.do";
-  frm.method="post";
-  frm.submit();
-		  */
+
 		
 		
 		
@@ -110,32 +107,58 @@
 	
 	function getDate(date){
 		date = document.getElementById("calendar").value;
-		alert(date);
+		
 		
 		
 		var now = new Date();
-		alert("now="+now);
+		var stringtempt=null;
+		var tempdate2=null;
 		
-		var tempdate2 = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+		var tempint = parseInt(now.getMonth()+1);
 		
-		alert("alert확인용:"+tempdate2);
-		/* if(date<tempdate2){m
-			alert("야 오늘 이전꺼 골랐어");
-		} */
+		if(tempint<10){
+			stringtempt="0"+ tempint.toString();
+			tempdate2 = now.getFullYear()+"-"+stringtempt+"-"+now.getDate();
+		}
+		else{
+			tempdate2 = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+		}
+		
+		
+	
 		xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = resultParse;
 	
 		data = "date=" + date;
-		alert(data);
+		
 		
 		//alert(tempdate2);
-		alert(date==tempdate2);
+		
+		
+		if(date==tempdate2){
+			alert("당일예약입니다");
+			//포스트방식
+			xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
+		}
+		else if(date<tempdate2){
+			alert("예약이 불가능한 날 입니다");
+			//포스트방식
+			xhr.open("POST", "reserve.do", true);//POST방식 비동기통신
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			//xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
+		}
+		else{
+			
+			//포스트방식
+			xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
+		}
 	//	if(data)
 		
-		//포스트방식
-		xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
-		xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-		xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
+		
 
 	
 		
@@ -145,10 +168,7 @@
 	function resultParse() {
 		if (xhr.readyState == 4) {//서버에서 전송이 끝남?
 			if (xhr.status == 200) {//정상종료
-				//alert(xhr.responseText);
-				// 					viewData1(xhr.responseText);
-				// 					viewData2(xhr.responseText); //->JSON
-				// 					viewData3(xhr.responseXML);  //XML
+				
 				viewData3(xhr.responseText);//HTML
 			}
 		}
@@ -157,8 +177,7 @@
 	function viewData3(data) {
 		
 		document.getElementById("timePrint").innerHTML += data;
-		//alert(f.possibleTime.value);
-		//alert(document.getElementById("timePrint").innerHTML);
+	
 
 	}
 	</script>

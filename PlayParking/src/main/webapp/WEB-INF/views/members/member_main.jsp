@@ -62,6 +62,7 @@
                                 <li class="active"><a href="#home">Home</a></li>
                                 <li><a href="#aboutus">About us</a></li>
                                 <li><a href="#services">reserve</a></li>
+                                <li><a href="#search">search</a></li>
                                 <li><a href="#portfolio">Notice</a></li>
                                 <li class="dropdown">
                                     <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
