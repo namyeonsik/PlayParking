@@ -90,6 +90,17 @@ public class ReservationDAO implements ReservationDAOInterface {
 
 
 
+
+	public int updateReservationEndByrid(ReservationDTO reserve) {
+		// TODO Auto-generated method stub
+		return session.update("flying.reservation.updateReservationEndByrid", reserve);
+	}
+	
+	
+	
+	
+	
+
 	public ReservationDTO selectMaxrid(String mid) {
 		// TODO Auto-generated method stub
 		return session.selectOne("flying.reservation.selectMaxrid", mid);
@@ -100,5 +111,6 @@ public class ReservationDAO implements ReservationDAOInterface {
 		// TODO Auto-generated method stub
 		return session.selectList("flying.reservation.selectReservation", mid);
 	}
+
 
 }

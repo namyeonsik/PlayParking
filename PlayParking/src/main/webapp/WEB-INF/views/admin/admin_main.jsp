@@ -136,7 +136,8 @@
 									 <c:forEach items="${reservelist}" var="num">
 									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
 									<c:set var="TextValue2" value="${num.rstarttime}"/>
-									<c:set var="endcheck" value="${end }"/>
+									<%-- <c:set var="endcheck" value="${end }"/> --%>
+									<c:set var="resultEnd" value="${num.rend==null?'출차안함':'출차함'}"/>
 									<c:set var="testval1" value=""/>
 									<c:if test=""></c:if>
 									<tr class="odd gradeX">
@@ -145,7 +146,8 @@
 									<td>${num.mid}</td>
 									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>
 									<td>${num.rtime}</td>
-									<td>${endcheck }</td>
+									
+									<td>${resultEnd }</td> 
 									<td><a onclick="window.open('reservationupdate.do?rid=${num.rid}', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200')" >정보수정</a></td>
 									</tr>
 									</c:forEach>
@@ -177,7 +179,8 @@
 								<p class="text-muted">나의 주차장 요금</p></a>								
 						</section>
 						<!--</div>상단btn-controls-->
-						 <form action="adminmain.do">
+						
+						<form action="adminmain.do">
 						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
 							<div class="module-head">
 							
@@ -216,7 +219,7 @@
 				              </div><!-- table -->
 				              </div><!--/.module-->
 							</form></div>
-						</div>
+						</div> --%>
 						</div><!--/.content-->
 						</div><!--/.span9-->
 					</div><!-- row class -->			

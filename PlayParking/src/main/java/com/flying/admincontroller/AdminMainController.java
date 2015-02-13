@@ -149,9 +149,10 @@ public class AdminMainController {
 		}*/
 		String end=null;//출차안함,출차함 표시 String
 		for (int z=0;z<reservelist2.size();z++){
+			System.out.println("end여부=="+reservelist2.get(z).getRend());
 			if(reservelist2.get(z).getRend()==null){
 				end = "출차안함";
-			}else{
+			}else if(reservelist2.get(z).getRend()!=null){
 				end="출차함";
 			}
 			
@@ -169,7 +170,7 @@ public class AdminMainController {
 	
 	
 	@RequestMapping(value="reservationupdate.do", method=RequestMethod.GET)
-	public ModelAndView update(int rid){
+	public ModelAndView updateGet(int rid){
 		
 		
 		      /*
@@ -201,12 +202,18 @@ public class AdminMainController {
 		System.out.println(starttime1);
 		System.out.println(tempresult.length()); // 현재 시간이 0~9분일때의 예외처리를 위한 구문
 		if(tempresult.length()==3){
-			String faketemp3 = tempresult.substring(0, 2);
-			String faketemp4 = tempresult.substring(2, 3);
-			tempresult=faketemp3+"0"+faketemp4;
+			String faketemp3 = tempresult.substring(0, 1);
+			String faketemp4 = tempresult.substring(1, 3);
+			tempresult="0"+faketemp3+faketemp4;
 			
+			
+		}else if(tempresult.length()==2){
+			String faketemp3 = tempresult.substring(0,1);
+			String faketemp4 = tempresult.substring(1, 2);
+			tempresult="0"+faketemp3+"0"+faketemp4;
 			
 		}
+		System.out.println("tempresult"+tempresult);
 		//starttime1 = 
 		int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // 현재 시간에서 시 만 떼어냄
 		int temp4 = Integer.parseInt(tempresult.substring(2, 4));
@@ -236,10 +243,29 @@ public class AdminMainController {
 			
 		}
 		mv.addObject("naga", cal);
+		mv.addObject("rid",rid);
 		mv.setViewName("admin/chulcha");
 		return mv;
 	}
 	
+	@RequestMapping(value="reservationupdate.do", method=RequestMethod.POST)
+	public ModelAndView updatePost(int rid,int naga){
+		ModelAndView mv = new ModelAndView();
+		System.out.println("naga"+naga);
+		System.out.println("rid==========="+rid);
+		ReservationDTO reserve = rservice.searchReservationByrid(rid);
+		System.out.println("출차할 예약 정보는="+reserve);
+			
+		  /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+	         Date d = sf.parse(date);
+		*/
+	reserve.setRextrafare(naga);
 	
-	
+	int ret = rservice.updateReservationEndByrid(reserve);
+		System.out.println(ret+"건의 업데이트가 성공했습니다.");
+		mv.setViewName("redirect:/adminmain.do");
+		return mv;
+		
+		
+	}
 }

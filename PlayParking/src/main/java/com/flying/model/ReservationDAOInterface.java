@@ -18,4 +18,6 @@ public interface ReservationDAOInterface {
 	public int insertUsepoint(UsePointDTO usepoint);
 	
 	public ReservationDTO searchReservationByrid(int rid);
+	
+	public int updateReservationEndByrid(ReservationDTO reserve);
 }
