@@ -67,7 +67,7 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">YourParking Profile</a></li>
+								<li><a href="parkinginfo.do">YourParking Profile</a></li>
 								<li><a href="parkingupdate.do">EditParking Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
@@ -116,7 +116,7 @@
 						 <div class="module">
 							<div class="module-head">
 							
-								<h3>오늘의 주차 에약자는 ${todaycount }명입니다.</h3>
+								<h3>오늘의 주차 예약자는 ${todaycount }명입니다.</h3>
 							</div>
 							<div class="module-body table">
 								<table cellpadding="0" cellspacing="0" border="0"
@@ -156,16 +156,16 @@
 							</form>
 							 <section id="saleschart">
 							 <div class="module">
-							<div class="module-head">
-								<h3>Sales Chart</h3>
-							</div>
-							<div class="module-body">
-								<div class="chart inline-legend grid">
-									<div id="placeholder2" class="graph" style="height: 500px">
-									</div>
-								</div>
-							</div>
-						</div><!-- salechart -->
+                 	    <div class="module-head">
+                 	       <h3>Sales Chart</h3>
+              	       </div>
+              	       <div class="module-body">
+                 	       <div class="chart inline-legend grid">
+               		            <div id="placeholder2" class="graph" style="height: 500px">
+                           </div>
+                        </div>
+                     </div>
+                  </div><!-- salechart -->
 						</section>
 				<div class="btn-box-row row-fluid">
 					  <div class="btn-controls"> 
@@ -181,7 +181,7 @@
 						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
 							<div class="module-head">
 							
-								<h3>주변 주차장 정보</h3>
+								<h3>${parking.plocation} 주차장 정보</h3>
 							</div>
 							<div class="module-body table">
 								<table cellpadding="0" cellspacing="0" border="0"

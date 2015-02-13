@@ -1,6 +1,8 @@
 package com.flying.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +60,14 @@ public class ParkingDAO implements ParkingDAOInterface{
 	public int checkAmount(int pid) {
 		// TODO Auto-generated method stub
 		return session.selectOne("flying.parking.checkAmount", pid);
+	}
+	
+	public List<ParkingDTO> selectByAround(String plocation, int pid){
+		List<ParkingDTO> aroundparkinglist = null;
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("plocation", plocation); 
+		map.put("pid", pid);
+		aroundparkinglist = session.selectList("flying.parking.selectByAround", map);
+		return aroundparkinglist;
 	}
 }

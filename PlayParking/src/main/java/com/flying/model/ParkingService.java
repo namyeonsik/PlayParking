@@ -50,4 +50,7 @@ public class ParkingService implements ParkingServiceInterface{
 		// TODO Auto-generated method stub
 		return dao.checkAmount(pid);
 	}
+	public List<ParkingDTO> selectByAround(String plocation, int pid){
+		return dao.selectByAround(plocation, pid);
+	}
 }

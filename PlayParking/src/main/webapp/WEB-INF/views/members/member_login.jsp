@@ -22,7 +22,7 @@
 <style>
 
 #loginform { float: left; margin-left: 6%; margin-top:14%; width: 35%;}
-#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 14%}
+#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 5%}
 </style>
 
 <meta name="generator" content="Bootply" />
@@ -42,11 +42,11 @@ function validationcheck(){
 	var mid = myfrm.mid.value;
 	var mname = myfrm.mname.value;
 	var mpwd = myfrm.mpwd.value;
+	var mpwdcheck = myfrm.mpwdcheck.value;
 	if(mid ==""||mid==null){
 		alert("아이디을 입력하세용");
 		myfrm.mid.focus();
-		return false; //list로 넘어가지마!
-		
+		return false; //list로 넘어가지마!		
 	}else if(mname==""||mname==null){
 		alert("이름을 입력해야해용~~");
 		myfrm.mname.focus();
@@ -54,6 +54,10 @@ function validationcheck(){
 	}else if(mpwd==""||mpwd==null){
 		alert("비밀번호 필수!!!!");
 		myfrm.mpwd.focus();
+		return false;
+	}else if(mpwd!=mpwdcheck){
+		alert("비밀번호가 일치하지 않습니다.");
+		loginfrm.mpwd.focus();
 		return false;
 	}else{
 		return true;
@@ -129,6 +133,12 @@ function validationlogin(){
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
       <div class="col-lg-10">
         <input type="password" class="form-control" name="mpwd" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPasswordcheck" class="col-lg-2 control-label">Password check</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="mpwdcheck" placeholder="Password">
       </div>
     </div>
     <div class="form-group">
