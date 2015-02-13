@@ -28,11 +28,9 @@ public class NoticeDAO implements NoticeDAOInterface{
 	}
 	
 	public NoticeDTO selectByNno(int nno, String aid) {
-		System.out.println("甚走????????????ばばばばばばばばばばばばばば");		
 		Map<String,Object> map = new HashMap<String,Object>();			
 		map.put("nno", nno); 
 		map.put("aid", aid);		
-		System.out.println("map!!!!!!!!"+map);
 		return session.selectOne("flying.notice.selectBynno",map);
 	}
 	
@@ -40,12 +38,16 @@ public class NoticeDAO implements NoticeDAOInterface{
 		return session.selectList("flying.notice.selectAll",aid);
 	}
 	
-	public List<NoticeDTO> selectnoticeAll(){
-		return session.selectList("flying.notice.selectnoticeAll");
+	public NoticeDTO selectnoticeAll(int nno){
+		return session.selectOne("flying.notice.selectnoticeAll");
 	}
 
 	public List<NoticeDTO> selectByaid(String aid) {
 		return session.selectList("flying.notice.selectByaid",aid);
+	}
+	
+	public List<NoticeDTO> selectByaid2(String aid) {
+		return session.selectList("flying.notice.selectByaid2",aid);
 	}
 
 	public NoticeDTO selectText(int nno, String aid) {
@@ -56,7 +58,8 @@ public class NoticeDAO implements NoticeDAOInterface{
 		return session.selectOne("flying.notice.selectText", map);
 	}
 	
-	
-
+	public List<NoticeDTO> selectMembernotice() {
+		return session.selectList("flying.notice.selectMembernotice");
+	}
 
 }

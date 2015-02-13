@@ -21,8 +21,12 @@ import com.flying.model.ParkingServiceInterface;
 public class NoticeListController {
    
    @Autowired
-   NoticeServiceInterface service;   
-    
+   NoticeServiceInterface service;  
+   
+   @Autowired
+   ParkingServiceInterface parkingservice;
+   
+   
    @RequestMapping(value="/noticelist1.do")
    public ModelAndView listGet1(HttpServletRequest request, HttpSession session){
       ModelAndView mv = new ModelAndView();
@@ -32,10 +36,10 @@ public class NoticeListController {
 		}else{
     	 session = request.getSession();
     	 MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");    	 
-  		List<NoticeDTO> noticelist = service.selectnoticeAll();
-  		mv.addObject("noticelist", noticelist);
+  		List<NoticeDTO> noticelist = service.selectMembernotice();
+  		mv.addObject("noticelist", noticelist);  		
   		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list");
+  		mv.setViewName("/admin/notice_list_member");
   		return mv;
       }
    }
@@ -50,12 +54,14 @@ public class NoticeListController {
     	session = request.getSession();
     	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");         
   		List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid());
-  		
+    	//List<NoticeDTO> noticelist = service.selectByaid2(admincheck.getAid());
   		System.out.println("++++++++++"+noticelist+"++++++++++");
   		
+  		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
+  		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);
-//  		mv.addObject("adminid", admincheck.getAid());
-  		mv.setViewName("/admin/notice_list");
+  		//mv.addObject("adminid", admincheck.getAid());
+  		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }
    }

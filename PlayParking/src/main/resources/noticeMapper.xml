@@ -3,10 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.notice">
+  
+  <resultMap type="com.flying.model.NoticeDTO" id="noticeresult">
+     <association property="pname" column="pid" select="getpname"></association>
+  </resultMap>
+  <select id="selectByaid2" parameterType="String" resultMap="noticeresult"> 
+  select * from admin where pid = #{aa}
+  </select>
+  
+  <select id="getpname" resultType="String">
+  	select pname from parking where pid=#{aa}
+  </select>
+    
+	<select id="selectMembernotice"
+  	resultType="com.flying.model.NoticeDTO">
+  	select nno,ntitle,ntext,ndate,aid from notice
+  </select>
+
 
   <select id="selectnoticeAll"
   	resultType="com.flying.model.NoticeDTO">
-  	select nno,ntitle,ntext,ndate,aid from notice
+  	select nno,ntitle,ntext,ndate,aid from notice where nno = #{nno:INTEGER}
   </select>
   
   <select id="selectByaid" 
