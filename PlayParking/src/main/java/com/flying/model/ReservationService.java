@@ -68,4 +68,14 @@ public class ReservationService implements ReservationServiceInterface{
 		// TODO Auto-generated method stub
 		return dao.searchReservationByrid(rid);
 	}
+
+	public ReservationDTO selectMaxrid(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectMaxrid(mid);
+	}
+
+	public List<ReservationDTO> selectReservation(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectReservation(mid);
+	}
 }

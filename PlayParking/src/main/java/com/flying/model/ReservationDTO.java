@@ -13,8 +13,15 @@ public class ReservationDTO {
 	int rextrafare;
 	String rstarttime;
 	String rstarttimeback;
-
 	
+	String pname;
+	
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
 	public String getRstarttimeback() {
 		return rstarttimeback;
 	}
