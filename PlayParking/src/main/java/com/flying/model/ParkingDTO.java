@@ -6,8 +6,8 @@ public class ParkingDTO {
 	private double pwidth;
 	private double plength;
 	private int platefare;
-	private int pamount;
-	private int pcount;
+	private int pamount; //
+	private int pcount; //
 	private String pname;
 	private String plocation;
 	private String pphone;

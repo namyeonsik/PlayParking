@@ -17,8 +17,8 @@ public interface ParkingServiceInterface {
 	
 	public int updateParkingPcount(ParkingDTO parking);
 	public int checkCount(int pid);
-		public int checkAmount(int pid);
-	
+	public int checkAmount(int pid);
+	public List<ParkingDTO> selectByAround(String plocation, int pid);
 		
 
 }
