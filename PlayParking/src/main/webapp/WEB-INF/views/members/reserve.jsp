@@ -28,7 +28,7 @@
 <%@ include file="../Header.jsp" %>
 	<h1>예약페이지입니다!</h1>
 	
-		<input type = "date" min = "1987-07-01" max = "2020-03-01" name = "date" id="calendar" " >
+		<input type = "date" min = "1987-07-01" max = "2020-03-01" name = "date" id="calendar"  >
 	                    <br><br>
 	                    <input type = "button" value = "날짜선택" onclick="getDate()"/>
 	                    <input type = "reset" value = "reset"/>
@@ -112,12 +112,26 @@
 		date = document.getElementById("calendar").value;
 		alert(date);
 		
+		
+		var now = new Date();
+		alert("now="+now);
+		
+		var tempdate2 = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+		
+		alert("alert확인용:"+tempdate2);
+		/* if(date<tempdate2){m
+			alert("야 오늘 이전꺼 골랐어");
+		} */
 		xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = resultParse;
 	
 		data = "date=" + date;
 		alert(data);
-
+		
+		//alert(tempdate2);
+		alert(date==tempdate2);
+	//	if(data)
+		
 		//포스트방식
 		xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
 		xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
