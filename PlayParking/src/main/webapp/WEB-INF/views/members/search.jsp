@@ -17,13 +17,13 @@
 	</tr>
 	</thead>
 
-	<tbody>
+	<tbody id="tbody">	
 	<c:set var="cnt" value="0"></c:set>
 	<c:forEach items="${parkinglist}" var="p">
 	<c:set var="cnt" value="${cnt+1}"></c:set>
 		<input type="hidden" name="pid" id="pid" value="${p.pid}">
-		<tr class="info">
-			<td>${cnt}</td>
+		<tr class="info1" id="tr${cnt}">
+			<td><input type="text" size="1" id="cnt${cnt}" value="${cnt}" readonly="readonly" style="border:0"></td>
 			<td>${p.pname}</td>
 			<td>${p.pfare}</td>
 			<td>${p.platefare}</td>
@@ -41,7 +41,8 @@
 <c:set var="cnt" value="${cnt+1}"></c:set>
 {
 	latlng: new daum.maps.LatLng(${p2.x}, ${p2.y}),
-	title:'${p2.pname}'
+	title:'${p2.pname}',
+	fare:${p2.pfare}
 }
 <c:if test="${parklistsize!=cnt}">,</c:if>
 </c:forEach>
@@ -60,13 +61,13 @@
 	</tr>
 	</thead>
 
-	<tbody>
+	<tbody id="tbody">	
 	<c:set var="cnt" value="0"></c:set>
 	<c:forEach items="${parkinglist2}" var="p">
 	<c:set var="cnt" value="${cnt+1}"></c:set>
 		<input type="hidden" name="pid" id="pid" value="${p.pid}">
-		<tr class="info">
-			<td>${cnt}</td>
+		<tr class="info1" id="tr${cnt}">
+			<td><input type="text" size="1" id="cnt${cnt}" value="${cnt}" readonly="readonly" style="border:0"></td>
 			<td>${p.pname}</td>
 			<td>${p.pfare}</td>
 			<td>${p.platefare}</td>
@@ -78,6 +79,3 @@
 	</tbody>
 </table>
 </form>
-
-
-

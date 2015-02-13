@@ -12,7 +12,7 @@
 
 <style>
 html, body {width:100%;height:100%;margin:0;padding:0;} 
-.map_wrap {position:relative;overflow:hidden;width:60%;height:100%;}
+.map_wrap {position:relative;overflow:hidden;width:100%;height:60%;}
 .radius_border{border:1px solid #919191;border-radius:5px;}     
 .custom_zoomcontrol {position:absolute;top:10px;right:5px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
 .custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
@@ -27,7 +27,7 @@ h2{
 }
 </style> 
 
-<meta name="generator" content="Bootply" />
+<meta name="generator" content="Bootply"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -178,7 +178,7 @@ h2{
 					t1 = tlist[0];
 					t2 = tlist[1];
 					t3 = tlist[2];
-					
+										
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML ="";
 							document.getElementById("t3").innerHTML = t3;
@@ -280,8 +280,10 @@ h2{
 					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
 					         title:markers[i].title,
+					         fare:markers[i].fare,
 					         image:markerImage
 					     });
+			 		   			 		   
 					    marker[i].setMap(map);			 			
 					    
 					    arr.push(marker[i]); //arr에 총 마커 개수 구하기
@@ -290,7 +292,7 @@ h2{
 					   
 			 			 //인포윈도우 생성
 					     infowindow[i] = new daum.maps.InfoWindow({
-					         content: '<div style="padding:5px;font-size:12px;">' + markers[i].title + '<br>' + '요금' + '</div>',
+					         content: '<div style="padding:5px;font-size:12px;">' + '이름 : ' + markers[i].title + '<br>' + '요금 : ' + markers[i].fare + '</div>',
 					         removable : true
 					     }); 
 			 			 
@@ -315,9 +317,11 @@ h2{
 					    	 for ( var i = 0; i < marker.length ; i++) {
 					    		 infowindow[i].close();
 					    	}
-					    	 
+					    	
 					   		 /****** 클릭한 마커의 좌표를 받아와서 그 좌표의 이름을 뿌려줘라! ******/	
-					         infowindow[this.index].open(map, marker[this.index]);					       	
+					         infowindow[this.index].open(map, marker[this.index]);	
+					   		 
+					   		 tablechange(this.index);
 					     });
 					 	
 			 		}
@@ -327,6 +331,21 @@ h2{
 			}
 	}
 
+	 function tablechange(index){
+		var index2 = (index+1);
+		
+		if(index2 == document.getElementById('cnt'+index2).value){
+			//document.getElementById('tr'+index2).style.backgroundColor = "#627bfc";		
+			for(var i=1; i<11; i++){
+				if(i!=index2)
+					document.getElementById('tr'+i).style.backgroundColor = "#ffffff";	
+				else
+					document.getElementById('tr'+i).style.backgroundColor = "#627bfc";		
+			}
+		}else{
+			
+		}
+	}
 	</script>
 	
 </body>

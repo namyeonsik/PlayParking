@@ -3,8 +3,8 @@ package com.flying.model;
 public class ParkingDTO {
 	private int pid;
 	private int pfare;
-	private int pwidth;
-	private int plength;
+	private double pwidth;
+	private double plength;
 	private int platefare;
 	private int pamount;
 	private int pcount;
@@ -24,7 +24,7 @@ public class ParkingDTO {
 	}
 	
 	public ParkingDTO(){};
-	public ParkingDTO(int pid, int pfare, int pwidth, int plength,
+	public ParkingDTO(int pid, int pfare, double pwidth, double plength,
 			int platefare, int pamount,int pcount, String pname, String plocation,
 			String pphone, double x, double y) {
 		super();
@@ -54,16 +54,16 @@ public class ParkingDTO {
 	public void setPfare(int pfare) {
 		this.pfare = pfare;
 	}
-	public int getPwidth() {
+	public double getPwidth() {
 		return pwidth;
 	}
-	public void setPwidth(int pwidth) {
+	public void setPwidth(double pwidth) {
 		this.pwidth = pwidth;
 	}
-	public int getPlength() {
+	public double getPlength() {
 		return plength;
 	}
-	public void setPlength(int plength) {
+	public void setPlength(double plength) {
 		this.plength = plength;
 	}
 	public int getPlatefare() {
