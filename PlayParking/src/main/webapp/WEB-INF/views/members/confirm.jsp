@@ -24,12 +24,12 @@
 <body>
 <%@ include file="../Header.jsp" %>
 
-	<h1>결제 후 예약확인 페이지입니다</h1>
 	<h2>***예약 내용 보여주기***</h2>
 	<h3>메일로 발송되었습니다!</h3>
 	예약번호:${reservation.rid} <br>
 	예약자ID:${reservation.mid} <br>
 	주차장:${pname.pname} <br>
+	예약시간:${reservation.rstart}
 	
 </body>
 </html>
