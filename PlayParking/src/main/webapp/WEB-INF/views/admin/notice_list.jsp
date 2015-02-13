@@ -11,6 +11,7 @@
 
 <TABLE border='0' cellspacing=1 cellpadding=2 width='600'> 
  <h1>${memberid}</h1>
+	<c:set var="cnt" value="0"></c:set>	
 		
 	<tr style="text-align:center; background-color: #DB5B43 ; color:white ; font-size:13pt ; font-weight:bold ;">      
 		<td ><font color = "#FFFFFF"><b>번호</b></font></td>      
@@ -19,27 +20,27 @@
 		<!-- <td><font color = "#FFFFFF"><b>조회</b></font></td>       -->
 		<td><font color = "#FFFFFF"><b>주차장</b></font></td>      
 	</tr>   
-	<c:set var="cnt" value="0"></c:set>
+	<%-- <c:set var="cnt" value="0"></c:set> --%>
 	<c:forEach items="${noticelist}" var="n">
 		<tr>
 			<%-- <td>${cnt}</td> --%>
 			<td>${n.nno}</td>
-			<td>${n.ntitle}</td>
+			<td><a href='checktext.do?nno=${n.nno}'>${n.ntitle}</a></td>
 			<td>${n.ndate}</td>
 			<td>${n.aid}</td>
 			<td><a href='noticeupdate.do?nno=${n.nno}'>수정</a></td>
 			<td><a href='noticedelete.do?nno=${n.nno}'>삭제</a></td>
 			
 			<c:set var="cnt" value="${n.nno+1}"></c:set>
-			<td>
+		<%-- 	<td>
 				<c:if test="${memberid==null}">
 					<a href='noticeinsert.do?cnt=${cnt}'>등록</a>
 				</c:if>
-			</td>
+			</td> --%>
 			
 		</tr>				
 	</c:forEach>
-
+<a href='noticeinsert.do?cnt=${cnt}'>등록</a>
 	
 </table>
 

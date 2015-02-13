@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>충전완료!</h1>
-<script type="text/javascript">
-window.opener.location.reload();
-</script>
-<input type="button" value="close" onClick="window.close()">
+
 </body>
 </html>

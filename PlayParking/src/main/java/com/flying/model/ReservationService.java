@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("reservationservice")
+@Component 
 public class ReservationService implements ReservationServiceInterface{
 
 	@Autowired
@@ -69,8 +69,19 @@ public class ReservationService implements ReservationServiceInterface{
 		return dao.searchReservationByrid(rid);
 	}
 
+
 	public int updateReservationEndByrid(ReservationDTO reserve) {
 		// TODO Auto-generated method stub
 		return dao.updateReservationEndByrid(reserve);
+	}
+	public ReservationDTO selectMaxrid(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectMaxrid(mid);
+	}
+
+	public List<ReservationDTO> selectReservation(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectReservation(mid);
+
 	}
 }

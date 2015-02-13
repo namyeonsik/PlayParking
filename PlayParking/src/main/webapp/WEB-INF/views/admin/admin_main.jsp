@@ -67,7 +67,7 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">YourParking Profile</a></li>
+								<li><a href="parkinginfo.do">YourParking Profile</a></li>
 								<li><a href="parkingupdate.do">EditParking Profile</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
@@ -116,7 +116,7 @@
 						 <div class="module">
 							<div class="module-head">
 							
-								<h3>오늘의 주차 에약자는 ${todaycount }명입니다.</h3>
+								<h3>오늘의 주차 예약자는 ${todaycount }명입니다.</h3>
 							</div>
 							<div class="module-body table">
 								<table cellpadding="0" cellspacing="0" border="0"
@@ -158,16 +158,16 @@
 							</form>
 							 <section id="saleschart">
 							 <div class="module">
-							<div class="module-head">
-								<h3>Sales Chart</h3>
-							</div>
-							<div class="module-body">
-								<div class="chart inline-legend grid">
-									<div id="placeholder2" class="graph" style="height: 500px">
-									</div>
-								</div>
-							</div>
-						</div><!-- salechart -->
+                 	    <div class="module-head">
+                 	       <h3>Sales Chart</h3>
+              	       </div>
+              	       <div class="module-body">
+                 	       <div class="chart inline-legend grid">
+               		            <div id="placeholder2" class="graph" style="height: 500px">
+                           </div>
+                        </div>
+                     </div>
+                  </div><!-- salechart -->
 						</section>
 				<div class="btn-box-row row-fluid">
 					  <div class="btn-controls"> 
@@ -179,11 +179,12 @@
 								<p class="text-muted">나의 주차장 요금</p></a>								
 						</section>
 						<!--</div>상단btn-controls-->
-						<%--  <form action="adminmain.do">
+						
+						<form action="adminmain.do">
 						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
 							<div class="module-head">
 							
-								<h3>주변 주차장 정보</h3>
+								<h3>${parking.plocation} 주차장 정보</h3>
 							</div>
 							<div class="module-body table">
 								<table cellpadding="0" cellspacing="0" border="0"
@@ -191,24 +192,26 @@
 									width="100%" >
 									<thead>
 										<tr>
-											<th>예약번호</th>
-											<th>예약자ID</th>
-											<th>예약 입차시간</th>
-											<th>입,출차관리</th>
+											<th>주차장이름</th>
+											<th>주차장요금</th>
+											<th>추가요금</th>
+											<th>수용차수</th>
+											<th>연락처</th>
 										</tr>
 									</thead>
 									<tbody>									
-									 <c:forEach items="${reservelist}" var="num">
-									<c:set var="TextValue1" value="${num.rstarttimeback}"/>
+									 <c:forEach items="${aroundpark}" var="around">
+									<%-- <c:set var="TextValue1" value="${num.rstarttimeback}"/>
 									<c:set var="TextValue2" value="${num.rstarttime}"/>
 									<c:set var="testval1" value=""/>
-									<c:if test=""></c:if>
-									<tr class="odd gradeX">
-			
-									<td>${num.rid}</td>
-									<td>${num.mid}</td>
-									<td>${fn:substring(TextValue1,0,2)}:${fn:substring(TextValue1,2,4) } ~ ${fn:substring(TextValue2,0,2) }:${fn:substring(TextValue2,2,4) } 까지 입차합니다.</td>
-									<td><a href="reservationupdate.do?mno=${num.mid}">정보수정</a></td>
+									<c:if test=""></c:if> --%>
+									
+									<tr class="odd gradeX">			
+									<td>${around.pname}</td>
+									<td>${around.pfare}</td>
+									<td>${around.platefare}</td>
+									<td>${around.pamount}</td>
+									<td>${around.pphone}</td>
 									</tr>
 									</c:forEach>
 						       	 </tbody>
@@ -225,7 +228,7 @@
 
 	<div class="footer">
 		<div class="container">
-			<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights
+			<b class="copyright">&copy; 2015 PlayParking </b>All rights
 			reserved.
 		</div>
 	</div>

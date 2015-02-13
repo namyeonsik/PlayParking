@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface ReservationDAOInterface {
 	
+	public List<ReservationDTO> selectReservation(String mid);
+	public ReservationDTO selectMaxrid(String mid);
 	public List<ReservationDTO> selectBymid(String mid);
 	public ReservationDTO selectBymidone(String mid);
 	public int insertReservation(ReservationDTO reserve);

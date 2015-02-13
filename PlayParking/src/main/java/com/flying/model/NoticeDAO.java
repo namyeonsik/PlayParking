@@ -43,6 +43,18 @@ public class NoticeDAO implements NoticeDAOInterface{
 	public List<NoticeDTO> selectnoticeAll(){
 		return session.selectList("flying.notice.selectnoticeAll");
 	}
+
+	public List<NoticeDTO> selectByaid(String aid) {
+		return session.selectList("flying.notice.selectByaid",aid);
+	}
+
+	public NoticeDTO selectText(int nno, String aid) {
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("nno", nno);
+		map.put("aid", aid);
+		System.out.println("map"+map);
+		return session.selectOne("flying.notice.selectText", map);
+	}
 	
 	
 

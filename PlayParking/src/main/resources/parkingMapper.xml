@@ -11,6 +11,14 @@
     select * from parking where plocation = #{aa:VARCHAR}
   </select>
   
+  <select id="selectByAround" 
+  	parameterType="map"
+  	resultType="com.flying.model.ParkingDTO">
+  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+    select * from parking where plocation = #{plocation:VARCHAR}
+    minus
+    select * from parking where pid=#{pid:INTEGER}
+  </select>
 
 <select id="selectBymakchum_1" 
   	parameterType="String"

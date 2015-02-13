@@ -4,13 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.reservation">
 
-<select id="searchReservationByrid" 
-parameterType="int"
-resultType="com.flying.model.ReservationDTO">
-select * from reservation where rid= #{aa}
+  <select id="searchReservationByrid" 
+	parameterType="int"
+	resultType="com.flying.model.ReservationDTO">
+	select * from reservation where rid= #{aa}
+  </select>
 
-
-</select>
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.ReservationDTO">
@@ -22,11 +21,28 @@ select * from reservation where rid= #{aa}
   select * from parking where pid = #{aa}
   </select>
   
+  <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
+     <association property="pname" column="pid" select="getpname"></association>
+  </resultMap>
+  <select id="selectReservation" parameterType="int" resultMap="parkresult"> 
+  select * from reservation where mid = #{aa}
+  </select>
+  
+  <select id="getpname" resultType="String">
+  	select pname from parking where pid=#{aa}
+  </select>
+  
    <select id="searchBymid" 
   	parameterType="String"
   	resultType="com.flying.model.MembersDTO">
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select * from members where mid = #{aa}
+  </select>
+  
+  <select id="selectMaxrid" 
+  	parameterType="String"
+  	resultType="com.flying.model.ReservationDTO">
+    select * from reservation where rid in (select max(rid) from reservation where mid = #{aa})
   </select>
   
   <insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">

@@ -49,12 +49,12 @@ public class NoticeListController {
 		}else{
     	session = request.getSession();
     	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");         
-  		List<NoticeDTO> noticelist = service.selectnoticeAll();
+  		List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid());
   		
   		System.out.println("++++++++++"+noticelist+"++++++++++");
   		
   		mv.addObject("noticelist", noticelist);
-  		mv.addObject("adminid", admincheck.getAid());
+//  		mv.addObject("adminid", admincheck.getAid());
   		mv.setViewName("/admin/notice_list");
   		return mv;
       }
