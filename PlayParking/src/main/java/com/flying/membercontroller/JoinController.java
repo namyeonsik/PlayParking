@@ -24,6 +24,7 @@ public class JoinController {
 	@Autowired
 	MembersServiceInterface service; 
 	
+	
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinGet(){
 		return "/members/join";
