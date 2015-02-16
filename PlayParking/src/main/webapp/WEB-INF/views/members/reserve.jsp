@@ -89,7 +89,7 @@
 												<button type="button" onclick="getDate()" data-toggle="modal" data-target="#modal-text" class="btn btn-lightblue">Date Select</button>
 												<button type="reset" class="btn btn-default">reset</button>
                                                    
-                                                    <!-- Modal Login From 2-->
+                                    <!-- Modal Login From 2-->
                                         <div class="modal fade" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
@@ -161,7 +161,7 @@
                                                        
                                                     </div><!-- End .accordion-body-wrapper -->
                                                 </div><!-- End .accordion-body -->
-                                            </div><!-- End .accordion-group -->
+                                            
                                             <div class="accordion-group panel">
                                                 <div class="accordion-header">
                                                     <div class="accordion-title">이용시간선택</div><!-- End .accourdion-title -->
@@ -171,11 +171,21 @@
                                                 <div class="accordion-body collapse" id="accordion-three">
                                                     <div class="accordion-body-wrapper">
                                                         <!-- 이용시간선택 -->
-                                                        <div class="row">
-                                                         <div id="selecttimePrint"></div>
-                                                        <input type="button" value="Select Time" class="btn btn-lightblue" onclick="getsTime()" data-toggle="modal" data-target="#modal-text2" /> 
+                        
+                                                        
+                                                        </div><!-- End .accordion-group --> 
+                                                         <div id="selecttimePrint">
+                                                         
+                                                          
+                                                         </div>
+                                                         <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <input type="button" value="Select Time" class="btn btn-lightblue" onclick="getsTime()" data-toggle="modal" data-target="#modal-text2" />
+                                                        <h1></h1> 
+                                                        </div>
                                                    
                                                        </div>
+                                                       <div id="submitPrint"></div>
+                                                  </div><!--  End .accordion-group -->
                                                     <!-- Modal Login From 2-->
                                         <div class="modal fade" id="modal-text2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
                                             <div class="modal-dialog modal-sm-9">
@@ -200,7 +210,7 @@
                                                         
                                                     </div><!-- End .accordion-body-wrapper -->
                                                 </div><!-- End .accordion-body -->
-                                            </div><!-- End .accordion-group --> 
+                                            
                                            </div><!-- End .accordion -->
                                         
                                     </div><!-- End .col-md-6 -->
@@ -242,13 +252,13 @@
 			//alert(stime);
 
 			xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = resultParse2;
+			xhr.onreadystatechange = resultParse3;
 
 			data = data + "&selectTime=" + stime;
 		//	alert(data);
 
 			 msg1=stime;
-			viewData5();
+			viewData6();
 			//포스트방식
 			xhr.open("POST", "insert.do", true);//POST방식 비동기통신
 			xhr.setRequestHeader("content-type",
@@ -267,7 +277,7 @@
 			data = data + "&possibleTime=" + time;
 			msg1=time;
 			//alert(msg1);
-			viewData4();
+			viewData5();
 			//alert(data);
 			//포스트방식
 			xhr.open("POST", "reserve2.do", true);//POST방식 비동기통신
@@ -306,7 +316,7 @@
 			if (date == tempdate2) {
 				msg1="당일예약입니다";
 				//포스트방식
-				viewData3();
+				viewData4();
 				xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
 				xhr.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
@@ -314,7 +324,7 @@
 			} else if (date < tempdate2) {
 				msg1="예약이 불가능한 날 입니다";
 				//포스트방식
-				viewData3();
+				viewData4();
 				xhr.open("POST", "reserve.do", true);//POST방식 비동기통신
 				xhr.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
@@ -322,7 +332,7 @@
 			} else {
 				msg1="선택 가능한 날짜입니다.";
 				//포스트방식
-				viewData3();
+				viewData4();
 				xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
 				xhr.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
@@ -369,24 +379,31 @@
 		function viewData2(d)
 		{
 			//alert("viewData2:"+d);
-			document.getElementById("selecttimePrint").innerHTML += d;
+			document.getElementById("selecttimePrint").innerHTML = d;
+			
+
+		}
+		function viewData3(d)
+		{
+			//alert("viewData2:"+d);
+			document.getElementById("submitPrint").innerHTML = d;
 			
 
 		}
 		
-		 function viewData3()
+		 function viewData4()
 		{
 			
 			document.getElementById("msg1").innerHTML ='<h4>'+ msg1+'</h4>';
 
 		} 
-		 function viewData4()
+		 function viewData5()
 			{
 				
 				document.getElementById("msg2").innerHTML ='<h6>'+ msg1+' 까지 입차를 선택하셨습니다</h6>';
 
 			} 
-		 function viewData5()
+		 function viewData6()
 			{
 				
 				document.getElementById("msg3").innerHTML ='<h6>'+ msg1+' 시간을 선택하셨습니다</h6>';
