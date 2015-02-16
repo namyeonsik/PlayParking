@@ -1,33 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원정보수정</title>
-<style>
-
-#updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
-
-</style>
-
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
+       
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<!-- <meta charset="utf-8">
-        <title>Geass - Creative Onepage Html5 Template</title> -->
+<meta charset="utf-8">
+<!-- <title>회원정보수정</title> -->
+        <title>Geass - Creative Onepage Html5 Template</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
@@ -62,13 +42,15 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
+<style>
+#updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
+</style>
+       
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
                                     
-<!-- 회원정보수정 -->
-<!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
-                                    
+<!-- 회원정보수정 -->                                   
 <div class="col-md-6 col-sm-12 col-xs-12 lg-margin" id="updateform">
 <form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
     
@@ -115,6 +97,17 @@
 </div>
 <!-- 회원정보수정 -->
 
+<!-- Plugins -->
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
 <script type="text/javascript">
 var xhr;//전역변수
 
@@ -151,19 +144,7 @@ function viewData4(data){
  //html
 	document.getElementById("cnamediv").innerHTML =data;
 }
-
 </script>
-
-    
-<!-- Plugins -->
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 
 </body>
 </html> 
