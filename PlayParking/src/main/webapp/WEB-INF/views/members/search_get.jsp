@@ -3,44 +3,98 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>(html)주차장 검색페이지</title>
+
+<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+<!-- <meta charset="utf-8">
+        <title>Geass - Creative Onepage Html5 Template</title> -->
+        <meta name="description" content="Geass is premium and creative multipurpose onepage template">
+        <meta name="author" content="Eon">
+
+        <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
+      
+      
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+
+        <!-- Favicon and Apple Icons -->
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
+
+        <!--- jQuery -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
+
+        <!-- Queryloader -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
+
+        <!-- Modernizr -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
+
+       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
-#selectform { float:left; width: 25%; height:40%;}
-#listform { float:right; width: 75%; height:40%;}
+	#selectform { float:left; width: 100%; height:30%;}
+	#listform { float:right; width: 100%; height:100%;}
 </style> 
 
 <style>
-html, body {width:100%;height:100%;margin:0;padding:0;} 
-.map_wrap {position:relative;overflow:hidden;width:100%;height:60%;}
-.radius_border{border:1px solid #919191;border-radius:5px;}     
-.custom_zoomcontrol {position:absolute;top:10px;right:5px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
-.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
-.custom_zoomcontrol span img {width:20px;height:42px;padding:12px 0;border:none;}             
-.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}    
-@import url("bootswatch.less");
-@import url("variables.less");
-@import url("_bootswatch.scss");
-@import url("_variables.scss");
-h2{  
-  text-align: center;
-}
+	html, body {width:100%;height:100%;margin:0;padding:0;} 
+	/* .map_wrap {position:relative;overflow:hidden;width:100%;height:60%;} */
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.custom_zoomcontrol {position:absolute;top:10px;right:5px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+	.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
+	.custom_zoomcontrol span img {width:20px;height:42px;padding:12px 0;border:none;}             
+	.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}    
 </style> 
 
-<meta name="generator" content="Bootply"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<script src="//code.jquery.com/jquery.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/less/bootswatch.less"></script>
-<script src="${pageContext.request.contextPath}/resources/less/variables.less"></script>
-<script src="${pageContext.request.contextPath}/resources/css/bootstrap.css"></script>
-<script src="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"></script>
-<script src="${pageContext.request.contextPath}/resources/scss/_bootstrap.scss"></script>
-<script src="${pageContext.request.contextPath}/resources/scss/_variables.scss"></script>
+<style>
+.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
+.map_wrap {position:relative;width:100%;height:500px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+.bg_white {background:#fff;}
+#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
+#menu_wrap .option{text-align: center;}
+#menu_wrap .option p {margin:10px 0;}  
+#menu_wrap .option button {margin-left:5px;}
+#placesList li {list-style: none;}
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .item .info{padding:10px 0 10px 55px;}
+#placesList .info .gray {color:#8a8a8a;}
+#placesList .info .jibun {padding-left:26px;background:url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+#placesList .info .tel {color:#009900;}
+#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}
+</style>
+
 </head>
 
 <body>
@@ -56,7 +110,79 @@ h2{
 	        <span onclick="zoomIn()"><img src="${pageContext.request.contextPath}/resources/ico_plus.png" alt="확대"></span>  
 	        <span onclick="zoomOut()"><img src="${pageContext.request.contextPath}/resources/ico_minus.png" alt="축소"></span>
 	    </div>
-	</div> 
+	
+	
+		<%-- <div id="menu_wrap" class="bg_white">
+	        <div class="option">
+	       
+	        <h4>Search and Reservation</h4>
+		    	    
+		    <font size="3"><b>지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
+	  		<font size="2">알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font>
+	  		
+	  		<br>
+	  		
+	  		
+	  		<div class="input-group">
+	          <span class="input-group-addon">지역 선택</span>
+	          <div class="clearfix">
+		          <select onchange="change(value);change2();" name="plocation" class="selectbox">
+					<option>선택하시오</option>
+						<option value="강남구" ${selected[0]}>강남구</option>
+			            <option value="송파구" ${selected[1]}>송파구</option>
+			            <option value="서초구" ${selected[2]}>서초구</option>
+			            <option value="중구" ${selected[3]}>중구</option>
+			            <option value="영등포구" ${selected[4]}>영등포구</option>
+			            <option value="마포구" ${selected[5]}>마포구</option>
+			            <option value="종로구" ${selected[6]}>종로구</option>
+			            <option value="강동구" ${selected[7]}>강동구</option>
+			            <option value="관악구" ${selected[8]}>관악구</option>
+			            <option value="광진구" ${selected[9]}>광진구</option>
+			            <option value="구로구" ${selected[10]}>구로구</option>
+			            <option value="강서구" ${selected[11]}>강서구</option>
+			            <option value="동대문구" ${selected[12]}>동대문구</option>
+			            <option value="노원구" ${selected[13]}>노원구</option>
+			            <option value="서대문구" ${selected[14]}>서대문구</option>
+			            <option value="은평구" ${selected[15]}>은평구</option>
+			            <option value="용산구" ${selected[16]}>용산구</option>
+			            <option value="동작구" ${selected[17]}>동작구</option>
+			             <option value="성북구" ${selected[18]}>성북구</option>
+			            <option value="양천구" ${selected[19]}>양천구</option>
+			            <option value="강북구" ${selected[20]}>강북구</option>
+			            <option value="중랑구" ${selected[21]}>중랑구</option>
+			            <option value="성동구" ${selected[22]}>성동구</option>
+			            <option value="금천구" ${selected[23]}>금천구</option>
+			            <option value="도봉구" ${selected[24]}>도봉구</option>   
+			      </select>
+	          </div>
+	        </div>
+	        
+			 <div class="input-group">
+				 <span class="input-group-addon no-minwidth">
+			     	<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
+			     </span>
+			     <input type="text" class="form-control" placeholder="절약형">
+			    
+			   	 
+			     <span class="input-group-addon no-minwidth">
+			     	<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
+			     </span>
+			     <input type="text" class="form-control" placeholder="지각형">
+			     
+			     
+			     <span class="input-group-addon no-minwidth">
+			     	<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
+			     </span>
+			     <input type="text" class="form-control" placeholder="안전형">
+		     </div>
+	            
+	        </div>
+	        
+	        <hr>
+	        <ul id="placesList"></ul>
+	        <div id="pagination"></div>
+	    </div> --%>
+	</div>
 	
 	<script type="text/javascript" 
 	src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libraries=services">	
@@ -123,9 +249,9 @@ h2{
 					t1 = tlist[0];
 					t2 = tlist[1];
 					t3 = tlist[2];
-									
-					alert(t2);
 					
+					//alert(t2);
+								
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML ="";
 							document.getElementById("t3").innerHTML = t3;
@@ -219,19 +345,21 @@ h2{
 						 
 			 // 지도에 마커를 표시하는 함수입니다 positions.length
 			 function displayMarker() {
-				alert( "*****"+markers[0].parkingimage);
+				//alert( "*****"+markers[0].parkingimage);
 						
 				var marker = new Array();
 				var infowindow = new Array();
 										
 			 	for (var i = 0; i < markers.length; i ++) {				 		
 			 		   // 마커를 생성하고 지도에 표시합니다
-			 		  			 		   
+			 		 	 		   
 					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
 					         title:markers[i].title,
 					         fare:markers[i].fare,
-					         parkingimage:markers[i].parkingimage,
+					         parkingimage1:markers[i].parkingimage1,
+					         parkingimage2:markers[i].parkingimage2,
+					         parkingimage3:markers[i].parkingimage3,
 					         image:markerImage
 					     });
 			 		   
@@ -239,35 +367,55 @@ h2{
 					    
 					    arr.push(marker[i]); //arr에 총 마커 개수 구하기
 					    
-					    marker[i].index = i;				     
+					    marker[i].index = i;
 					   
 				         var realcontent = '<div style="padding:10px;font-size:15px;">'+
+				         '이름 : ' + markers[i].title + '<br>'+
+				         '요금 : ' + markers[i].fare + '<br>'+
+				         '<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7000">'+
+				         '<ol class="carousel-indicators">'+
+				         '<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>'+
+                         '<li data-target="#carousel-example-generic" data-slide-to="1"></li>'+
+                         '<li data-target="#carousel-example-generic" data-slide-to="2"></li>'+
+                         '</ol>'+
+                         '<div class="carousel-inner">'+
+                           '<div class="item active">'+
+                             '<img src='+markers[i].parkingimage1+' class="img-responsive" width=500 heigth=500>'+
+                              '<div class="carousel-caption">'+
+                              '1'+
+                              '</div>'+
+                            '</div>'+
+                            '<div class="item">'+
+                            '<img src='+markers[i].parkingimage2+' class="img-responsive" width=500 heigth=500>'+
+                             '<div class="carousel-caption">'+
+                             '2'+
+                             '</div>'+
+                           '</div>'+
+                           '<div class="item">'+
+                           '<img src='+markers[i].parkingimage3+' class="img-responsive" width=500 heigth=500>'+
+                            '<div class="carousel-caption">'+
+                            '3'+
+                            '</div>'+
+                          '</div>'+
+					     '</div>'+
+						 
+					     '<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>'+
+                         '<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>'+
+                         '</div>'+
+                        '</div>';
+				        	
+				        /*  '<div style="padding:10px;font-size:15px;">'+
 				         '이름 : ' + markers[i].title + '<br>'
 				         +'요금 : ' + markers[i].fare + '<br>'
 				         +'<img src='+markers[i].parkingimage+' width=500 heigth=500>'
-				         +'</div>';
+				         +'</div>'; */
 				         
 			 			 //인포윈도우 생성
 					     infowindow[i] = new daum.maps.InfoWindow({
 					         content: realcontent,
 					         removable : true
 					     }); 
-			 			 
-					  	 /* 
-					  	 // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-				 			var content = '<div class="customoverlay">' +
-				 		    '  <a href="http://map.daum.net/link/map/11394059" target="_blank">' +
-				 		    '    <span class="title">구의야구공원</span>' +
-				 		    '  </a>' +
-				 		    '</div>';
-				 		    
-				 			// 커스텀 오버레이를 생성합니다
-				 		   var customOverlay = new daum.maps.CustomOverlay({
-				 		       map: map,
-				 		       position: position,
-				 		       content: content,
-				 		       yAnchor: 1 
-				 		   });  */
+			 						  	
 					     
 					 	// 마커에 클릭이벤트를 등록합니다
 					     daum.maps.event.addListener(marker[i], 'click', function() {
@@ -295,69 +443,91 @@ h2{
 		if(index2 == document.getElementById('cnt'+index2).value){
 			//document.getElementById('tr'+index2).style.backgroundColor = "#627bfc";		
 			for(var i=1; i<11; i++){
-				if(i!=index2)
-					document.getElementById('tr'+i).style.backgroundColor = "#ffffff";	
-				else
-					document.getElementById('tr'+i).style.backgroundColor = "#627bfc";		
+				if(i!=index2){
+					document.getElementById('tr'+i).style.backgroundColor = "#ffffff";
+					document.getElementById('cnt'+i).style.backgroundColor="#ffffff";
+				}
+				else{//#D9EDF7
+					document.getElementById('tr'+i).style.backgroundColor = "#EAEAEA";
+					document.getElementById('cnt'+i).style.backgroundColor="#EAEAEA";
+				}
 			}
 		}else{
 			
 		}
 	}
 	</script>
-
-<div id="selectform">	
-	<div id="gu" class="alert alert-info">
-	    <h2>지역(구) 선택</h2>
-	    <p>지역(구)를 선택한 후 알맞은 맞춤형을 선택하세요</p>
-  	</div>
-  	
-  	<div>
-	<!-- 지역선택 select box -->
-	<form name="f">
-	    <select onchange="change(value);change2();" name="plocation" class="form-control">
-			<option>선택하시오</option>
-				<option value="강남구" ${selected[0]}>강남구</option>
-	            <option value="송파구" ${selected[1]}>송파구</option>
-	            <option value="서초구" ${selected[2]}>서초구</option>
-	            <option value="중구" ${selected[3]}>중구</option>
-	            <option value="영등포구" ${selected[4]}>영등포구</option>
-	            <option value="마포구" ${selected[5]}>마포구</option>
-	            <option value="종로구" ${selected[6]}>종로구</option>
-	            <option value="강동구" ${selected[7]}>강동구</option>
-	            <option value="관악구" ${selected[8]}>관악구</option>
-	            <option value="광진구" ${selected[9]}>광진구</option>
-	            <option value="구로구" ${selected[10]}>구로구</option>
-	            <option value="강서구" ${selected[11]}>강서구</option>
-	            <option value="동대문구" ${selected[12]}>동대문구</option>
-	            <option value="노원구" ${selected[13]}>노원구</option>
-	            <option value="서대문구" ${selected[14]}>서대문구</option>
-	            <option value="은평구" ${selected[15]}>은평구</option>
-	            <option value="용산구" ${selected[16]}>용산구</option>
-	            <option value="동작구" ${selected[17]}>동작구</option>
-	             <option value="성북구" ${selected[18]}>성북구</option>
-	            <option value="양천구" ${selected[19]}>양천구</option>
-	            <option value="강북구" ${selected[20]}>강북구</option>
-	            <option value="중랑구" ${selected[21]}>중랑구</option>
-	            <option value="성동구" ${selected[22]}>성동구</option>
-	            <option value="금천구" ${selected[23]}>금천구</option>
-	            <option value="도봉구" ${selected[24]}>도봉구</option>   
-	    </select>
-	    
-	    <div class="col-lg-10">
-        <div class="radio">
-	    <input type="radio" id="radio" name="radio" value="절약형" onclick="change();">절약형
-		</div>
-		<div class="radio">
-		<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">지각형
-		</div>
-		<div class="radio">
-		<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">안전형
-		</div>
-		</div>
-	</form> 
 	
-	</div>
+<div id="selectform" >	
+<form name="f">
+   <div class="col-md-12 col-sm-12 col-xs-12">
+  
+  <br>
+	   <h4>Search and Reservation</h4>
+	    	    
+	    <font color="#D5D5D5" size="3"><b>지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
+  		<font color="#D5D5D5" size="2">알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font>
+  		
+  		<br>
+  		
+  		
+  		<div class="input-group">
+          <span class="input-group-addon">지역 선택</span>
+          <div class="clearfix">
+	          <select onchange="change(value);change2();" name="plocation" class="selectbox">
+				<option>선택하시오</option>
+					<option value="강남구">강남구</option>
+		            <option value="송파구">송파구</option>
+		            <option value="서초구">서초구</option>
+		            <option value="중구">중구</option>
+		            <option value="영등포구">영등포구</option>
+		            <option value="마포구">마포구</option>
+		            <option value="종로구">종로구</option>
+		            <option value="강동구">강동구</option>
+		            <option value="관악구">관악구</option>
+		            <option value="광진구">광진구</option>
+		            <option value="구로구">구로구</option>
+		            <option value="강서구">강서구</option>
+		            <option value="동대문구">동대문구</option>
+		            <option value="노원구">노원구</option>
+		            <option value="서대문구">서대문구</option>
+		            <option value="은평구">은평구</option>
+		            <option value="용산구">용산구</option>
+		            <option value="동작구">동작구</option>
+		            <option value="성북구">성북구</option>
+		            <option value="양천구">양천구</option>
+		            <option value="강북구">강북구</option>
+		            <option value="중랑구">중랑구</option>
+		            <option value="성동구">성동구</option>
+		            <option value="금천구">금천구</option>
+		            <option value="도봉구">도봉구</option>   
+		      </select>
+          </div>
+        </div>
+        
+		 <div class="input-group">
+			 <span class="input-group-addon no-minwidth">
+		     	<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
+		     </span>
+		     <input type="text" class="form-control" placeholder="절약형">
+		    
+		   	 
+		     <span class="input-group-addon no-minwidth">
+		     	<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
+		     </span>
+		     <input type="text" class="form-control" placeholder="지각형">
+		     
+		     
+		     <span class="input-group-addon no-minwidth">
+		     	<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
+		     </span>
+		     <input type="text" class="form-control" placeholder="안전형">
+	     </div>
+	 
+	 
+	</div> 
+		
+	</form>	
 </div>
 
 <div id="listform">
@@ -365,5 +535,16 @@ h2{
 	<p id="t1"></p>
 	<p id="t3"></p>
 </div>	
+
+		<!-- Plugins -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>        
+  
 </body>
 </html>

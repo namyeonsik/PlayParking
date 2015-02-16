@@ -41,9 +41,9 @@ public class ReserveController {
          return mv;
       }else{
          pid = Integer.parseInt(request.getParameter("pid"));      
-         System.out.println("pid값:"+pid);
-         
+         System.out.println("pid값**************:"+pid);         
          System.out.println("get방식****");
+         mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
          return mv;
       }      

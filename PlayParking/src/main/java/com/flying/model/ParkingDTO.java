@@ -14,6 +14,10 @@ public class ParkingDTO {
 	private double x;
 	private double y;	
 	private String pimage;	
+	private String pimage2;	
+	private String pimage3;	
+	private String paddress;
+	private String ptip;
 	
 	public int getPcount() {
 		return pcount;
@@ -25,7 +29,7 @@ public class ParkingDTO {
 	public ParkingDTO(){};
 	public ParkingDTO(int pid, int pfare, double pwidth, double plength,
 			int platefare, int pamount,int pcount, String pname, String plocation,
-			String pphone, double x, double y, String pimage) {
+			String pphone, double x, double y, String pimage,String pimage2,String pimage3,String paddress,String ptip) {
 		super();
 		this.pid = pid;
 		this.pfare = pfare;
@@ -40,14 +44,43 @@ public class ParkingDTO {
 		this.x = x;
 		this.y = y;
 		this.pimage = pimage;
+		this.pimage2 = pimage2;
+		this.pimage3 = pimage3;
+		this.paddress = paddress;
+		this.ptip = ptip;
 	}
-		
+	
+	
+	public String getPaddress() {
+		return paddress;
+	}
+	public void setPaddress(String paddress) {
+		this.paddress = paddress;
+	}
+	public String getPtip() {
+		return ptip;
+	}
+	public void setPtip(String ptip) {
+		this.ptip = ptip;
+	}
 	public String getPimage() {
 		return pimage;
 	}
 	public void setPimage(String pimage) {
 		this.pimage = pimage;
 	}	
+	public String getPimage2() {
+		return pimage2;
+	}
+	public void setPimage2(String pimage2) {
+		this.pimage2 = pimage2;
+	}
+	public String getPimage3() {
+		return pimage3;
+	}
+	public void setPimage3(String pimage3) {
+		this.pimage3 = pimage3;
+	}
 	public int getPid() {
 		return pid;
 	}
@@ -120,6 +153,8 @@ public class ParkingDTO {
 				+ pwidth + ", plength=" + plength + ", platefare=" + platefare
 				+ ", pamount=" + pamount + ", pcount=" + pcount + ", pname="
 				+ pname + ", plocation=" + plocation + ", pphone=" + pphone
-				+ ", x=" + x + ", y=" + y + ", pimage=" + pimage + "]";
+				+ ", x=" + x + ", y=" + y + ", pimage=" + pimage + ", pimage2="
+				+ pimage2 + ", pimage3=" + pimage3 + ", paddress=" + paddress + ""
+						+ ", ptip=" + ptip + "]";
 	}
 }
