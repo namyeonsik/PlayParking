@@ -19,9 +19,10 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/style.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -39,9 +40,7 @@
     <body data-spy="scroll" data-target="#main-menu">
         <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
         <div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
-        <div id="wrapper">
-
-            <!-- Header / Menu Section -->
+        <div id="wrapper">          
             <header id="header" class="transparent">
                 <nav class="navbar navbar-default navbar-transparent" role="navigation">
                     <div class="container">
@@ -61,8 +60,7 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#home">Home</a></li>
                                 <li><a href="#aboutus">About us</a></li>
-                                <li><a href="#services">reserve</a></li>
-                                <li><a href="#search">search</a></li>
+                                <li><a href="#search">Search</a></li>
                                 <li><a href="#portfolio">Notice</a></li>
                                 <li class="dropdown">
                                     <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
@@ -72,11 +70,14 @@
                                         <li><a href="single.html">point check</a></li>
                                     </ul>
                                 </li>
+                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
+				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+				 				<li><a href="adminlogin.do">Admin</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
-            </header>
+            </header><!-- 헤더끝 -->
 
             <!-- Home Section -->
             <section id="home" class="section">
@@ -114,138 +115,51 @@
             </section><!-- End #home -->
 
 
-            
-            <!-- Skills Section -->
-            <div class="skills-container parallax" data-stellar-background-ratio="0.4">
-                <div class="overlaybg"></div><!-- End .overlaybg -->
-                <div class="parallax-content">
-                        <div class="container">
-                            <header class="parallax-header clearfix text-center">
-                                <h2 class="parallax-title">Our Experience</h2>
-                                <p class="parallax-desc">Some of our lucky numbers, our experiences. How good we are and What do we offer...</p>
-                            </header>
-                            <div class="row">
+ <!-- Modal Login Form-->
+		<div class="modal fade" id="modal-login-form" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<form id="login-form" method="post" action="memberlogin.do">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+						</div>
+						<!-- End .modal-header -->
+			<div class="modal-body">
+				<div class="form-group">
+						<label for="email2" class="form-label">Your Id<span
+									class="required">*</span></label> <input type="text" name="mid"
+									id="mid" class="form-control input-lg">
+							</div>
+							<!-- End .form-group -->
+							<div class="form-group">
+								<label for="password2" class="form-label">Your Passowrd<span
+									class="required">*</span></label> <input type="password"
+									name="mpwd" id="mpwd" class="form-control input-lg">
+							</div>
+							<!-- End .form-group -->
 
-                                <div class="col-md-3 col-sm-6 col-xs-6 circle-progress-container">
-                                    <div class="circle-progress progress-animate">
-                                        <input type="text" class="knob" data-width="160"  data-height="160" data-readOnly="true" data-fgColor="#f8d61b" data-animateto="92" data-thickness=".06" data-animatespeed="1000">
-                                    </div><!-- End .circle-progress -->
-                                    <h3 class="progress-title">Web Design</h3>
-                                </div><!-- End .col-md-3 -->
-
-                                <div class="col-md-3 col-sm-6 col-xs-6 circle-progress-container">
-                                    <div class="circle-progress progress-animate">
-                                        <input type="text" class="knob" data-width="160"  data-height="160" data-readOnly="true" data-fgColor="#1bc4f5" data-animateto="86" data-thickness=".06" data-animatespeed="1400">
-                                    </div><!-- End .circle-progress -->
-                                    <h3 class="progress-title">Logo Design</h3>
-                                </div><!-- End .col-md-3 -->
-
-                                <div class="lg-margin visible-sm visible-xs hidden-xss clearfix"></div><!-- space -->
-
-                                <div class="col-md-3 col-sm-6 col-xs-6 circle-progress-container">
-                                    <div class="circle-progress progress-animate">
-                                        <input type="text" class="knob" data-width="160"  data-height="160" data-readOnly="true" data-fgColor="#c90e31" data-animateto="90" data-thickness=".06" data-animatespeed="1800">
-                                    </div><!-- End .circle-progress -->
-                                    <h3 class="progress-title">Advertising</h3>
-                                </div><!-- End .col-md-3 -->
-
-                                <div class="col-md-3 col-sm-6 col-xs-6 circle-progress-container">
-                                    <div class="circle-progress progress-animate">
-                                        <input type="text" class="knob" data-width="160"  data-height="160" data-readOnly="true" data-fgColor="#09d33d" data-animateto="100" data-thickness=".06" data-animatespeed="2200">
-                                    </div><!-- End .circle-progress -->
-                                    <h3 class="progress-title">Happy Face</h3>
-                                </div><!-- End .col-md-3 -->
-                                
-                            </div><!-- End .row -->
-                        </div><!-- End .container -->
-                </div><!-- End parallax-content -->
-            </div><!-- End .countto-container -->
-
-         
-            <!-- Count Parallax Section -->
-            <div class="countto-container parallax" data-stellar-background-ratio="0.4">
-                <div class="overlaybg"></div><!-- End .overlaybg -->
-                <div class="parallax-content">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 count-container">
-                                <span class="count" data-from="0" data-to="724" data-speed="3000" data-refresh-interval="50">0</span>
-                                <h3>Complated <span>Projects</span></h3>
-                            </div><!-- End .count-container -->
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 count-container">
-                                <span class="count" data-from="0" data-to="476" data-speed="3000" data-refresh-interval="50">0</span>
-                                <h3>Satisfied <span>Customers</span></h3>
-                            </div><!-- End .count-container -->
-
-                            <div class="xlg-margin visible-sm visible-xs hidden-xss clearfix"></div><!-- space -->
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 count-container">
-                                <span class="count" data-from="0" data-to="89" data-speed="3000" data-refresh-interval="50">0</span>
-                                <h3>Winning <span>Awards</span></h3>
-                            </div><!-- End .count-container -->
-
-                            <div class="col-md-3 col-sm-6 col-xs-6 count-container">
-                                <span class="count" data-from="0" data-to="1174" data-speed="3000" data-refresh-interval="50">0</span>
-                                <h3>Enjoyable <span>Days</span></h3>
-                            </div><!-- End .count-container -->
-
-                        </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End .parallax-content -->
-            </div><!-- End .countto-container -->
-
-            
-
-            <!-- Testimonials Section -->
-            <div class="testimonials-container parallax" data-stellar-background-ratio="0.4">
-                <div class="overlaybg"></div><!-- End .overlaybg -->
-                <div class="parallax-content">
-                    <div class="container">
-                        <header class="parallax-header clearfix text-center md-margin2x">
-                            <h2 class="parallax-title clear-margin">Testimonials</h2>
-                        </header>
-                        <div class="row">
-
-                            <div class="col-md-8 col-md-push-2 col-sm-8 col-sm-push-2">
-                                <div class="owl-carousel testimonials-carousel">
-                                    <div class="testimonial">
-                                        <figure><img src="${pageContext.request.contextPath}/resources/geass/images/testimonials/dean.jpg" alt="Dean Winchester"></figure>
-                                        <p>First of all thank you very much for awesome product. What i like about you, is you don't give us only quality products, you also provide awesome supports. I am a life time customer here. When i need to design a website, you will be the one that i will ask to create. Thanks again for the world class design and clean code. Really appreciate.</p>
-                                        <span class="testimonial-owner">Dean Winchester - <span>Ceo of Parke</span></span>
-                                    </div><!-- End .testimonial -->
-
-                                    <div class="testimonial">
-                                        <figure><img src="${pageContext.request.contextPath}/resources/geass/images/testimonials/jane.jpg" alt="Jane Watson"></figure>
-                                        <p>I have used Geass’s services for the last three years. I have three sources of income - one from my rental property, one from my full time job and the other from my investments. Geass pointed out ways I can reduce taxes and boost my income in legitimately creative ways.</p>
-                                        <span class="testimonial-owner">Jane Watson - <span>Developer of Cacky</span></span>
-                                    </div><!-- End .testimonial -->
-
-                                    <div class="testimonial">
-                                        <figure><img src="${pageContext.request.contextPath}/resources/geass/images/testimonials/sam.jpg" alt="Sam Smimsonn"></figure>
-                                        <p>Fantastic product, my sites all run super fast and the support is excellent! Fortunately, Geass was my knight in shining armor. They set me up on their enterprise plan and handled the entire process flawlessly. Thank you very much for helping our company getting better. Can't wait to wokr with you again.</p>
-                                        <span class="testimonial-owner">Sam Smimsonn - <span>Designer of Goopsy</span></span>
-                                    </div><!-- End .testimonial -->
-                                </div><!-- End. owl-carousel -->
-                            </div><!-- End .col-md-8 -->
-                            
-                        </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End parallax-content -->
-            </div><!-- End .testimonials-container -->
-
-
-            <footer id="footer" class="pattern13">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="index.html" class="footer-logo" title="Geass - Creative Onepage Template"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" width="210" height="75" alt="Geass Logo"></a>
-                        </div><!-- End .col-md-12 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-
-                <div class="footer-social-icons transparent">
+						</div>
+						<!-- End .modal-body -->
+						
+						<div class="modal-footer">
+							<button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
+							<button type="submit" class="btn btn-blue">Login</button>
+							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+						</div>
+						<!-- End .modal-footer -->
+					</div>
+					<!-- End .modal-content -->
+				</div>
+				<!-- End .modal-dialog -->
+			</form>
+		</div>
+		<!-- End .modal -->
+ 
+               <div class="footer-social-icons transparent">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -261,7 +175,7 @@
                         </div><!-- End .row -->
                     </div><!-- End .container -->
                 </div><!-- End .footer-social-icons -->
-
+			<footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -290,6 +204,14 @@
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
         <script>
+        
+        var elem = document.getElementById('loginmodal');
+        elem.onclick = showModal;
+
+        function showModal() {
+            $('#modal-login-form').modal('show');
+            return false;
+        }
             /*----------------------------------------------------*/
             //* Google javascript api v3  -- map */
             /*----------------------------------------------------*/

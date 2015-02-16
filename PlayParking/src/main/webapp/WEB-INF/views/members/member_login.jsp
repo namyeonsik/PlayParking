@@ -18,24 +18,58 @@
  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
+
+ <meta charset="utf-8">
+<title>Geass - Creative Onepage Html5 Template</title>
+<meta name="description" content="Geass is premium and creative multipurpose onepage template">
+<meta name="author" content="Eon">
+
+<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switcch.css">
+        <!-- Favicon and Apple Icons -->
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
+
+        <!--- jQuery -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
+
+        <!-- Queryloader -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
+
+        <!-- Modernizr -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
+        
 <title>멤버 로그인</title>
 <style>
 
-#loginform { float: left; margin-left: 6%; margin-top:14%; width: 35%;}
-#joinform { float : right; ; width: 44%; margin-right: 10%; margin-top: 5%}
+#loginform { float: left; margin-top:14%; width: 35%;}
+#joinform { float : right; ; width: 45%; margin-right: 10%; margin-top: 5%}
 </style>
 
-<meta name="generator" content="Bootply" />
+<!-- <meta name="generator" content="Bootply" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한)
 <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
+합쳐지고 최소화된 최신 CSS
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+합쳐지고 최소화된 최신 자바스크립트
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
+ -->
 <script type="text/javascript">
 
 function validationcheck(){
@@ -83,11 +117,102 @@ function validationlogin(){
 }
 </script>
 </head>
-<body>
-<%@ include file="../Header.jsp" %>
+   <body data-spy="scroll" data-target="#main-menu">
+        <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
+        <div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
+        <div id="wrapper">
+
+                <header id="header" class="transparent">
+                <nav class="navbar navbar-default navbar-transparent" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#home">Home</a></li>
+                                <li><a href="#aboutus">About us</a></li>
+                                <li><a href="#search">Search</a></li>
+                                <li><a href="#portfolio">Notice</a></li>
+                                <li class="dropdown">
+                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog.html">myinfo update</a></li>
+                                        <li><a href="blog.html">reserve check</a></li>
+                                        <li><a href="single.html">point check</a></li>
+                                    </ul>
+                                </li>
+                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
+				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+				 				<li><a href="adminlogin.do">Admin</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header><!-- 헤더끝 -->
 
 
-<!-- 로그인 -->
+
+<!-- Modal Login Form-->
+		<div class="modal fade" id="modal-login-form" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<form id="login-form" method="post" action="memberlogin.do">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+						</div>
+						<!-- End .modal-header -->
+			<div class="modal-body">
+				<div class="form-group">
+						<label for="email2" class="form-label">Your Id<span
+									class="required">*</span></label> <input type="text" name="mid"
+									id="mid" class="form-control input-lg">
+							</div>
+							<!-- End .form-group -->
+							<div class="form-group">
+								<label for="password2" class="form-label">Your Passowrd<span
+									class="required">*</span></label> <input type="password"
+									name="mpwd" id="mpwd" class="form-control input-lg">
+							</div>
+							<!-- End .form-group -->
+
+						</div>
+						<!-- End .modal-body -->
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-blue">Login</button>
+							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+						</div>
+						<!-- End .modal-footer -->
+					</div>
+					<!-- End .modal-content -->
+				</div>
+				<!-- End .modal-dialog -->
+			</form>
+		</div>
+		<!-- End .modal -->
+ </div>
+
+
+
+
+
+
+
+
+<!--  로그인 
 <div id="loginform">
 <form class="form-horizontal" action="memberlogin.do" method="post" 
      onsubmit="return validationlogin();" name="loginfrm" style="width: 90%">
@@ -114,11 +239,11 @@ function validationlogin(){
     </div>
   </fieldset>
 </form>
-</div>
+</div> -->
 <!-- 로그인끝 -->
 
-<!-- 회원가입 -->
-<div id="joinform">
+<!--  회원가입 -->
+<!-- <div id="joinform">
 <form class="form-horizontal" action="join.do" method="post" 
      onsubmit="return validationcheck();" name="myfrm" style="width: 90%">
   <fieldset>
@@ -183,13 +308,112 @@ function validationlogin(){
         <button type="submit" class="btn btn-primary">Join</button>
       </div>
     </div>
-  </fieldset>
+   </fieldset>
 </form>
-</div>
-<!-- 회원가입끝 -->
+</div>-->
 
+
+
+<!-- Plugins -->
+		<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+		
+        <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+
+ <script>
+            /*----------------------------------------------------*/
+            //* Google javascript api v3  -- map */
+            /*----------------------------------------------------*/
+            (function () {
+                "use strict";
+
+                if (document.getElementById("map")) {
+                    var locations = [
+                        ['<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>', 38.396652, 27.090560, 9],
+                        ['<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>', 38.432742, 27.159140, 8]
+                    ];
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 13,
+                        center: new google.maps.LatLng(38.414592, 27.143122),
+                        scrollwheel: false,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+
+                    var infowindow = new google.maps.InfoWindow();
+
+
+                    var marker, i;
+
+                    for (i = 0; i < locations.length; i++) {  
+                      marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        icon: 'images/pin.png',
+                      });
+
+                      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                          infowindow.setContent(locations[i][0]);
+                          infowindow.open(map, marker);
+                        }
+                      })(marker, i));
+                    }
+                }
+
+            }());
+
+            $(function() {
+                // Slider Revolution for Home Section
+                jQuery('#revslider').revolution({
+                    delay:9000,
+                    startwidth: 1140,
+                    startheight: 600,
+                    onHoverStop:"true",
+                    hideThumbs:0,
+                    lazyLoad:"on",
+                    navigationType:"none",
+                    navigationHAlign:"center",
+                    navigationVAlign:"bottom",
+                    navigationHOffset:0,
+                    navigationVOffset:20,
+                    soloArrowLeftHalign:"left",
+                    soloArrowLeftValign:"center",
+                    soloArrowLeftHOffset:0,
+                    soloArrowLeftVOffset:0,
+                    soloArrowRightHalign:"right",
+                    soloArrowRightValign:"center",
+                    soloArrowRightHOffset:0,
+                    soloArrowRightVOffset:0,
+                    touchenabled:"on",
+                    stopAtSlide:-1,
+                    stopAfterLoops:-1,
+                    dottedOverlay:"none",
+                    spinned:"spinner5",
+                    shadow:0,
+                    hideTimerBar: "off",
+                    fullWidth:"off",
+                    fullScreen:"on",
+                    navigationStyle:"preview4"
+                  });
+            });
+        </script>
 
 <script type="text/javascript">
+var elem = document.getElementById('loginmodal');
+elem.onclick = showModal;
+
+function showModal() {
+    $('#modal-login-form').modal('show');
+    return false;
+}
+
 var xhr;//전역변수
 
 function call(){
@@ -224,6 +448,7 @@ function resultParse(){
 function viewData4(data){
  //html
 	document.getElementById("cnamediv").innerHTML =data;
+ 	alert(data);
 }
 
 </script>

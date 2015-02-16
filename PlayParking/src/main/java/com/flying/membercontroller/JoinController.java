@@ -26,7 +26,7 @@ public class JoinController {
 	
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinGet(){
-		return "/members/member_login";
+		return "/members/join";
 	}
 	
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
