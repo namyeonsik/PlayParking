@@ -139,16 +139,16 @@ function validationlogin(){
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse navbar-right" id="main-menu">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#home">Home</a></li>
+                                <li class="active"><a href="membermain.do">Home</a></li>
                                 <li><a href="#aboutus">About us</a></li>
-                                <li><a href="#search">Search</a></li>
-                                <li><a href="#portfolio">Notice</a></li>
+                                <li><a href="search.do">Search</a></li>
+                                <li><a href="noticelist1.do">Notice</a></li>
                                 <li class="dropdown">
                                     <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="blog.html">myinfo update</a></li>
-                                        <li><a href="blog.html">reserve check</a></li>
-                                        <li><a href="single.html">point check</a></li>
+                                        <li><a href="memberupdate.do">myinfo update</a></li>
+                                        <li><a href="reservecheck.do">reserve check</a></li>
+                                        <li><a href="pointcheck.do">point check</a></li>
                                     </ul>
                                 </li>
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
@@ -208,7 +208,7 @@ function validationlogin(){
 <!-- 새로운 회원가입 -->
 
  <section id="contactus" class="section">
-           <div class="container">
+           <div class="container" style="border:#6B71BD solid 1px">
                     <div class="row">
                         <div class="col-md-8 col-sm-10 col-md-push-2 col-sm-push-1">
                             <h2 class="text-center lg-margin">Create Account</h2>

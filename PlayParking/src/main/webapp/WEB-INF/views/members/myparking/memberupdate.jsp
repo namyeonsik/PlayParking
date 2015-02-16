@@ -11,20 +11,6 @@
 
 </style>
 
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <!-- <meta charset="utf-8">
         <title>Geass - Creative Onepage Html5 Template</title> -->
@@ -63,8 +49,46 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
 </head>
-<body>
-<%@ include file="../../Header.jsp" %>
+ <body>
+<div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
+<div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
+        <header id="header" class="transparent">
+                <nav class="navbar navbar-default navbar-transparent" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#home">Home</a></li>
+                                <li><a href="#aboutus">About us</a></li>
+                                <li><a href="#search">Search</a></li>
+                                <li><a href="#portfolio">Notice</a></li>
+                                <li class="dropdown">
+                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="memberupdate.do">myinfo update</a></li>
+                                        <li><a href="reservecheck.do">reserve check</a></li>
+                                        <li><a href="pointcheck.do">point check</a></li>
+                                    </ul>
+                                </li>
+                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
+				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+				 				<li><a href="adminlogin.do">Admin</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header><!-- 헤더끝 -->
                                     
 <!-- 회원정보수정 -->
 <!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->

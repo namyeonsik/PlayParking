@@ -39,7 +39,7 @@ public class NoticeListController {
   		List<NoticeDTO> noticelist = service.selectMembernotice();
   		mv.addObject("noticelist", noticelist);  		
   		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list_member");
+  		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }
    }

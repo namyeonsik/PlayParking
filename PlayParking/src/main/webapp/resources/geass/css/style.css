@@ -103,7 +103,7 @@ body.dark {
 
 /* this is important to make #home section height 100%*/
 #wrapper {
-  height:100%;
+  height:0%;
 }
 
 /* this is important to make layout boxed and fix the height bug */
