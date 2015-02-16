@@ -57,132 +57,108 @@
 </style> 
 
 <style>
-.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-.map_wrap {position:relative;width:100%;height:500px;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+.map_wrap {position:relative;width:100%;height:800px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:300px;height:500px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
-#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
+#menu_wrap hr {display: block; height: 1px;border:1; border-top: 5px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
 #menu_wrap .option button {margin-left:5px;}
-#placesList li {list-style: none;}
-#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
-#placesList .item span {display: block;margin-top:4px;}
-#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-#placesList .item .info{padding:10px 0 10px 55px;}
-#placesList .info .gray {color:#8a8a8a;}
-#placesList .info .jibun {padding-left:26px;background:url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
-#placesList .info .tel {color:#009900;}
-#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
-#placesList .item .marker_1 {background-position: 0 -10px;}
-#placesList .item .marker_2 {background-position: 0 -56px;}
-#placesList .item .marker_3 {background-position: 0 -102px}
-#placesList .item .marker_4 {background-position: 0 -148px;}
-#placesList .item .marker_5 {background-position: 0 -194px;}
-#placesList .item .marker_6 {background-position: 0 -240px;}
-#placesList .item .marker_7 {background-position: 0 -286px;}
-#placesList .item .marker_8 {background-position: 0 -332px;}
-#placesList .item .marker_9 {background-position: 0 -378px;}
-#placesList .item .marker_10 {background-position: 0 -423px;}
-#placesList .item .marker_11 {background-position: 0 -470px;}
-#placesList .item .marker_12 {background-position: 0 -516px;}
-#placesList .item .marker_13 {background-position: 0 -562px;}
-#placesList .item .marker_14 {background-position: 0 -608px;}
-#placesList .item .marker_15 {background-position: 0 -654px;}
-#pagination {margin:10px auto;text-align: center;}
-#pagination a {display:inline-block;margin-right:10px;}
-#pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
-
 </head>
 
 <body>
 <%@ include file="../Header.jsp"%>
 <!-- style="border:#6B71BD solid 1px" -->
-	<!-- ---------------------------**지도**--------------------------- -->
+<!-- ---------------------------**지도**--------------------------- -->
 	
-	<div class="map_wrap" >
-		<!-- 지도를 표시할 div 입니다 -->
-	    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
-	    <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
-	    <div class="custom_zoomcontrol radius_border"> 
-	        <span onclick="zoomIn()"><img src="${pageContext.request.contextPath}/resources/ico_plus.png" alt="확대"></span>  
-	        <span onclick="zoomOut()"><img src="${pageContext.request.contextPath}/resources/ico_minus.png" alt="축소"></span>
-	    </div>
+<div class="map_wrap" >
+
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
+
+<!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+<div class="custom_zoomcontrol radius_border"> 
+	<span onclick="zoomIn()"><img src="${pageContext.request.contextPath}/resources/ico_plus.png" alt="확대"></span>  
+	<span onclick="zoomOut()"><img src="${pageContext.request.contextPath}/resources/ico_minus.png" alt="축소"></span>
+</div>
 	
 	
-		<%-- <div id="menu_wrap" class="bg_white">
-	        <div class="option">
-	       
-	        <h4>Search and Reservation</h4>
-		    	    
-		    <font size="3"><b>지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
-	  		<font size="2">알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font>
-	  		
-	  		<br>
-	  		
-	  		
-	  		<div class="input-group">
-	          <span class="input-group-addon">지역 선택</span>
-	          <div class="clearfix">
-		          <select onchange="change(value);change2();" name="plocation" class="selectbox">
-					<option>선택하시오</option>
-						<option value="강남구" ${selected[0]}>강남구</option>
-			            <option value="송파구" ${selected[1]}>송파구</option>
-			            <option value="서초구" ${selected[2]}>서초구</option>
-			            <option value="중구" ${selected[3]}>중구</option>
-			            <option value="영등포구" ${selected[4]}>영등포구</option>
-			            <option value="마포구" ${selected[5]}>마포구</option>
-			            <option value="종로구" ${selected[6]}>종로구</option>
-			            <option value="강동구" ${selected[7]}>강동구</option>
-			            <option value="관악구" ${selected[8]}>관악구</option>
-			            <option value="광진구" ${selected[9]}>광진구</option>
-			            <option value="구로구" ${selected[10]}>구로구</option>
-			            <option value="강서구" ${selected[11]}>강서구</option>
-			            <option value="동대문구" ${selected[12]}>동대문구</option>
-			            <option value="노원구" ${selected[13]}>노원구</option>
-			            <option value="서대문구" ${selected[14]}>서대문구</option>
-			            <option value="은평구" ${selected[15]}>은평구</option>
-			            <option value="용산구" ${selected[16]}>용산구</option>
-			            <option value="동작구" ${selected[17]}>동작구</option>
-			             <option value="성북구" ${selected[18]}>성북구</option>
-			            <option value="양천구" ${selected[19]}>양천구</option>
-			            <option value="강북구" ${selected[20]}>강북구</option>
-			            <option value="중랑구" ${selected[21]}>중랑구</option>
-			            <option value="성동구" ${selected[22]}>성동구</option>
-			            <option value="금천구" ${selected[23]}>금천구</option>
-			            <option value="도봉구" ${selected[24]}>도봉구</option>   
-			      </select>
-	          </div>
-	        </div>
-	        
-			 <div class="input-group">
-				 <span class="input-group-addon no-minwidth">
-			     	<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
-			     </span>
-			     <input type="text" class="form-control" placeholder="절약형">
-			    
-			   	 
-			     <span class="input-group-addon no-minwidth">
-			     	<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
-			     </span>
-			     <input type="text" class="form-control" placeholder="지각형">
-			     
-			     
-			     <span class="input-group-addon no-minwidth">
-			     	<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
-			     </span>
-			     <input type="text" class="form-control" placeholder="안전형">
-		     </div>
-	            
-	        </div>
-	        
-	        <hr>
-	        <ul id="placesList"></ul>
-	        <div id="pagination"></div>
-	    </div> --%>
+<div id="menu_wrap" class="bg_white">
+	<div id="option">	
+		<form name="f">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<font size="7"><b>Search and Reservation</b></font><br>
+				<font color="#5D5D5D" size="3"><b>지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
+				<font color="#5D5D5D" size="3">알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font><br>
+				<br>
+				<hr>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon">지역 선택</span>
+					<div class="clearfix">
+						<select onchange="change(value);change2();" name="plocation" class="selectbox">
+						<option>Search Country</option>
+						<option value="강남구">강남구</option>
+						<option value="송파구">송파구</option>
+						<option value="서초구">서초구</option>
+						<option value="중구">중구</option>
+						<option value="영등포구">영등포구</option>
+						<option value="마포구">마포구</option>
+						<option value="종로구">종로구</option>
+						<option value="강동구">강동구</option>
+						<option value="관악구">관악구</option>
+						<option value="광진구">광진구</option>
+						<option value="구로구">구로구</option>
+						<option value="강서구">강서구</option>
+						<option value="동대문구">동대문구</option>
+						<option value="노원구">노원구</option>
+						<option value="서대문구">서대문구</option>
+						<option value="은평구">은평구</option>
+						<option value="용산구">용산구</option>
+						<option value="동작구">동작구</option>
+						<option value="성북구">성북구</option>
+						<option value="양천구">양천구</option>
+						<option value="강북구">강북구</option>
+						<option value="중랑구">중랑구</option>
+						<option value="성동구">성동구</option>
+						<option value="금천구">금천구</option>
+						<option value="도봉구">도봉구</option>   
+						</select>
+					</div>
+				</div>
+				
+				<br>   
+				     
+				<div class="radio">
+					<label>					
+					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
+					<font size="4">절약형</font>	
+					</label>
+				</div>
+				<div class="radio">
+					<label>					
+					<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
+					<font size="4">지각형</font>	
+					</label>
+				</div>
+				<div class="radio">
+					<label>					
+					<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
+					<font size="4">안전형</font>	
+					</label>
+				</div>
+			</div> 
+		</form>	
 	</div>
+	
+	<!-- <ul id="placesList"></ul>
+	<div id="pagination"></div> -->
+</div>
+
+</div>
 	
 	<script type="text/javascript" 
 	src="//apis.daum.net/maps/maps3.js?apikey=c05e019c266785a869e42a43d7a7d076&libraries=services">	
@@ -253,11 +229,11 @@
 					//alert(t2);
 								
 					if(t3.length>1000){
-							document.getElementById("t1").innerHTML ="";
+							document.getElementById("t1").innerHTML = null;
 							document.getElementById("t3").innerHTML = t3;
 					}
 					else{
-						document.getElementById("t3").innerHTML ="";
+						document.getElementById("t3").innerHTML = null;
 						document.getElementById("t1").innerHTML = t1;
 					}
 					search();
@@ -307,8 +283,8 @@
 	function search(){
 				
 		/*----------------------------마커 이미지 설정----------------------------*/
-		var imageSrc = 'http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
-   		imageSize = new daum.maps.Size(34,39), // 마커이미지의 크기입니다
+		var imageSrc = 'resources/pin.png', // 마커이미지의 주소입니다    
+   		imageSize = new daum.maps.Size(34,45), // 마커이미지의 크기입니다
     	imageOption = {offset: new daum.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
       
 		// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
@@ -457,78 +433,6 @@
 		}
 	}
 	</script>
-	
-<div id="selectform" >	
-<form name="f">
-   <div class="col-md-12 col-sm-12 col-xs-12">
-  
-  <br>
-	   <h4>Search and Reservation</h4>
-	    	    
-	    <font color="#D5D5D5" size="3"><b>지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
-  		<font color="#D5D5D5" size="2">알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font>
-  		
-  		<br>
-  		
-  		
-  		<div class="input-group">
-          <span class="input-group-addon">지역 선택</span>
-          <div class="clearfix">
-	          <select onchange="change(value);change2();" name="plocation" class="selectbox">
-				<option>선택하시오</option>
-					<option value="강남구">강남구</option>
-		            <option value="송파구">송파구</option>
-		            <option value="서초구">서초구</option>
-		            <option value="중구">중구</option>
-		            <option value="영등포구">영등포구</option>
-		            <option value="마포구">마포구</option>
-		            <option value="종로구">종로구</option>
-		            <option value="강동구">강동구</option>
-		            <option value="관악구">관악구</option>
-		            <option value="광진구">광진구</option>
-		            <option value="구로구">구로구</option>
-		            <option value="강서구">강서구</option>
-		            <option value="동대문구">동대문구</option>
-		            <option value="노원구">노원구</option>
-		            <option value="서대문구">서대문구</option>
-		            <option value="은평구">은평구</option>
-		            <option value="용산구">용산구</option>
-		            <option value="동작구">동작구</option>
-		            <option value="성북구">성북구</option>
-		            <option value="양천구">양천구</option>
-		            <option value="강북구">강북구</option>
-		            <option value="중랑구">중랑구</option>
-		            <option value="성동구">성동구</option>
-		            <option value="금천구">금천구</option>
-		            <option value="도봉구">도봉구</option>   
-		      </select>
-          </div>
-        </div>
-        
-		 <div class="input-group">
-			 <span class="input-group-addon no-minwidth">
-		     	<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
-		     </span>
-		     <input type="text" class="form-control" placeholder="절약형">
-		    
-		   	 
-		     <span class="input-group-addon no-minwidth">
-		     	<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
-		     </span>
-		     <input type="text" class="form-control" placeholder="지각형">
-		     
-		     
-		     <span class="input-group-addon no-minwidth">
-		     	<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
-		     </span>
-		     <input type="text" class="form-control" placeholder="안전형">
-	     </div>
-	 
-	 
-	</div> 
-		
-	</form>	
-</div>
 
 <div id="listform">
 	<!-- 주차장 검색 후 리스트 -->	

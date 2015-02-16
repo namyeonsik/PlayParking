@@ -61,6 +61,7 @@ public class SearchController {
 			}
 			
 			ModelAndView mv = new ModelAndView();
+			
 			mv.addObject("parkinglist", parkinglist);
 			if(parkinglist2!=null){
 				mv.addObject("parkinglist2", parkinglist2);
