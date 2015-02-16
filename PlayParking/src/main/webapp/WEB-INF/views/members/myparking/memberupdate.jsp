@@ -49,7 +49,7 @@
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
-                                    
+                                                  
 <!-- 회원정보수정 -->                                   
 <div class="col-md-6 col-sm-12 col-xs-12 lg-margin" id="updateform">
 <form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
