@@ -26,6 +26,7 @@
 
 <!-- TOP BAR -->
 <%@ include file="../Header.jsp" %>
+<h1>${pid }</h1>
 	<h1>예약페이지입니다!</h1>
 	
 		<input type = "date" min = "1987-07-01" max = "2020-03-01" name = "date" id="calendar"  >

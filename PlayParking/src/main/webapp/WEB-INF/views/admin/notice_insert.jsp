@@ -31,7 +31,7 @@
 <form action="noticeinsert.do" method="post" 
 	name="myfrm" onsubmit="return validation();">
 		<!-- add라는 서블릿을 찾아서 dopost로 -->
-		<h1>${adminid }</h1>
+		<h1>${adminid}</h1>
 		<h1>${cnt}<</h1>
 		
 		<input type="hidden" name="nno" value="${cnt}">
