@@ -47,7 +47,6 @@
  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
-
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <!-- <meta charset="utf-8">
         <title>Geass - Creative Onepage Html5 Template</title> -->
@@ -154,7 +153,6 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-
 
 </body>
 </html>

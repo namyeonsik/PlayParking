@@ -62,13 +62,10 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
-      
-        
 </head>
 <body>
 <%@ include file="../../Header.jsp" %>
-                  
-                                     
+                                    
 <!-- 회원정보수정 -->
 <!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
                                     
@@ -155,15 +152,6 @@ function viewData4(data){
 	document.getElementById("cnamediv").innerHTML =data;
 }
 
-
-/* function callcid(){
-	var cname = document.getElementById("cname").value;
-	xhr.open("POST", "getcid.do", true); //POST방식.비동기통식.
-	//POST일때는 아래추가.
-	xhr.setRequestHeader("content-type", 
-			                   "application/x-www-form-urlencoded");
-	xhr.send("cname="+cname);
-} */
 </script>
 
     
