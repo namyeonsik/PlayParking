@@ -9,7 +9,8 @@ public class NoticeDTO {
 	private String ntext;
 	private Date ndate;
 	private String aid;
-	
+	private String npname;
+
 	public NoticeDTO(){}
 
 	public int getNno() {
@@ -67,4 +68,5 @@ public class NoticeDTO {
 		return "NoticeDTO [nno=" + nno + ", ntitle=" + ntitle + ", ntext="
 				+ ntext + ", ndate=" + ndate + ", aid=" + aid + "]";
 	}
+
 }

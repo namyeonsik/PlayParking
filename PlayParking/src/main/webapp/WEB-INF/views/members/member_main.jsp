@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>사용자 메인</title>
+
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <!-- <meta charset="utf-8">
@@ -161,6 +163,7 @@
 
   <hr class="featurette-divider">
 
+<<<<<<< HEAD
   <div class="featurette">
     <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
     <h2 class="featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>
@@ -206,4 +209,42 @@ if(dd!=''){
 		
 		
 </body>
+<script>
+            $(function() {
+                // Slider Revolution for Home Section
+                jQuery('#revslider').revolution({
+                    delay:9000,
+                    startwidth: 1140,
+                    startheight: 600,
+                    onHoverStop:"true",
+                    hideThumbs:0,
+                    lazyLoad:"on",
+                    navigationType:"none",
+                    navigationHAlign:"center",
+                    navigationVAlign:"bottom",
+                    navigationHOffset:0,
+                    navigationVOffset:20,
+                    soloArrowLeftHalign:"left",
+                    soloArrowLeftValign:"center",
+                    soloArrowLeftHOffset:0,
+                    soloArrowLeftVOffset:0,
+                    soloArrowRightHalign:"right",
+                    soloArrowRightValign:"center",
+                    soloArrowRightHOffset:0,
+                    soloArrowRightVOffset:0,
+                    touchenabled:"on",
+                    stopAtSlide:-1,
+                    stopAfterLoops:-1,
+                    dottedOverlay:"none",
+                    spinned:"spinner5",
+                    shadow:0,
+                    hideTimerBar: "off",
+                    fullWidth:"off",
+                    fullScreen:"on",
+                    navigationStyle:"preview4"
+                  });
+            });
+        </script>
+    </body>
+
 </html>

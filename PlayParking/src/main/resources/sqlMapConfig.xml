@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>	
   <typeAliases>
-  	<typeAlias type="com.flying.model.ParkingDTO" alias="parkdto"/>
-  	<typeAlias type="com.flying.model.MembersDTO" alias="memdto"/>
+  	<!-- <typeAlias type="com.flying.model.ParkingDTO" alias="parkdto"/> -->
+  	<!-- <typeAlias type="com.flying.model.MembersDTO" alias="memdto"/> -->
   </typeAliases>
 </configuration>

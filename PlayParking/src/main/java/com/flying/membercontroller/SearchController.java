@@ -64,10 +64,9 @@ public class SearchController {
 			mv.addObject("parkinglist", parkinglist);
 			if(parkinglist2!=null){
 				mv.addObject("parkinglist2", parkinglist2);
-			}else{				
-			}
+			}else{}
 			
-			String[] selected = {"","","","","","" };
+			/*String[] selected = {"","","","","","" };
 			if(plocation.equals("강북구")) selected[0]="selected";
 			if(plocation.equals("강남구")) selected[1]="selected";
 			if(plocation.equals("마포구")) selected[2]="selected";
@@ -79,7 +78,7 @@ public class SearchController {
 			mv.addObject("parklistsize", parkinglist.size());		
 			for(String s : selected){
 				System.out.println(s);
-			}
+			}*/
 			
 			mv.setViewName("/members/search");
 			return mv;

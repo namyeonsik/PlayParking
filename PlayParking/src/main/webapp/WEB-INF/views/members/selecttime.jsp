@@ -15,7 +15,7 @@
 
 
 
-	<div class="col-md-6 col-sm-12 col-xs-9 md-margin">
+	<div class="col-md-12 col-sm-12 col-xs-12 md-margin">
 		<label>이용시간 선택</label> <select multiple class="form-control"
 			name="selectTime" id="selectTime">
 			<c:forEach items="${numArray}" var="num">

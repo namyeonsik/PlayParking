@@ -11,8 +11,11 @@ public class NoticeService implements NoticeServiceInterface{
 	@Autowired
 	NoticeDAOInterface dao;
 
-	public List<NoticeDTO> selectnoticeAll(){
-		return dao.selectnoticeAll();
+	public List<NoticeDTO> selectMembernotice() {
+		return dao.selectMembernotice();
+	}
+	public NoticeDTO selectnoticeAll(int nno){
+		return dao.selectnoticeAll(nno);
 	}
 	
 	public List<NoticeDTO> selectAll(String aid){
@@ -39,6 +42,10 @@ public class NoticeService implements NoticeServiceInterface{
 		return dao.selectByaid(aid);
 	}
 
+	public List<NoticeDTO> selectByaid2(String aid) {
+		return dao.selectByaid(aid);
+	}
+	
 	public NoticeDTO selectText(int nno, String aid) {
 		return dao.selectText(nno, aid);
 	}

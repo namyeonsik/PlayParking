@@ -4,8 +4,10 @@ import java.util.List;
 
 public interface NoticeServiceInterface {
 
-	public List<NoticeDTO> selectnoticeAll();
+	public List<NoticeDTO> selectMembernotice();
+	public NoticeDTO selectnoticeAll(int nno);
 	public List<NoticeDTO> selectByaid(String aid);
+	public List<NoticeDTO> selectByaid2(String aid);
 	public List<NoticeDTO> selectAll(String aid);
 	public NoticeDTO selectByNno(int nno, String aid);
 	public NoticeDTO selectText(int nno, String aid);

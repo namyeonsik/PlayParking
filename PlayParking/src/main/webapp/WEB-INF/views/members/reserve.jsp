@@ -62,85 +62,11 @@
 
 	<!-- TOP BAR -->
 	<%@ include file="../Header.jsp"%>
-	<!-- <div id="calendarstyle">
-	<div class="col-md-10 col-sm-9 col-xs-12">
-		<div class="row" style="size: 200px">
-			<div class="col-md-6 col-sm-12 col-xs-12 lg-margin">
-
-			<label for="text1">날짜를 선택해주세요</label>
-			
-
-				<input type="date" class="form-control" min="1987-07-01"
-					max="2020-03-01" name="date" id="calendar" style="width: 40%;"> <br>
-				<br>
-				<input type = "button" value = "날짜선택" onclick="getDate()"/>
-				<button type="button" onclick="getDate()" class="btn btn-lightblue">Date Select</button>
-				<button type="reset" class="btn btn-default">reset</button><br><br>
-				   <input type = "reset" value = "reset"/>
-			</div>
-		</div>
-	</div>
-	</div> -->
-	
-	<!-- <div class="md-margin visible-xs clearfix"></div>space
-
-                        <div class="col-md-6 col-sm-6">
-                            <div class="accordion-panel" id="accordion-panel2">
-                                <div class="accordion-panel-group panel">
-                                    <a class="accordion-panel-title yellow" data-toggle="collapse" data-parent="#accordion-panel2" href="#panel-one2"><i class="fa fa-briefcase"></i>날짜를 선택해주세요</a>
-
-                                    <div class="accordion-panel-body collapse in" id="panel-one2">
-                                        <div class="accordion-body-wrapper">
-                                           
-                                            <input type="date" class="form-control" min="1987-07-01"
-												max="2020-03-01" name="date" id="calendar" style="width: 40%;"> <br>
-												<br>
-												
-												<button type="button" onclick="getDate()" class="btn btn-lightblue">Date Select</button>
-												<button type="reset" class="btn btn-default">reset</button>
-												
-                                             
-                                        </div>End .accordion-body-wrapper
-                                    </div>End .accordion-body
-                                </div>End .accordion-group 
-                                <div class="accordion-panel-group panel">
-
-                                    <a class="accordion-panel-title red" data-toggle="collapse" data-parent="#accordion-panel2" href="#panel-three2"><i class="fa fa-bar-chart"></i>가능 시간을 선택해주세요</a>
-
-                                    <div class="accordion-panel-body collapse" id="panel-three2">
-                                        <div class="accordion-body-wrapper">
-                                            
-                                            <div id="timePrint"></div>
-                                            <button type="button" onclick="getsDate()" class="btn btn-lightblue" position="position:absolute; top:0; left:0"  >Time Select</button>
-<button type="reset" class="btn btn-default">reset</button>
-                                            
-                                        </div>End .accordion-body-wrapper
-                                    </div>End .accordion-panel-body
-                                </div>End .accordion-panel-group
-                                <div class="accordion-panel-group panel">
-
-                                    <a class="accordion-panel-title lightblue" data-toggle="collapse" data-parent="#accordion-panel2" href="#panel-four2"><i class="fa fa-group"></i>이용 시간을 선택해주세요</a>
-
-                                    <div class="accordion-panel-body collapse" id="panel-four2">
-                                        <div class="accordion-body-wrapper">
-                                        
-                                         <div id="selecttimePrint"></div>
-                                           
-                                        </div>End .accordion-body-wrapper
-                                    </div>End .accordion-panel-body
-                                </div>End .accordion-panel-group
-                            </div>End .accordion-panel
-                        </div>End .col-md-6
-                    </div>End .row
-                </div>End .container -->
-	
-	
-	
 	
 	
 	
 	 <div class="col-md-6 col-sm-12 col-xs-12 xlg-margin">
-                                        <h4>예약 페이지입니다.</h4>
+                                      
                                         <div class="md-margin"></div><!--space -->
 
                                         <div class="accordion" id="accordion">
@@ -207,7 +133,7 @@
                                        
                                         <!-- Modal Login From 2-->
                                         <div class="modal fade" id="modal-text1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-                                            <div class="modal-dialog modal-sm">
+                                            <div class="modal-dialog modal-sm-9">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -245,14 +171,14 @@
                                                 <div class="accordion-body collapse" id="accordion-three">
                                                     <div class="accordion-body-wrapper">
                                                         <!-- 이용시간선택 -->
-                                                        
+                                                        <div class="row">
                                                          <div id="selecttimePrint"></div>
                                                         <input type="button" value="Select Time" class="btn btn-lightblue" onclick="getsTime()" data-toggle="modal" data-target="#modal-text2" /> 
                                                    
-                                                       
+                                                       </div>
                                                     <!-- Modal Login From 2-->
                                         <div class="modal fade" id="modal-text2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-                                            <div class="modal-dialog modal-sm">
+                                            <div class="modal-dialog modal-sm-9">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -457,13 +383,13 @@
 		 function viewData4()
 			{
 				
-				document.getElementById("msg2").innerHTML ='<h4>'+ msg1+' 까지 입차를 선택하셨습니다</h4>';
+				document.getElementById("msg2").innerHTML ='<h6>'+ msg1+' 까지 입차를 선택하셨습니다</h6>';
 
 			} 
 		 function viewData5()
 			{
 				
-				document.getElementById("msg3").innerHTML ='<h4>'+ msg1+' 시간을 선택하셨습니다</h4>';
+				document.getElementById("msg3").innerHTML ='<h6>'+ msg1+' 시간을 선택하셨습니다</h6>';
 
 			} 
 	</script>
