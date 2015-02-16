@@ -25,7 +25,7 @@
      <association property="pname" column="pid" select="getpname"></association>
   </resultMap>
   <select id="selectReservation" parameterType="int" resultMap="parkresult"> 
-  select * from reservation where mid = #{aa}
+  select * from reservation where mid = #{aa} order by rid desc
   </select>
   
   <select id="getpname" resultType="String">

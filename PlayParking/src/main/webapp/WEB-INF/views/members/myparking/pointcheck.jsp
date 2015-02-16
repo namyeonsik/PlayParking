@@ -45,9 +45,12 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
+	.header {height: 50px}
+	.body {margin-top: 100px;}
 	.mypoint {width: 40%; margin-top: 5%; margin-left: 10%; float: left;}
+	.mypoint .mpoint {float: right; margin-right: 30%;}
 	.charge {width: 40%; margin-top: 5%; margin-right: 10%; float: right;}
-
+	.charge .cbtn {float: right; margin-right: 30%;}
 	.title {width: 80%; margin-top: 5%; margin-left: 9%; float: left;}
 	
 	.paypoint {width: 40%; margin-top: 3%; margin-left: 10%; float: left;}
@@ -71,17 +74,66 @@
             
 </head>
 <body>
-<%@ include file="../../Header.jsp" %>
+<!-- 진짜헤더시작 -->
+<div class="header">
+        <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
+        <div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
+        <div id="aaa">          
+            <header id="header" class="transparent nav-fixed">
+                <nav class="navbar navbar-default navbar-transparent" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
+                        </div>
 
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#home">Home</a></li>
+                                <li><a href="#aboutus">About us</a></li>
+                                <li><a href="#search">Search</a></li>
+                                <li><a href="#portfolio">Notice</a></li>
+                                <li class="dropdown">
+                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog.html">myinfo update</a></li>
+                                        <li><a href="blog.html">reserve check</a></li>
+                                        <li><a href="single.html">point check</a></li>
+                                    </ul>
+                                </li>
+                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
+             ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+                         <li><a href="adminlogin.do">Admin</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header><!-- 헤더끝 -->
+  	</div>
+  </div>
+<!-- 진짜헤더끝 -->  
+
+  <div class="body">          
 <div class="row">
  <div class="mypoint">
   <h3>My Point</h3>
+  <div class="mpoint">
   <h1>${point.mpoint} P</h1>
+  </div>
  </div>
 
  <div class="charge">
   <h3>Charge</h3>
+  <div class="cbtn">
   <input class="btn btn-lightblue" type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+  </div>
   <br><br>
  </div>
 </div>
@@ -130,6 +182,7 @@
 <!--  포인트 사용내역 끝 -->	
 </div>
 
+</div>
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
