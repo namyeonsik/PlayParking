@@ -1,7 +1,10 @@
 package com.flying.membercontroller;
 
 import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,6 +50,8 @@ public class ReserveCheckController {
 //			
 //			mv.addObject("pnamelist", pnamelist);
 //			System.out.println(pname);
+			
+			
 			mv.addObject("reservationlist", reservationlist);
 			mv.setViewName("/members/myparking/reservecheck");
 			return mv;
