@@ -46,7 +46,7 @@
 
 <style>
 	.header {height: 50px}
-	.body {margin-top: 100px;}
+	.body {margin-top: 100px; margin-left: 9%;}
 	.mypoint {width: 40%; margin-top: 5%; margin-left: 10%; float: left;}
 	.mypoint .mpoint {float: right; margin-right: 30%;}
 	.charge {width: 40%; margin-top: 5%; margin-right: 10%; float: right;}
