@@ -43,10 +43,10 @@ public class NoticeUpdateController {
    
    @RequestMapping(value="/noticeupdate.do", method=RequestMethod.POST)
    public String noticeupdatePost(NoticeDTO notice){
-	   System.out.println(notice+"노티스!!!!!!!!!!!!");
+	  System.out.println(notice+"노티스!!!!!!!!!!!!");
       int ret = service.updateNotice(notice);
       System.out.println(ret+"건 수정!!!!");
-      return "redirect:/noticelist2.do";
+      return "redirect:/noticelist2.do?pageno=1";
    }   
    
 }

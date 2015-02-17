@@ -5,7 +5,7 @@ import java.util.List;
 public interface NoticeDAOInterface {
 	public List<NoticeDTO> selectMembernotice();
 	public NoticeDTO selectnoticeAll(int nno);
-	public List<NoticeDTO> selectByaid(String aid);
+	public List<NoticeDTO> selectByaid(String aid, int s, int l);
 	public List<NoticeDTO> selectByaid2(String aid);
 	public NoticeDTO selectByNno(int nno, String aid);
 	public NoticeDTO selectText(int nno, String aid);
@@ -13,4 +13,5 @@ public interface NoticeDAOInterface {
 	public int insertNotice(NoticeDTO notice);
 	public int updateNotice(NoticeDTO notice);
 	public int deleteNotice(NoticeDTO notice);
+	public List<NoticeDTO> selectByaid11(String aid);
 }

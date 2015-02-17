@@ -45,7 +45,7 @@ public class NoticeDeleteController {
       mv.setViewName("/admin/parkingdelete");
       
       
-      return "redirect:noticelist2.do";
+      return "redirect:noticelist2.do?pageno=1";
       //}
    }
 }

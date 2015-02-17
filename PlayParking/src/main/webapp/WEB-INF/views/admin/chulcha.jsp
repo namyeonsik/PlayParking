@@ -3,6 +3,7 @@
 
 <form name="chulfrm" action="reservationupdate.do" method="post" onsubmit="call2()"> 
 
+
 <h1>${naga}원 더 내라</h1>
 <h1>${rid }</h1>
 <input type="hidden" name="rid" value="${rid }"> 

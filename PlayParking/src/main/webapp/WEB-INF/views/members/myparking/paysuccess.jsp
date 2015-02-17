@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>충전완료페이지</title>
+
 <style>
 	.btn {width: 50%; margin-top: 30%; margin-left: 40%;}
 </style>	
@@ -33,16 +34,6 @@
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
-
-        <!--- jQuery -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
-
-        <!-- Queryloader -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
-
-        <!-- Modernizr -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
-
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 </head>
 <body>
