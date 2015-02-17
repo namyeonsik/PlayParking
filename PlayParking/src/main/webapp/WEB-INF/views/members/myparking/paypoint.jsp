@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+ <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
 	<title>포인트 충전</title>
         <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
@@ -30,17 +30,8 @@
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
-
-        <!--- jQuery -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
-
-        <!-- Queryloader -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
-
-        <!-- Modernizr -->
-        <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
-
-       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->     
+    
+       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->  
 
 <style>
 	.form-horizontal {width: 100%; margin-top: 20%; margin-left: 5%; float: left;}

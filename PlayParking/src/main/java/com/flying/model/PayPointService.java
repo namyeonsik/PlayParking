@@ -19,4 +19,8 @@ public class PayPointService implements PayPointServiceInterface{
 		return dao.insertPoint(point);
 	}
 
+	public List<PayPointDTO> selectBytenmid(String mid) {
+		return dao.selectBytenmid(mid);
+	}
+
 }

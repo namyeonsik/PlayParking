@@ -4,16 +4,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.paypoint">
 
- <select id="selectBymid" 
-  	parameterType="String"
-  	resultType="com.flying.model.PayPointDTO">
-    select * from paypoint where mid = #{aa:VARCHAR} order by paydate
-  </select>
- 
-  <insert id="insertPoint" parameterType="com.flying.model.PayPointDTO">
-	insert into PayPoint(paydate,mid,paypoint)
-	values(sysdate,#{mid:VARCHAR},
-	       #{paypoint:INTEGER})
-  </insert>
-  
+	<select id="selectBytenmid" parameterType="String"
+		resultType="com.flying.model.PayPointDTO">
+		select e.*
+		from (select *
+		from paypoint
+		where mid = #{aa:VARCHAR}
+		order by paydate desc)e
+		where ROWNUM &lt;= 5
+	</select>
+
+	<select id="selectBymid" parameterType="String"
+		resultType="com.flying.model.PayPointDTO">
+		select *
+		from paypoint
+		where mid = #{aa:VARCHAR}
+		order by paydate
+	</select>
+
+	<insert id="insertPoint" parameterType="com.flying.model.PayPointDTO">
+		insert into PayPoint(paydate,mid,paypoint)
+		values(sysdate,#{mid:VARCHAR},
+		#{paypoint:INTEGER})
+	</insert>
+
 </mapper>
