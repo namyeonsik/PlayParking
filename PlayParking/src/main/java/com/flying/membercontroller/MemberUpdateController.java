@@ -24,7 +24,7 @@ public class MemberUpdateController {
 	public ModelAndView updateGet(HttpServletRequest request, HttpSession session){
 		ModelAndView mv = new ModelAndView();
 		if(session.getAttribute("memcheck")==null){			
-			mv.setViewName("members/member_login");
+			mv.setViewName("members/notmember");
 			return mv;
 		}else{
 		

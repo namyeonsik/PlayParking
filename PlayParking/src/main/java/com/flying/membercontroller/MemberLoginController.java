@@ -18,10 +18,10 @@ public class MemberLoginController {
 	@Autowired
 	MembersServiceInterface service; 
 	
-	@RequestMapping(method = RequestMethod.GET)
+	/*@RequestMapping(method = RequestMethod.GET)
 	public String loginGet(MembersDTO member){
-		return "members/member_login";
-	}
+		return "members/member_main";
+	}*/
 
 
 	// 여러개값을 받을경우 DTO를 만들어서 받는다.

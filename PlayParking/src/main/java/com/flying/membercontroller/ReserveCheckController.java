@@ -32,7 +32,7 @@ public class ReserveCheckController {
 			                                  HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		if (session.getAttribute("memcheck") == null) {
-			mv.setViewName("members/member_login");
+			mv.setViewName("members/notmember");
 			return mv;
 		} else {
 			session = request.getSession();

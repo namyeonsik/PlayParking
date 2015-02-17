@@ -37,7 +37,7 @@ public class ReserveController {
    public ModelAndView test(HttpSession session, HttpServletRequest request) {
       ModelAndView mv = new ModelAndView();
       if(session.getAttribute("memcheck")==null){
-         mv.setViewName("members/member_login");
+         mv.setViewName("members/notmember");
          return mv;
       }else{
          pid = Integer.parseInt(request.getParameter("pid"));      

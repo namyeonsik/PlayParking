@@ -22,8 +22,8 @@ public class SearchController {
 	@RequestMapping(value="/search.do", method=RequestMethod.GET)
 	public ModelAndView searchGet(HttpSession session){
 		ModelAndView mv = new ModelAndView();
-		if(session.getAttribute("memcheck")==null){			
-			mv.setViewName("members/member_login");
+		if(session.getAttribute("memcheck")==null){		
+			mv.setViewName("members/notmember");
 			return mv;
 		}else{
 			mv.setViewName("members/search_get");
