@@ -3,7 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-       
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>회원정보수정</title>
+<style>
+
+#updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
+
+</style>
+
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
 <!-- <title>회원정보수정</title> -->
@@ -43,18 +50,21 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
 <style>
-#updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
+#updateform { float: left; margin-left: 30%; margin-top:10%; width: 60%;}
+.header {height: 50px}
 </style>
        
 </head>
-<body>
 <%@ include file="../../Header.jsp" %>
                                     
-<!-- 회원정보수정 -->                                   
+<!-- 회원정보수정 -->
+<!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
+                                    
+
 <div class="col-md-6 col-sm-12 col-xs-12 lg-margin" id="updateform">
 <form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
     
-    <h2>Update Information</h2>
+    <h2> MyInfo Update </h2>
       
       <label for="inputId"></label>
       <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">

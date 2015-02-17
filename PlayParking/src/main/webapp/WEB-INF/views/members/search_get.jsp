@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 
@@ -57,7 +57,8 @@
 </style> 
 
 <style>
-.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;}
+.header {height: 50px}
+.map_wrap, .map_wrap * {margin-top:4%;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:800px;}
 #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:300px;height:500px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
@@ -66,11 +67,17 @@
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
 #menu_wrap .option button {margin-left:5px;}
+
 </style>
 </head>
 
-<body>
-<%@ include file="../Header.jsp"%>
+ <body>
+ <!-- 진짜헤더시작 -->
+<div class="header">
+<%@ include file="../Header.jsp" %>
+</div>
+<!-- 진짜헤더끝 -->      
+
 <!-- style="border:#6B71BD solid 1px" -->
 <!-- ---------------------------**지도**--------------------------- -->
 	

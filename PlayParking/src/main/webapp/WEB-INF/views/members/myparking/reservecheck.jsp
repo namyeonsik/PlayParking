@@ -43,7 +43,9 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
   
-  <style>
+<style>
+	.header {height: 50px}
+	.body {margin-top: 100px;}
 	.reservecheck {width: 90%; margin-top: 5%; margin-left: 10%;}
 	.reservecheck ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
 	.reservecheck .title {font-weight: bold;text-align: center;}
@@ -54,8 +56,12 @@
      
 </head>
 <body>
+<!-- 진짜헤더시작 -->
+<div class="header">
 <%@ include file="../../Header.jsp" %>
-
+</div>
+<!-- 진짜헤더끝 --> 
+<div class="body">
 <div class="reservecheck">
 	<ul class="title">
 		<li class="list-group-item list-group-item-lightblue">#</li>
@@ -76,7 +82,7 @@
     	</ul> 
     	</c:forEach>	
 </div> 
-
+</div>
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>

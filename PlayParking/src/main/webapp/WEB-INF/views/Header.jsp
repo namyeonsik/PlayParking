@@ -8,61 +8,50 @@
 <title>헤더</title>
 </head>
 <body>
-<!-- TOP BAR -->
-<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
-		<div class="container">
-			<div class="navbar-header responsive-logo">
-				<!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> -->
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<!-- </button> -->
-				<!-- <a href="./" class="navbar-brand">
-				<img src="images/logo.png" alt="Zerif">
-				</a> -->
-			</div>
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
-				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-				<li><a href="adminlogin.do">Admin</a></li>
-			</ul>
-			</nav>
-		</div>
-				
-				
-		<div class="navbar-wrapper">
-		  <div class="container">
-		    <div class="navbar navbar-inverse navbar-static-top">
-		        <div class="navbar-header">
-			    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </a>
-		        <a class="navbar-brand" href="membermain.do">Play Parking</a>
-		        </div>
-		        <div class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav">
-		            <li><a href="search.do">Search</a></li>
-		            <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MyParking <b class="caret"></b></a>
-		              <ul class="dropdown-menu">
-		                <li><a href="memberupdate.do">내정보수정</a></li>
-		                <li><a href="reservecheck.do">예약확인</a></li>
-		                <li class="divider"></li>
-		                <li><a href="pointcheck.do">포인트확인</a></li>       
-		              </ul>
-		            </li>
-		            <li><a href="noticelist1.do">Notice</a></li>
-		          </ul>
-		        </div>
-		    </div>
-		  </div>
-		</div>		
-</div>
+<div class="header">
+        <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
+        <div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
+        <div id="aaa">          
+            <header id="header" class="transparent nav-fixed">
+                <nav class="navbar navbar-default " role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="" href=""><%-- <img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"> --%><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a> 
+                        </div>
 
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="membermain.do">Home</a></li>
+                                <li><a href="#aboutus">About us</a></li>
+                                <li><a href="search.do">Search</a></li>
+                                <li><a href="noticelist1.do">Notice</a></li>
+                                <li class="dropdown">
+                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="memberupdate.do">myinfo update</a></li>
+                                        <li><a href="reservecheck.do">reserve check</a></li>
+                                        <li><a href="pointcheck.do">point check</a></li>
+                                    </ul>
+                                </li>
+                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
+             ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+                         <li><a href="adminlogin.do">Admin</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header><!-- 헤더끝 -->
+  	</div>
+  </div>
+<!-- 진짜헤더끝 --> 
 
 
 

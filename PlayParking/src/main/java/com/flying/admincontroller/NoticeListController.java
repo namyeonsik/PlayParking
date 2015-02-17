@@ -39,7 +39,7 @@ public class NoticeListController {
   		List<NoticeDTO> noticelist = service.selectMembernotice();
   		mv.addObject("noticelist", noticelist);  		
   		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list_member");
+  		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }
    }
@@ -54,9 +54,7 @@ public class NoticeListController {
     	session = request.getSession();
     	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");         
   		List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid());
-    	//List<NoticeDTO> noticelist = service.selectByaid2(admincheck.getAid());
-  		System.out.println("++++++++++"+noticelist+"++++++++++");
-  		
+      		
   		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
   		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);

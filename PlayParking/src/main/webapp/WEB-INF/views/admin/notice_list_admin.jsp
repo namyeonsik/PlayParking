@@ -37,18 +37,21 @@
 	int endRow = currentPage*listSize;	
 	int nsize = 0;
 %>
+
 ${noticelistsize}
 시작로우 <%=startRow %>
 끝 로우 <%=endRow %>
+
 <div style="padding:10px;">
 <h1>주차장 공지사항</h1>
- <h1>멤버 로그인했으면 멤버 아이디가 보임 ==> ${memberid}</h1>
+<h1>멤버 로그인했으면 멤버 아이디가 보임 ==> ${memberid}</h1>
 
 <TABLE border='0' cellspacing=1 cellpadding=2 width='600'> 
 	<c:set var="cnt" value="1"></c:set>	
 		
 	<tr style="text-align:center; background-color: #DB5B43 ; color:white ; font-size:13pt ; font-weight:bold ;">      
-		<td ><font color = "#FFFFFF"><b>번호</b></font></td>      
+		<!-- <td><font color = "#FFFFFF"><b>cnt</b></font></td>     -->
+		<td><font color = "#FFFFFF"><b>n.nno</b></font></td>    
 		<td><font color = "#FFFFFF"><b>글 제목</b></font></td>      
 		<td><font color = "#FFFFFF"><b>주차장명</b></font></td> 
 		<td><font color = "#FFFFFF"><b>작성일</b></font></td>      
@@ -57,51 +60,46 @@ ${noticelistsize}
 
 	
 	<c:forEach items="${noticelist}" var="n" begin="<%=startRow%>" end="<%=endRow%>"> 
-		<tr>
-			<td>${cnt}</td>
+		<tr>			
+			<%-- <td>${cnt}</td> --%>
+			<td>${n.nno}</td>
 			<td><a href='checktext.do?nno=${n.nno}'>${n.ntitle}</a></td>
 			<td>${pname}</td>
 			<td>${n.ndate}</td>
 			<td>${n.aid}</td>
 			<c:set var="cnt" value="${n.nno+1}"></c:set>
-			<% number++; %>		
-			<td><%=number %></td>
-			<td>${noticelistsize} dddddddd</td>			
 		</tr>				
-	</c:forEach>
-<a href='noticeinsert.do?cnt=${cnt}'>등록</a>	
+	</c:forEach>	
+	<a href='noticeinsert.do?cnt=${noticelistsize+1}'>등록</a>
 </table>
 
 <%if (currentPage>1){%>
 <a href="noticelist2.do?pageNum=<%=currentPage-1%>">◀</a>
 <%}%>
 
-<%
-int savenum;
-if(nsize%listSize!=0){savenum=nsize/listSize+1;}
-else {savenum=nsize/listSize;}
-for(int i=1;i<=savenum;i++){%>
-<a href="noticelist2.do?pageNum=<%=i%>"><%=i%></a>
-<%}%>
->
-<%if (currentPage<savenum){%>
+
+<%-- <%if (currentPage<savenum){%>
 <a href="noticelist2.do?pageNum=<%=currentPage+1%>">▶</a>
-<%} %> 
+<%} %> --%>
 
 <c:set var="savenum" value="0" />
 <c:choose>
-    <c:when test="${noticelistsize%10 ne 0}">
-        ${savenum}=${(noticelistsize/10)+1};
+    <c:when test="${(noticelistsize%10) ne 0}">
+    	<c:set var="savenum" value="${(noticelistsize/10)+1}" />        
     </c:when>
 
     <c:otherwise>
-        ${savenum}=${(noticelistsize/10)};
+    	<c:set var="savenum" value="${(noticelistsize/10)}" />
     </c:otherwise>
 </c:choose>
+
+<h1>${savenum }</h1>
 
 <c:forEach var="i" begin="1" end="${savenum}"> 
 <a href="noticelist2.do?pageNum=${i}">${i}</a>
 </c:forEach>
+
+<br>
 
 
 
