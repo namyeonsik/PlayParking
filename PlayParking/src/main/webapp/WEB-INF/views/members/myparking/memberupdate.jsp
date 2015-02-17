@@ -5,11 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원정보수정</title>
-<style>
-
+<!-- <style>
 #updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
-
-</style>
+</style> -->
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
@@ -50,8 +48,9 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
 <style>
-#updateform { float: left; margin-left: 30%; margin-top:10%; width: 60%;}
+.form { float: left; margin-left: 39%; margin-top:3%; width: 80%;}
 .header {height: 50px}
+.title {margin-left: 40%; margin-top: 8%;}
 </style>
        
 </head>
@@ -60,12 +59,14 @@
 <!-- 회원정보수정 -->
 <!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
                                     
-
-<div class="col-md-6 col-sm-12 col-xs-12 lg-margin" id="updateform">
-<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
-    
+<div class="title">
     <h2> MyInfo Update </h2>
-      
+    </div>
+
+<div class="form">    
+<div class="col-md-6 col-sm-12 col-xs-12 lg-margin">
+<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
+  
       <label for="inputId"></label>
       <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
 
@@ -104,7 +105,7 @@
     </div>
 
 </form>
-</div>
+</div></div>
 <!-- 회원정보수정 -->
 
 <!-- Plugins -->

@@ -5,30 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-[if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]
-<link href="css/styles.css" rel="stylesheet"> 
-jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한)
- <script src="//code.jquery.com/jquery.js"></script>
-합쳐지고 최소화된 최신 CSS
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- 합쳐지고 최소화된 최신 자바스크립트
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
- -->
 
- <meta charset="utf-8">
-<title>Geass - Creative Onepage Html5 Template</title>
-<meta name="description" content="Geass is premium and creative multipurpose onepage template">
-<meta name="author" content="Eon">
+<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+<meta charset="utf-8">
+<title>회원가입</title>
+        <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
+        <meta name="description" content="Geass is premium and creative multipurpose onepage template">
+        <meta name="author" content="Eon">
 
-<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+        <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
+		
+		
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
@@ -37,10 +27,9 @@ jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한)
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/style.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switcch.css">
+
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -52,25 +41,9 @@ jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한)
 
         <!-- Modernizr -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
-        
-<title>멤버 로그인</title>
-<!-- <style>
 
-#loginform { float: left; margin-top:14%; width: 35%;}
-#joinform { float : right; ; width: 45%; margin-right: 10%; margin-top: 5%}
-</style> -->
+       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
-<!-- <meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한)
-<script src="//code.jquery.com/jquery.js"></script>
-합쳐지고 최소화된 최신 CSS
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
-합쳐지고 최소화된 최신 자바스크립트
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
- -->
 <script type="text/javascript">
 
 function validationcheck(){
@@ -117,48 +90,19 @@ function validationlogin(){
 	}
 }
 </script>
+
+<style type="text/css">
+.header {height: 50px}
+</style>
+
 </head>
 
-  <body>
-<div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
-<div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
-        <header id="header" class="transparent">
-                <nav class="navbar navbar-default navbar-transparent" role="navigation">
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
-                        </div>
-
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="membermain.do">Home</a></li>
-                                <li><a href="#aboutus">About us</a></li>
-                                <li><a href="search.do">Search</a></li>
-                                <li><a href="noticelist1.do">Notice</a></li>
-                                <li class="dropdown">
-                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="memberupdate.do">myinfo update</a></li>
-                                        <li><a href="reservecheck.do">reserve check</a></li>
-                                        <li><a href="pointcheck.do">point check</a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
-				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-				 				<li><a href="adminlogin.do">Admin</a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-            </header><!-- 헤더끝 -->
+<body>
+<!-- 진짜헤더시작 -->
+<div class="header">
+<%@ include file="../Header.jsp" %>
+</div>
+<!-- 진짜헤더끝 -->  
        
  <!-- Modal Login Form-->
 		<div class="modal fade" id="modal-login-form" tabindex="-1"
@@ -206,9 +150,9 @@ function validationlogin(){
        
 
 <!-- 새로운 회원가입 -->
-
  <section id="contactus" class="section">
-           <div class="container" style="border:#6B71BD solid 1px">
+           <!-- <div class="container" style="border:#6B71BD solid 1px"> -->
+           <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-10 col-md-push-2 col-sm-push-1">
                             <h2 class="text-center lg-margin">Create Account</h2>
@@ -259,17 +203,7 @@ function validationlogin(){
                                    </div>                                     
                                 </div><!-- End .col-md-6 -->
                             </div><!-- End .row -->
-                            
-                            <!-- <div class="row">
-                                  <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="normal-selectbox clearfix">
-                                        <select id="cnamediv" class="selectbox" name="cid" id="cname" style="float: right;width:40%;">
-         								
-         								</select>                                         
-                                    </div>End .normal-selectbox
-                                </div>End .col-md-6
-                            </div>End .row
-                  	    -->
+
 							   <div class="form-group text-center">
                                     <input type="submit" class="btn btn-lightblue btn-lg" value="Send">
                                     <input type="reset" class="btn btn-yellow btn-lg" value="Reset">
@@ -283,112 +217,6 @@ function validationlogin(){
 <!-- 새로운 회원가입 -->
 
 
-
-
-
-
-
-
-
-<!--  로그인 
-<div id="loginform">
-<form class="form-horizontal" action="memberlogin.do" method="post" 
-     onsubmit="return validationlogin();" name="loginfrm" style="width: 90%">
-  <fieldset>
-    <legend>Login</legend>
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">ID</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="mid" placeholder="ID">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input type="password" class="form-control" name="mpwd" placeholder="Password">
-        <br>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="submit" class="btn btn-primary">Login</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
-</div> -->
-<!-- 로그인끝 -->
-
-<!--  회원가입 -->
-<!-- <div id="joinform">
-<form class="form-horizontal" action="join.do" method="post" 
-     onsubmit="return validationcheck();" name="myfrm" style="width: 90%">
-  <fieldset>
-    <legend>Join</legend>
-    <div class="form-group">
-      <label for="inputID" class="col-lg-2 control-label">ID</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="mid" placeholder="ID">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input type="password" class="form-control" name="mpwd" placeholder="Password">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPasswordcheck" class="col-lg-2 control-label">Password check</label>
-      <div class="col-lg-10">
-        <input type="password" class="form-control" name="mpwdcheck" placeholder="Password">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputName" class="col-lg-2 control-label">Name</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="mname" placeholder="name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="mphone" placeholder="phone">
-      </div>
-      <span class="help-block" style="margin-left: 20%; margin-top: 8%;">'-'없이 입력해주세요.</span>
-    </div>
-   <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" name="memail" placeholder="email">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Car Model</label>
-      <div class="col-lg-10">
-        <select class="form-control" id="cbrand"  onchange="call();" 
-                           style="float: left; width:40%;">
-          <option value="브랜드선택" selected="selected">브랜드선택</option>
-          <option value="현대">현대</option>
-          <option value="기아">기아</option>
-          <option value="쉐보레">쉐보레</option>
-          <option value="BMW">BMW</option>
-          <option value="아우디">아우디</option>
-        </select>
-        <div id="cnamediv">
-        </div>
-      </div>
-    </div><br><br>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Join</button>
-      </div>
-    </div>
-   </fieldset>
-</form>
-</div>-->
 
 
 
@@ -530,5 +358,19 @@ function viewData4(data){
 }
 
 </script>
+
+
+<!-- Plugins -->
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
+
 </body>
 </html>
