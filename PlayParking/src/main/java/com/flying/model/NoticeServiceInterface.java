@@ -15,4 +15,5 @@ public interface NoticeServiceInterface {
 	public int updateNotice(NoticeDTO notice);
 	public int deleteNotice(NoticeDTO notice);
 	public List<NoticeDTO> selectByaid11(String aid);
+	public String selectMaxnno(String aid);
 }

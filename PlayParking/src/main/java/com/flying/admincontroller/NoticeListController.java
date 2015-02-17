@@ -28,7 +28,7 @@ public class NoticeListController {
    
    
    @RequestMapping(value="/noticelist1.do")
-   public ModelAndView listGet1(HttpServletRequest request, HttpSession session){
+   public ModelAndView listGet1(HttpServletRequest request, HttpSession session, String pageno){
       ModelAndView mv = new ModelAndView();
       if(session.getAttribute("memcheck")==null){			
 			mv.setViewName("members/member_login");
@@ -36,10 +36,11 @@ public class NoticeListController {
 		}else{
     	 session = request.getSession();
     	 MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");    	 
-  		List<NoticeDTO> noticelist = service.selectMembernotice();
-  		mv.addObject("noticelist", noticelist);  		
+  		List<NoticeDTO> noticelist = service.selectMembernotice(); //다 가져오기
+  		mv.addObject("noticelist", noticelist); 
+  		mv.addObject("noticelistsize", noticelist.size());
   		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list_admin");
+  		mv.setViewName("/admin/notice_list_member");
   		return mv;
       }
    }
@@ -59,12 +60,15 @@ public class NoticeListController {
     	
     	List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid(),start_num,last_num);
     	
-    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid());    	
+    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid()); 
+    	
+    	String maxnno = service.selectMaxnno(admincheck.getAid());
     	
   		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
   		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);
   		mv.addObject("noticelistsize", noticelist2.size());
+  		mv.addObject("maxnno", maxnno);
   		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }

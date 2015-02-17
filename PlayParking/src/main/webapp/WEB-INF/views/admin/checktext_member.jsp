@@ -1,54 +1,142 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-<title>공지사항 글 보기</title>
-<%@ include file="../Header.jsp"%>
-</head>
-<body>
-<h1>공지사항 글 보기</h1>
-<!-- 
-<c:forEach items="${parkinglist}" var="p">
-	<c:set var="cnt" value="${cnt+1}"></c:set>
-		<input type="hidden" name="pid" id="pid" value="${p.pid}">
-		<tr class="info1" id="tr${cnt}">
-			<td><input type="text" size="1" id="cnt${cnt}" value="${cnt}" readonly="readonly" style="border:0"></td>
-			<td>${p.pname}</td>
-			<td>${p.pfare}</td>
-			<td>${p.platefare}</td>
-			<td>${p.pwidth}</td>
-			<td>${p.plength }</td>
-			<td><input type="submit" value="예약"></td>
-		</tr>		
-	</c:forEach>
- -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<table>
-	<tr>
-		<td>제목</td>
-		<td>${title}</td>
-	</tr>
-	
-	<tr>
-		<td>내용</td>
-		<td>${text}</td>
-	</tr>
-</table>
+<!-- 헤더 부트스트랩 시작 -->
+        <title>Geass - Creative Onepage Html5 Template</title>
+        <meta name="description" content="Geass is premium and creative multipurpose onepage template">
+        <meta name="author" content="Eon">
+
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+
+        <!-- Favicon and Apple Icons -->
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
+
+        <!--- jQuery -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
+
+        <!-- Queryloader -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
+
+        <!-- Modernizr -->
+        <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
+
+<!-- 부트스트랩 끝 -->
+<style>
+.title {margin-left: 35%; margin-top: 8%;}
+.table {margin-top:3%;}
+</style>
+
+</head>
+
+<body>
+<%@ include file="../Header.jsp"%>
+<%
+	int number=0;
+	int listSize = 10;
+	int currentPage=0;
+	if(request.getParameter("pageNum")==null){
+		currentPage=1;
+	}else{
+		currentPage = Integer.parseInt(request.getParameter("pageNum"));
+	}		
+	int nextPage = currentPage + 1;
+	int startRow = (currentPage - 1)*listSize+1;
+	int endRow = currentPage*listSize;	
+	int nsize = 0;
+%>
+<div class="title">
+    <h2>Parking Notice View </h2>
+</div>
+
+<c:set var="cnt" value="1"></c:set>
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="content">
+				<div class="module message">
+					                               
+                <div class="list-group">
+                <table class="table table-message">
+                <tbody>
+                	<tr>
+	                    <td width="30%" style="background-color: #1CC5F6;font-weight : bold">Notice Title</td>
+	                    <td>${title}</td>						
+					</tr>
+					<tr>
+	                    <td width="30%" style="background-color: #1CC5F6;font-weight : bold">Content</td>
+	                 </tr>  
+	                 <tr>
+	                    <td>${text }</td>
+	                 </tr>      
+				</tbody>
+				</table>                             
+               </div>
+               </div>
+			</div>  <!--/.content-->
+
+<div align="center">                       
+<!-- 페이징 처리 -->            
+<%if (currentPage>1){%>
+<a href="noticelist1.do?pageno=<%=currentPage-1%>">◀</a>
+<%}%>
+
+<%-- <%if (currentPage<savenum){%>
+<a href="noticelist2.do?pageNum=<%=currentPage+1%>">▶</a>
+<%} %> --%>
+
+<c:set var="savenum" value="0" />
+<c:choose>
+    <c:when test="${(noticelistsize%10) ne 0}">
+    	<c:set var="savenum" value="${(noticelistsize/10)+1}" />        
+    </c:when>
+
+    <c:otherwise>
+    	<c:set var="savenum" value="${(noticelistsize/10)}" />
+    </c:otherwise>
+</c:choose>
+
+<c:forEach var="i" begin="1" end="${savenum}"> 
+<a href="noticelist1.do?pageno=${i}">${i}</a>
+</c:forEach>
+
+</div>
+<!-- 페이징 처리 끝 -->
+
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        
+
+<!-- Plugins -->
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+</body>
+</html>
 
 </body>
 </html>
