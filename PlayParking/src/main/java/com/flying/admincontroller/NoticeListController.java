@@ -34,11 +34,26 @@ public class NoticeListController {
 			mv.setViewName("members/member_login");
 			return mv;
 		}else{
-    	 session = request.getSession();
-    	 MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");    	 
-  		List<NoticeDTO> noticelist = service.selectMembernotice(); //다 가져오기
+		
+		if(pageno==null)
+			pageno="1";
+
+			
+	   	session = request.getSession();
+    	MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck"); 
+    	
+    	int last_num = Integer.parseInt(pageno)*10;
+     	int start_num = last_num-9;
+     	
+     	System.out.println(last_num+"***"+start_num);
+     	
+  		List<NoticeDTO> noticelist = service.selectMembernotice(start_num,last_num); //다 가져오기  		
+  		List<NoticeDTO> noticelist2 = service.selectMembernotice2();
+  		
+  		System.out.println("노티스 리스트"+noticelist);
+  		
   		mv.addObject("noticelist", noticelist); 
-  		mv.addObject("noticelistsize", noticelist.size());
+  		mv.addObject("noticelistsize", noticelist2.size());
   		mv.addObject("memberid", memcheck.getMid());
   		mv.setViewName("/admin/notice_list_member");
   		return mv;
@@ -52,6 +67,10 @@ public class NoticeListController {
 	         mv.setViewName("admin/admin_login");
 	         return mv;
 		}else{
+			
+		if(pageno==null)
+			pageno="1";
+		
     	session = request.getSession();
     	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");      
     	 

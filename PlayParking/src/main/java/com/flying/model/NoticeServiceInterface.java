@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface NoticeServiceInterface {
 
-	public List<NoticeDTO> selectMembernotice();
+	public List<NoticeDTO> selectMembernotice(int s, int l);
 	public NoticeDTO selectnoticeAll(int nno);
 	public List<NoticeDTO> selectByaid(String aid, int s, int l);
 	public List<NoticeDTO> selectByaid2(String aid);
@@ -16,4 +16,5 @@ public interface NoticeServiceInterface {
 	public int deleteNotice(NoticeDTO notice);
 	public List<NoticeDTO> selectByaid11(String aid);
 	public String selectMaxnno(String aid);
+	public List<NoticeDTO> selectMembernotice2();
 }
