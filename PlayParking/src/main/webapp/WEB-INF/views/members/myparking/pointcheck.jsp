@@ -2,61 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>포인트 확인 및 이용내역</title>
-
-<style>
-	.mypoint {width: 40%; margin-top: 5%; margin-left: 10%; float: left;}
-	.charge {width: 40%; margin-top: 5%; margin-right: 10%; float: right;}
-
-	.title {width: 80%; margin-top: 5%; margin-left: 9%; float: left;}
-	
-	.paypoint {width: 40%; margin-top: 3%; margin-left: 10%; float: left;}
-	.paypoint ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
-	.paypoint .ptitle {font-weight: bold;text-align: center;}
-	.paypoint ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:200px;}
-	.paypoint ul .list-group-item list-group-item-lightblue {width: 199px;} /* 표 라인 맞추기기 위해*/
-	.paypoint ul .list-group-item {width: 199px;}
-	
-	.usepoint {width: 40%; margin-top: 3%; margin-right: 10%; float: right;}
-	.usepoint ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
-	.usepoint .utitle {font-weight: bold;text-align: center;}
-	.usepoint ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:200px;}
-	.usepoint ul .list-group-item list-group-item-lightblue {width: 199px;} /* 표 라인 맞추기기 위해*/
-	.usepoint ul .list-group-item {width: 199px;}
-</style>	
-
-<style>
-#point {margin-left: 5%; margin-top:5%; width: 80%;}
-</style>
-
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<!-- <meta charset="utf-8">
-        <title>Geass - Creative Onepage Html5 Template</title> -->
+<meta charset="utf-8">
+<title>포인트 확인 및 이용내역</title>
+        <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
         <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">		
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
+		
 		
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
@@ -82,59 +43,59 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
-       
-</head>
- <body>
-<div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
-<div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
-        <header id="header" class="transparent">
-                <nav class="navbar navbar-default navbar-transparent" role="navigation">
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
-                        </div>
 
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse navbar-right" id="main-menu">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#home">Home</a></li>
-                                <li><a href="#aboutus">About us</a></li>
-                                <li><a href="search.do">Search</a></li>
-                                <li><a href="noticelist1.do">Notice</a></li>
-                                <li class="dropdown">
-                                    <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="memberupdate.do">myinfo update</a></li>
-                                        <li><a href="reservecheck.do">reserve check</a></li>
-                                        <li><a href="pointcheck.do">point check</a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
-				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-				 				<li><a href="adminlogin.do">Admin</a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-            </header><!-- 헤더끝 -->
+<style>
+	.header {height: 50px}
+	.body {margin-top: 100px;}
+	.mypoint {width: 40%; margin-top: 5%; margin-left: 10%; float: left;}
+	.mypoint .mpoint {float: right; margin-right: 30%;}
+	.charge {width: 40%; margin-top: 5%; margin-right: 10%; float: right;}
+	.charge .cbtn {float: right; margin-right: 30%;}
+	.title {width: 80%; margin-top: 5%; margin-left: 9%; float: left;}
+	
+	.paypoint {width: 40%; margin-top: 3%; margin-left: 10%; float: left;}
+	.paypoint ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
+	.paypoint .ptitle {font-weight: bold;text-align: center;}
+	.paypoint ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:200px;}
+	.paypoint ul .list-group-item list-group-item-lightblue {width: 199px;} /* 표 라인 맞추기기 위해*/
+	.paypoint ul .list-group-item {width: 199px;}
+	
+	.usepoint {width: 40%; margin-top: 3%; margin-right: 10%; float: right;}
+	.usepoint ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
+	.usepoint .utitle {font-weight: bold;text-align: center;}
+	.usepoint ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:200px;}
+	.usepoint ul .list-group-item list-group-item-lightblue {width: 199px;} /* 표 라인 맞추기기 위해*/
+	.usepoint ul .list-group-item {width: 199px;}
+</style>	
+
+<style>
+#point {margin-left: 5%; margin-top:5%; width: 80%;}
+</style>
             
-            
+</head>
+
+ <body>
+<!-- 진짜헤더시작 -->
+<div class="header">
+<%@ include file="../../Header.jsp" %>
+</div>
+<!-- 진짜헤더끝 -->  
+
+<div class="body">          
+
 <div class="row">
  <div class="mypoint">
   <h3>My Point</h3>
+  <div class="mpoint">
   <h1>${point.mpoint} P</h1>
+  </div>
  </div>
 
  <div class="charge">
   <h3>Charge</h3>
+  <div class="cbtn">
   <input class="btn btn-lightblue" type="button" value="충전하기" onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+  </div>
   <br><br>
  </div>
 </div>
@@ -183,6 +144,7 @@
 <!--  포인트 사용내역 끝 -->	
 </div>
 
+</div>
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
@@ -192,6 +154,7 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
 </body>
 </html>

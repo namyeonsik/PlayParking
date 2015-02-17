@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <!--[if IE 9]> <html class="ie9"> <![endif]-->
 <!--[if !IE]><!--><html lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Geass - Creative Onepage Html5 Template</title>
+        <title>PlayParking</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
@@ -36,7 +38,7 @@
         <!-- Modernizr -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
         
-	    
+       
     </head>
     <body data-spy="scroll" data-target="#main-menu">
         <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
@@ -59,7 +61,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse navbar-right" id="main-menu">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="membermain.do">Home</a></li>
+                                <li class="active"><a href="#home">Home</a></li>
                                 <li><a href="#aboutus">About us</a></li>
                                 <li><a href="search.do">Search</a></li>
                                 <li><a href="noticelist1.do">Notice</a></li>
@@ -72,8 +74,8 @@
                                     </ul>
                                 </li>
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
-				 ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-				 				<li><a href="adminlogin.do">Admin</a></li>
+             ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
+                         <li><a href="adminlogin.do">Admin</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
@@ -85,7 +87,7 @@
                 <div id="revslider-container">
                     <div id="revslider">
                         <ul>
-                        	<!-- data-lazyload: 홈배경 -->
+                           <!-- data-lazyload: 홈배경 -->
                             <li data-transition="random" data-slotamount="8" data-masterspeed="400" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide12.jpg" data-saveperformance="on"  data-title="Welcome to Geass">
                                 <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg1" data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide12.jpg" data-kenburns="on" data-bgposition="center center" data-duration="4800" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center top" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-uppercase sft stt" data-x="center" data-hoffset="25" data-y="215" data-start="1000" data-speed="1000"><span class="yellow-color">Welcome</span> to</div>
@@ -117,48 +119,48 @@
 
 
  <!-- Modal Login Form-->
-		<div class="modal fade" id="modal-login-form" tabindex="-1"
-			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-			<form id="login-form" method="post" action="memberlogin.do">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
-						</div>
-						<!-- End .modal-header -->
-			<div class="modal-body">
-				<div class="form-group">
-						<label for="email2" class="form-label">Your Id<span
-									class="required">*</span></label> <input type="text" name="mid"
-									id="mid" class="form-control input-lg">
-							</div>
-							<!-- End .form-group -->
-							<div class="form-group">
-								<label for="password2" class="form-label">Your Passowrd<span
-									class="required">*</span></label> <input type="password"
-									name="mpwd" id="mpwd" class="form-control input-lg">
-							</div>
-							<!-- End .form-group -->
+      <div class="modal fade" id="modal-login-form" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+         <form id="login-form" method="post" action="memberlogin.do">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+                  </div>
+                  <!-- End .modal-header -->
+         <div class="modal-body">
+            <div class="form-group">
+                  <label for="email2" class="form-label">Your Id<span
+                           class="required">*</span></label> <input type="text" name="mid"
+                           id="mid" class="form-control input-lg">
+                     </div>
+                     <!-- End .form-group -->
+                     <div class="form-group">
+                        <label for="password2" class="form-label">Your Passowrd<span
+                           class="required">*</span></label> <input type="password"
+                           name="mpwd" id="mpwd" class="form-control input-lg">
+                     </div>
+                     <!-- End .form-group -->
 
-						</div>
-						<!-- End .modal-body -->
-						
-						<div class="modal-footer">
-							<button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
-							<button type="submit" class="btn btn-blue">Login</button>
-							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
-						</div>
-						<!-- End .modal-footer -->
-					</div>
-					<!-- End .modal-content -->
-				</div>
-				<!-- End .modal-dialog -->
-			</form>
-		</div>
-		<!-- End .modal -->
+                  </div>
+                  <!-- End .modal-body -->
+                  
+                  <div class="modal-footer">
+                     <button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
+                     <button type="submit" class="btn btn-blue">Login</button>
+                     <button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+                  </div>
+                  <!-- End .modal-footer -->
+               </div>
+               <!-- End .modal-content -->
+            </div>
+            <!-- End .modal-dialog -->
+         </form>
+      </div>
+      <!-- End .modal -->
  
                <div class="footer-social-icons transparent">
                     <div class="container">
@@ -176,7 +178,7 @@
                         </div><!-- End .row -->
                     </div><!-- End .container -->
                 </div><!-- End .footer-social-icons -->
-			<footer>
+         <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">

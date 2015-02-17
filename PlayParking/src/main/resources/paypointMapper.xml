@@ -7,7 +7,7 @@
  <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.PayPointDTO">
-    select * from paypoint where mid = #{aa:VARCHAR}
+    select * from paypoint where mid = #{aa:VARCHAR} order by paydate
   </select>
  
   <insert id="insertPoint" parameterType="com.flying.model.PayPointDTO">

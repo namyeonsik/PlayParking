@@ -7,7 +7,7 @@
  <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.UsePointDTO">
-    select * from usepoint where mid = #{aa:VARCHAR}
+    select * from usepoint where mid = #{aa:VARCHAR} order by usedate
   </select>
  
   <insert id="insertUsePoint" parameterType="com.flying.model.UsePointDTO">
