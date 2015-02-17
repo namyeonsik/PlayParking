@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
 <title>회원가입</title>
@@ -199,9 +196,13 @@ function validationlogin(){
                 
                                     
                                     
-                                   <div id="cnamediv">
-                                   </div>                                     
+                                                                   
                                 </div><!-- End .col-md-6 -->
+                                
+                                
+                                <div id="cnamediv"><h1>들어왓니</h1>
+									
+								</div> 
                             </div><!-- End .row -->
 
 							   <div class="form-group text-center">

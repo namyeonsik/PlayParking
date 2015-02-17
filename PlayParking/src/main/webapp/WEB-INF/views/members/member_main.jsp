@@ -206,7 +206,12 @@
         <!-- Google map javascript api v3 -->
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
+<input id="mm" value="${msg}" type="hidden"> 
 <script>
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+	alert("*"+dd+"*");
+}
 
 var elem = document.getElementById('loginmodal');
 elem.onclick = showModal;

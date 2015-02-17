@@ -94,8 +94,14 @@
          </form>
       </div>
       <!-- End .modal -->
+<input id="mm" value="${msg}" type="hidden"> 
 
 <script>
+var dd = document.getElementById("mm").value;
+if(dd!=''){
+	alert("*"+dd+"*");
+}
+
 var elem = document.getElementById('loginmodal');
 elem.onclick = showModal;
 

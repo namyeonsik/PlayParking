@@ -41,7 +41,7 @@ public class MemberLoginController {
 			
 		}else{
 			mv.setViewName("members/member_main");
-			mv.addObject("msg", "로그인 실패");
+			mv.addObject("msg", "아이디나 비밀번호가 일치하지 않습니다.");
 		}
 		return mv;
 	}
