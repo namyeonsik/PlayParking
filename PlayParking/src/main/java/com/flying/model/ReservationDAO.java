@@ -1,6 +1,8 @@
 package com.flying.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,6 +112,21 @@ public class ReservationDAO implements ReservationDAOInterface {
 	public List<ReservationDTO> selectReservation(String mid) {
 		// TODO Auto-generated method stub
 		return session.selectList("flying.reservation.selectReservation", mid);
+	}
+
+
+	public List<ReservationDTO> selectByaid(String mid, int s, int l) {
+		Map<String,Object> map = new HashMap<String,Object>();			
+		map.put("mid", mid);
+		map.put("s", s); 
+		map.put("l", l); 
+		return session.selectList("flying.reservation.selectByaid", map);
+	}
+
+
+	public List<ReservationDTO> selectByaid11(String mid) {
+		// TODO Auto-generated method stub
+		return session.selectList("flying.reservation.selectByaid11", mid);
 	}
 
 

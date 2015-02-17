@@ -9,7 +9,19 @@
 	resultType="com.flying.model.ReservationDTO">
 	select * from reservation where rid= #{aa}
   </select>
-
+  
+  <select id="selectByaid" 
+  	parameterType="Map"
+  	resultType="com.flying.model.ReservationDTO">
+    select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc 
+  </select>
+  
+  <select id="selectByaid11" 
+  	parameterType="String"
+  	resultType="com.flying.model.ReservationDTO">
+    select * from reservation where mid = #{mid:VARCHAR} order by rid desc 
+  </select>
+  
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.ReservationDTO">
