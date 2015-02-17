@@ -10,6 +10,17 @@
 	select * from reservation where rid= #{aa}
   </select>
   
+  <!-- <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
+     <association property="pname" column="pid" select="getpname2"></association>
+  </resultMap>
+  <select id="selectByaid" parameterType="Map" resultMap="parkresult"> 
+  select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc
+  </select>
+  
+  <select id="getpname2" resultType="String">
+  	select pname from parking where pid=#{aa}
+  </select> -->
+  
   <select id="selectByaid" 
   	parameterType="Map"
   	resultType="com.flying.model.ReservationDTO">

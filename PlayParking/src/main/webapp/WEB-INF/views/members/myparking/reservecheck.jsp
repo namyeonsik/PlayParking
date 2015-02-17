@@ -47,6 +47,7 @@
 	.header {height: 50px}
 	.body {margin-top: 100px;}
 	.title {margin-left: 35%;}
+	.tail {margin-left: 3%; margin-top: 10%;}
 	.reservecheck {width: 90%; margin-top: 5%; margin-left: 15%;}
 	.reservecheck ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
 	.reservecheck .title {font-weight: bold;text-align: center;}
@@ -78,6 +79,7 @@
 	int nsize = 0;
 %>
 
+
 <div class="body">
 <div class="title">
     <h2> Reservation History </h2>
@@ -103,6 +105,7 @@
     	</c:forEach>	
 </div>
 
+<div class="tail">
 <div align="center">                       
 <!-- 페이징 처리 -->            
 <%if (currentPage>1){%>
@@ -123,8 +126,14 @@
 <c:forEach var="i" begin="1" end="${savenum}"> 
 <a href="reservecheck.do?pageno=${i}">${i}</a>
 </c:forEach>
+
 </div> 
 </div>
+
+
+
+</div>
+
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
