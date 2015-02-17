@@ -1,48 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
-
 <head>
-<!-- <style type="text/css">
-@import url("theme.css");
-</style> -->
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>관리자</title>
-<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
-	rel="stylesheet">
-<link type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/theme.css"
-	rel="stylesheet">
-<link type="text/css"
-	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
-	rel="stylesheet">
-<link type="text/css"
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
-	rel='stylesheet'>
+<title>Admin</title>
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/css/theme.css" rel="stylesheet">
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/images/icons/css/font-awesome.css" rel="stylesheet">
+<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+            rel='stylesheet'>
 
-<%-- <!-- 스크롤 -->
- <!-- BOOTSTRAP STYLE SHEET -->
- <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
-<!-- FONT AWESOME ICONS STYLE SHEET -->
-<link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-<!-- CUSTOM STYLES -->
- <link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet" />
-<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]--> --%>
-	
 
 </head>
 
@@ -249,35 +221,18 @@ function loginfail(){
 	}
 }
 </script> -->
+
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/common.js" type="text/javascript"></script>
+      
 	
-	
-	
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/jquery-1.9.1.min.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/jquery-ui-1.10.1.custom.min.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.resize.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/datatables/jquery.dataTables.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/scripts/common.js"
-		type="text/javascript"></script>
-	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
-		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->
-	<!--Dynamically creates analytics markup-->
-	
-	<script type="text/javascript">
+
+<script type="text/javascript">
 		var _gaq = _gaq || [];
 
 		_gaq.push([ '_setAccount', 'UA-21576262-1' ]);
@@ -298,5 +253,7 @@ function loginfail(){
 			s.parentNode.insertBefore(ga, s);
 
 		})();
-	</script>
+</script>
+
+
 </body>
