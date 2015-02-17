@@ -276,7 +276,6 @@ public class AdminMainController {
 		*/
 	reserve.setRextrafare(naga);
 	
-	
 	//출차해서 parking table의 pcount수 +1 해주는 구문.
 	ParkingDTO parking =  service.selectBypid(rservice.searchReservationByrid(rid).getPid());
 	int countTemp = parking.getPcount()+1;

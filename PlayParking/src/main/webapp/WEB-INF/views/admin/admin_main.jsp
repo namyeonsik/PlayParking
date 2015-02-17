@@ -336,7 +336,7 @@ function loginfail(){
 	var xhr = null;
 	function call(rid) {
 		
-		//alert(data);
+	
 		//stime = document.getElementById("selectTime").value;
 		//alert(stime);
 		xhr = new XMLHttpRequest();
