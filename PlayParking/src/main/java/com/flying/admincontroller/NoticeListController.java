@@ -31,7 +31,7 @@ public class NoticeListController {
    public ModelAndView listGet1(HttpServletRequest request, HttpSession session, String pageno){
       ModelAndView mv = new ModelAndView();
       if(session.getAttribute("memcheck")==null){			
-			mv.setViewName("members/member_login");
+			mv.setViewName("members/notmember");
 			return mv;
 		}else{
 		

@@ -180,30 +180,32 @@ function validationlogin(){
                                 
                                 
                                  <div class="row">
-                                  <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="normal-selectbox clearfix">
-                                       <label>Car Model</label>
-                                         <select id="cbrand" name="cbrand" class="selectbox" 
-                                              onchange="call();" style="float: left; width:40%;">
-                                             <option value="브랜드선택" selected="selected">브랜드선택</option>
-     									     <option value="현대">현대</option>
-     									     <option value="기아">기아</option>
-     									     <option value="쉐보레">쉐보레</option>
-     									     <option value="BMW">BMW</option>
-     									     <option value="아우디">아우디</option>
-                                        </select>
-                                    </div><!-- End .normal-selectbox-->
-                
-                                    
-                                    
-                                                                   
-                                </div><!-- End .col-md-6 -->
+							<div class="col-md-6 col-sm-12 col-xs-12">
+								<div class="normal-selectbox clearfix">
+									<label>Car Model</label>
+								 <select id="cbrand" name="cbrand"
+										class="selectbox" onchange="call();"
+										style="float: left; width: 30%;">
+										<option value="브랜드선택" selected="selected">브랜드선택</option>
+										<option value="현대">현대</option>
+										<option value="기아">기아</option>
+										<option value="쉐보레">쉐보레</option>
+										<option value="BMW">BMW</option>
+										<option value="아우디">아우디</option>
+									</select>
+								</div>
+								<!-- End .normal-selectbox-->
+								<div id="cnamediv">
+								
+	                            </div> 
+							</div>
+							<!-- End .col-md-6 -->
+
+							
                                 
-                                
-                                <div id="cnamediv"><h1>들어왓니</h1>
-									
-								</div> 
+                             
                             </div><!-- End .row -->
+                            
 
 							   <div class="form-group text-center">
                                     <input type="submit" class="btn btn-lightblue btn-lg" value="Send">
@@ -354,8 +356,12 @@ function resultParse(){
 
 function viewData4(data){
  //html
-	document.getElementById("cnamediv").innerHTML =data;
+	//document.getElementById("cnamediv").innerHTML =data;
  	alert(data);
+ 	/* $(document).ajaxSend(function(event,request,settings ) {
+ 		  $("#cnamediv").append(data);
+ 		}); */
+ 	$("#cnamediv").append(data);
 }
 
 </script>

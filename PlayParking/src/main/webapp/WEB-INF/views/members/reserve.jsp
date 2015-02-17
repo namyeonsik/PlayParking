@@ -215,7 +215,7 @@ margin-left: 10%
 				aria-labelledby="myModalLabel3" aria-hidden="true">
 				<div class="modal-dialog modal-sm-9">
 					<div class="modal-content">
-						<div class="modal-header">
+						<div class="modal-header" style="">
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
@@ -224,10 +224,13 @@ margin-left: 10%
 						<!-- End .modal-header -->
 						<div class="modal-body">
 							<div id="msg3"></div><br><br><br><br>
+							<button type="button" class="btn btn-lightblue btn-sm" data-dismiss="modal" style="float: right; margin-right: 10%;">Close</button>
+						
 						</div>
 						<!-- End .modal-body -->
-
-						<button type="button" class="btn1 btn-orange" data-dismiss="modal">Close</button>
+						
+						
+						
 						<!-- <button class="btn btn-yellow">Action</button> -->
 
 					</div>
@@ -397,7 +400,7 @@ margin-left: 10%
 
 	function viewData4() {
 
-		document.getElementById("msg1").innerHTML = '<h4>' + msg1 + '</h4>';
+		document.getElementById("msg1").innerHTML = '<h6>' + msg1 + '</h6>';
 
 	}
 	function viewData5() {
