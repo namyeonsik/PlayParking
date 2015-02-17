@@ -33,9 +33,10 @@ public class NoticeInsertController {
       }else{    	  
     	  session = request.getSession();
           AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");
-          System.out.println("*********notice insert_pid:"+admincheck);
-          	
+          System.out.println("*********notice insert_pid:"+admincheck);          	
           System.out.println("cnt!!!!!!!!!!!!!"+cnt);
+          
+         // String maxnno = service.selectMaxnno(admincheck.getAid());
           
           mv.addObject("adminid", admincheck.getAid());
           mv.addObject("cnt", cnt);
@@ -46,10 +47,8 @@ public class NoticeInsertController {
    }
    
    @RequestMapping(value="/noticeinsert.do", method=RequestMethod.POST)
-   public String insertPost(NoticeDTO notice, HttpServletRequest request){
-	   System.out.println(notice+"天天天天天天天天天天天天天天天天");
-	   String ntitle = request.getParameter("ntitle");
-	   System.out.println(ntitle);
+   public String insertPost(NoticeDTO notice){	 
+	   System.out.println(notice);
 	   int ret = service.insertNotice(notice);
 	   System.out.println(ret+"勒 殮溘!!!!!");
       return "redirect:/noticelist2.do?pageno=1";

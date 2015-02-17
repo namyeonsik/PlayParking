@@ -29,19 +29,15 @@ public class CheckTextController {
 	         mv.setViewName("member/member_login");
 	         return mv;
 		}else{	
-		System.out.println("no:"+no);
 		session = request.getSession();
 		MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
-		
-    	System.out.println(memcheck.getMid());
-    	
+    	    	
     	NoticeDTO notice = service.selectByNno(no,aid);
-    	
-    	System.out.println("*****************"+notice);
     	
     	mv.addObject("title", notice.getNtitle());
     	mv.addObject("text", notice.getNtext());
     	mv.addObject("date", notice.getNdate());
+    	
     	mv.setViewName("admin/checktext_member");
 		return mv;
 		}

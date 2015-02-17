@@ -52,5 +52,8 @@ public class NoticeService implements NoticeServiceInterface{
 	public NoticeDTO selectText(int nno, String aid) {
 		return dao.selectText(nno, aid);
 	}
+	public String selectMaxnno(String aid){
+		return dao.selectMaxnno(aid);
+	}
 
 }

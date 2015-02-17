@@ -57,11 +57,9 @@
 		</div>
 		<!-- /navbar-inner -->
 	</div> 
-		 
+		
 	<form action="noticeupdate.do" method="post">
 	<div class="wrapper">
-	<input type="hidden" name="aid" value="${notice.aid}"><br>
-	<input type="hidden" name="nno" value="${notice.nno}"><br>
 	<div class="container">
 		<div class="row">
 			<div class="content">
@@ -72,6 +70,7 @@
 						</div>						
 						<div class="pull-right">
 						<input class="btn btn-primary" type="submit" value="수정 완료">
+						<input class="btn btn-primary" type="reset" value="취소">
 						<%-- <a class="btn btn-primary" href='noticedelete.do?nno=${nno}'>삭제</a> --%>
 						</div>  
                     </div>
@@ -110,6 +109,8 @@
 		</div>
 	</div>
 </div>
+<input type="hidden" name="aid" value="${notice.aid}"><br>
+<input type="hidden" name="nno" value="${notice.nno}"><br>
 </form>
 
 <!--/.wrapper-->

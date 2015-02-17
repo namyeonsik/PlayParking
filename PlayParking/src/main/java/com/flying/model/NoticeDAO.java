@@ -13,7 +13,11 @@ public class NoticeDAO implements NoticeDAOInterface{
 
 	@Autowired
 	SqlSession session;
-
+	
+	public String selectMaxnno(String aid) {
+		return session.selectOne("flying.notice.selectMaxnno",aid);
+	}	
+	
 	public int insertNotice(NoticeDTO notice) {
 		return session.insert("flying.notice.insertNotice", notice);
 	}

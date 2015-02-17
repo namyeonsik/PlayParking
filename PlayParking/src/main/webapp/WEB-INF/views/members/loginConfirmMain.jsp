@@ -206,92 +206,102 @@
         <!-- Google map javascript api v3 -->
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-        <script>
-        
-        var elem = document.getElementById('loginmodal');
-        elem.onclick = showModal;
+<script>
 
-        function showModal() {
-            $('#modal-login-form').modal('show');
-            return false;
-        }
-            /*----------------------------------------------------*/
-            //* Google javascript api v3  -- map */
-            /*----------------------------------------------------*/
-            (function () {
-                "use strict";
+var elem = document.getElementById('loginmodal');
+elem.onclick = showModal;
 
-                if (document.getElementById("map")) {
-                    var locations = [
-                        ['<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>', 38.396652, 27.090560, 9],
-                        ['<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>', 38.432742, 27.159140, 8]
-                    ];
+function showModal() {
+	var val = elem.toString().split("/");
+	if(val[val.length-1]=="memberlogout.do"){
+		$('#myModal').modal('hide');
+		return true;
+	}else{
+		$('#modal-login-form').modal('show');
+		return false;
+	}
+}
+	/*----------------------------------------------------*/
+	//* Google javascript api v3  -- map */
+	/*----------------------------------------------------*/
+	(function() {
+		"use strict";
 
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 13,
-                        center: new google.maps.LatLng(38.414592, 27.143122),
-                        scrollwheel: false,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    });
+		if (document.getElementById("map")) {
+			var locations = [
+					[
+							'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>',
+							38.396652, 27.090560, 9 ],
+					[
+							'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>',
+							38.432742, 27.159140, 8 ] ];
 
-                    var infowindow = new google.maps.InfoWindow();
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 13,
+				center : new google.maps.LatLng(38.414592, 27.143122),
+				scrollwheel : false,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			});
 
+			var infowindow = new google.maps.InfoWindow();
 
-                    var marker, i;
+			var marker, i;
 
-                    for (i = 0; i < locations.length; i++) {  
-                      marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                        map: map,
-                        animation: google.maps.Animation.DROP,
-                        icon: 'images/pin.png',
-                      });
+			for (i = 0; i < locations.length; i++) {
+				marker = new google.maps.Marker({
+					position : new google.maps.LatLng(locations[i][1],
+							locations[i][2]),
+					map : map,
+					animation : google.maps.Animation.DROP,
+					icon : 'images/pin.png',
+				});
 
-                      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                        return function() {
-                          infowindow.setContent(locations[i][0]);
-                          infowindow.open(map, marker);
-                        }
-                      })(marker, i));
-                    }
-                }
+				google.maps.event.addListener(marker, 'click', (function(
+						marker, i) {
+					return function() {
+						infowindow.setContent(locations[i][0]);
+						infowindow.open(map, marker);
+					}
+				})(marker, i));
+			}
+		}
 
-            }());
+	}());
 
-            $(function() {
-                // Slider Revolution for Home Section
-                jQuery('#revslider').revolution({
-                    delay:9000,
-                    startwidth: 1140,
-                    startheight: 600,
-                    onHoverStop:"true",
-                    hideThumbs:0,
-                    lazyLoad:"on",
-                    navigationType:"none",
-                    navigationHAlign:"center",
-                    navigationVAlign:"bottom",
-                    navigationHOffset:0,
-                    navigationVOffset:20,
-                    soloArrowLeftHalign:"left",
-                    soloArrowLeftValign:"center",
-                    soloArrowLeftHOffset:0,
-                    soloArrowLeftVOffset:0,
-                    soloArrowRightHalign:"right",
-                    soloArrowRightValign:"center",
-                    soloArrowRightHOffset:0,
-                    soloArrowRightVOffset:0,
-                    touchenabled:"on",
-                    stopAtSlide:-1,
-                    stopAfterLoops:-1,
-                    dottedOverlay:"none",
-                    spinned:"spinner5",
-                    shadow:0,
-                    hideTimerBar: "off",
-                    fullWidth:"off",
-                    fullScreen:"on",
-                    navigationStyle:"preview4"
-                  });
-            });
-        </script>
+	$(function() {
+		// Slider Revolution for Home Section
+		jQuery('#revslider').revolution({
+			delay : 9000,
+			startwidth : 1140,
+			startheight : 600,
+			onHoverStop : "true",
+			hideThumbs : 0,
+			lazyLoad : "on",
+			navigationType : "none",
+			navigationHAlign : "center",
+			navigationVAlign : "bottom",
+			navigationHOffset : 0,
+			navigationVOffset : 20,
+			soloArrowLeftHalign : "left",
+			soloArrowLeftValign : "center",
+			soloArrowLeftHOffset : 0,
+			soloArrowLeftVOffset : 0,
+			soloArrowRightHalign : "right",
+			soloArrowRightValign : "center",
+			soloArrowRightHOffset : 0,
+			soloArrowRightVOffset : 0,
+			touchenabled : "on",
+			stopAtSlide : -1,
+			stopAfterLoops : -1,
+			dottedOverlay : "none",
+			spinned : "spinner5",
+			shadow : 0,
+			hideTimerBar : "off",
+			fullWidth : "off",
+			fullScreen : "on",
+			navigationStyle : "preview4"
+		});
+	});
+</script>
     </body>
 </html>

@@ -29,8 +29,10 @@
   <select id="selectByaid" 
   	parameterType="Map"
   	resultType="com.flying.model.NoticeDTO">
-    select * from notice where aid = #{aid:VARCHAR} and
-     nno between #{s:INTEGER} and #{l:INTEGER} order by ndate desc 
+    select * from (
+ 	select rownum r, aa.*
+	from (select * from notice where aid = #{aid:VARCHAR} order by ndate desc) aa 
+	) where r between #{s:INTEGER} and #{l:INTEGER}
   </select>
   
   <select id="selectByaid11" 
@@ -67,6 +69,12 @@
 	insert into Notice(nno,ntitle,ntext,ndate,aid)
 	values(#{nno:INTEGER},#{ntitle:VARCHAR}, #{ntext:VARCHAR},sysdate,#{aid:VARCHAR})
   </insert>
+  
+   <select id="selectMaxnno" 
+  	parameterType="String"
+  	resultType="String">
+    select max(nno) from notice where aid = #{aid:VARCHAR}
+  </select>
   
  
   

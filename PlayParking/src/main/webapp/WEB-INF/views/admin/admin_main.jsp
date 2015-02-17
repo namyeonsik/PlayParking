@@ -1,26 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
+
 <head>
+<!-- <style type="text/css">
+@import url("theme.css");
+</style> -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin</title>
-<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/css/theme.css" rel="stylesheet">
-<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/images/icons/css/font-awesome.css" rel="stylesheet">
-<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
-            rel='stylesheet'>
+<title>관리자</title>
+<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/theme.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
+	rel="stylesheet">
+<link type="text/css"
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+	rel='stylesheet'>
 
+<%-- <!-- 스크롤 -->
+ <!-- BOOTSTRAP STYLE SHEET -->
+ <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONT AWESOME ICONS STYLE SHEET -->
+<link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
+<!-- CUSTOM STYLES -->
+ <link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet" />
+<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]--> --%>
+	
 
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
+	
 		<div class="navbar-inner">
+		
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
@@ -53,13 +83,14 @@
 	</div> 
 	<!-- /navbar -->
 	<div class="wrapper">
+	 
 		<div class="container">
 			<div class="row" style="margin-right: 3%; margin-left: 8%">
 				<div class="span9">
 					<div class="content">
 						<div class="btn-controls">
 							<div class="btn-box-row row-fluid">
-								<a href="noticelist2.do?pageno=1" class="btn-box big span4">								
+								<a href="noticelist2.do" class="btn-box big span4">
 								<i class="icon-edit"></i><b>Notice</b>
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">
@@ -112,6 +143,7 @@
 									<c:set var="resultEnd" value="${num.rend==null?'출차안함':'출차함'}"/>
 									<c:set var="testval1" value=""/>
 									<c:if test=""></c:if>
+									
 									<tr class="odd gradeX">
 			
 			
@@ -121,14 +153,62 @@
 									<td>${num.rtime}</td>
 									
 									<td>${resultEnd }</td> 
-									<td><a onclick="window.open('reservationupdate.do?rid=${num.rid}', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200')" >정보수정</a></td>
+								
+									
+									<td><input type="button" value="Select Time"
+									class="btn btn-lightblue" 
+									data-toggle="modal" data-target="#modal-login-form" onclick="call(${num.rid})" ></td>
+									
+									<!-- Modal Login Form-->
+		<div class="modal fade" id="modal-login-form" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<!-- <form id="login-form" method="post" action="reservationupdate.do"> -->
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+						</div>
+						<!-- End .modal-header -->
+			<div class="modal-body">
+					<div id="modalPrint"></div>
+
+						</div>
+						<!-- End .modal-body -->
+						<!-- <div class="modal-footer">
+							<button type="submit" class="btn btn-blue">Login</button>
+							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+						</div> -->
+						<!-- End .modal-footer -->
+					</div>
+					<!-- End .modal-content -->
+				</div>
+				<!-- End .modal-dialog -->
+			<!-- </form> -->
+		</div>
+		<!-- End .modal -->
+									
+								
+									
+									
+									
+									
 									</tr>
 									</c:forEach>
+									
+									
+									
+                                        
 						       	 </tbody>
 				              </table>
+				              
 				              </div><!-- table -->
 				              </div><!--/.module-->
+				             
 							</form>
+							 
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
@@ -192,7 +272,7 @@
 				              </div><!-- table -->
 				              </div><!--/.module-->
 							</form></div>
-						</div> --%>
+						</div> 
 						</div><!--/.content-->
 						</div><!--/.span9-->
 					</div><!-- row class -->			
@@ -221,18 +301,101 @@ function loginfail(){
 	}
 }
 </script> -->
-
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/edmin/scripts/common.js" type="text/javascript"></script>
-      
 	
+	
+	
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/jquery-1.9.1.min.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/jquery-ui-1.10.1.custom.min.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.resize.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/datatables/jquery.dataTables.js"
+		type="text/javascript"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/scripts/common.js"
+		type="text/javascript"></script>
+	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
+		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->
+	<!--Dynamically creates analytics markup-->
+	
+	<script type="text/javascript">
+/* 	$('#modal-text1').on('show', function() {
+	    var link = $(this).data('link'),
+	        confirmBtn = $(this).find('.confirm');
+	})
 
-<script type="text/javascript">
+
+	$('#btnYes').click(function() {
+	  
+	    // handle form processing here
+	  	
+	  	//alert('submit form');
+	    $('form').submit();
+	  
+	}); */
+	
+	
+	
+	
+	var msg1;
+	var rid=0;
+	var data;
+	var xhr = null;
+	function call(rid) {
+		
+		//alert(data);
+		//stime = document.getElementById("selectTime").value;
+		//alert(stime);
+
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = resultParse1;
+
+		data="rid="+rid;
+		//alert(rid);
+		//   alert(data);
+
+		//msg1 = stime;
+		//viewData1();
+		//포스트방식
+		xhr.open("GET", "reservationupdate.do?"+data, true);//POST방식 비동기통신
+		/* xhr.setRequestHeader("content-type",
+				"application/x-www-form-urlencoded"); */
+		xhr.send(null);//post방식일때는 요청body에 데이터를 담는다.
+
+	}
+	
+	
+	function resultParse1() {
+		if (xhr.readyState == 4) {//서버에서 전송이 끝남?
+			if (xhr.status == 200) {//정상종료
+
+				viewData1(xhr.responseText);//HTML
+			}
+		}
+
+	}
+	
+	function viewData1(d)
+	{
+		//alert(d);
+		//document.getElementById("msg3").innerHTML ='<h6>'+ msg1+' 시간을 선택하셨습니다</h6>';
+		//document.getElementById("modalPrint").innerHTML=d;
+		$("#modalPrint").append(d);
+	}
+	
+	
+	
 		var _gaq = _gaq || [];
 
 		_gaq.push([ '_setAccount', 'UA-21576262-1' ]);
@@ -253,7 +416,8 @@ function loginfail(){
 			s.parentNode.insertBefore(ga, s);
 
 		})();
-</script>
+	</script>
+	
 
 
 </body>

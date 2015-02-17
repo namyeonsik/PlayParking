@@ -78,7 +78,7 @@ public class AdminMainController {
 		String today = format.format(d1);
 		String reserveday=null;
 		System.out.println("오늘날짜는"+today);
-		System.out.println("예약날짜는"+reserveday);
+		//System.out.println("예약날짜는"+reserveday);
 		
 		
 		//시간형변환 부분 시작끝!
@@ -97,28 +97,28 @@ public class AdminMainController {
 		//	System.out.println(reserveday);
 			if(today.equals(reserveday)){
 				reservelist2.add(reservelist.get(a));
-			System.out.println("reserveday="+reserveday);
+			//System.out.println("reserveday="+reserveday);
 			}
 			
 		}
 		//rstarttimeback 가 900이거나 930일때 처리방법
 		String s1="900";
 		String s2="930";
-		for(int a=0;a<reservelist2.size();a++){
+		/*for(int a=0;a<reservelist2.size();a++){
 			System.out.println("확인용="+reservelist2.get(a).getRstarttimeback());
-		}
+		}*/
 		for(int a=0;a<reservelist2.size();a++){
 			String temps = reservelist2.get(a).getRstarttimeback();
 			temps=temps.trim();
 			if(temps.equals(s1)){
 				temps = "0"+temps;
-				System.out.println(temps);
+				//System.out.println(temps);
 				reservelist2.get(a).setRstarttimeback(temps);
 				
 			}
 			else if(temps.equals(s2)){
 				temps = "0"+temps;
-				System.out.println(temps);
+				//System.out.println(temps);
 				reservelist2.get(a).setRstarttimeback(temps);
 				
 			}
@@ -127,10 +127,10 @@ public class AdminMainController {
 		}
 		
 		todaycount = reservelist2.size();
-		for(int a = 0;a<todaycount;a++){
+		/*for(int a = 0;a<todaycount;a++){
 			
 			System.out.println(reservelist2.get(a));
-		}
+		}*/
 		/*String tmp;
 		int cnt1=0;
 		for(int a = 0; a<todaycount;a++){
@@ -172,7 +172,7 @@ public class AdminMainController {
 		mv.addObject("reservelist", reservelist2);
 		mv.addObject("todaypoint",todaypoint);
 	//	mv.addObject("plus30", reservelist3);
-		System.out.println(todaycount);
+		System.out.println("오늘의 예약자는="+todaycount);
 
 		mv.setViewName("admin/admin_main");
 		return mv;
@@ -189,28 +189,28 @@ public class AdminMainController {
 		//ReservationDTO reserve4 = rservice.
 		
 		ModelAndView mv = new ModelAndView();
-	System.out.println("rid="+rid);
+	System.out.println("rid=!="+rid);
 		ReservationDTO reserve1 = rservice.searchReservationByrid(rid);
 		Date d = new Date();
 		SimpleDateFormat sf = new SimpleDateFormat("HHmm");
 		//String test2 = sf.format(d);
-		System.out.println(d.getHours());
+		System.out.println("*******"+d.getHours());
 		String temp1=null;
 		String temp2=null;
-		System.out.println("d의 시간"+d.getHours());
-		System.out.println("d의 분"+d.getMinutes());
+		//System.out.println("d의 시간"+d.getHours());
+		//System.out.println("d의 분"+d.getMinutes());
 		temp1 = temp1.valueOf(d.getHours());
 		temp2 = temp2.valueOf(d.getMinutes());
-		System.out.println("temp2"+temp2);//이걸로 확인하자.
+		//System.out.println("temp2"+temp2);//이걸로 확인하자.
 		String tempresult = temp1+temp2;//계산할 근거 찾음 (출차시간)
-		System.out.println("몇시간 쓰냐면="+reserve1);
+		//System.out.println("몇시간 쓰냐면="+reserve1);
 		//int tempint1 = reserve1.getRtime();
-		System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
+		//System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
 		String tempstring1 = reserve1.getRstarttime();//db에있는 입차예약시간
 		int starttime1 = Integer.parseInt(tempstring1);//db에있는 입차예약시간 int형으로 전환
-		System.out.println(tempresult);
-		System.out.println(starttime1);
-		System.out.println(tempresult.length()); // 현재 시간이 0~9분일때의 예외처리를 위한 구문
+		//System.out.println(tempresult);
+		//System.out.println(starttime1);
+		//System.out.println(tempresult.length()); // 현재 시간이 0~9분일때의 예외처리를 위한 구문
 		if(tempresult.length()==3){
 			String faketemp3 = tempresult.substring(0, 1);
 			String faketemp4 = tempresult.substring(1, 3);
@@ -223,7 +223,7 @@ public class AdminMainController {
 			tempresult="0"+faketemp3+"0"+faketemp4;
 			
 		}
-		System.out.println("tempresult"+tempresult);
+		//System.out.println("tempresult"+tempresult);
 		//starttime1 = 
 		int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // 현재 시간에서 시 만 떼어냄
 		int temp4 = Integer.parseInt(tempresult.substring(2, 4));
@@ -240,7 +240,7 @@ public class AdminMainController {
 			cntm = temp4-temp6;
 			
 		}
-		System.out.println("cnth="+cnth);
+		//System.out.println("cnth="+cnth);
 		/*
 		System.out.println("temp7="+rstarttime);
 		System.out.println(temp3);
@@ -254,17 +254,22 @@ public class AdminMainController {
 		}
 		mv.addObject("naga", cal);
 		mv.addObject("rid",rid);
+		System.out.println("resrvationupdate.do의 끝");
 		mv.setViewName("admin/chulcha");
 		return mv;
 	}
 	
-	@RequestMapping(value="reservationupdate.do", method=RequestMethod.POST)
+	@RequestMapping(value="reservationupdate1.do", method=RequestMethod.POST)
 	public ModelAndView updatePost(int rid,int naga){
 		ModelAndView mv = new ModelAndView();
-		System.out.println("naga"+naga);
+		
+		System.out.println("=============여기까지왔니?=============");
+		
+		
+		//System.out.println("naga"+naga);
 		System.out.println("rid==========="+rid);
 		ReservationDTO reserve = rservice.searchReservationByrid(rid);
-		System.out.println("출차할 예약 정보는="+reserve);
+		//System.out.println("출차할 예약 정보는="+reserve);
 			
 		  /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 	         Date d = sf.parse(date);

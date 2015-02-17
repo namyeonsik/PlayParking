@@ -39,8 +39,8 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
         
        
-    </head>
-    <body data-spy="scroll" data-target="#main-menu">
+  </head>
+<body data-spy="scroll" data-target="#main-menu">
         <div class="geass-loader-overlay left"></div><!-- End .geass-loader-overlay left -->
         <div class="geass-loader-overlay right"></div><!-- End .geass-loader-overlay right -->
         <div id="wrapper">          
