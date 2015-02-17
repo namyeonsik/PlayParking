@@ -1,40 +1,118 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="Bootply" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- [if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif] -->
-<link href="css/styles.css" rel="stylesheet"> 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
- <script src="//code.jquery.com/jquery.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
- <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-<title>공지사항 글 보기</title>
-<%@ include file="../Header.jsp"%>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자</title>
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/edmin/css/theme.css"
+	rel="stylesheet">
+<link type="text/css"
+	href="${pageContext.request.contextPath}/resources/edmin/images/icons/css/font-awesome.css"
+	rel="stylesheet">
+<link type="text/css"
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+	rel='stylesheet'>
 </head>
-<body>
-<h1>공지사항 글 보기</h1>
-<table>
-	<tr>
-		<td>제목</td>
-		<td>${title}</td>
-	</tr>
+
+<body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
+	 <div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container" style="margin-top: 50px;">
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".navbar-inverse-collapse"> <i
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+				<div class="nav-collapse collapse navbar-inverse-collapse">
+					<ul class="nav nav-icons">
+						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
+						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
+						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
+					</ul>
+				 <ul class="nav pull-right"> 
+						 
+						<li><a href="membermain.do">UserPage</a></li>
+						<li class="nav-user dropdown"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								src="resources/images/user.png" class="nav-avatar" /> <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="parkinginfo.do">YourParking Profile</a></li>
+								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="adminlogout.do">Logout</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<!-- /.nav-collapse -->
+			</div>
+		</div>
+		<!-- /navbar-inner -->
+	</div> 
 	
-	<tr>
-		<td>내용</td>
-		<td>${text}</td>
-	</tr>
-</table>
-<a href='noticeupdate.do?nno=${nno}'>수정</a>
-<a href='noticedelete.do?nno=${nno}'>삭제</a>
+	<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="content">
+				<div class="module message">
+					<div class="module-head" style="height: 30px">
+						<div class="pull-left">
+						<font size="4">Parking Notice View</font>
+						</div>						
+						<div class="pull-right">
+						<a class="btn btn-primary" href='noticeupdate.do?nno=${nno}'>수정</a>
+						<a class="btn btn-primary" href='noticedelete.do?nno=${nno}'>삭제</a>
+						</div>  
+                    </div>
+                                            
+                	<div class="module-body">
+                   	<div class="media stream">
+    				<a href="#" class="media-avatar medium pull-left">
+						<img src="resources/images/user.png">
+					</a>
+                    
+                    <div class="media-body">
+						<div class="stream-headline">
+							<h5 class="stream-author">							
+								${title}
+								<small>
+									<c:set var="d" value="${date}"/>
+		    		 				<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
+		    		 			</small>
+							</h5>
+                            <div class="stream-text">
+                            	${text}
+                            </div>
+							
+                        </div><!--/.stream-headline-->
+					</div>
+					</div>
+	            </div>
+	           </div>
+			</div>  <!--/.content-->
+		</div>
+	</div>
+</div>
+
+<!--/.wrapper-->
+<div class="footer">
+	<div class="container">
+	<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+	</div>
+</div>
+
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 </body>
+
 </html>

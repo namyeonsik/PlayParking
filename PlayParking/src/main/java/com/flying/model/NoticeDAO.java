@@ -42,8 +42,16 @@ public class NoticeDAO implements NoticeDAOInterface{
 		return session.selectOne("flying.notice.selectnoticeAll");
 	}
 
-	public List<NoticeDTO> selectByaid(String aid) {
-		return session.selectList("flying.notice.selectByaid",aid);
+	public List<NoticeDTO> selectByaid(String aid, int s, int l) { //페이징때문에 s,l 추가
+		Map<String,Object> map = new HashMap<String,Object>();			
+		map.put("aid", aid);
+		map.put("s", s); 
+		map.put("l", l); 
+		return session.selectList("flying.notice.selectByaid",map);
+	}
+	
+	public List<NoticeDTO> selectByaid11(String aid) { //리스트 전체 갯수 구하려고 만든거
+		return session.selectList("flying.notice.selectByaid11",aid);
 	}
 	
 	public List<NoticeDTO> selectByaid2(String aid) {

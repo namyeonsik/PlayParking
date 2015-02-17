@@ -59,7 +59,7 @@
 					<div class="content">
 						<div class="btn-controls">
 							<div class="btn-box-row row-fluid">
-								<a href="noticelist2.do" class="btn-box big span4">
+								<a href="noticelist2.do?pageno=1" class="btn-box big span4">								
 								<i class="icon-edit"></i><b>Notice</b>
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">

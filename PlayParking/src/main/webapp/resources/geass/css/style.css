@@ -3420,7 +3420,11 @@ select.form-control {
   border: 1px solid #1bc4f5;
 }
 
+<<<<<<< HEAD
 .lightblue + .popover .popover-title {;
+=======
+.lightblue + .popover .popover-title {
+>>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
   background-color: #1bc4f5;
   border-bottom: 1px solid #1bc4f5;
 }
