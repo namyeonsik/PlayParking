@@ -208,13 +208,19 @@
 
 <script>
 
-	var elem = document.getElementById('loginmodal');
-	elem.onclick = showModal;
-	
-	function showModal() {
+var elem = document.getElementById('loginmodal');
+elem.onclick = showModal;
+
+function showModal() {
+	var val = elem.toString().split("/");
+	if(val[val.length-1]=="memberlogout.do"){
+		$('#myModal').modal('hide');
+		return true;
+	}else{
 		$('#modal-login-form').modal('show');
 		return false;
 	}
+}
 	/*----------------------------------------------------*/
 	//* Google javascript api v3  -- map */
 	/*----------------------------------------------------*/
