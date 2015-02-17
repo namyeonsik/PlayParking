@@ -46,9 +46,9 @@
 .header {height: 50px}
 .body {margin-top: 100px;}
 .col-md-6{
-width: 80%;
+width: 40%;
 	margin-top: 5%;
-	margin-left: 10%;
+	margin-left: 30%;
 
 }
 
@@ -57,11 +57,15 @@ width: 80%;
 	
 	}
 
-.modal.modal-content{
+.modal-content{
 width:100%;
 height:20%;
-margin-top: 80%;
-	margin-left: 10%;
+margin-top: 50%;
+	
+}
+.modal-header{
+
+size: 70%;
 }
 .modal-body{
 width:100%;
@@ -107,10 +111,10 @@ margin-left: 10%
                        <button type="reset" class="btn btn-default">reset</button>
                        
                        <!-- Modal Login From 2-->
-                       <div class="modal fade" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+                       <div class="modal fade"   id="modal-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
                             <div class="modal-dialog modal-sm">
                                  <div class="modal-content">
-                                      <div class="modal-header">
+                                      <div class="modal-header" style="size:20px; ">
                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                            <h4 class="modal-title" id="myModalLabel3">Message</h4>
                                        </div><!-- End .modal-header -->
