@@ -7,6 +7,7 @@
   <resultMap type="com.flying.model.NoticeDTO" id="noticeresult">
      <association property="pname" column="pid" select="getpname"></association>
   </resultMap>
+  
   <select id="selectByaid2" parameterType="String" resultMap="noticeresult"> 
   select * from admin where pid = #{aa} order by ndate desc
   </select>
@@ -15,11 +16,10 @@
   	select pname from parking where pid=#{aa} order by ndate desc
   </select>
     
-	<select id="selectMembernotice"
+  <select id="selectMembernotice"
   	resultType="com.flying.model.NoticeDTO">
   	select nno,ntitle,ntext,ndate,aid from notice order by ndate desc
   </select>
-
 
   <select id="selectnoticeAll"
   	resultType="com.flying.model.NoticeDTO">
@@ -27,9 +27,16 @@
   </select>
   
   <select id="selectByaid" 
+  	parameterType="Map"
+  	resultType="com.flying.model.NoticeDTO">
+    select * from notice where aid = #{aid:VARCHAR} and
+     nno between #{s:INTEGER} and #{l:INTEGER} order by ndate desc 
+  </select>
+  
+  <select id="selectByaid11" 
   	parameterType="String"
   	resultType="com.flying.model.NoticeDTO">
-    select * from notice where aid = #{aid:VARCHAR} order by ndate desc
+    select * from notice where aid = #{aid:VARCHAR} order by ndate desc 
   </select>
   
   <select id="selectBynno" 

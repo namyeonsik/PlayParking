@@ -45,20 +45,26 @@ public class NoticeListController {
    }
    
    @RequestMapping(value="/noticelist2.do")
-   public ModelAndView listGet2(HttpServletRequest request, HttpSession session){
+   public ModelAndView listGet2(HttpServletRequest request, HttpSession session, String pageno){
       ModelAndView mv = new ModelAndView();
       if(session.getAttribute("admincheck")==null){         
 	         mv.setViewName("admin/admin_login");
 	         return mv;
 		}else{
     	session = request.getSession();
-    	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");         
-  		List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid());
-      		
+    	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");      
+    	 
+    	int last_num = Integer.parseInt(pageno)*10;
+    	int start_num = last_num-9;
+    	
+    	List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid(),start_num,last_num);
+    	
+    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid());    	
+    	
   		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
   		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);
-  		mv.addObject("noticelistsize", noticelist.size());
+  		mv.addObject("noticelistsize", noticelist2.size());
   		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }

@@ -52,7 +52,7 @@ public class NoticeInsertController {
 	   System.out.println(ntitle);
 	   int ret = service.insertNotice(notice);
 	   System.out.println(ret+"╟г ют╥б!!!!!");
-      return "redirect:/noticelist2.do";
+      return "redirect:/noticelist2.do?pageno=1";
    }   
    
    

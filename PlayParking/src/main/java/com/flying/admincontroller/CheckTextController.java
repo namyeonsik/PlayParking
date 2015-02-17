@@ -41,6 +41,7 @@ public class CheckTextController {
     	
     	mv.addObject("title", notice.getNtitle());
     	mv.addObject("text", notice.getNtext());
+    	mv.addObject("date", notice.getNdate());
     	mv.setViewName("admin/checktext_member");
 		return mv;
 		}
@@ -63,6 +64,7 @@ public class CheckTextController {
     	System.out.println(text);
     	mv.addObject("title", text.getNtitle());
     	mv.addObject("text", text.getNtext());
+    	mv.addObject("date", text.getNdate());
     	mv.addObject("nno", text.getNno());
     	mv.setViewName("admin/checktext");
 		return mv;

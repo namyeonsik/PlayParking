@@ -38,12 +38,15 @@ public class NoticeService implements NoticeServiceInterface{
 		return dao.deleteNotice(notice);
 	}
 
-	public List<NoticeDTO> selectByaid(String aid) {
-		return dao.selectByaid(aid);
+	public List<NoticeDTO> selectByaid(String aid, int s, int l){
+		return dao.selectByaid(aid, s, l);
 	}
 
+	public List<NoticeDTO> selectByaid11(String aid) {
+		return dao.selectByaid11(aid);
+	}
 	public List<NoticeDTO> selectByaid2(String aid) {
-		return dao.selectByaid(aid);
+		return dao.selectByaid2(aid);
 	}
 	
 	public NoticeDTO selectText(int nno, String aid) {
