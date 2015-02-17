@@ -20,4 +20,8 @@ public class UsePointDAO implements UsePointDAOInterface{
 		return session.insert("flying.usepoint.insertUsePoint", point);
 	}
 
+	public List<UsePointDTO> selectBytenmid(String mid) {
+		return session.selectList("flying.usepoint.selectBytenmid", mid);
+	}
+
 }

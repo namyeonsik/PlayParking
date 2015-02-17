@@ -19,4 +19,8 @@ public class UsePointService implements UsePointServiceInterface{
 		return dao.insertUsePoint(point);
 	}
 
+	public List<UsePointDTO> selectBytenmid(String mid) {
+		return dao.selectBytenmid(mid);
+	}
+
 }
