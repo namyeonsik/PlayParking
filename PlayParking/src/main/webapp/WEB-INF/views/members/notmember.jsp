@@ -54,7 +54,7 @@
 <!-- 진짜헤더끝 -->  
 
 <div class="body">
-<p><span class="dropcap-bg blue" >로그인후 이용해주세요</span></p>
+<p><span class="dropcap-bg blue" >로</span> <span class="dropcap-bg blue" >그</span> <span class="dropcap-bg blue" >인</span> <span class="dropcap-bg blue" >후</span> <span class="dropcap-bg blue" >이</span></p>
 </div>
 
 

@@ -42,7 +42,7 @@
                                 </li>
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
              ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-                         <li><a href="adminlogin.do">Admin</a></li>
+                         <li><a href="adminlogin.do">관리자</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
@@ -100,8 +100,14 @@ var elem = document.getElementById('loginmodal');
 elem.onclick = showModal;
 
 function showModal() {
-    $('#modal-login-form').modal('show');
-    return false;
+	var val = elem.toString().split("/");
+	if(val[val.length-1]=="memberlogout.do"){
+		$('#myModal').modal('hide');
+		return true;
+	}else{
+		$('#modal-login-form').modal('show');
+		return false;
+	}
 }
 </script>
 
