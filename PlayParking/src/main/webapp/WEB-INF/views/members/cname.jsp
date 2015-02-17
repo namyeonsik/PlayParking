@@ -43,7 +43,7 @@
 <body>
 
 
-	<div class="row">
+	<div class="row" id="ajaxcname">
 		<div class="col-md-6 col-sm-12 col-xs-12">
 				<div class="normal-selectbox clearfix">
 					<select class="selectbox" name="cid" id="cname"

@@ -233,7 +233,7 @@ function validationlogin(){
         <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 
  <script>
- 
+
  var elem = document.getElementById('loginmodal');
  elem.onclick = showModal;
 
@@ -371,7 +371,7 @@ function viewData4(data){
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 </body>
 </html>

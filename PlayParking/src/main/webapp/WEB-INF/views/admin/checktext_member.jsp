@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,14 +39,17 @@
 
 <!-- 부트스트랩 끝 -->
 <style>
-.title {margin-left: 35%; margin-top: 8%;}
-.table {margin-top:3%;}
+.header{height: 50px;}
+.title {margin-left: 35%; margin-top: 100px;}
+.table {margin-top:100px;}
 </style>
 
 </head>
 
 <body>
+<div class="header">
 <%@ include file="../Header.jsp"%>
+</div>
 <%
 	int number=0;
 	int listSize = 10;
@@ -65,7 +68,46 @@
     <h2>Parking Notice View </h2>
 </div>
 
-<c:set var="cnt" value="1"></c:set>
+<div id="wrapper">
+<section id="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12"></div>
+					<!-- End .col-md-12 -->
+				</div>
+				<!-- End .row -->
+
+				<div class="xlg-margin"></div>
+				<!-- space -->
+
+				<div class="row">
+					<div class="col-md-8 single">
+						<div class="article-author">
+							<figure>
+								<img src="images/blog/author.jpg" alt="Author">
+							</figure>
+							<h4>
+								<a href="#">Eon Dean</a>
+							</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Hic tempore voluptate, iste id quisquam nam neque maiores, eaque
+								ad blanditiis eius quod consequatur inventore quasi dolorem
+								nobis doloribus cum saepe!</p>
+						</div>
+						<!-- End .article-author -->
+					</div>
+					<!-- End .col-md-8 -->
+				</div>
+				<!-- End .row -->
+			</div>
+			<!-- End .container -->
+		</section>
+		<!-- End #content -->
+	</div>
+	<!-- End #wrapper -->
+
+
+	<c:set var="cnt" value="1"></c:set>
 <div class="wrapper">
 	<div class="container">
 		<div class="row">
@@ -126,7 +168,6 @@
         
 
 <!-- Plugins -->
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
