@@ -133,21 +133,40 @@
 				<br>   
 				     
 				<div class="radio">
-					<label>					
+					<label>			
 					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
-					<font size="4">절약형</font>	
+					<font size="3">
+					<input type="text" size="4" style="border:0;background:transparent;" value="절약형" readonly="readonly" 
+						class="add-popover lightblue" data-toggle="popover"
+						 data-placement="right" title="절약형이란?" 
+						 data-content="주차장 요금이 저렴한 순서로 리스트를 보여줍니다!">		
+					</font>
 					</label>
 				</div>
+				<br>
 				<div class="radio">
-					<label>					
+					<label>			
 					<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
-					<font size="4">지각형</font>	
+					<font size="3">
+					<input type="text" size="4" style="border:0;background:transparent;" value="지각형" readonly="readonly" 
+						class="add-popover lightblue" data-toggle="popover"
+						 data-placement="right" title="지각형이란?" 
+						 data-content="자주 주차장 예약 종료 시간 내에 오지않고 지각을 많이 하는 
+						 분들을 위해서 주차장 추가 요금이 저렴한 순서로 리스트를 보여줍니다!">		
+					</font>
 					</label>
 				</div>
+				<br>
 				<div class="radio">
 					<label>					
 					<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
-					<font size="4">안전형</font>	
+					<font size="3">
+					<input type="text" size="4" style="border:0;background:transparent;" value="안전형" readonly="readonly" 
+						class="add-popover lightblue" data-toggle="popover"
+						 data-placement="right" title="안전형이란?" 
+						 data-content="주차하기 힘드신 분들을 위해서 너비와 길이가 다른 주차장보다
+						 큰 순서로 리스트를 보여줍니다!">	
+					</font>
 					</label>
 				</div>
 			</div> 

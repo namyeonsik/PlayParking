@@ -60,7 +60,7 @@ public class NoticeListController {
   		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
   		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);
-  		//mv.addObject("adminid", admincheck.getAid());
+  		mv.addObject("noticelistsize", noticelist.size());
   		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }

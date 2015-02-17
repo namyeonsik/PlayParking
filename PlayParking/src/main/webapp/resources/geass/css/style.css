@@ -3420,7 +3420,7 @@ select.form-control {
   border: 1px solid #1bc4f5;
 }
 
-.lightblue + .popover .popover-title {;
+.lightblue + .popover .popover-title {
   background-color: #1bc4f5;
   border-bottom: 1px solid #1bc4f5;
 }
