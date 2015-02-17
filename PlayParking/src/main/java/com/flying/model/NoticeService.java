@@ -11,8 +11,8 @@ public class NoticeService implements NoticeServiceInterface{
 	@Autowired
 	NoticeDAOInterface dao;
 
-	public List<NoticeDTO> selectMembernotice() {
-		return dao.selectMembernotice();
+	public List<NoticeDTO> selectMembernotice(int s, int l) {
+		return dao.selectMembernotice(s, l);
 	}
 	public NoticeDTO selectnoticeAll(int nno){
 		return dao.selectnoticeAll(nno);
@@ -54,6 +54,10 @@ public class NoticeService implements NoticeServiceInterface{
 	}
 	public String selectMaxnno(String aid){
 		return dao.selectMaxnno(aid);
+	}
+	
+	public List<NoticeDTO> selectMembernotice2() {
+		return dao.selectMembernotice2();
 	}
 
 }

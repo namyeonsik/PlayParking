@@ -17,8 +17,17 @@
   </select>
     
   <select id="selectMembernotice"
+ 	 parameterType="Map"
   	resultType="com.flying.model.NoticeDTO">
-  	select nno,ntitle,ntext,ndate,aid from notice order by ndate desc
+  	select * from (
+ 	select rownum r, aa.*
+	from (select * from notice order by ndate desc) aa 
+	) where r between #{s:INTEGER} and #{l:INTEGER}
+  </select>
+  
+  <select id="selectMembernotice2"
+  	resultType="com.flying.model.NoticeDTO">
+  	select * from notice order by ndate desc
   </select>
 
   <select id="selectnoticeAll"

@@ -38,13 +38,23 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
 <style>
+.header {
+	height: 50px
+}
+.body {
+	margin-top: 50px;
+}
 .title {margin-left: 40%; margin-top: 8%;}
 .table {margin-top:3%;}
 </style>
 
 </head>
 <body>
-<%@ include file="../Header.jsp"%>
+<!-- 진짜헤더시작 -->
+	<div class="header">
+		<%@ include file="../Header.jsp"%>
+	</div>
+	<!-- 진짜헤더끝 -->
 <%
 	int number=0;
 	int listSize = 10;

@@ -84,4 +84,14 @@ public class ReservationService implements ReservationServiceInterface{
 		return dao.selectReservation(mid);
 
 	}
+
+	public List<ReservationDTO> selectByaid11(String mid) {
+		// TODO Auto-generated method stub
+		return dao.selectByaid11(mid);
+	}
+
+	public List<ReservationDTO> selectByaid(String mid, int s, int l) {
+		// TODO Auto-generated method stub
+		return dao.selectByaid(mid, s, l);
+	}
 }

@@ -3,6 +3,8 @@ package com.flying.model;
 import java.util.List;
 
 public interface ReservationServiceInterface {
+	public List<ReservationDTO> selectByaid11(String mid);
+	public List<ReservationDTO> selectByaid(String mid, int s, int l);
 	public List<ReservationDTO> selectReservation(String mid);
 	public ReservationDTO selectMaxrid(String mid);
 	public List<ReservationDTO> selectBymid(String mid);

@@ -70,8 +70,15 @@ public class NoticeDAO implements NoticeDAOInterface{
 		return session.selectOne("flying.notice.selectText", map);
 	}
 	
-	public List<NoticeDTO> selectMembernotice() {
-		return session.selectList("flying.notice.selectMembernotice");
+	public List<NoticeDTO> selectMembernotice(int s, int l) {
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("s", s);
+		map.put("l", l);
+		return session.selectList("flying.notice.selectMembernotice", map);
+	}
+	
+	public List<NoticeDTO> selectMembernotice2() {
+		return session.selectList("flying.notice.selectMembernotice2");
 	}
 
 }

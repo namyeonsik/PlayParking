@@ -29,7 +29,7 @@ public class ReserveCheckController {
 	
 	@RequestMapping("/reservecheck.do")
 	public ModelAndView getMaplist(HttpServletRequest request,
-			                                  HttpSession session) {
+			                                  HttpSession session, String pageno) {
 		ModelAndView mv = new ModelAndView();
 		if (session.getAttribute("memcheck") == null) {
 			mv.setViewName("members/notmember");
@@ -40,19 +40,25 @@ public class ReserveCheckController {
 					     (MembersDTO)session.getAttribute("memcheck");
 			String mid = memcheck.getMid();
 			System.out.println("예약확인mid:" + mid);
-			
+			pageno="1";
+			int last_num = Integer.parseInt(pageno)*10;
+	    	int start_num = last_num-9;
+	    	
 //			List<ParkingDTO> pnamelist=null;
 //			List<ReservationDTO> reservationlist = service.selectBymid(mid);
-			List<ReservationDTO> reservationlist = service.selectReservation(mid);
+
+	    	//			List<ReservationDTO> reservationlist = service.selectReservation(mid);
 //			for(ReservationDTO dto: reservationlist){
 //				pnamelist.add(service.selectBypid(dto.getPid()));
 //			}
 //			
 //			mv.addObject("pnamelist", pnamelist);
 //			System.out.println(pname);
-			
+			List<ReservationDTO> reservationlist = service.selectByaid(mid,start_num,last_num);
+			List<ReservationDTO> reservationlist2 = service.selectByaid11(mid);
 			
 			mv.addObject("reservationlist", reservationlist);
+			mv.addObject("reservationlistsize", reservationlist2.size());
 			mv.setViewName("/members/myparking/reservecheck");
 			return mv;
 		}
