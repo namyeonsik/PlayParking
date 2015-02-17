@@ -40,14 +40,17 @@ public class ReserveCheckController {
 					     (MembersDTO)session.getAttribute("memcheck");
 			String mid = memcheck.getMid();
 			System.out.println("예약확인mid:" + mid);
-			pageno="1";
+			System.out.println(pageno);
+//			pageno="1";
+			if(pageno == null)
+				pageno="1";
 			int last_num = Integer.parseInt(pageno)*10;
 	    	int start_num = last_num-9;
 	    	
 //			List<ParkingDTO> pnamelist=null;
 //			List<ReservationDTO> reservationlist = service.selectBymid(mid);
 
-	    	//			List<ReservationDTO> reservationlist = service.selectReservation(mid);
+//	    	List<ReservationDTO> reservationlist = service.selectReservation(mid);
 //			for(ReservationDTO dto: reservationlist){
 //				pnamelist.add(service.selectBypid(dto.getPid()));
 //			}
