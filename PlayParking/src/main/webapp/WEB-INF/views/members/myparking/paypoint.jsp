@@ -30,8 +30,7 @@
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
-
-     
+    
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->  
 
 <style>

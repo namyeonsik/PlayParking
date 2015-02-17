@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>충전완료페이지</title>
+
 <style>
 	.btn {width: 50%; margin-top: 30%; margin-left: 40%;}
 </style>	
