@@ -6,7 +6,7 @@
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
-<title>포인트 확인 및 이용내역</title>
+<title>예약</title>
         <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
@@ -45,6 +45,43 @@
 <style type="text/css">
 .header {height: 50px}
 .body {margin-top: 100px;}
+.col-md-6{
+width: 40%;
+	margin-top: 5%;
+	margin-left: 30%;
+
+}
+
+
+.modal{width: 100%;
+	
+	}
+
+.modal-content{
+width:100%;
+height:20%;
+margin-top: 50%;
+	
+}
+.modal-header{
+
+size: 70%;
+}
+.modal-body{
+width:100%;
+height:10%;
+
+margin-left:5%;
+
+}
+
+
+.btn1{
+widhth:100%;
+margin-bottom: 10%;
+margin-left: 10%
+ }
+ 
 </style>
 
 
@@ -57,7 +94,7 @@
 <!-- 진짜헤더끝 --> 
 
 <div class="body">
-<div class="col-md-6 col-sm-12 col-xs-12 xlg-margin">
+<div class="col-md-6 col-sm-6 col-xs-6 xlg-margin">
  <div class="md-margin"></div><!--space -->
      <div class="accordion" id="accordion">
             <div class="accordion-group panel">
@@ -74,17 +111,17 @@
                        <button type="reset" class="btn btn-default">reset</button>
                        
                        <!-- Modal Login From 2-->
-                       <div class="modal fade" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+                       <div class="modal fade"   id="modal-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
                             <div class="modal-dialog modal-sm">
                                  <div class="modal-content">
-                                      <div class="modal-header">
+                                      <div class="modal-header" style="size:20px; ">
                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                            <h4 class="modal-title" id="myModalLabel3">Message</h4>
                                        </div><!-- End .modal-header -->
                                   <div class="modal-body">
                                       <div id="msg1"></div><br><br><br><br>
                                   </div><!-- End .modal-body -->
-                                  <button type="button" class="btn btn-orange" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn1 btn-orange" data-dismiss="modal">Close</button>
                                  </div><!-- End .modal-content -->
                              </div><!-- End .modal-dialog -->
                        </div><!-- End .modal -->
@@ -116,6 +153,7 @@
                       	<!-- Modal Login From 2-->
 						<div class="modal fade" id="modal-text1" tabindex="-1"
 							role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+							
 							<div class="modal-dialog modal-sm-9">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -130,7 +168,7 @@
                                     </div>
 									<!-- End .modal-body -->
 
-									<button type="button" class="btn btn-orange"
+									<button type="button" class="btn1 btn-orange"
 										data-dismiss="modal">Close</button>
 									<!-- <button class="btn btn-yellow">Action</button> -->
 
@@ -138,7 +176,7 @@
 								<!-- End .modal-content -->
 							</div>
 							<!-- End .modal-dialog -->
-						</div>
+						
 						<!-- End .modal -->
 
 					</div>
@@ -189,7 +227,7 @@
 						</div>
 						<!-- End .modal-body -->
 
-						<button type="button" class="btn btn-orange" data-dismiss="modal">Close</button>
+						<button type="button" class="btn1 btn-orange" data-dismiss="modal">Close</button>
 						<!-- <button class="btn btn-yellow">Action</button> -->
 
 					</div>
