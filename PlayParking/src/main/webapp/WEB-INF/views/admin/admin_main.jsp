@@ -48,7 +48,9 @@
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
+	
 		<div class="navbar-inner">
+		
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
@@ -81,6 +83,7 @@
 	</div> 
 	<!-- /navbar -->
 	<div class="wrapper">
+	 
 		<div class="container">
 			<div class="row" style="margin-right: 3%; margin-left: 8%">
 				<div class="span9">
@@ -140,6 +143,7 @@
 									<c:set var="resultEnd" value="${num.rend==null?'출차안함':'출차함'}"/>
 									<c:set var="testval1" value=""/>
 									<c:if test=""></c:if>
+									
 									<tr class="odd gradeX">
 			
 			
@@ -149,14 +153,62 @@
 									<td>${num.rtime}</td>
 									
 									<td>${resultEnd }</td> 
-									<td><a onclick="window.open('reservationupdate.do?rid=${num.rid}', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200')" >정보수정</a></td>
+								
+									
+									<td><input type="button" value="Select Time"
+									class="btn btn-lightblue" 
+									data-toggle="modal" data-target="#modal-login-form" onclick="call(${num.rid})" ></td>
+									
+									<!-- Modal Login Form-->
+		<div class="modal fade" id="modal-login-form" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<!-- <form id="login-form" method="post" action="reservationupdate.do"> -->
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+						</div>
+						<!-- End .modal-header -->
+			<div class="modal-body">
+					<div id="modalPrint"></div>
+
+						</div>
+						<!-- End .modal-body -->
+						<!-- <div class="modal-footer">
+							<button type="submit" class="btn btn-blue">Login</button>
+							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+						</div> -->
+						<!-- End .modal-footer -->
+					</div>
+					<!-- End .modal-content -->
+				</div>
+				<!-- End .modal-dialog -->
+			<!-- </form> -->
+		</div>
+		<!-- End .modal -->
+									
+								
+									
+									
+									
+									
 									</tr>
 									</c:forEach>
+									
+									
+									
+                                        
 						       	 </tbody>
 				              </table>
+				              
 				              </div><!-- table -->
 				              </div><!--/.module-->
+				             
 							</form>
+							 
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
@@ -220,7 +272,7 @@
 				              </div><!-- table -->
 				              </div><!--/.module-->
 							</form></div>
-						</div> --%>
+						</div> 
 						</div><!--/.content-->
 						</div><!--/.span9-->
 					</div><!-- row class -->			
@@ -278,6 +330,72 @@ function loginfail(){
 	<!--Dynamically creates analytics markup-->
 	
 	<script type="text/javascript">
+/* 	$('#modal-text1').on('show', function() {
+	    var link = $(this).data('link'),
+	        confirmBtn = $(this).find('.confirm');
+	})
+
+
+	$('#btnYes').click(function() {
+	  
+	    // handle form processing here
+	  	
+	  	//alert('submit form');
+	    $('form').submit();
+	  
+	}); */
+	
+	
+	
+	
+	var msg1;
+	var rid=0;
+	var data;
+	var xhr = null;
+	function call(rid) {
+		
+		//alert(data);
+		//stime = document.getElementById("selectTime").value;
+		//alert(stime);
+
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = resultParse1;
+
+		data="rid="+rid;
+		//alert(rid);
+		//   alert(data);
+
+		//msg1 = stime;
+		//viewData1();
+		//포스트방식
+		xhr.open("GET", "reservationupdate.do?"+data, true);//POST방식 비동기통신
+		/* xhr.setRequestHeader("content-type",
+				"application/x-www-form-urlencoded"); */
+		xhr.send(null);//post방식일때는 요청body에 데이터를 담는다.
+
+	}
+	
+	
+	function resultParse1() {
+		if (xhr.readyState == 4) {//서버에서 전송이 끝남?
+			if (xhr.status == 200) {//정상종료
+
+				viewData1(xhr.responseText);//HTML
+			}
+		}
+
+	}
+	
+	function viewData1(d)
+	{
+		//alert(d);
+		//document.getElementById("msg3").innerHTML ='<h6>'+ msg1+' 시간을 선택하셨습니다</h6>';
+		//document.getElementById("modalPrint").innerHTML=d;
+		$("#modalPrint").append(d);
+	}
+	
+	
+	
 		var _gaq = _gaq || [];
 
 		_gaq.push([ '_setAccount', 'UA-21576262-1' ]);
@@ -299,4 +417,7 @@ function loginfail(){
 
 		})();
 	</script>
+	
+
+
 </body>
