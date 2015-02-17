@@ -28,18 +28,34 @@ public class NoticeListController {
    
    
    @RequestMapping(value="/noticelist1.do")
-   public ModelAndView listGet1(HttpServletRequest request, HttpSession session){
+   public ModelAndView listGet1(HttpServletRequest request, HttpSession session, String pageno){
       ModelAndView mv = new ModelAndView();
       if(session.getAttribute("memcheck")==null){			
 			mv.setViewName("members/member_login");
 			return mv;
 		}else{
-    	 session = request.getSession();
-    	 MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");    	 
-  		List<NoticeDTO> noticelist = service.selectMembernotice();
-  		mv.addObject("noticelist", noticelist);  		
+		
+		if(pageno==null)
+			pageno="1";
+
+			
+	   	session = request.getSession();
+    	MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck"); 
+    	
+    	int last_num = Integer.parseInt(pageno)*10;
+     	int start_num = last_num-9;
+     	
+     	System.out.println(last_num+"***"+start_num);
+     	
+  		List<NoticeDTO> noticelist = service.selectMembernotice(start_num,last_num); //다 가져오기  		
+  		List<NoticeDTO> noticelist2 = service.selectMembernotice2();
+  		
+  		System.out.println("노티스 리스트"+noticelist);
+  		
+  		mv.addObject("noticelist", noticelist); 
+  		mv.addObject("noticelistsize", noticelist2.size());
   		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list_admin");
+  		mv.setViewName("/admin/notice_list_member");
   		return mv;
       }
    }
@@ -51,6 +67,10 @@ public class NoticeListController {
 	         mv.setViewName("admin/admin_login");
 	         return mv;
 		}else{
+			
+		if(pageno==null)
+			pageno="1";
+		
     	session = request.getSession();
     	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");      
     	 
@@ -59,12 +79,15 @@ public class NoticeListController {
     	
     	List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid(),start_num,last_num);
     	
-    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid());    	
+    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid()); 
+    	
+    	String maxnno = service.selectMaxnno(admincheck.getAid());
     	
   		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
   		mv.addObject("pname",parking.getPname());
   		mv.addObject("noticelist", noticelist);
   		mv.addObject("noticelistsize", noticelist2.size());
+  		mv.addObject("maxnno", maxnno);
   		mv.setViewName("/admin/notice_list_admin");
   		return mv;
       }

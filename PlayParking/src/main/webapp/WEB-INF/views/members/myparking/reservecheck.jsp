@@ -46,7 +46,9 @@
 <style>
 	.header {height: 50px}
 	.body {margin-top: 100px;}
-	.reservecheck {width: 90%; margin-top: 5%; margin-left: 10%;}
+	.title {margin-left: 35%;}
+	.tail {margin-left: 3%; margin-top: 10%;}
+	.reservecheck {width: 90%; margin-top: 5%; margin-left: 15%;}
 	.reservecheck ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
 	.reservecheck .title {font-weight: bold;text-align: center;}
 	.reservecheck ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:240px;}
@@ -61,7 +63,27 @@
 <%@ include file="../../Header.jsp" %>
 </div>
 <!-- 진짜헤더끝 --> 
+
+<%
+	int number=0;
+	int listSize = 10;
+	int currentPage=0;
+	if(request.getParameter("pageNum")==null){
+		currentPage=1;
+	}else{
+		currentPage = Integer.parseInt(request.getParameter("pageNum"));
+	}		
+	int nextPage = currentPage + 1;
+	int startRow = (currentPage - 1)*listSize+1;
+	int endRow = currentPage*listSize;	
+	int nsize = 0;
+%>
+
+
 <div class="body">
+<div class="title">
+    <h2> Reservation History </h2>
+</div>
 <div class="reservecheck">
 	<ul class="title">
 		<li class="list-group-item list-group-item-lightblue">#</li>
@@ -81,8 +103,37 @@
     		 <li class="list-group-item">${reservation.pname}</li>
     	</ul> 
     	</c:forEach>	
+</div>
+
+<div class="tail">
+<div align="center">                       
+<!-- 페이징 처리 -->            
+<%if (currentPage>1){%>
+<a href="reservecheck.do?pageno=<%=currentPage-1%>">◀</a>
+<%}%>
+
+<c:set var="savenum" value="0" />
+<c:choose>
+    <c:when test="${(reservationlistsize%10) ne 0}">
+    	<c:set var="savenum" value="${(reservationlistsize/10)+1}" />        
+    </c:when>
+
+    <c:otherwise>
+    	<c:set var="savenum" value="${(reservationlistsize/10)}" />
+    </c:otherwise>
+</c:choose>
+
+<c:forEach var="i" begin="1" end="${savenum}"> 
+<a href="reservecheck.do?pageno=${i}">${i}</a>
+</c:forEach>
+
 </div> 
 </div>
+
+
+
+</div>
+
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>

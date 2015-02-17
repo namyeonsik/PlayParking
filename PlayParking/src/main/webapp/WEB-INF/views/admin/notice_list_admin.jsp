@@ -79,14 +79,14 @@
 		<div class="row">
 			<div class="content">
 				<div class="module message">
-					<div class="module-head">
+					<div class="module-head" style="height: 30px">
 						<div class="pull-left">
-						</div>
 						<font size="4">Parking Notice</font>
+						</div>						
 						<div class="pull-right">
-						<a class="btn btn-primary" href='noticeinsert.do?cnt=${noticelistsize+1}'>등록</a>
-						</div>  
-                    </div>                                
+						<a class="btn btn-primary" href='noticeinsert.do?cnt=${maxnno+1}'>등록</a>
+						</div> 
+                    </div>                     
                 <div class="module-body table">
                 <table class="table table-message">
                 <tbody>
