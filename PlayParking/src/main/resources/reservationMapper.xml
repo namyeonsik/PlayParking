@@ -126,5 +126,16 @@
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
     select pamount from parking where pid = #{aa}
   </select>
+  
+  <resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
+     <association property="pname" column="pid" select="getpname2"></association>
+  </resultMap>
+  <select id="selectReservation2" parameterType="Map" resultMap="parkresult2"> 
+  select * from (select pid,rid,rstart,rtime, ROWNUM num from reservation where mid = #{mid:VARCHAR} order by rid desc) where num between #{s:INTEGER} and #{l:INTEGER} 
+  </select>
+  
+  <select id="getpname2" resultType="String">
+     select pname from parking where pid=#{aa}
+  </select> 
 
 </mapper>
