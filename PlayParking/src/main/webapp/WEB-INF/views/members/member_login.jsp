@@ -193,6 +193,7 @@ function validationlogin(){
 						</div>
 						<!-- End .modal-body -->
 						<div class="modal-footer">
+							<button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
 							<button type="submit" class="btn btn-blue">Login</button>
 							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
 						</div>

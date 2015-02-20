@@ -41,8 +41,8 @@ public class ReserveController {
          return mv;
       }else{
          pid = Integer.parseInt(request.getParameter("pid"));      
-         System.out.println("pid°ª**************:"+pid);         
-         System.out.println("get¹æ½Ä****");
+         System.out.println("pidï¿½ï¿½**************:"+pid);         
+         System.out.println("getï¿½ï¿½ï¿½****");
          mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
          return mv;
@@ -51,8 +51,8 @@ public class ReserveController {
 
    @RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)
    public ModelAndView test2() {
-      // °¡´Â½Ã°£À» Á¶È¸ÇØ¼­ data¸¦ ÀúÀå
-      // ¿ø·¡´Â pid°ªÀ» ¹Þ¾Æ¿Í¾ßÇÑ´Ù.      
+      // ï¿½ï¿½ï¿½Â½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ø¼ï¿½ dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pidï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.      
       
       
       ModelAndView mv = new ModelAndView();
@@ -61,18 +61,17 @@ public class ReserveController {
 
       if (pcountcheck > (pamountcheck * 0.1)) {
 
-         String check = "¿¹¾à°¡´É";
+         String check = "ì˜ˆì•½ ê°€ëŠ¥";
          mv.addObject("check", check);
-
       } else {
-         String check = "¿¹¾àºÒ°¡´É";
+         String check = "ì˜ˆì•½ ë¶ˆê°€ëŠ¥";
          mv.addObject("check", check);
 
       }
 
       mv.setViewName("members/possibletime");
 
-      System.out.println("post¹æ½Ä");
+      System.out.println("postï¿½ï¿½ï¿½");
       return mv;
    }
 
@@ -83,13 +82,13 @@ public class ReserveController {
       MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
       System.out.println(memcheck);
       
-      // °¡´Â½Ã°£À» Á¶È¸ÇØ¼­ data¸¦ ÀúÀå
+      // ï¿½ï¿½ï¿½Â½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ø¼ï¿½ dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
       ModelAndView mv = new ModelAndView();
       System.out.println("p"+possibleTime);
       int rstarttime = Integer.parseInt(possibleTime);
 
-      int limit = 23;// ¿ÀÀü9½Ã¿¡ ¿¹¾àÇÏ¸é ÃÖ´ë 14½Ã°£±îÁö °¡´É
-      int num = rstarttime / 100; // ÁÖÂ÷¿¹¾à°¡´É½Ã°£ °ªÀ» °¡Áú num
+      int limit = 23;// ï¿½ï¿½ï¿½ï¿½9ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ö´ï¿½ 14ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+      int num = rstarttime / 100; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à°¡ï¿½É½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ num
       int temp = limit-num;
       int[] numArray = new int[temp];
       
@@ -109,14 +108,14 @@ public class ReserveController {
 
       mv.setViewName("members/selecttime");
 
-      System.out.println("post¹æ½Ä");
+      System.out.println("postï¿½ï¿½ï¿½");
       return mv;
    }
    ReservationDTO reserve  = new ReservationDTO();
    MembersDTO members = new MembersDTO();
    ParkingDTO parking = new ParkingDTO();
    UsePointDTO usepoint = new UsePointDTO();
-   int temp=0;//pid°ªÀ» ¹Þ¾Æ¿À´Âº¯¼ö temp
+   int temp=0;//pidï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½Âºï¿½ï¿½ï¿½ temp
    int parkingMpoint=0;
    int minusMpoint=0;
    int resultMpoint=0;
@@ -129,12 +128,12 @@ public class ReserveController {
       System.out.println(memcheck);
        possibleTime = request.getParameter("possibleTime");
       System.out.println("possibleTime:" + possibleTime);
-      System.out.println("¾ÆÀÌµð´Â="+memcheck.getMid()); //¿©±â¼­ ¿¡·¯°¡³­´Ù.
+      System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ï¿½="+memcheck.getMid()); //ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
       
       try {
          SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
          Date d = sf.parse(date);
-         System.out.println(d+"ÀÏ"+possibleTime+"½Ã"+selectTime+"½Ã°£");
+         System.out.println(d+"ï¿½ï¿½"+possibleTime+"ï¿½ï¿½"+selectTime+"ï¿½Ã°ï¿½");
          
          String mid = memcheck.getMid();
          
@@ -157,40 +156,40 @@ public class ReserveController {
          System.out.println("rstarttimeback="+testtimeint);
          reserve.setRstarttimeback(String.valueOf(testtimeint));
         // reserve.setRstarttimeback(testtimeint);
-         // ReservationDTO¿¡ °ªÀ» ÀÔ·ÂÇØÁÖ´Â ºÎºÐ
-         reserve.setMid(mid);  // request¿¡¼­ ¹Þ¾Æ¿Í¾ßÇÑ´Ù.
-         reserve.setPid(pid);   //request¿¡¼­ ¹Þ¾Æ¿Í¾ßÇÑ´Ù.
+         // ReservationDTOï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½
+         reserve.setMid(mid);  // requestï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.
+         reserve.setPid(pid);   //requestï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.
          reserve.setRstart(d);
          reserve.setRend(null);
-         reserve.setRstarttime(possibleTime);  //½ÃÀÛ ³¯Â¥ Á¤º¸¸¦ º¯ÇüÇØ¼­ Áà¾ßÇÑ´Ù.
+         reserve.setRstarttime(possibleTime);  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
          reserve.setRtime(Integer.parseInt(selectTime));
          reserve.setRextrafare(0);
          
          
-         //pid°ªÀ» ¹Þ¾Æ¿Í¼­ ³Ö¾îÁÖ´Â ºÎºÐ
+         //pidï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Í¼ï¿½ ï¿½Ö¾ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½
          temp = reserve.getPid();
          parking = service.selectBypid(temp);
-         parkingMpoint = parking.getPfare(); //ÁÖÂ÷ÀåÀÇ ¿ä±Ý Á¤º¸¸¦ ¹Þ¾Æ¿Â´Ù.
-         System.out.println("ÁÖÂ÷Àå ±âº»¿ä±Ý= "+parkingMpoint);
+         parkingMpoint = parking.getPfare(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Â´ï¿½.
+         System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½= "+parkingMpoint);
          
-         //membersÀÇ ¾ÆÀÌµð°ªÀ» ¹Þ¾Æ¼­ Mpoint°ªÀ» ¹Þ¾Æ¿À´Â ºÎºÐ
+         //membersï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ Mpointï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ ï¿½Îºï¿½
          members = service.searchBymid(mid);
          System.out.println(members.getMpoint());
          
          
-         int mpoint = members.getMpoint();//membersÀÇ mpoint°ªÀ» °¡Áø¾ÆÀÌ
+         int mpoint = members.getMpoint();//membersï¿½ï¿½ mpointï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
          minusMpoint = parkingMpoint*Integer.parseInt(selectTime);
          
          resultMpoint = members.getMpoint()-minusMpoint;
-         mv.addObject("mpoint", mpoint); // submit.jsp¿¡ °ªÀ» ³Ö¾îÁØ´Ù.
+         mv.addObject("mpoint", mpoint); // submit.jspï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ø´ï¿½.
          mv.addObject("minusMpoint",minusMpoint);
          
          
          
-         //rid´Â db¿¡¼­ sequence·Î °ªÀ» Áà¾ßÇÑ´Ù.
-         //reserve.setRid(1); //Test¿ëÀ¸·Î ¿ì¼± 1À» Áàº»´Ù 
+         //ridï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ sequenceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+         //reserve.setRid(1); //Testï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼± 1ï¿½ï¿½ ï¿½àº»ï¿½ï¿½ 
       /*int ret = service.insertReservation(reserve);
-         System.out.println(ret+"°Ç ÀÔ·Â ¹Þ¾Ò½À´Ï´Ù.");*/
+         System.out.println(ret+"ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ¾Ò½ï¿½ï¿½Ï´ï¿½.");*/
       } catch (ParseException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
@@ -218,21 +217,21 @@ public class ReserveController {
       usepoint.setUsepoint(minusMpoint);
       int ret4 =service.insertUsepoint(usepoint);
       
-      System.out.println(ret+"°Ç ÀÔ·Â ¹Þ¾Ò½À´Ï´Ù.");
-      System.out.println(ret2+"°ÇÀÇ pcount¼öÁ¤Çß½À´Ï´Ù.");
-      System.out.println(ret3+"°ÇÀÇ mpoint¼öÁ¤Çß½À´Ï´Ù.");
-      System.out.println(ret4+"°ÇÀÇ usepoint¼öÁ¤Çß½À´Ï´Ù.");
+      System.out.println(ret+"ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ¾Ò½ï¿½ï¿½Ï´ï¿½.");
+      System.out.println(ret2+"ï¿½ï¿½ï¿½ï¿½ pcountï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+      System.out.println(ret3+"ï¿½ï¿½ï¿½ï¿½ mpointï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+      System.out.println(ret4+"ï¿½ï¿½ï¿½ï¿½ usepointï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
       
-    //¿¹¾à¿Ï·á¹®ÀÚ¹ß¼Û ½ÃÀÛ
+    //ï¿½ï¿½ï¿½ï¿½Ï·á¹®ï¿½Ú¹ß¼ï¿½ ï¿½ï¿½ï¿½ï¿½
       ApplicationContext context = 
                 new ClassPathXmlApplicationContext("Spring-Mail.xml");
     
           MailMail mm = (MailMail) context.getBean("mailMail");
            mm.sendMail("playingparking@gmail.com",
                 members.getMemail(),
-                "[³ë´ÂÁÖÂ÷Àå]"+members.getMid()+"´Ô ¿¹¾à¿Ï·á", 
-                parking.getPname()+"ÁÖÂ÷Àå ¿¹¾à¿Ï·áµÇ¾ú½À´Ï´Ù:-)");
-       //¿¹¾à¿Ï·á¹®ÀÚ¹ß¼Û ³¡
+                "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]"+members.getMid()+"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½", 
+                parking.getPname()+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½:-)");
+       //ï¿½ï¿½ï¿½ï¿½Ï·á¹®ï¿½Ú¹ß¼ï¿½ ï¿½ï¿½
       
       return "redirect:/confirm.do";
       
