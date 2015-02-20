@@ -53,6 +53,7 @@
 
 
 
+
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
 	
@@ -68,19 +69,18 @@
 						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
 						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
 					</ul>
-				 <ul class="nav pull-right"> 
-						 
-						<li><a href="membermain.do">UserPage</a></li>
+				 <ul class="nav pull-right">
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">YourParking Profile</a></li>
-								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li><a href="parkinginfo.do">주차장 정보</a></li>
+								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->
@@ -221,7 +221,7 @@
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
-                 	       <h3>Sales Chart</h3>
+                 	       <h3>매출 차트</h3>
               	       </div>
               	       <div class="module-body">
                  	       <div class="chart inline-legend grid">
