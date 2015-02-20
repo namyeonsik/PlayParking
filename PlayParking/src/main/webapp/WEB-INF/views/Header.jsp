@@ -29,20 +29,21 @@
                         <div class="collapse navbar-collapse navbar-right" id="main-menu">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="membermain.do">Home</a></li>
-                                <li><a href="aboutus.do">About us</a></li>
-                                <li><a href="search.do">Search</a></li>
+                                <li><a href="aboutus.do">About</a></li>
+                                <li><a href="search.do">Reservation</a></li>
                                 <li><a href="noticelist1.do">Notice</a></li>
                                 <li class="dropdown">
                                     <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="memberupdate.do">myinfo update</a></li>
-                                        <li><a href="reservecheck.do">reserve check</a></li>
-                                        <li><a href="pointcheck.do">point check</a></li>
+                                        <li><a href="memberupdate.do">내 정보 수정</a></li>
+                                        <li><a href="reservecheck.do">예약 확인</a></li>
+                                        <li><a href="pointcheck.do">포인트 확인</a></li>
                                     </ul>
                                 </li>
+                                
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
              ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-                         <li><a href="adminlogin.do">관리자</a></li>
+                         <li><a href="adminlogin.do">Admin</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
