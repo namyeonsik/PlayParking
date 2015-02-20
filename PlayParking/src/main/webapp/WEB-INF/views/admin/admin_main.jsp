@@ -213,7 +213,7 @@
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
-                 	       <h3>매출 차트</h3>
+                 	       <h3>매출 차트 </h3>
               	       </div>
               	       <div class="module-body">
                  	       <div class="chart inline-legend grid">
