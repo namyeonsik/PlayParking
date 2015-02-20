@@ -55,7 +55,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand navbar-brand-img" href="index.html"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
+                            <a class="navbar-brand navbar-brand-img" href="membermain.do"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,11 +68,12 @@
                                 <li class="dropdown">
                                     <a href="#pages" class="dropdown-toggle" data-toggle="dropdown"><span class="sm-separator">MyParking</span><i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="memberupdate.do">myinfo update</a></li>
-                                        <li><a href="reservecheck.do">reserve check</a></li>
-                                        <li><a href="pointcheck.do">point check</a></li>
+                                        <li><a href="memberupdate.do">내 정보 수정</a></li>
+                                        <li><a href="reservecheck.do">예약 확인</a></li>
+                                        <li><a href="pointcheck.do">포인트 확인</a></li>
                                     </ul>
                                 </li>
+                               
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
              ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
                          <li><a href="adminlogin.do">Admin</a></li>
