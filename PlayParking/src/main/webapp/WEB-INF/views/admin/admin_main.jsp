@@ -70,8 +70,8 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">YourParking Profile</a></li>
-								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li><a href="parkinginfo.do">주차장 정보</a></li>
+								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
@@ -213,7 +213,7 @@
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
-                 	       <h3>Sales Chart</h3>
+                 	       <h3>매출 차트</h3>
               	       </div>
               	       <div class="module-body">
                  	       <div class="chart inline-legend grid">
