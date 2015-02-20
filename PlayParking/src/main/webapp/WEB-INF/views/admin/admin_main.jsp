@@ -96,7 +96,7 @@
 								<p class="text-muted">list</p></a>
 								<a href="#"	class="btn-box big span4">
 								<i class="icon-group"></i><b>${todaycount}</b>
-								<p class="text-muted">오늘의예약자</p></a>
+								<p class="text-muted">오늘의 예약자 수</p></a>
 								<a href="#"	class="btn-box big span4">
 								<i class="icon-money"></i><b>${todaypoint }</b>
 									<p class="text-muted">오늘 얻은 point</p> </a>

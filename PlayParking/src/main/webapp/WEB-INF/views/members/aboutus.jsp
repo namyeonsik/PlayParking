@@ -43,12 +43,25 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<style>
+.header {
+	height: 50px
+}
 
+.body {
+	margin-top: 50px;
+	}
+</style>
 
 </head>
  <body>
-<%@ include file="../Header.jsp" %>
+<!-- 진짜헤더시작 -->
+	<div class="header">
+		<%@ include file="../Header.jsp"%>
+	</div>
+	<!-- 진짜헤더끝 -->
 
+<div class="body">
 	<!-- About Us Section -->
 	<section id="aboutus" class="section">
 		<header class="container text-center">
@@ -58,7 +71,7 @@
 				you...</p>
 		</header>
 
-		<div class="container">
+		<div class="container" >
 			<div class="row">
 
 				<div class="col-md-3 col-xs-6 member-container">
@@ -374,6 +387,6 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
  
-        
+  </div>  
 </body>
 </html>

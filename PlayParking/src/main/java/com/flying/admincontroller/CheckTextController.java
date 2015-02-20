@@ -37,6 +37,7 @@ public class CheckTextController {
     	mv.addObject("title", notice.getNtitle());
     	mv.addObject("text", notice.getNtext());
     	mv.addObject("date", notice.getNdate());
+    	mv.addObject("aid", notice.getAid());
     	
     	mv.setViewName("admin/checktext_member");
 		return mv;

@@ -7,42 +7,39 @@
 <title>내 주차장 정보</title>
 <style>
 
-#updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 10%; width: 55%; height: 50%}
+#updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 2%; width: 55%; height: 50%}
 
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>관리자</title>
-<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
+
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
+	href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap-responsive.min.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/theme.css"
+	href="${pageContext.request.contextPath}/resources/edmin/css/theme.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
+	href="${pageContext.request.contextPath}/resources/edmin/images/icons/css/font-awesome.css"
 	rel="stylesheet">
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
-
 </head>
-<body>
- <div class="navbar navbar-fixed-top">
+
+<body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
+	 <div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
 					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
-					<ul class="nav nav-icons">
-						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-						<li><a href="#"><i class="icon-eye-open"></i></a></li>
-						<li><a href="#"><i class="icon-bar-chart"></i></a></li>
-					</ul>
+					
 				 <ul class="nav pull-right"> 
 						 
 						<li><a href="membermain.do">UserPage</a></li>
@@ -62,35 +59,44 @@
 			</div>
 		</div>
 		<!-- /navbar-inner -->
-	</div> 
-	<!-- /navbar -->
+	</div>
 
 <!-- 내주차장정보 -->
 
 <div class="module" id="updateform">
 <div class="module-head">
-<h3>MyParking Info</h3>
+<font size="4">MyParking Info</font>
 </div>
 <form class="form-horizontal row-fluid" action="parkinginfo.do" method="get">
 <!-- 주차장정보수정 -->
-<label class="control-label" for="basicinput" style="margin-top: 6%;margin-right: 5%;">Name</label>
+<label class="control-label" for="basicinput" style="margin-top: 6%;margin-right: 5%;"><font size="3">Name</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pname}</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;">Fare</label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Fare</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pfare} 원</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;">Additional Fee</label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Additional Fee</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.platefare} 원</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;">Phone</label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Phone</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pphone}</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;margin-bottom: 5%;">Capacity</label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;margin-bottom: 5%;"><font size="3">Capacity</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;margin-bottom: 5%;">${parking.pamount}</p>
 
 </form>
 </div>
 <!-- 내주차장정보 -->
 
+<div class="footer">
+	<div class="container">
+	<b class="copyright">&copy; 2015 PlayParking </b>All rights reserved.
+	</div>
+</div>
+
 </body>
+
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/edmin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </html>

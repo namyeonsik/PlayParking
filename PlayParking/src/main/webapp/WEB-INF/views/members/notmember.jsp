@@ -53,10 +53,30 @@
 </div>
 <!-- 진짜헤더끝 -->  
 
-<div class="body">
+<!-- <div class="body">
 <p><span class="dropcap-bg blue" >로</span> <span class="dropcap-bg blue" >그</span> <span class="dropcap-bg blue" >인</span> <span class="dropcap-bg blue" >후</span> <span class="dropcap-bg blue" >이</span></p>
 </div>
+ -->
+                                           <div class="modal-dialog" style="margin-top:150px;">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    
+                                                    <h4 class="modal-title" id="myModalLabel4">잠깐!</h4>
+                                                    </div><!-- End .modal-header -->
+                                                    <div class="modal-body">
 
+                                                    <p>주차장 검색과 예약 및 공지사항 확인 등 다양한 메뉴들은</p>
+                                                    <p>로그인을 한 후에 이용하실 수 있습니다!</p>
+                                                    
+                                                
+                                                    </div><!-- End .modal-body -->
+                                                    <div class="modal-footer">
+                                                    <!-- <a href="../memberlogin.do"><button class="btn btn-green" >Login</button></a> -->
+                                                    <br><br>
+                                                    </div><!-- End .modal-footer -->
+                                                </div><!-- End .modal-content -->
+                                            </div><!-- End .modal-dialog -->
+                                      
 
 
 
