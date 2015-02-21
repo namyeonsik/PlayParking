@@ -8,16 +8,16 @@
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
  <meta charset="utf-8">
- 	<title>예약확인</title>
+    <title>예약확인</title>
        <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
         <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">		
-		
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">      
+      
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
@@ -44,17 +44,17 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
   
 <style>
-	.header {height: 50px}
-	.body {margin-top: 100px;}
-	.title {margin-left: 35%;}
-	.tail {margin-left: 3%; margin-top: 10%;}
-	.reservecheck {width: 90%; margin-top: 5%; margin-left: 15%;}
-	.reservecheck ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
-	.reservecheck .title {font-weight: bold;text-align: center;}
-	.reservecheck ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:240px;}
-	.reservecheck ul .list-group-item list-group-item-lightblue {width: 239px;} /* 표 라인 맞추기기 위해*/
-	.reservecheck ul .list-group-item {width: 239px;}
-</style>	
+   .header {height: 50px}
+   .body {margin-top: 100px;}
+   .title {margin-left: 35%;}
+   .tail {margin-left: 3%; margin-top: 10%;}
+   .reservecheck {width: 90%; margin-top: 5%; margin-left: 15%;}
+   .reservecheck ul {clear: left;margin: 0;padding: 0;list-style-type: none;} 
+   .reservecheck .title {font-weight: bold;text-align: center;}
+   .reservecheck ul li {text-align: center;float: left;margin: 0;padding: 2px, 1px;width:240px;}
+   .reservecheck ul .list-group-item list-group-item-lightblue {width: 239px;} /* 표 라인 맞추기기 위해*/
+   .reservecheck ul .list-group-item {width: 239px;}
+</style>   
      
 </head>
 <body>
@@ -65,18 +65,18 @@
 <!-- 진짜헤더끝 --> 
 
 <%
-	int number=0;
-	int listSize = 10;
-	int currentPage=0;
-	if(request.getParameter("pageNum")==null){
-		currentPage=1;
-	}else{
-		currentPage = Integer.parseInt(request.getParameter("pageNum"));
-	}		
-	int nextPage = currentPage + 1;
-	int startRow = (currentPage - 1)*listSize+1;
-	int endRow = currentPage*listSize;	
-	int nsize = 0;
+   int number=0;
+   int listSize = 5;
+   int currentPage=0;
+   if(request.getParameter("pageNum")==null){
+      currentPage=1;
+   }else{
+      currentPage = Integer.parseInt(request.getParameter("pageNum"));
+   }      
+   int nextPage = currentPage + 1;
+   int startRow = (currentPage - 1)*listSize+1;
+   int endRow = currentPage*listSize;   
+   int nsize = 0;
 %>
 
 
@@ -85,24 +85,24 @@
     <h2> Reservation History </h2>
 </div>
 <div class="reservecheck">
-	<ul class="title">
-		<li class="list-group-item list-group-item-lightblue">#</li>
-		<li class="list-group-item list-group-item-lightblue">예약날짜</li>
-		<li class="list-group-item list-group-item-lightblue">이용시간</li>
-		<li class="list-group-item list-group-item-lightblue">주차장</li>
-	</ul>
-	
-		<c:forEach items="${reservationlist}" var="reservation">  
-		<ul>                                  
-     		 <li class="list-group-item">${reservation.rid}</li>    		 
-    		 <li class="list-group-item">
-    		 	<c:set var="d" value="${reservation.rstart}"/>
-    		 	<fmt:formatDate value="${d}" pattern="yy-MM-dd"/>
-    		 </li>
-    		 <li class="list-group-item">${reservation.rtime}</li>
-    		 <li class="list-group-item">${reservation.pname}</li>
-    	</ul> 
-    	</c:forEach>	
+   <ul class="title">
+      <li class="list-group-item list-group-item-lightblue">#</li>
+      <li class="list-group-item list-group-item-lightblue">예약날짜</li>
+      <li class="list-group-item list-group-item-lightblue">이용시간</li>
+      <li class="list-group-item list-group-item-lightblue">주차장</li>
+   </ul>
+   
+      <c:forEach items="${reservationlist}" var="reservation">  
+      <ul>                                  
+            <li class="list-group-item">${reservation.rid}</li>           
+           <li class="list-group-item">
+              <c:set var="d" value="${reservation.rstart}"/>
+              <fmt:formatDate value="${d}" pattern="yy-MM-dd"/>
+           </li>
+           <li class="list-group-item">${reservation.rtime}</li>
+           <li class="list-group-item">${reservation.pname}</li> 
+       </ul> 
+       </c:forEach>   
 </div>
 
 <div class="tail">
@@ -114,12 +114,12 @@
 
 <c:set var="savenum" value="0" />
 <c:choose>
-    <c:when test="${(reservationlistsize%10) ne 0}">
-    	<c:set var="savenum" value="${(reservationlistsize/10)+1}" />        
+    <c:when test="${(reservationlistsize%5) ne 0}">
+       <c:set var="savenum" value="${(reservationlistsize/5)+1}" />        
     </c:when>
 
     <c:otherwise>
-    	<c:set var="savenum" value="${(reservationlistsize/10)}" />
+       <c:set var="savenum" value="${(reservationlistsize/5)}" />
     </c:otherwise>
 </c:choose>
 
@@ -129,8 +129,6 @@
 
 </div> 
 </div>
-
-
 
 </div>
 
