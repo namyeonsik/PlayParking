@@ -86,10 +86,10 @@
 								<div class="vcenter-container">
 									<div class="vcenter">
 										<h2>Kwon Minji</h2>
-										<p>Founder</p>
+										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
-											<li><a href="#" class="facebook add-tooltip"
+											<li><a href="http://www.facebook.com/k91311" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
 											<li><a href="#" class="twitter add-tooltip"
@@ -129,7 +129,7 @@
 								<div class="vcenter-container">
 									<div class="vcenter">
 										<h2>Kim Dayea</h2>
-										<p>Co-Founder</p>
+										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
 											<li><a href="#" class="facebook add-tooltip"
@@ -212,7 +212,7 @@
 								<div class="vcenter-container">
 									<div class="vcenter">
 										<h2>Shin Insoo</h2>
-										<p>Designer</p>
+										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
 											<li><a href="#" class="facebook add-tooltip"
@@ -278,6 +278,31 @@
 					</p>
 				</div>
 				<!-- End .col-md-6 -->
+				<div class="col-md-6 col-sm-6">
+					<h3>Get to know us!</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Dolores tempora quasi in, illum repudiandae, ipsum totam fugiat
+						aliquid corporis soluta cupiditate rerum nam nisi quas, mollitia
+						exercitationem voluptatibus ut. Eligendi.</p>
+					<p>
+						Porro, quo natus. <span class="highlight red">Accusamus
+							veritatis velit</span> quas minus esse ipsum, impedit! Accusamus
+						nesciunt beatae tempore suscipit quam molestias similique sed, cum
+						vel neque, eveniet ab? A magni libero, debitis veritatis! Nostrum
+						veritatis dolores illum, similique consectetur repudiandae <span
+							class="highlight yellow">pariatur voluptates</span> aut, itaque
+						sunt consequatur praesentium doloribus soluta dolore architecto
+						quae quos commodi facilis numquam eos atque molestiae. Consequatur
+						sequi veritatis omnis!
+					</p>
+					<p>
+						Dicta adipisci, mollitia molestiae voluptatem itaque atque rerum
+						nemo. Soluta minima omnis odit. <a href="#contactus"
+							class="scrollto add-tooltip" data-placement="bottom"
+							title="Get in Touch Now!">Contact Us!</a>
+					</p>
+				</div>
+				<!-- End .col-md-6 -->
 
 				<div class="md-margin visible-xs clearfix"></div>
 				<!-- space -->
@@ -285,70 +310,10 @@
 				<div class="col-md-6 col-sm-6">
 					<div class="accordion-panel" id="accordion-panel2">
 						<div class="accordion-panel-group panel">
-							<a class="accordion-panel-title yellow" data-toggle="collapse"
-								data-parent="#accordion-panel2" href="#panel-one2"><i
-								class="fa fa-briefcase"></i>What we do?</a>
-
-							<div class="accordion-panel-body collapse in" id="panel-one2">
-								<div class="accordion-body-wrapper">
-									<p>Pellentesque malesuada sollicitudin fermentum. Nullam
-										ultricesposuere congue. Sed convallis purus a sem tincidunt et
-										tempor turpis rhoncus. Nullam pretium eleifend neque, eget
-										congue purus tincidunt id. Duis quam vitae condimentum.</p>
-									<p>Sed pretium, elit eget fermentum mattis, tortor eros
-										aliquam purus, a nisl a nulla. Proin eu orci orci, ac
-										venenatis tortor. Donec laoreet, nu fringilla mollis, lacus
-										mauris pellentesque odio, ut rhoncus erat risus sed.</p>
-								</div>
-								<!-- End .accordion-body-wrapper -->
-							</div>
-							<!-- End .accordion-body -->
+							
 						</div>
 						<!-- End .accordion-group -->
-						<div class="accordion-panel-group panel">
-
-							<a class="accordion-panel-title red" data-toggle="collapse"
-								data-parent="#accordion-panel2" href="#panel-three2"><i
-								class="fa fa-bar-chart"></i>How we do?</a>
-
-							<div class="accordion-panel-body collapse" id="panel-three2">
-								<div class="accordion-body-wrapper">
-									<p>Pellentesque malesuada sollicitudin fermentum. Nullam
-										ultricesposuere congue. Sed convallis purus a sem tincidunt et
-										tempor turpis rhoncus. Nullam pretium eleifend neque, eget
-										congue purus tincidunt id. Duis quam vitae condimentum.</p>
-									<p>Sed pretium, elit eget fermentum mattis, tortor eros
-										aliquam purus, a nisl a nulla. Proin eu orci orci, ac
-										venenatis tortor. Donec laoreet, nu fringilla mollis, lacus
-										mauris pellentesque odio, ut rhoncus erat risus sed.</p>
-								</div>
-								<!-- End .accordion-body-wrapper -->
-							</div>
-							<!-- End .accordion-panel-body -->
-						</div>
-						<!-- End .accordion-panel-group -->
-						<div class="accordion-panel-group panel">
-
-							<a class="accordion-panel-title lightblue" data-toggle="collapse"
-								data-parent="#accordion-panel2" href="#panel-four2"><i
-								class="fa fa-group"></i>More About Us!</a>
-
-							<div class="accordion-panel-body collapse" id="panel-four2">
-								<div class="accordion-body-wrapper">
-									<p>Pellentesque malesuada sollicitudin fermentum. Nullam
-										ultricesposuere congue. Sed convallis purus a sem tincidunt et
-										tempor turpis rhoncus. Nullam pretium eleifend neque, eget
-										congue purus tincidunt id. Duis quam vitae condimentum.</p>
-									<p>Sed pretium, elit eget fermentum mattis, tortor eros
-										aliquam purus, a nisl a nulla. Proin eu orci orci, ac
-										venenatis tortor. Donec laoreet, nu fringilla mollis, lacus
-										mauris pellentesque odio, ut rhoncus erat risus sed.</p>
-								</div>
-								<!-- End .accordion-body-wrapper -->
-							</div>
-							<!-- End .accordion-panel-body -->
-						</div>
-						<!-- End .accordion-panel-group -->
+						
 					</div>
 					<!-- End .accordion-panel -->
 				</div>
@@ -361,18 +326,7 @@
 		<div class="md-margin visible-xs clearfix"></div>
 		<!-- space -->
 
-		<div class="container img-container">
-			<div class="row">
-				<div class="col-md-10 col-md-push-1 col-sm-10 col-sm-push-1">
-					<img
-						src="${pageContext.request.contextPath}/resources/geass/images/geass.png"
-						alt="Geass" class="img-responsive wow fadeInUpBig">
-				</div>
-				<!-- End .col-md-8 -->
-			</div>
-			<!-- End .row -->
-		</div>
-		<!-- End .container -->
+		
 	</section>
 	<!-- about US -->
  
