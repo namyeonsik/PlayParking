@@ -55,7 +55,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand navbar-brand-img" href="membermain.do"><img src="${pageContext.request.contextPath}/resources/geass/images/logo-white.png" class="img-responsive logo-white" alt="logo"><img src="${pageContext.request.contextPath}/resources/geass/images/logo.png" class="img-responsive logo-fixed" alt="logo"></a>
+                            <a class="navbar-brand navbar-brand-img" href="membermain.do"><img src="${pageContext.request.contextPath}/resources/logo_design.png" class="img-responsive logo-white" alt="logo"></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
