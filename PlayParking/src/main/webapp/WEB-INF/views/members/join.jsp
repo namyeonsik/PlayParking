@@ -195,16 +195,18 @@ function validationlogin(){
 									</select>
 								</div>
 								<!-- End .normal-selectbox-->
-								<div id="cnamediv">
-								
+								<h4>cnamediv 전</h4>
+								<div>
+								<h4>cnamediv 중</h4>
 	                            </div> 
+	                            <h4>cnamediv 후</h4>
 							</div>
 							<!-- End .col-md-6 -->
 
 							
                                 
                              
-                            </div><!-- End .row -->
+                            </div><!-- End .row --><div id="cnamediv"></div>
                             
 
 							   <div class="form-group text-center">
@@ -323,6 +325,17 @@ function validationlogin(){
         </script>
 
 <script type="text/javascript">
+/* function btn(){
+	$.ajax({
+		type: "POST",
+		url: "cname.jsp",
+		success: function(html){
+			$("#cnamediv").append(html);
+		}
+	});
+} */
+
+
 var xhr;//전역변수
 
 function call(){
