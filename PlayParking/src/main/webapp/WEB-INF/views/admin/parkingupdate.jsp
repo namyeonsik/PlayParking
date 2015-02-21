@@ -30,7 +30,7 @@
 	rel='stylesheet'>
 
 </head>
-<bodydata-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
+<body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container" style="margin-top: 50px;">
@@ -68,34 +68,35 @@
 </div>
 <form class="form-horizontal row-fluid" action="parkingupdate.do" method="post" style="width: 100%;">
 <!-- 주차장정보수정 -->
-<label class="control-label" for="basicinput" style="margin-top: 6%"><font size="3">Name</font></label>
 <div class="controls">
-<input type="text" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pname}"	class="span10">
+<input type="hidden" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pid}" name="pid" class="span8">
 </div>
-<label class="control-label" for="basicinput"><font size="3">Fare</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 6%">Name</label>
 <div class="controls">
-<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pfare}"	class="span10">
+<input type="text" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pname}" name="pname" class="span8">
 </div>
-<label class="control-label" for="basicinput"><font size="3">Additional Fee</font></label>
+<label class="control-label" for="basicinput">Fare</label>
 <div class="controls">
-<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.platefare}" class="span10">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pfare}" name="pfare" class="span8">
 </div>
-<label class="control-label" for="basicinput"><font size="3">Phone</font></label>
+<label class="control-label" for="basicinput">Additional Fee</label>
 <div class="controls">
-<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pphone}" class="span10">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.platefare}" name="platefare" class="span8">
 </div>
-<label class="control-label" for="basicinput"><font size="3">Capacity</font></label>
+<label class="control-label" for="basicinput">Phone</label>
 <div class="controls">
-<input type="text" id="basicinput" style="margin-bottom: 10%" value="${parking.pamount}" class="span10">
+<input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pphone}" name="pphone" class="span8">
+</div>
+<label class="control-label" for="basicinput">Capacity</label>
+<div class="controls">
+<input type="text" id="basicinput" style="margin-bottom: 10%" value="${parking.pamount}" name="pamount" class="span8">
 </div>
 <div class="form-group">
-<div class="col-lg-10 col-lg-offset-2" style="text-align: center;">
-    <button type="submit" class="btn btn-primary" style="margin-right: 3%;margin-bottom: 5% "><font size="3">Complete</font></button>
-	<button type="reset" onclick="adminmain.do" class="btn btn-default" style="margin-bottom: 5% "><font size="3">Cancel</font></button>
+<div class="col-lg-10 col-lg-offset-2">
+    <button type="submit" class="btn btn-primary" style="margin-left: 33%;margin-right: 5%;margin-bottom: 5% ">Complete</button>
+   <button type="reset" onclick="adminmain.do" class="btn btn-default" style="margin-bottom: 5% ">Cancel</button>
  </div>
 </div>
-
-
 
 </form>
 </div>
