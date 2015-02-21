@@ -35,9 +35,9 @@
         <!--- jQuery -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
 
-        <!-- Queryloader -->
+<%--   		  <!-- Queryloader -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
-
+ --%>
         <!-- Modernizr -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
