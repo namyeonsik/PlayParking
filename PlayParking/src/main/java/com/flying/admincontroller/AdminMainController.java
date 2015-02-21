@@ -24,270 +24,277 @@ import com.flying.model.ReservationServiceInterface;
 @Controller
 public class AdminMainController {
 
-	@Autowired
-	ParkingServiceInterface service;
-	
-	@Autowired
-	ReservationServiceInterface rservice;
+   @Autowired
+   ParkingServiceInterface service;
+   
+   @Autowired
+   ReservationServiceInterface rservice;
 
-	@RequestMapping(value="/adminmain.do", method=RequestMethod.GET)
-	public ModelAndView adminMain(HttpServletRequest request,
-		                          	HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		System.out.println("¿©±â´Â ¸ŞÀÎ");
-		session = request.getSession();
-		AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
-		
-	
-		
-		// ParkingDTO admincheck =
-		// (ParkingDTO)session.getAttribute("admincheck");
-		System.out.println("Á¤º¸¼öÁ¤pid:" + admincheck);
+   @RequestMapping(value="/adminmain.do", method=RequestMethod.GET)
+   public ModelAndView adminMain(HttpServletRequest request,
+                                   HttpSession session) {
+      ModelAndView mv = new ModelAndView();
+      System.out.println("ì—¬ê¸°ëŠ” ë©”ì¸");
+      session = request.getSession();
+      AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
+      
+   
+      
+      // ParkingDTO admincheck =
+      // (ParkingDTO)session.getAttribute("admincheck");
+      System.out.println("ì •ë³´ìˆ˜ì •pid:" + admincheck);
 
-		System.out.println(admincheck.getPid());
-		ParkingDTO parking = service.selectBypid(admincheck.getPid());
-		mv.addObject("parking", parking);//parkingÁ¤º¸µé
-		List<ParkingDTO> aroundpark = 
-				service.selectByAround(parking.getPlocation(), admincheck.getPid());
-		mv.addObject("aroundpark", aroundpark);
-		System.out.println(parking.getPcount());
-		int resultcount = parking.getPamount() - parking.getPcount();
-		int todaycount=0;
-		List<ReservationDTO> reservelist = service.seachReservationBypid(admincheck.getPid());
-				//.seachReservationBypid(admincheck.getPid());
-		
-		
-		//½Ã°£Çüº¯È¯ ºÎºĞ ½ÃÀÛ!
-		Date d1 = new Date();
-		System.out.println("½Ã°£À»È®ÀÎÇØº¸ÀÚ"+d1.getHours()+"ºĞÀº"+d1.getMinutes());
-		String test1 = toString().format("", d1.getHours())+toString().format("", d1.getMinutes());
-		//ÃâÂ÷½Ã°£À» À§ÇØ Çüº¯È¯À» ÇÏ´Â ºÎºĞ
-		SimpleDateFormat sf = new SimpleDateFormat("HHmm");
-		String test2 = sf.format(d1);
-		System.out.println(test2);
-		
-		
-		// ¿À´Ã³¯Â¥¿Í ¿¹¾à ³¯Â¥¸¦ ºñ±³ÇÏ´Â ºÎºĞ
-		int i = reservelist.size(); //  ¿ì¼± ÀüÃ¼ ¿¹¾àÁ¤º¸ÀÇ Å©±â¸¦ ±¸ÇØ¿Â´Ù.
-		List<ReservationDTO> reservelist2 = new ArrayList<ReservationDTO>();
-		List<ReservationDTO> reservelist3 = new ArrayList<ReservationDTO>();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		//SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
-		//Date d2 = sf.parse(d1);
-		System.out.println("ÀüÃ¼ ¿¹¾à°³¼ö´Â="+i);
-		String today = format.format(d1);
-		String reserveday=null;
-		System.out.println("¿À´Ã³¯Â¥´Â"+today);
-		//System.out.println("¿¹¾à³¯Â¥´Â"+reserveday);
-		
-		
-		//½Ã°£Çüº¯È¯ ºÎºĞ ½ÃÀÛ³¡!
-		
-		/*if(today.equals(reserveday)){
-			
-			System.out.println("³¯Â¥°¡ °°¾ÆÀÓ¸¶");
-		}else{
-			
-			System.out.println("´Ï°¡ Æ²¸°°Å¾ßÀÓ¸¶");
-		}*/
-		
-		for (int a = 0; a < i; a++) {
+      System.out.println(admincheck.getPid());
+      ParkingDTO parking = service.selectBypid(admincheck.getPid());
+      mv.addObject("parking", parking);//parkingì •ë³´ë“¤
+      List<ParkingDTO> aroundpark = 
+            service.selectByAround(parking.getPlocation(), admincheck.getPid());
+      mv.addObject("aroundpark", aroundpark);
+      int sumfare=0;
+      int avg;
+      for(ParkingDTO p : aroundpark){
+    	  sumfare += p.getPfare();
+      }
+      avg=sumfare/aroundpark.size();
+      mv.addObject("avg", avg);
+      System.out.println(parking.getPcount());
+      int resultcount = parking.getPamount() - parking.getPcount();
+      int todaycount=0;
+      List<ReservationDTO> reservelist = service.seachReservationBypid(admincheck.getPid());
+            //.seachReservationBypid(admincheck.getPid());
+      
+      
+      //ì‹œê°„í˜•ë³€í™˜ ë¶€ë¶„ ì‹œì‘!
+      Date d1 = new Date();
+      System.out.println("ì‹œê°„ì„í™•ì¸í•´ë³´ì"+d1.getHours()+"ë¶„ì€"+d1.getMinutes());
+      String test1 = toString().format("", d1.getHours())+toString().format("", d1.getMinutes());
+      //ì¶œì°¨ì‹œê°„ì„ ìœ„í•´ í˜•ë³€í™˜ì„ í•˜ëŠ” ë¶€ë¶„
+      SimpleDateFormat sf = new SimpleDateFormat("HHmm");
+      String test2 = sf.format(d1);
+      System.out.println(test2);
+      
+      
+      // ì˜¤ëŠ˜ë‚ ì§œì™€ ì˜ˆì•½ ë‚ ì§œë¥¼ ë¹„êµí•˜ëŠ” ë¶€ë¶„
+      int i = reservelist.size(); //  ìš°ì„  ì „ì²´ ì˜ˆì•½ì •ë³´ì˜ í¬ê¸°ë¥¼ êµ¬í•´ì˜¨ë‹¤.
+      List<ReservationDTO> reservelist2 = new ArrayList<ReservationDTO>();
+      List<ReservationDTO> reservelist3 = new ArrayList<ReservationDTO>();
+      SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+      //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+      //Date d2 = sf.parse(d1);
+      System.out.println("ì „ì²´ ì˜ˆì•½ê°œìˆ˜ëŠ”="+i);
+      String today = format.format(d1);
+      String reserveday=null;
+      System.out.println("ì˜¤ëŠ˜ë‚ ì§œëŠ”"+today);
+      //System.out.println("ì˜ˆì•½ë‚ ì§œëŠ”"+reserveday);
+      
+      
+      //ì‹œê°„í˜•ë³€í™˜ ë¶€ë¶„ ì‹œì‘ë!
+      
+      /*if(today.equals(reserveday)){
+         
+         System.out.println("ë‚ ì§œê°€ ê°™ì•„ì„ë§ˆ");
+      }else{
+         
+         System.out.println("ë‹ˆê°€ í‹€ë¦°ê±°ì•¼ì„ë§ˆ");
+      }*/
+      
+      for (int a = 0; a < i; a++) {
 
-			reserveday=format.format(reservelist.get(a).getRstart());
-		//	System.out.println(reserveday);
-			if(today.equals(reserveday)){
-				reservelist2.add(reservelist.get(a));
-			//System.out.println("reserveday="+reserveday);
-			}
-			
-		}
-		//rstarttimeback °¡ 900ÀÌ°Å³ª 930ÀÏ¶§ Ã³¸®¹æ¹ı
-		String s1="900";
-		String s2="930";
-		/*for(int a=0;a<reservelist2.size();a++){
-			System.out.println("È®ÀÎ¿ë="+reservelist2.get(a).getRstarttimeback());
-		}*/
-		for(int a=0;a<reservelist2.size();a++){
-			String temps = reservelist2.get(a).getRstarttimeback();
-			temps=temps.trim();
-			if(temps.equals(s1)){
-				temps = "0"+temps;
-				//System.out.println(temps);
-				reservelist2.get(a).setRstarttimeback(temps);
-				
-			}
-			else if(temps.equals(s2)){
-				temps = "0"+temps;
-				//System.out.println(temps);
-				reservelist2.get(a).setRstarttimeback(temps);
-				
-			}
-		
-			
-		}
-		
-		todaycount = reservelist2.size();
-		/*for(int a = 0;a<todaycount;a++){
-			
-			System.out.println(reservelist2.get(a));
-		}*/
-		/*String tmp;
-		int cnt1=0;
-		for(int a = 0; a<todaycount;a++){
-			reservelist3.add(reservelist2.get(a));
-		tmp = 	reservelist3.get(a).getRstarttime();
-			cnt1 = Integer.parseInt(tmp);
-			cnt1=cnt1+30;
-		
-			reservelist3.get(a).setRstarttime(toString().valueOf(cnt1));
-		}*/
-		/*for (int a = 0; a < i; a++) {
+         reserveday=format.format(reservelist.get(a).getRstart());
+      //   System.out.println(reserveday);
+         if(today.equals(reserveday)){
+            reservelist2.add(reservelist.get(a));
+         //System.out.println("reserveday="+reserveday);
+         }
+         
+      }
+      //rstarttimeback ê°€ 900ì´ê±°ë‚˜ 930ì¼ë•Œ ì²˜ë¦¬ë°©ë²•
+      String s1="900";
+      String s2="930";
+      /*for(int a=0;a<reservelist2.size();a++){
+         System.out.println("í™•ì¸ìš©="+reservelist2.get(a).getRstarttimeback());
+      }*/
+      for(int a=0;a<reservelist2.size();a++){
+         String temps = reservelist2.get(a).getRstarttimeback();
+         temps=temps.trim();
+         if(temps.equals(s1)){
+            temps = "0"+temps;
+            //System.out.println(temps);
+            reservelist2.get(a).setRstarttimeback(temps);
+            
+         }
+         else if(temps.equals(s2)){
+            temps = "0"+temps;
+            //System.out.println(temps);
+            reservelist2.get(a).setRstarttimeback(temps);
+            
+         }
+      
+         
+      }
+      
+      todaycount = reservelist2.size();
+      /*for(int a = 0;a<todaycount;a++){
+         
+         System.out.println(reservelist2.get(a));
+      }*/
+      /*String tmp;
+      int cnt1=0;
+      for(int a = 0; a<todaycount;a++){
+         reservelist3.add(reservelist2.get(a));
+      tmp =    reservelist3.get(a).getRstarttime();
+         cnt1 = Integer.parseInt(tmp);
+         cnt1=cnt1+30;
+      
+         reservelist3.get(a).setRstarttime(toString().valueOf(cnt1));
+      }*/
+      /*for (int a = 0; a < i; a++) {
 
-			if (d1.equals(reservelist.get(a).getRstart()) )
-				// reservelist2=(List<ReservationDTO>) reservelist.get(a);
-				System.out.println(reservelist.get(a));
-		}*/
-		String end=null;//ÃâÂ÷¾ÈÇÔ,ÃâÂ÷ÇÔ Ç¥½Ã String
-		/*for (int z=0;z<reservelist2.size();z++){
-			System.out.println("end¿©ºÎ=="+reservelist2.get(z).getRend());
-			if(reservelist2.get(z).getRend()==null){
-				end = "ÃâÂ÷¾ÈÇÔ";
-			}else if(reservelist2.get(z).getRend()!=null){
-				end="ÃâÂ÷ÇÔ";
-			}
-			
-		}*/
-		int todaypoint=0;
-		
-		for(int c=0; c<reservelist2.size();c++){
-			
-		
-		todaypoint=todaypoint+(rservice.searchReservationByrid(reservelist2.get(c).getRid()).getRtime()*
-			service.selectBypid(reservelist2.get(c).getPid()).getPfare());
-		}
-		
-		
-	//	mv.addObject("end", end);
-		mv.addObject("todaycount", todaycount);
-		mv.addObject("reservelist", reservelist2);
-		mv.addObject("todaypoint",todaypoint);
-	//	mv.addObject("plus30", reservelist3);
-		System.out.println("¿À´ÃÀÇ ¿¹¾àÀÚ´Â="+todaycount);
+         if (d1.equals(reservelist.get(a).getRstart()) )
+            // reservelist2=(List<ReservationDTO>) reservelist.get(a);
+            System.out.println(reservelist.get(a));
+      }*/
+      String end=null;//ì¶œì°¨ì•ˆí•¨,ì¶œì°¨í•¨ í‘œì‹œ String
+      /*for (int z=0;z<reservelist2.size();z++){
+         System.out.println("endì—¬ë¶€=="+reservelist2.get(z).getRend());
+         if(reservelist2.get(z).getRend()==null){
+            end = "ì¶œì°¨ì•ˆí•¨";
+         }else if(reservelist2.get(z).getRend()!=null){
+            end="ì¶œì°¨í•¨";
+         }
+         
+      }*/
+      int todaypoint=0;
+      
+      for(int c=0; c<reservelist2.size();c++){
+         
+      
+      todaypoint=todaypoint+(rservice.searchReservationByrid(reservelist2.get(c).getRid()).getRtime()*
+         service.selectBypid(reservelist2.get(c).getPid()).getPfare());
+      }
+      
+      
+   //   mv.addObject("end", end);
+      mv.addObject("todaycount", todaycount);
+      mv.addObject("reservelist", reservelist2);
+      mv.addObject("todaypoint",todaypoint);
+   //   mv.addObject("plus30", reservelist3);
+      System.out.println("ì˜¤ëŠ˜ì˜ ì˜ˆì•½ìëŠ”="+todaycount);
 
-		mv.setViewName("admin/admin_main");
-		return mv;
-	}
-	
-	
-	@RequestMapping(value="reservationupdate.do", method=RequestMethod.GET)
-	public ModelAndView updateGet(int rid){
-		
-		
-		      /*
-		      HttpSession session = request.getSession();
-		      AdminDTO admin = (AdminDTO)session.getAttribute("admincheck");*/
-		//ReservationDTO reserve4 = rservice.
-		
-		ModelAndView mv = new ModelAndView();
-	System.out.println("rid=!="+rid);
-		ReservationDTO reserve1 = rservice.searchReservationByrid(rid);
-		Date d = new Date();
-		SimpleDateFormat sf = new SimpleDateFormat("HHmm");
-		//String test2 = sf.format(d);
-		System.out.println("*******"+d.getHours());
-		String temp1=null;
-		String temp2=null;
-		//System.out.println("dÀÇ ½Ã°£"+d.getHours());
-		//System.out.println("dÀÇ ºĞ"+d.getMinutes());
-		temp1 = temp1.valueOf(d.getHours());
-		temp2 = temp2.valueOf(d.getMinutes());
-		//System.out.println("temp2"+temp2);//ÀÌ°É·Î È®ÀÎÇÏÀÚ.
-		String tempresult = temp1+temp2;//°è»êÇÒ ±Ù°Å Ã£À½ (ÃâÂ÷½Ã°£)
-		//System.out.println("¸î½Ã°£ ¾²³Ä¸é="+reserve1);
-		//int tempint1 = reserve1.getRtime();
-		//System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
-		String tempstring1 = reserve1.getRstarttime();//db¿¡ÀÖ´Â ÀÔÂ÷¿¹¾à½Ã°£
-		int starttime1 = Integer.parseInt(tempstring1);//db¿¡ÀÖ´Â ÀÔÂ÷¿¹¾à½Ã°£ intÇüÀ¸·Î ÀüÈ¯
-		//System.out.println(tempresult);
-		//System.out.println(starttime1);
-		//System.out.println(tempresult.length()); // ÇöÀç ½Ã°£ÀÌ 0~9ºĞÀÏ¶§ÀÇ ¿¹¿ÜÃ³¸®¸¦ À§ÇÑ ±¸¹®
-		if(tempresult.length()==3){
-			String faketemp3 = tempresult.substring(0, 1);
-			String faketemp4 = tempresult.substring(1, 3);
-			tempresult="0"+faketemp3+faketemp4;
-			
-			
-		}else if(tempresult.length()==2){
-			String faketemp3 = tempresult.substring(0,1);
-			String faketemp4 = tempresult.substring(1, 2);
-			tempresult="0"+faketemp3+"0"+faketemp4;
-			
-		}
-		//System.out.println("tempresult"+tempresult);
-		//starttime1 = 
-		int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // ÇöÀç ½Ã°£¿¡¼­ ½Ã ¸¸ ¶¼¾î³¿
-		int temp4 = Integer.parseInt(tempresult.substring(2, 4));
-		int temp5 = Integer.parseInt(reserve1.getRstarttime().substring(0, 2));
-		int temp6 = Integer.parseInt(reserve1.getRstarttime().substring(2, 4));
-		int rstarttime = Integer.parseInt(tempstring1);
-		int endtime = Integer.parseInt(tempresult);//ÃâÂ÷¶§ÀÇ ½Ã°£À» intÇüÀ¸·Î ÀüÈ¯
-	temp5 = temp5+reserve1.getRtime();
-		int cnth = 0;//½Ã°£´ÜÀ§ °è»êÇÒ cnth
-		int cntm = 0;//ºĞ´ÜÀ§ °è»êÇÒ cntm
-		int cal =0;
-		if(endtime>rstarttime){
-			cnth = temp3-temp5;
-			cntm = temp4-temp6;
-			
-		}
-		//System.out.println("cnth="+cnth);
-		/*
-		System.out.println("temp7="+rstarttime);
-		System.out.println(temp3);
-		*/
-		if(cntm>0){
-		cal = ((cnth+1)*service.selectBypid(reserve1.getPid()).getPlatefare());
-		}
-		else{
-			cal = (cnth*service.selectBypid(reserve1.getPid()).getPlatefare());
-			
-		}
-		mv.addObject("naga", cal);
-		mv.addObject("rid",rid);
-		System.out.println("resrvationupdate.doÀÇ ³¡");
-		mv.setViewName("admin/chulcha");
-		return mv;
-	}
-	
-	@RequestMapping(value="reservationupdate1.do", method=RequestMethod.POST)
-	public ModelAndView updatePost(int rid,int naga){
-		ModelAndView mv = new ModelAndView();
-		
-		System.out.println("=============¿©±â±îÁö¿Ô´Ï?=============");
-		
-		
-		//System.out.println("naga"+naga);
-		System.out.println("rid==========="+rid);
-		ReservationDTO reserve = rservice.searchReservationByrid(rid);
-		//System.out.println("ÃâÂ÷ÇÒ ¿¹¾à Á¤º¸´Â="+reserve);
-			
-		  /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
-	         Date d = sf.parse(date);
-		*/
-	reserve.setRextrafare(naga);
-	
-	//ÃâÂ÷ÇØ¼­ parking tableÀÇ pcount¼ö +1 ÇØÁÖ´Â ±¸¹®.
-	ParkingDTO parking =  service.selectBypid(rservice.searchReservationByrid(rid).getPid());
-	int countTemp = parking.getPcount()+1;
+      mv.setViewName("admin/admin_main");
+      return mv;
+   }
+   
+   
+   @RequestMapping(value="reservationupdate.do", method=RequestMethod.GET)
+   public ModelAndView updateGet(int rid){
+      
+      
+            /*
+            HttpSession session = request.getSession();
+            AdminDTO admin = (AdminDTO)session.getAttribute("admincheck");*/
+      //ReservationDTO reserve4 = rservice.
+      
+      ModelAndView mv = new ModelAndView();
+   System.out.println("rid=!="+rid);
+      ReservationDTO reserve1 = rservice.searchReservationByrid(rid);
+      Date d = new Date();
+      SimpleDateFormat sf = new SimpleDateFormat("HHmm");
+      //String test2 = sf.format(d);
+      System.out.println("*******"+d.getHours());
+      String temp1=null;
+      String temp2=null;
+      //System.out.println("dì˜ ì‹œê°„"+d.getHours());
+      //System.out.println("dì˜ ë¶„"+d.getMinutes());
+      temp1 = temp1.valueOf(d.getHours());
+      temp2 = temp2.valueOf(d.getMinutes());
+      //System.out.println("temp2"+temp2);//ì´ê±¸ë¡œ í™•ì¸í•˜ì.
+      String tempresult = temp1+temp2;//ê³„ì‚°í•  ê·¼ê±° ì°¾ìŒ (ì¶œì°¨ì‹œê°„)
+      //System.out.println("ëª‡ì‹œê°„ ì“°ëƒë©´="+reserve1);
+      //int tempint1 = reserve1.getRtime();
+      //System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
+      String tempstring1 = reserve1.getRstarttime();//dbì—ìˆëŠ” ì…ì°¨ì˜ˆì•½ì‹œê°„
+      int starttime1 = Integer.parseInt(tempstring1);//dbì—ìˆëŠ” ì…ì°¨ì˜ˆì•½ì‹œê°„ intí˜•ìœ¼ë¡œ ì „í™˜
+      //System.out.println(tempresult);
+      //System.out.println(starttime1);
+      //System.out.println(tempresult.length()); // í˜„ì¬ ì‹œê°„ì´ 0~9ë¶„ì¼ë•Œì˜ ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ìœ„í•œ êµ¬ë¬¸
+      if(tempresult.length()==3){
+         String faketemp3 = tempresult.substring(0, 1);
+         String faketemp4 = tempresult.substring(1, 3);
+         tempresult="0"+faketemp3+faketemp4;
+         
+         
+      }else if(tempresult.length()==2){
+         String faketemp3 = tempresult.substring(0,1);
+         String faketemp4 = tempresult.substring(1, 2);
+         tempresult="0"+faketemp3+"0"+faketemp4;
+         
+      }
+      //System.out.println("tempresult"+tempresult);
+      //starttime1 = 
+      int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // í˜„ì¬ ì‹œê°„ì—ì„œ ì‹œ ë§Œ ë–¼ì–´ëƒ„
+      int temp4 = Integer.parseInt(tempresult.substring(2, 4));
+      int temp5 = Integer.parseInt(reserve1.getRstarttime().substring(0, 2));
+      int temp6 = Integer.parseInt(reserve1.getRstarttime().substring(2, 4));
+      int rstarttime = Integer.parseInt(tempstring1);
+      int endtime = Integer.parseInt(tempresult);//ì¶œì°¨ë•Œì˜ ì‹œê°„ì„ intí˜•ìœ¼ë¡œ ì „í™˜
+   temp5 = temp5+reserve1.getRtime();
+      int cnth = 0;//ì‹œê°„ë‹¨ìœ„ ê³„ì‚°í•  cnth
+      int cntm = 0;//ë¶„ë‹¨ìœ„ ê³„ì‚°í•  cntm
+      int cal =0;
+      if(endtime>rstarttime){
+         cnth = temp3-temp5;
+         cntm = temp4-temp6;
+         
+      }
+      //System.out.println("cnth="+cnth);
+      /*
+      System.out.println("temp7="+rstarttime);
+      System.out.println(temp3);
+      */
+      if(cntm>0){
+      cal = ((cnth+1)*service.selectBypid(reserve1.getPid()).getPlatefare());
+      }
+      else{
+         cal = (cnth*service.selectBypid(reserve1.getPid()).getPlatefare());
+         
+      }
+      mv.addObject("naga", cal);
+      mv.addObject("rid",rid);
+      System.out.println("resrvationupdate.doì˜ ë");
+      mv.setViewName("admin/chulcha");
+      return mv;
+   }
+   
+   @RequestMapping(value="reservationupdate1.do", method=RequestMethod.POST)
+   public ModelAndView updatePost(int rid,int naga){
+      ModelAndView mv = new ModelAndView();
+      
+      System.out.println("=============ì—¬ê¸°ê¹Œì§€ì™”ë‹ˆ?=============");
+      
+      
+      //System.out.println("naga"+naga);
+      System.out.println("rid==========="+rid);
+      ReservationDTO reserve = rservice.searchReservationByrid(rid);
+      //System.out.println("ì¶œì°¨í•  ì˜ˆì•½ ì •ë³´ëŠ”="+reserve);
+         
+        /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+            Date d = sf.parse(date);
+      */
+   reserve.setRextrafare(naga);
+   
+   //ì¶œì°¨í•´ì„œ parking tableì˜ pcountìˆ˜ +1 í•´ì£¼ëŠ” êµ¬ë¬¸.
+   ParkingDTO parking =  service.selectBypid(rservice.searchReservationByrid(rid).getPid());
+   int countTemp = parking.getPcount()+1;
     parking.setPcount(countTemp);
     int ret = rservice.updateReservationEndByrid(reserve);
     int ret2 = service.updateParkingPcount(parking);
-	System.out.println("ÃâÂ÷È®ÀÎ¿ë  reserve==="+reserve);
-		System.out.println(ret+"°ÇÀÇ ¾÷µ¥ÀÌÆ®°¡ ¼º°øÇß½À´Ï´Ù.");
-		System.out.println(ret2+"°ÇÀÇ pcount ¼öÁ¤ ¼º°ø");
-		mv.setViewName("redirect:/adminmain.do");
-		return mv;
-		
-		
-	}
+   System.out.println("ì¶œì°¨í™•ì¸ìš©  reserve==="+reserve);
+      System.out.println(ret+"ê±´ì˜ ì—…ë°ì´íŠ¸ê°€ ì„±ê³µí–ˆìŠµë‹ˆë‹¤.");
+      System.out.println(ret2+"ê±´ì˜ pcount ìˆ˜ì • ì„±ê³µ");
+      mv.setViewName("redirect:/adminmain.do");
+      return mv;
+      
+      
+   }
 }

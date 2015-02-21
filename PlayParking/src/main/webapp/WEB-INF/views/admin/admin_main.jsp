@@ -225,15 +225,8 @@
                   </div><!-- salechart -->
 						</section>
 				<div class="btn-box-row row-fluid">
-					  <div class="btn-controls"> 
-						<!-- <div style="width: 100%"> -->
-						<!--  <div class="btn-box-row row-fluid"> -->
-						<section id="myfare">
-								<a href="#"	class="btn-box big span4" style="width: 25%">
-								<i class="icon-user"></i><b>${parking.pfare}</b>
-								<p class="text-muted">나의 주차장 요금</p></a>								
-						</section>
-						<!--</div>상단btn-controls-->
+					 
+						
 						
 						<form action="adminmain.do">
 						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
@@ -273,7 +266,34 @@
 				              </table>
 				              </div><!-- table -->
 				              </div><!--/.module-->
-							</form></div>
+							</form>
+							<div class="btn-controls"> 
+						<!-- <div style="width: 100%"> -->
+						<!--  <div class="btn-box-row row-fluid"> -->
+						<section id="myfare">
+								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<i class="icon-user"></i><b>${parking.pamount}</b>
+								<p class="text-muted">주차장 수용차수</p></a>								
+						</section>
+						</div><!--상단btn-controls-->
+						<div class="btn-controls"> 
+						<!-- <div style="width: 100%"> -->
+						<!--  <div class="btn-box-row row-fluid"> -->
+						<section id="myfare">
+								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<i class="icon-user"></i><b><fmt:formatNumber value="${parking.pfare}" type="number" var="parkingfare"/>${parkingfare}</b>
+								<p class="text-muted">나의 주차장 요금</p></a>								
+						</section>
+						</div><!--상단btn-controls-->
+						<div class="btn-controls"> 
+						<!-- <div style="width: 100%"> -->
+						<!--  <div class="btn-box-row row-fluid"> -->
+						<section id="myfare">
+								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<i class="icon-user"></i><b><fmt:formatNumber value="${avg}" type="number" var="avgfare"/>${avgfare}</b>
+								<p class="text-muted">주변 주차장 평균요금</p></a>								
+						</section>
+						</div><!--상단btn-controls-->
 						</div> 
 						</div><!--/.content-->
 						</div><!--/.span9-->
