@@ -3,17 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- 주차장 검색 후 리스트! -->
 <form method="post" action="reserve.do">
+<br>
 <table class="table table-striped table-hover ">
    <thead>
    <tr class="info" align="center">
-      <th align="center">번호</th>
+      <th align="center" class="th">번호</th>
       <th align="center">주차장 이름</th>
       <th align="center">주소</th>
       <th align="center">요금</th>
       <th align="center">추가요금</th>
       <th align="center">너비</th>
       <th align="center">길이</th>
-      <th align="center">Tip</th>
+      <th align="center" class="th">Tip (고객님들이 도착지에 조금 더 빨리 찾아갈 수 있도록!)</th>
       <th align="center">예약</th>
    </tr>
    </thead>
@@ -34,15 +35,32 @@
             <td>${p.ptip}</td>
             <td><input type="image" width="70" id="pid" name="pid" value="${p.pid}" src="resources/reservation_btn.png">
             </td>
-         </tr>      
-   </c:forEach>   
+         </tr>     
+   </c:forEach> 
+   <%-- <tr>
+   <c:set var="savenum" value="0" />
+		<c:choose>
+	    <c:when test="${(parkinglistsize%10) ne 0}">
+	    	<c:set var="savenum" value="${(parkinglistsize/10)+1}" />        
+	    </c:when>
+	
+	    <c:otherwise>
+	    	<c:set var="savenum" value="${(parkinglistsize/10)}" />
+	    </c:otherwise>
+		</c:choose>
+		
+		<td></td><td></td>
+		<td></td><td></td><td></td>
+		<td>
+			<c:forEach var="i" begin="1" end="${savenum}">
+			<a href="search.do?pageno=${i}">[${i}]</a>
+			</c:forEach>
+		</td>
+		<td></td><td></td><td></td>
+		
+   </tr> --%>
    </tbody>
 </table>
-<script type="text/javascript">
-function func(a){
-   <input type="hidden" name="piddd" id="piddd" value=a>
-}
-</script>
 </form>
 ;
 <c:set var="cnt" value="0"></c:set>
@@ -70,7 +88,7 @@ function func(a){
       <th align="center">추가요금</th>
       <th align="center">너비</th>
       <th align="center">길이</th>
-      <th align="center">Tip</th>
+      <th align="center">Tip (고객님들이 도착지에 조금 더 빨리 찾아갈 수 있도록!)</th>
       <th align="center">예약</th>
    </tr>
    </thead>

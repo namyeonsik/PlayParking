@@ -44,7 +44,7 @@
 .body {
 	margin-top: 50px;
 }
-.title {margin-left: 40%; margin-top: 8%;}
+.title {text-align:center; margin-top: 8%;}
 .table {margin-top:3%;}
 </style>
 
@@ -94,7 +94,7 @@
                     
 					<c:forEach items="${noticelist}" var="n"> 
 					<tr>						
-					<td>${n.nno}</td>
+					<td>${noticelistsize-cnt+1}</td>
 					<td><a href='checktextmem.do?nno=${n.nno}&aid=${n.aid}'>${n.ntitle}</a></td>
 					<td>${n.aid}</td>
 					<td>${n.ndate}</td>

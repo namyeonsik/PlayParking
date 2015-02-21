@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>관리자</title>
@@ -70,7 +71,7 @@
 
 <c:set var="cnt" value="1"></c:set>
 
-<div class="wrapper">
+<div class="wrapper" style="background-color: #ffffff;">
 	<div class="container">
 		<div class="row">
 			<div class="content">
@@ -145,7 +146,7 @@
         <!--/.wrapper-->
         <div class="footer">
             <div class="container">
-                <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+                <b class="copyright">&copy; 2015 PlayParking </b>All rights reserved.
             </div>
         </div>
 

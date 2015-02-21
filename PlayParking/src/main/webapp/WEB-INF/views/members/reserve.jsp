@@ -43,8 +43,9 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style type="text/css">
+.title {text-align:center; margin-top: 8%;}
 .header {height: 50px}
-.body {margin-top: 100px;}
+.body {margin-top: 0px;}
 .col-md-6{
 width: 40%;
 	margin-top: 5%;
@@ -92,6 +93,10 @@ margin-left: 10%
 <%@ include file="../Header.jsp" %>
 </div>
 <!-- 진짜헤더끝 --> 
+
+<div class="title">
+    <h2> Parking Reserve </h2>
+</div>
 
 <div class="body">
 <div class="col-md-6 col-sm-6 col-xs-6 xlg-margin">
@@ -244,7 +249,7 @@ margin-left: 10%
  </div><!-- col-md-6 col-sm-12 col-xs-12 xlg-margin -->
 
 </div>
-
+</div>
 
 
 
