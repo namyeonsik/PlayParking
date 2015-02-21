@@ -66,9 +66,7 @@
 	<section id="aboutus" class="section">
 		<header class="container text-center">
 			<h1 class="section-title">About Us</h1>
-			<p class="section-desc">We a group of people who like the design
-				and development. We enjoy the life and create the new things for
-				you...</p>
+			<p class="section-desc">I'm Developer는 공유를 통한 가치 창출에 대해 고민하는 개발자들입니다. </p>
 		</header>
 
 		<div class="container" >
@@ -254,53 +252,54 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
-					<h3>Get to know us!</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Dolores tempora quasi in, illum repudiandae, ipsum totam fugiat
-						aliquid corporis soluta cupiditate rerum nam nisi quas, mollitia
-						exercitationem voluptatibus ut. Eligendi.</p>
+					
+					<blockquote >
+					<h4>I'm Developer의 이야기입니다!</h4>
+					<p>우리는 <span class="highlight lightblue">'노는 주차장'</span> 프로젝트를 시작하게 된 이유는 
+					서울의 주차 공간 부족을 직접 체험한 후 였습니다.</p>
+					<p>약속이 있는 주말! 차를 이용하여 약속장소에 간다는 것은 주차 공간을 항상 염두해둬야 한다는 어려움이 있습니다. 
+					왜냐하면 영화관,쇼핑몰의 주차장은 꽉 차 있으며 공영주차장 또한 자리가 없기 때문이죠.   </p>
 					<p>
-						Porro, quo natus. <span class="highlight red">Accusamus
-							veritatis velit</span> quas minus esse ipsum, impedit! Accusamus
-						nesciunt beatae tempore suscipit quam molestias similique sed, cum
-						vel neque, eveniet ab? A magni libero, debitis veritatis! Nostrum
-						veritatis dolores illum, similique consectetur repudiandae <span
-							class="highlight yellow">pariatur voluptates</span> aut, itaque
-						sunt consequatur praesentium doloribus soluta dolore architecto
-						quae quos commodi facilis numquam eos atque molestiae. Consequatur
-						sequi veritatis omnis!
-					</p>
+						<span class="highlight red">주차 공간 부족!</span> 우리 <b>I'm Developer</b> 는 이 문제를 해결하고자 
+					고민하고 또 고민했습니다. 그리고 번화가에 위치하며 주차장 관리인이 있는 기업 소유의 건물 주차장에 관심을 갖게 되었습니다.	</p>
+					<P>직원들이 퇴근하고 나면 사용되지 않는 건물의 빈 주차장을 주말 서울의 주차공간 부족 문제의 대안으로 생각한 우리는 
+					 
+			<span class="highlight yellow">CSV</span>(Creating Shared Value)를 통한 기업의 참여를 이끌어내기 위해 '노는 주차장'
+			프로젝트를 시작한 것 입니다.  
+				</p>	
 					<p>
-						Dicta adipisci, mollitia molestiae voluptatem itaque atque rerum
-						nemo. Soluta minima omnis odit. <a href="#contactus"
+						 <!-- <a href="membermain.do"
 							class="scrollto add-tooltip" data-placement="bottom"
-							title="Get in Touch Now!">Contact Us!</a>
+							title="Get in Touch Now!">Contact Us!</a> -->
 					</p>
+					</blockquote>
 				</div>
 				<!-- End .col-md-6 -->
 				<div class="col-md-6 col-sm-6">
-					<h3>Get to know us!</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Dolores tempora quasi in, illum repudiandae, ipsum totam fugiat
-						aliquid corporis soluta cupiditate rerum nam nisi quas, mollitia
-						exercitationem voluptatibus ut. Eligendi.</p>
-					<p>
-						Porro, quo natus. <span class="highlight red">Accusamus
-							veritatis velit</span> quas minus esse ipsum, impedit! Accusamus
-						nesciunt beatae tempore suscipit quam molestias similique sed, cum
-						vel neque, eveniet ab? A magni libero, debitis veritatis! Nostrum
-						veritatis dolores illum, similique consectetur repudiandae <span
-							class="highlight yellow">pariatur voluptates</span> aut, itaque
-						sunt consequatur praesentium doloribus soluta dolore architecto
-						quae quos commodi facilis numquam eos atque molestiae. Consequatur
-						sequi veritatis omnis!
-					</p>
-					<p>
-						Dicta adipisci, mollitia molestiae voluptatem itaque atque rerum
-						nemo. Soluta minima omnis odit. <a href="#contactus"
+					
+					<blockquote >
+					<h4>'노는 주차장'을 소개합니다!</h4>
+					<h6>일반 사용자</h6>
+					<p>우리는 사용자가 최소한의 개인정보 입력을 통해서 우리의 Service를 이용하도록 사용자를 배려했습니다.지금 당장 <a href="join.do"
 							class="scrollto add-tooltip" data-placement="bottom"
-							title="Get in Touch Now!">Contact Us!</a>
+							title="Join Now!">Join</a> 해보세요! 
 					</p>
+					<p>
+						가입을 통해 ID를 만들었다면 당장 로그인 하세요! 그리고는<span class="highlight lightblue">Reservation</span> 기능을 통해 주차장을 예약하세요! </p>
+					<p>	<span class="highlight lightblue">MyParking</span> 기능을 통해 나의정보, 예약확인, 포인트확인 등의 기능을 통해 당신의 정보를 관리 할 수 있습니다
+					</p>
+					<p></p>
+					<h6>주차장 관리자</h6>
+					<p>
+						오늘의 입차 차량 정보부터 출차확인까지 손 쉽게 주차장을 <span class="highlight yellow">관리</span> 할 수 있으며,
+						<span class="highlight lightblue">Report</span> 기능을 통해 내 주차장의 수익,내 주변 주차장 정보 등을 한 눈에 확인 할 수 있습니다!  
+						</p>
+			<P>				
+						 <!-- <a href="membermain.do"
+							class="scrollto add-tooltip" data-placement="bottom"
+							title="Get in Touch Now!">Contact Us!</a> -->
+				</P>	
+					</blockquote>
 				</div>
 				<!-- End .col-md-6 -->
 
