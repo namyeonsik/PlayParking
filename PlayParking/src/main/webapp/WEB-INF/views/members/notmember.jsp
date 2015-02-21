@@ -65,7 +65,7 @@
                                                     </div><!-- End .modal-header -->
                                                     <div class="modal-body">
 
-                                                    <p>주차장 검색과 예약 및 공지사항 확인 등 다양한 메뉴들은</p>
+                                                    <p><font face=""></font>주차장 검색과 예약 및 공지사항 확인 등 다양한 메뉴들은</p>
                                                     <p>로그인을 한 후에 이용하실 수 있습니다!</p>
                                                     
                                                 
