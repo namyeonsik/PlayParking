@@ -155,8 +155,8 @@
 									<td>${resultEnd }</td> 
 								
 									
-									<td><input type="button" value="Select Time"
-									class="btn btn-lightblue" 
+									<td><input type="button" value="출차확인"
+									class="btn btn-info" 
 									data-toggle="modal" data-target="#modal-login-form" onclick="call(${num.rid})" ></td>
 									
 									<!-- Modal Login Form-->
@@ -169,7 +169,8 @@
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+							<h4 class="modal-title" id="myModalLabel1">Message</h4>
+							
 						</div>
 						<!-- End .modal-header -->
 			<div class="modal-body">
