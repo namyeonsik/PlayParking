@@ -57,7 +57,7 @@ function validationlogin(){
 <form id="loginform" class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
 onsubmit="return validationlogin();" name="adminloginfrm" >
 
-<div class="modal-dialog modal-lg" style="margin-left:600px;margin-top:300px;width:800px">
+<div class="modal-dialog modal-lg" style="margin-left:20%;margin-top:15%;width:60%">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>

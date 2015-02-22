@@ -66,7 +66,7 @@
 	int nsize = 0;
 %>
 <div class="title">
-    <h2>Parking Notice View </h2>
+    <h2>Parking Notice View</h2>
 </div>
 
 <div id="wrapper">
@@ -77,7 +77,7 @@
 					<div class="col-md-12 single">
 						<div class="article-author">
 							<figure>
-								<img src="${pageContext.request.contextPath}/resources/geass/images/blog/author.jpg" alt="Author">
+								<img src="${pageContext.request.contextPath}/resources/images/user.png" alt="Author">
 							</figure>
 							<h4>
 								<a href="#">${title}</a>&nbsp;&nbsp;&nbsp;
