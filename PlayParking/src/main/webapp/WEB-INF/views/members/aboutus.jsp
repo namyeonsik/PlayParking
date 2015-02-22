@@ -249,7 +249,7 @@
 		<div class="lg-margin visible-xs clearfix"></div>
 		<!-- space -->
 
-		<div class="container">
+		<div class="container" style="font: ">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					
