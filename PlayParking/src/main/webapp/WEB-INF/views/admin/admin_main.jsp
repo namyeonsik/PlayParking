@@ -224,12 +224,10 @@
                      </div>
                   </div><!-- salechart -->
 						</section>
-				<div class="btn-box-row row-fluid">
-					 
-						
-						
-						<form action="adminmain.do">
-						 <div class="module"  style="width: 69%;float: left;margin-left: 5%">
+				<!-- <div class="btn-box-row row-fluid"> -->
+				
+				<form action="adminmain.do">
+						 <div class="module"  style="width: 69%;float: right; margin-right: ">
 							<div class="module-head">
 							
 								<h3>${parking.plocation} 주차장 정보</h3>
@@ -267,7 +265,8 @@
 				              </div><!-- table -->
 				              </div><!--/.module-->
 							</form>
-							<div class="btn-controls"> 
+						<div class="btn-box-row row-fluid">
+						<div class="btn-controls"> 
 						<!-- <div style="width: 100%"> -->
 						<!--  <div class="btn-box-row row-fluid"> -->
 						<section id="myfare">
@@ -285,9 +284,7 @@
 								<p class="text-muted">나의 주차장 요금</p></a>								
 						</section>
 						</div><!--상단btn-controls-->
-						<div class="btn-controls"> 
-						<!-- <div style="width: 100%"> -->
-						<!--  <div class="btn-box-row row-fluid"> -->
+						<div class="btn-controls">
 						<section id="myfare">
 								<a href="#"	class="btn-box big span4" style="width: 25%">
 								<i class="icon-user"></i><b><fmt:formatNumber value="${avg}" type="number" var="avgfare"/>${avgfare}</b>
@@ -297,7 +294,7 @@
 						</div> 
 						</div><!--/.content-->
 						</div><!--/.span9-->
-					</div><!-- row class -->			
+					</div><!-- row class --><br><br>			
 				</div><!--/.container-->
 			</div><!--/.wrapper-->
 
