@@ -30,6 +30,9 @@ public class AdminMainController {
    @Autowired
    ReservationServiceInterface rservice;
 
+   String thisMonth=null;
+   
+   
    @RequestMapping(value="/adminmain.do", method=RequestMethod.GET)
    public ModelAndView adminMain(HttpServletRequest request,
                                    HttpSession session) {
@@ -79,6 +82,7 @@ public class AdminMainController {
       List<ReservationDTO> reservelist2 = new ArrayList<ReservationDTO>();
       List<ReservationDTO> reservelist3 = new ArrayList<ReservationDTO>();
       SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+      SimpleDateFormat formatForchart = new SimpleDateFormat("yyyy-MM");
       //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
       //Date d2 = sf.parse(d1);
       System.out.println("전체 예약개수는="+i);
@@ -86,7 +90,8 @@ public class AdminMainController {
       String reserveday=null;
       System.out.println("오늘날짜는"+today);
       //System.out.println("예약날짜는"+reserveday);
-      
+     thisMonth = formatForchart.format(d1);
+      System.out.println("이번달은 = "+thisMonth);
       
       //시간형변환 부분 시작끝!
       

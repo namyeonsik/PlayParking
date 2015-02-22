@@ -104,7 +104,8 @@
 								<i class="icon-group"></i><b>${todaycount}</b>
 								<p class="text-muted">오늘의 예약자 수</p></a>
 								<a href="#"	class="btn-box big span4">
-								<i class="icon-money"></i><b>${todaypoint }</b>
+								<fmt:formatNumber value="${todaypoint }" type="number" var="todaypointview"/>
+								<i class="icon-money"></i><b>${todaypointview }</b>
 									<p class="text-muted">오늘 얻은 point</p> </a>
 							</div>
 						</div><!--상단btn-controls-->
