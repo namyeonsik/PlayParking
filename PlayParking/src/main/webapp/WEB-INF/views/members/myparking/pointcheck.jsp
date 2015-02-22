@@ -74,27 +74,38 @@
 }
 
 .mypoint {
-   width: 40%;
+   width: 30%;
    margin-top: 5%;
    margin-left: 10%;
    float: left;
+   border:1px gray solid;
 }
 
 .mypoint .mpoint {
    float: right;
-   margin-right: 30%;
+   margin-right: 5%;
 }
-
+/* .non {
+	width: 10%;
+	margin-top: 5%;
+   margin-left: 40%;
+   float: left;
+   border:1px gray solid;
+} */
 .charge {
-   width: 40%;
+   width: 30%;
    margin-top: 5%;
-   margin-right: 10%;
-   float: right;
+   margin-left: 10%;
+   float: left;
+   border:1px gray solid;
+   height: 40%;
 }
 
 .charge .cbtn {
    float: right;
-   margin-right: 30%;
+   margin-right: 5%;
+   margin-top: 8%;
+   height: 10%;
 }
 
 .title {
@@ -199,7 +210,8 @@
                <h1>${point.mpoint}P</h1>
             </div>
          </div>
-
+		<div class="non">
+		</div>
          <div class="charge">
             <h3>Charge</h3>
             <div class="cbtn">

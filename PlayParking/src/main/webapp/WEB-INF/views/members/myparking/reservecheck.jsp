@@ -70,7 +70,8 @@
 }
 
 .title {
-	margin-left: 35%;
+	margin-left: 43%;
+	margin-top: 10%;
 }
 
 .tail {
@@ -139,7 +140,7 @@
 
 	<div class="body">
 		<div class="title">
-			<h2>Reservation History</h2>
+			<h2>예약 내역</h2>
 		</div>
 		<div class="reservecheck">
 			<ul class="title">

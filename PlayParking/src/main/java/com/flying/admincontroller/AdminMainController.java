@@ -37,7 +37,7 @@ public class AdminMainController {
    public ModelAndView adminMain(HttpServletRequest request,
                                    HttpSession session) {
       ModelAndView mv = new ModelAndView();
-      System.out.println("여기는 메인");
+      System.out.println("���Ⱑ main ������");
       session = request.getSession();
       AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
       
@@ -45,49 +45,21 @@ public class AdminMainController {
       
       // ParkingDTO admincheck =
       // (ParkingDTO)session.getAttribute("admincheck");
-      System.out.println("정보수정pid:" + admincheck);
+      System.out.println("pid:" + admincheck);
 
       System.out.println(admincheck.getPid());
       ParkingDTO parking = service.selectBypid(admincheck.getPid());
-      mv.addObject("parking", parking);//parking정보들
+      mv.addObject("parking", parking);//parking
       List<ParkingDTO> aroundpark = 
             service.selectByAround(parking.getPlocation(), admincheck.getPid());
       mv.addObject("aroundpark", aroundpark);
       int sumfare=0;
       int avg;
       for(ParkingDTO p : aroundpark){
-    	  sumfare += p.getPfare();
+         sumfare += p.getPfare();
       }
       avg=sumfare/aroundpark.size();
       mv.addObject("avg", avg);
-      
-      //rservice.selectByMonth(admincheck.getPid(), month);
-      
-      /*int monthlypoint=0;
-      for(int i=0; i<10;i++){
-    	  monthlypoint += 1;
-      }*/
-      
-     /* int parkingfare = parking.getPfare(); //주차장 요금 
-      List<ReservationDTO> reserveparking = 
-    		        rservice.selectReserve(admincheck.getPid());
-      //월별 주차장이용시간의 합계 
-      for(ReservationDTO r : reserveparking ){
-    	  System.out.println(r+"resdto");
-      }*/
-      
-      /*List<String> monthlist = null;
-      for(int i=0;i<reserveparking.size();i++){
-    	  monthlist.add(reserveparking.get(1));
-      }*/
-      
-  /* //reserve parking join
-      List<ReservationDTO> reserveparking =
-    		         rservice.selectReserve(admincheck.getPid());
- 		System.out.println(reserveparking.size()); */
-      
-      
-      
       System.out.println(parking.getPcount());
       int resultcount = parking.getPamount() - parking.getPcount();
       int todaycount=0;
@@ -95,41 +67,33 @@ public class AdminMainController {
             //.seachReservationBypid(admincheck.getPid());
       
       
-      //시간형변환 부분 시작!
       Date d1 = new Date();
-      System.out.println("시간을확인해보자"+d1.getHours()+"분은"+d1.getMinutes());
+      System.out.println("�����ǽð�="+d1.getHours()+"��="+d1.getMinutes());
       String test1 = toString().format("", d1.getHours())+toString().format("", d1.getMinutes());
-      //출차시간을 위해 형변환을 하는 부분
+      
       SimpleDateFormat sf = new SimpleDateFormat("HHmm");
       String test2 = sf.format(d1);
       System.out.println(test2);
       
       
-      // 오늘날짜와 예약 날짜를 비교하는 부분
-      int i = reservelist.size(); //  우선 전체 예약정보의 크기를 구해온다.
+      
+      int i = reservelist.size(); 
       List<ReservationDTO> reservelist2 = new ArrayList<ReservationDTO>();
       List<ReservationDTO> reservelist3 = new ArrayList<ReservationDTO>();
       SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
       SimpleDateFormat formatForchart = new SimpleDateFormat("yyyy-MM");
       //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
       //Date d2 = sf.parse(d1);
-      System.out.println("전체 예약개수는="+i);
+      System.out.println("��ü����Ǽ�="+i);
       String today = format.format(d1);
       String reserveday=null;
-      System.out.println("오늘날짜는"+today);
-      //System.out.println("예약날짜는"+reserveday);
+     
      thisMonth = formatForchart.format(d1);
-      System.out.println("이번달은 = "+thisMonth);
+      System.out.println("�̹��⵵�� ���� = "+thisMonth);
       
-      //시간형변환 부분 시작끝!
+  
       
-      /*if(today.equals(reserveday)){
-         
-         System.out.println("날짜가 같아임마");
-      }else{
-         
-         System.out.println("니가 틀린거야임마");
-      }*/
+      
       
       for (int a = 0; a < i; a++) {
 
@@ -141,12 +105,10 @@ public class AdminMainController {
          }
          
       }
-      //rstarttimeback 가 900이거나 930일때 처리방법
+     
       String s1="900";
       String s2="930";
-      /*for(int a=0;a<reservelist2.size();a++){
-         System.out.println("확인용="+reservelist2.get(a).getRstarttimeback());
-      }*/
+      
       for(int a=0;a<reservelist2.size();a++){
          String temps = reservelist2.get(a).getRstarttimeback();
          temps=temps.trim();
@@ -187,16 +149,8 @@ public class AdminMainController {
             // reservelist2=(List<ReservationDTO>) reservelist.get(a);
             System.out.println(reservelist.get(a));
       }*/
-      String end=null;//출차안함,출차함 표시 String
-      /*for (int z=0;z<reservelist2.size();z++){
-         System.out.println("end여부=="+reservelist2.get(z).getRend());
-         if(reservelist2.get(z).getRend()==null){
-            end = "출차안함";
-         }else if(reservelist2.get(z).getRend()!=null){
-            end="출차함";
-         }
-         
-      }*/
+      String end=null;
+     
       int todaypoint=0;
       
       for(int c=0; c<reservelist2.size();c++){
@@ -212,7 +166,7 @@ public class AdminMainController {
       mv.addObject("reservelist", reservelist2);
       mv.addObject("todaypoint",todaypoint);
    //   mv.addObject("plus30", reservelist3);
-      System.out.println("오늘의 예약자는="+todaycount);
+      System.out.println("������ ���హ��="+todaycount);
 
       mv.setViewName("admin/admin_main");
       return mv;
@@ -237,20 +191,19 @@ public class AdminMainController {
       System.out.println("*******"+d.getHours());
       String temp1=null;
       String temp2=null;
-      //System.out.println("d의 시간"+d.getHours());
-      //System.out.println("d의 분"+d.getMinutes());
+     
       temp1 = temp1.valueOf(d.getHours());
       temp2 = temp2.valueOf(d.getMinutes());
-      //System.out.println("temp2"+temp2);//이걸로 확인하자.
-      String tempresult = temp1+temp2;//계산할 근거 찾음 (출차시간)
-      //System.out.println("몇시간 쓰냐면="+reserve1);
+      //System.out.println("temp2"+temp2);//
+      String tempresult = temp1+temp2;//
+      
       //int tempint1 = reserve1.getRtime();
       //System.out.println("reserve1.getRstarttime()===="+reserve1.getRstarttime());
-      String tempstring1 = reserve1.getRstarttime();//db에있는 입차예약시간
-      int starttime1 = Integer.parseInt(tempstring1);//db에있는 입차예약시간 int형으로 전환
+      String tempstring1 = reserve1.getRstarttime();//db
+      int starttime1 = Integer.parseInt(tempstring1);//db
       //System.out.println(tempresult);
       //System.out.println(starttime1);
-      //System.out.println(tempresult.length()); // 현재 시간이 0~9분일때의 예외처리를 위한 구문
+      //System.out.println(tempresult.length()); // 
       if(tempresult.length()==3){
          String faketemp3 = tempresult.substring(0, 1);
          String faketemp4 = tempresult.substring(1, 3);
@@ -265,15 +218,15 @@ public class AdminMainController {
       }
       //System.out.println("tempresult"+tempresult);
       //starttime1 = 
-      int temp3 = Integer.parseInt(tempresult.substring(0, 2)); // 현재 시간에서 시 만 떼어냄
+      int temp3 = Integer.parseInt(tempresult.substring(0, 2));
       int temp4 = Integer.parseInt(tempresult.substring(2, 4));
       int temp5 = Integer.parseInt(reserve1.getRstarttime().substring(0, 2));
       int temp6 = Integer.parseInt(reserve1.getRstarttime().substring(2, 4));
       int rstarttime = Integer.parseInt(tempstring1);
-      int endtime = Integer.parseInt(tempresult);//출차때의 시간을 int형으로 전환
+      int endtime = Integer.parseInt(tempresult);//
    temp5 = temp5+reserve1.getRtime();
-      int cnth = 0;//시간단위 계산할 cnth
-      int cntm = 0;//분단위 계산할 cntm
+      int cnth = 0;//cnth
+      int cntm = 0;//cntm
       int cal =0;
       if(endtime>rstarttime){
          cnth = temp3-temp5;
@@ -294,7 +247,7 @@ public class AdminMainController {
       }
       mv.addObject("naga", cal);
       mv.addObject("rid",rid);
-      System.out.println("resrvationupdate.do의 끝");
+     // System.out.println("resrvationupdate.do");
       mv.setViewName("admin/chulcha");
       return mv;
    }
@@ -303,28 +256,28 @@ public class AdminMainController {
    public ModelAndView updatePost(int rid,int naga){
       ModelAndView mv = new ModelAndView();
       
-      System.out.println("=============여기까지왔니?=============");
+      
       
       
       //System.out.println("naga"+naga);
       System.out.println("rid==========="+rid);
       ReservationDTO reserve = rservice.searchReservationByrid(rid);
-      //System.out.println("출차할 예약 정보는="+reserve);
+  
          
         /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
             Date d = sf.parse(date);
       */
    reserve.setRextrafare(naga);
    
-   //출차해서 parking table의 pcount수 +1 해주는 구문.
+   
    ParkingDTO parking =  service.selectBypid(rservice.searchReservationByrid(rid).getPid());
    int countTemp = parking.getPcount()+1;
     parking.setPcount(countTemp);
     int ret = rservice.updateReservationEndByrid(reserve);
     int ret2 = service.updateParkingPcount(parking);
-   System.out.println("출차확인용  reserve==="+reserve);
-      System.out.println(ret+"건의 업데이트가 성공했습니다.");
-      System.out.println(ret2+"건의 pcount 수정 성공");
+   System.out.println("������Ʈ�� reserve==="+reserve);
+      System.out.println(ret+"���� End ������Ʈ ����");
+      System.out.println(ret2+"���� pcount������Ʈ ����");
       mv.setViewName("redirect:/adminmain.do");
       return mv;
       

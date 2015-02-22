@@ -15,75 +15,74 @@ import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
 @Controller
 public class SearchController {
-	
-	@Autowired
-	ParkingServiceInterface service;
-	
-	@RequestMapping(value="/search.do", method=RequestMethod.GET)
-	public ModelAndView searchGet(HttpSession session){
-		ModelAndView mv = new ModelAndView();
-		if(session.getAttribute("memcheck")==null){		
-			mv.setViewName("members/notmember");
-			return mv;
-		}else{
-			mv.setViewName("members/search_get");
-			return mv;
-		}
-	}
-	
-	@RequestMapping(value="/search.do", method=RequestMethod.POST)
-	public ModelAndView searchPost(HttpServletRequest request, HttpSession session){
-		System.out.println(session.getAttribute("memcheck").toString());
-		if(session.getAttribute("memcheck")==null){
-			ModelAndView mv = new ModelAndView();
-			mv.setViewName("members/member_login");
-			return mv;
-		}else{
-		
-			String plocation = request.getParameter("plocation");
-			if(plocation==null)
-				plocation="";		
-			List<ParkingDTO> parkinglist = service.selectByplocation(plocation);
-			
-			
-			List<ParkingDTO> parkinglist2 = null; 
-			String makchum = request.getParameter("makchum");
-			if(makchum==null)
-				makchum="";
-			else if(makchum.equals("Ï†àÏïΩÌòï")){
-				parkinglist2 = service.selectBymakchum_1(plocation);
-			}
-			else if(makchum.equals("ÏßÄÍ∞ÅÌòï")){
-				parkinglist2 = service.selectBymakchum_2(plocation);
-			}
-			else if(makchum.equals("ÏïàÏ†ÑÌòï")){
-				parkinglist2 = service.selectBymakchum_3(plocation);
-			}
-			
-			ModelAndView mv = new ModelAndView();
-			
-			mv.addObject("parkinglist", parkinglist);
-			if(parkinglist2!=null){
-				mv.addObject("parkinglist2", parkinglist2);
-			}else{}
-			
-			/*String[] selected = {"","","","","","" };
-			if(plocation.equals("Í∞ïÎ∂ÅÍµ¨")) selected[0]="selected";
-			if(plocation.equals("Í∞ïÎÇ®Íµ¨")) selected[1]="selected";
-			if(plocation.equals("ÎßàÌè¨Íµ¨")) selected[2]="selected";
-			if(plocation.equals("Ï¢ÖÎ°úÍµ¨")) selected[3]="selected";
-			if(plocation.equals("ÏùÄÌèâÍµ¨")) selected[4]="selected";
-			if(plocation.equals("ÏÑúÎåÄÎ¨∏Íµ¨")) selected[5]="selected";
-			mv.addObject("pp", plocation);
-			mv.addObject("selected", selected);
-			mv.addObject("parklistsize", parkinglist.size());		
-			for(String s : selected){
-				System.out.println(s);
-			}*/
-			
-			mv.setViewName("/members/search");
-			return mv;
-		}
-	}
+   
+   @Autowired
+   ParkingServiceInterface service;
+   
+   @RequestMapping(value="/search.do", method=RequestMethod.GET)
+   public ModelAndView searchGet(HttpSession session){
+      ModelAndView mv = new ModelAndView();
+      if(session.getAttribute("memcheck")==null){      
+         mv.setViewName("members/notmember");
+         return mv;
+      }else{
+         mv.setViewName("members/search_get");
+         return mv;
+      }
+   }
+   
+   @RequestMapping(value="/search.do", method=RequestMethod.POST)
+   public ModelAndView searchPost(HttpServletRequest request, HttpSession session){
+      System.out.println(session.getAttribute("memcheck").toString());
+      if(session.getAttribute("memcheck")==null){
+         ModelAndView mv = new ModelAndView();
+         mv.setViewName("members/member_login");
+         return mv;
+      }else{
+      
+         String plocation = request.getParameter("plocation");
+         if(plocation==null)
+            plocation="";      
+         List<ParkingDTO> parkinglist = service.selectByplocation(plocation);
+         
+         
+         List<ParkingDTO> parkinglist2 = null; 
+         String makchum = request.getParameter("makchum");
+         if(makchum==null)
+            makchum="";
+         else if(makchum.equals("¿˝æ‡«¸")){
+            parkinglist2 = service.selectBymakchum_1(plocation);
+         }
+         else if(makchum.equals("¡ˆ∞¢«¸")){
+            parkinglist2 = service.selectBymakchum_2(plocation);
+         }
+         else if(makchum.equals("æ»¿¸«¸")){
+            parkinglist2 = service.selectBymakchum_3(plocation);
+         }
+         
+         ModelAndView mv = new ModelAndView();
+         
+         mv.addObject("parkinglist", parkinglist);
+         if(parkinglist2!=null){
+            mv.addObject("parkinglist2", parkinglist2);
+         }else{}
+         
+         /*String[] selected = {"","","","","","" };
+         if(plocation.equals("∞≠∫œ±∏")) selected[0]="selected";
+         if(plocation.equals("∞≠≥≤±∏")) selected[1]="selected";
+         if(plocation.equals("∏∂∆˜±∏")) selected[2]="selected";
+         if(plocation.equals("¡æ∑Œ±∏")) selected[3]="selected";
+         if(plocation.equals("¿∫∆Ú±∏")) selected[4]="selected";
+         if(plocation.equals("º≠¥ÎπÆ±∏")) selected[5]="selected";
+         mv.addObject("pp", plocation);
+         mv.addObject("selected", selected);
+         mv.addObject("parklistsize", parkinglist.size());      
+         for(String s : selected){
+            System.out.println(s);
+         }*/
+         
+         mv.setViewName("/members/search");
+         return mv;
+      }
+   }
 }
-
