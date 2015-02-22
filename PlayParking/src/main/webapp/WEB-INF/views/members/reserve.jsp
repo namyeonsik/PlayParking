@@ -51,6 +51,7 @@ width: 40%;
 	margin-left: 30%;
 
 }
+
 .title{
 margin-left:46%;
 }
@@ -65,7 +66,9 @@ height:20%;
 margin-top: 50%;
 	
 }
-
+.parkingname{
+margin-left:9%;
+}
 .modal-header{
 
 size: 70%;
@@ -100,9 +103,14 @@ margin-left: 10%
 <div class="body">
 	<div class="title">
 			<h2>예약</h2>
+			
 		</div>
 <div class="col-md-6 col-sm-6 col-xs-6 xlg-margin">
+
  <div class="md-margin"></div><!--space -->
+ <div class="parkingname">
+ <h6>${pname} 주차장 예약</h6>
+ </div>
      <div class="accordion" id="accordion">
             <div class="accordion-group panel">
                   <div class="accordion-header">

@@ -43,12 +43,15 @@ public class ReserveController {
          pid = Integer.parseInt(request.getParameter("pid"));      
          System.out.println("pid:"+pid);         
          System.out.println("get¹æ½Ä");
+         ParkingDTO parking = pservice.selectBypid(pid);
+         mv.addObject("pname", parking.getPname());
          mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
          return mv;
       }      
    }
-
+   
+   
    @RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)
    public ModelAndView test2() {
      
