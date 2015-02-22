@@ -40,8 +40,7 @@
    href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
 <!-- Favicon and Apple Icons -->
-<link rel="shortcut icon"
-   href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 <link rel="apple-touch-icon" sizes="57x57"
    href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
@@ -71,6 +70,7 @@
 .body {
    margin-top: 50px;
    margin-left: 9%;
+   font-family: HU미드나잇120;
 }
 
 .mypoint {
@@ -78,12 +78,20 @@
    margin-top: 5%;
    margin-left: 10%;
    float: left;
-   border:1px gray solid;
+   border:1px solid #d9d7d8;
+   background-color: #f4f3f3;
+   padding: 2%;
+   
+   	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;  
 }
 
 .mypoint .mpoint {
    float: right;
    margin-right: 5%;
+   font-family: HU미드나잇120;
 }
 /* .non {
 	width: 10%;
@@ -95,30 +103,49 @@
 .charge {
    width: 30%;
    margin-top: 5%;
-   margin-left: 10%;
+   margin-left: 14%;
    float: left;
-   border:1px gray solid;
-   height: 40%;
+   height: 60%;
+   border:1px solid #d9d7d8;
+   background-color: #f4f3f3;
+   padding: 2%;
+   
+   border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;  
 }
 
 .charge .cbtn {
    float: right;
    margin-right: 5%;
    margin-top: 8%;
-   height: 10%;
+   height: 20%;
 }
-
+.history{
+	border:1px solid #d9d7d8;
+    background-color: #f4f3f3;
+	margin-top: 5%;
+	margin-left: 9%;
+	margin-right: 15%;
+	padding-bottom: 3%;
+	
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;  
+}
 .title {
    width: 80%;
    margin-top: 5%;
-   margin-left: 9%;
+   margin-left: 3%;
    float: left;
 }
 
 .paypoint {
-   width: 40%;
+   width: 45%;
    margin-top: 3%;
-   margin-left: 10%;
+   margin-left: 5%;
    float: left;
 }
 
@@ -150,9 +177,9 @@
 }
 
 .usepoint {
-   width: 40%;
+   width: 45%;
    margin-top: 3%;
-   margin-right: 10%;
+   margin-right: 5%;
    float: right;
 }
 
@@ -205,7 +232,7 @@
 
       <div class="row">
          <div class="mypoint">
-            <h3>My Point</h3>
+            <h3><font face="HU미드나잇120">나의 포인트</font></h3>
             <div class="mpoint">
                <h1>${point.mpoint}P</h1>
             </div>
@@ -213,17 +240,18 @@
 		<div class="non">
 		</div>
          <div class="charge">
-            <h3>Charge</h3>
+            <h3><font face="HU미드나잇120">포인트 충전</font></h3>
             <div class="cbtn">
                <input class="btn btn-lightblue" type="button" value="충전하기"
                   onclick="window.open('paypoint.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+            <br> <br>
             </div>
             <br> <br>
          </div>
       </div>
-
+		<div class="history">
       <div class="title">
-         <h3>Point History</h3>
+         <h3><font face="HU미드나잇120">포인트 내역</font></h3>
       </div>
 
       <div class="row">
@@ -231,7 +259,7 @@
          <div class="paypoint">
 
             <!-- Tab nav -->
-            <ul class="nav nav-tabs" role="tablist" style="border-color: white;">
+            <ul class="nav nav-tabs" role="tablist" style="border-color: #f4f3f3;">
                <li class="active"><a href="#pay1" role="tab"
                   data-toggle="tab">최근내역</a></li>
                <li><a href="#pay2" role="tab" data-toggle="tab">전체내역</a></li>
@@ -280,7 +308,7 @@
          <div class="usepoint">
 
             <!-- Tab nav -->
-            <ul class="nav nav-tabs" role="tablist" style="border-color: white;">
+            <ul class="nav nav-tabs" role="tablist" style="border-color: #f4f3f3;">
                <li class="active"><a href="#use1" role="tab"
                   data-toggle="tab">최근내역</a></li>
                <li><a href="#use2" role="tab" data-toggle="tab">전체내역</a></li>
@@ -325,7 +353,7 @@
          </div>
          <!--  포인트 사용내역 끝 -->
       </div>
-
+</div>
    </div>
    <!-- Plugins -->
    <script

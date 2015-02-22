@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원정보수정</title>
+<title>내정보수정</title>
 <!-- <style>
 #updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
 </style> -->
@@ -48,7 +48,7 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
        
 <style>
-.form { float: left; margin-left: 39%; margin-top:3%; width: 80%;}
+.form { float: left; margin-left: 39%; margin-top:3%; width: 80%;font-family: HU미드나잇120;}
 .header {height: 50px}
 .title {margin-left: 43%; margin-top: 10%;}
 </style>
@@ -60,7 +60,7 @@
 <!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
                                     
 <div class="title">
-    <h2> 내정보수정 </h2>
+    <h2><font face="HU미드나잇140">내정보수정</font></h2>
     </div>
 
 <div class="form">    

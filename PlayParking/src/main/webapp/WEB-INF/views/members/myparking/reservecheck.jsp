@@ -39,8 +39,7 @@
 	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
 <!-- Favicon and Apple Icons -->
-<link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 <link rel="apple-touch-icon" sizes="57x57"
 	href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
@@ -83,6 +82,7 @@
 	width: 90%;
 	margin-top: 5%;
 	margin-left: 15%;
+	font-family: HU미드나잇120;
 }
 
 .reservecheck ul {
@@ -140,7 +140,7 @@
 
 	<div class="body">
 		<div class="title">
-			<h2>예약 내역</h2>
+			<h2><font face="HU미드나잇140">예약 내역</font></h2>
 		</div>
 		<div class="reservecheck">
 			<ul class="title">

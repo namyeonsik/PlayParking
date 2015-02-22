@@ -77,15 +77,16 @@
 	background-color: light-gray;
 } */
 .container {margin-left: 10%;
-	margin-right: 10%;}
+	margin-right: 20%;}
 .container .img {
-	margin-top: 7%;
+	margin-top: 3%;
 	margin-left: 5%;
 }
 
 .container .ticket {
-	margin-top: 9%;
+	margin-top: 5%;
 	margin-left: 55%;
+	font-family: HU미드나잇120;
 }
 </style>
 
@@ -98,34 +99,9 @@
 	<!-- 진짜헤더끝 -->
 
 	<div class="title">
-		<h2>예약 완료</h2>
+		<h2><font face="HU미드나잇140">예약 완료</font></h2>
 	</div>
-	<%-- <div class="total" style="border: 1px solid blue">    
-<div class="img">
-<div class="col-md-6 col-sm-6 col-xs-12">
-   <p>
-      <img src="${pname.pimage}" alt="boy" class="wow rubberBand pull-left lg-separator-right2x" data-wow-delay="0.9s" style="width: 80%; height: auto;">
-   </p>
-</div>
-</div>
-
-<div class="ticket">
-<blockquote class="lightblue">
-      <p>
-      예약자ID : ${reservation.mid} <br>
-      주차장 : ${pname.pname} <br>
-      위치 : ${pname.paddress} <br>
-      Tip : ${pname.ptip} <br>
-      예약날짜 : 
-      <c:set var="d" value="${reservation.rstart}"/>
-       <fmt:formatDate value="${d}" pattern="yyyy/MM/dd"/>    
-      </p>
-    <cite>예약 내용이</cite><br>
-    <cite>메일로 발송되었습니다!</cite>
-</blockquote>
-</div>
-</div> --%>
-
+	
 	<div id="wrapper">
 		<section id="content">
 		<div class="container">
