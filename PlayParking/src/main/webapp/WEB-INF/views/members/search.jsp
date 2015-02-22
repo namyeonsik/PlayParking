@@ -4,13 +4,8 @@
 <!-- 주차장 검색 후 리스트! -->
 <font face="HU미드나잇120">
 <form method="post" action="reserve.do">
-<<<<<<< HEAD
-<table class="table table-striped table-hover">
-   <thead align="center">   
-=======
 <table class="table table-striped table-hover ">
    <thead>
->>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
    <tr class="info" align="center">
       <th align="center">번호</th>
       <th align="center">주차장 이름</th>

@@ -69,6 +69,7 @@ public class SearchController {
 
 			mv.setViewName("/members/search");
 			return mv;
+			
 		}
 	}
 }
