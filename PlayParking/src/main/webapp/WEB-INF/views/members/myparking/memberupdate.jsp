@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -50,7 +50,7 @@
 <style>
 .form { float: left; margin-left: 39%; margin-top:3%; width: 80%;}
 .header {height: 50px}
-.title {margin-left: 40%; margin-top: 8%;}
+.title {margin-left: 43%; margin-top: 10%;}
 </style>
        
 </head>
@@ -60,7 +60,7 @@
 <!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
                                     
 <div class="title">
-    <h2> MyInfo Update </h2>
+    <h2> 내정보수정 </h2>
     </div>
 
 <div class="form">    
@@ -82,7 +82,7 @@
       <label for="inputEmail">Email</label>
       <input type="text" class="form-control" name="memail" placeholder="Email" value="${memcheck.memail}">
 
-      <label>Car Model</label>
+      <!-- <label>Car Model</label>
        <div class="normal-selectbox clearfix">
          <select id="cbrand" name="cbrand" class="selectbox" onchange="call();">
             <option  value="브랜드선택">브랜드선택</option>
@@ -92,15 +92,15 @@
             <option  value="BMW">BMW</option>
             <option  value="아우디">아우디</option>
          </select>
-       </div><!-- End .normal-selectbox-->
+       </div>End .normal-selectbox
         
-        <div id="cnamediv" class="normal-selectbox clearfix">
+        <div id="cnamediv" class="normal-selectbox clearfix"> -->
         </div><br><br>
  
-    <div class="form-group" style="margin-left: 10%">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-lightblue">Complete</button>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2" style="margin-left: 7%">
+        <button type="reset" class="btn btn-default">취소</button>
+        <button type="submit" class="btn btn-lightblue">완료</button>
       </div>
     </div>
 
@@ -119,7 +119,7 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var xhr;//전역변수
 
 function call(){
@@ -155,7 +155,7 @@ function viewData4(data){
  //html
 	document.getElementById("cnamediv").innerHTML =data;
 }
-</script>
+</script> -->
 
 </body>
 </html> 

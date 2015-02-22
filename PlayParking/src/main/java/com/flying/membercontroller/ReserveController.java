@@ -41,8 +41,8 @@ public class ReserveController {
          return mv;
       }else{
          pid = Integer.parseInt(request.getParameter("pid"));      
-         System.out.println("pidï¿½ï¿½**************:"+pid);         
-         System.out.println("getï¿½ï¿½ï¿½****");
+         System.out.println("pid:"+pid);         
+         System.out.println("get¹æ½Ä");
          mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
          return mv;
@@ -51,8 +51,7 @@ public class ReserveController {
 
    @RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)
    public ModelAndView test2() {
-      // ï¿½ï¿½ï¿½Â½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ø¼ï¿½ dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pidï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.      
+     
       
       
       ModelAndView mv = new ModelAndView();
@@ -61,17 +60,17 @@ public class ReserveController {
 
       if (pcountcheck > (pamountcheck * 0.1)) {
 
-         String check = "ì˜ˆì•½ ê°€ëŠ¥";
+         String check = "¿¹¾à°¡´É";
          mv.addObject("check", check);
       } else {
-         String check = "ì˜ˆì•½ ë¶ˆê°€ëŠ¥";
+         String check = "¿¹¾àºÒ°¡´É";
          mv.addObject("check", check);
 
       }
 
       mv.setViewName("members/possibletime");
 
-      System.out.println("postï¿½ï¿½ï¿½");
+      System.out.println("post¹æ½Ä");
       return mv;
    }
 
@@ -82,13 +81,13 @@ public class ReserveController {
       MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
       System.out.println(memcheck);
       
-      // ï¿½ï¿½ï¿½Â½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ø¼ï¿½ dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+ 
       ModelAndView mv = new ModelAndView();
       System.out.println("p"+possibleTime);
       int rstarttime = Integer.parseInt(possibleTime);
 
-      int limit = 23;// ï¿½ï¿½ï¿½ï¿½9ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ö´ï¿½ 14ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-      int num = rstarttime / 100; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à°¡ï¿½É½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ num
+      int limit = 23;
+      int num = rstarttime / 100; 
       int temp = limit-num;
       int[] numArray = new int[temp];
       
@@ -108,14 +107,14 @@ public class ReserveController {
 
       mv.setViewName("members/selecttime");
 
-      System.out.println("postï¿½ï¿½ï¿½");
+      System.out.println("post¹æ½Ä");
       return mv;
    }
    ReservationDTO reserve  = new ReservationDTO();
    MembersDTO members = new MembersDTO();
    ParkingDTO parking = new ParkingDTO();
    UsePointDTO usepoint = new UsePointDTO();
-   int temp=0;//pidï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿ï¿½ï¿½Âºï¿½ï¿½ï¿½ temp
+   int temp=0;//pidÀÇ °ªÀ» ¹Ş¾Æ¿À±âÀ§ÇÑ temp
    int parkingMpoint=0;
    int minusMpoint=0;
    int resultMpoint=0;
@@ -128,12 +127,12 @@ public class ReserveController {
       System.out.println(memcheck);
        possibleTime = request.getParameter("possibleTime");
       System.out.println("possibleTime:" + possibleTime);
-      System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ï¿½="+memcheck.getMid()); //ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+      System.out.println("mid="+memcheck.getMid()); //
       
       try {
          SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
          Date d = sf.parse(date);
-         System.out.println(d+"ï¿½ï¿½"+possibleTime+"ï¿½ï¿½"+selectTime+"ï¿½Ã°ï¿½");
+         System.out.println(d+"ÀÇ"+possibleTime+"½Ã±îÁö"+selectTime+"¾´´Ù");
          
          String mid = memcheck.getMid();
          
@@ -156,46 +155,44 @@ public class ReserveController {
          System.out.println("rstarttimeback="+testtimeint);
          reserve.setRstarttimeback(String.valueOf(testtimeint));
         // reserve.setRstarttimeback(testtimeint);
-         // ReservationDTOï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½
-         reserve.setMid(mid);  // requestï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.
-         reserve.setPid(pid);   //requestï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿Í¾ï¿½ï¿½Ñ´ï¿½.
+        
+         reserve.setMid(mid);  
+         reserve.setPid(pid);   
          reserve.setRstart(d);
          reserve.setRend(null);
-         reserve.setRstarttime(possibleTime);  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+         reserve.setRstarttime(possibleTime);  
          reserve.setRtime(Integer.parseInt(selectTime));
          reserve.setRextrafare(0);
          
          
-         //pidï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿Í¼ï¿½ ï¿½Ö¾ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½
+         //pidÀÇ °©À» °¡Áú temp
          temp = reserve.getPid();
          parking = service.selectBypid(temp);
-         parkingMpoint = parking.getPfare(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿Â´ï¿½.
-         System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½= "+parkingMpoint);
+         parkingMpoint = parking.getPfare();
+         System.out.println("»ç¿ëÇÒ"+parkingMpoint);
          
-         //membersï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Ş¾Æ¼ï¿½ Mpointï¿½ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿ï¿½ï¿½ï¿½ ï¿½Îºï¿½
+        
          members = service.searchBymid(mid);
          System.out.println(members.getMpoint());
          
          
-        mpoint = members.getMpoint();//membersï¿½ï¿½ mpointï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mpoint = members.getMpoint();
          minusMpoint = parkingMpoint*Integer.parseInt(selectTime);
          
          resultMpoint = members.getMpoint()-minusMpoint;
-         mv.addObject("mpoint", mpoint); // submit.jspï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ø´ï¿½.
+         mv.addObject("mpoint", mpoint); // submit.jsp¿¡ º¸¿©ÁÙ ¾Öµé
          mv.addObject("minusMpoint",minusMpoint);
          
          
          
-         //ridï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ sequenceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
-         //reserve.setRid(1); //Testï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼± 1ï¿½ï¿½ ï¿½àº»ï¿½ï¿½ 
+       
       /*int ret = service.insertReservation(reserve);
-         System.out.println(ret+"ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ş¾Ò½ï¿½ï¿½Ï´ï¿½.");*/
+         */
       } catch (ParseException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
       }
-      //mv.setViewName("redirect:members/member_main");
-//      return mv;
+     
       mv.setViewName("members/submit");
       return mv;
       
@@ -203,9 +200,10 @@ public class ReserveController {
    
    
    @RequestMapping(value="/insert1.do", method=RequestMethod.POST)
-   public String insertcom(){
-      
-      if(mpoint>minusMpoint){int ret = service.insertReservation(reserve);
+   public ModelAndView insertcom(){
+      ModelAndView mv =new ModelAndView();
+      if(mpoint>minusMpoint){
+         int ret = service.insertReservation(reserve);
          
          int countTemp = parking.getPcount()-1;
          parking.setPcount(countTemp);
@@ -218,28 +216,28 @@ public class ReserveController {
          usepoint.setUsepoint(minusMpoint);
          int ret4 =service.insertUsepoint(usepoint);
          
-         System.out.println(ret+"ê±´ì˜ ì˜ˆì•½ì •ë³´ ì…ë ¥ ì™„ë£Œ");
-         System.out.println(ret2+"ê±´ì˜ pcountì •ë³´ ì—…ë°ì´íŠ¸ ì™„ë£Œ");
-         System.out.println(ret3+"ê±´ì˜ mpointì •ë³´ ì—…ë°ì´íŠ¸ ì™„ë£Œ");
-         System.out.println(ret4+"ê±´ì˜ usepointì •ë³´ ì—…ë°ì´íŠ¸ ì™„ë£Œ");
+         System.out.println(ret+"°ÇÀÇ reservation insert¼º°ø");
+         System.out.println(ret2+"success updatePcout");
+         System.out.println(ret3+"success updateMpoint");
+         System.out.println(ret4+"success insert usepoint");
          
-       //emailë¶€ë¶„
          ApplicationContext context = 
                    new ClassPathXmlApplicationContext("Spring-Mail.xml");
        
              MailMail mm = (MailMail) context.getBean("mailMail");
               mm.sendMail("playingparking@gmail.com",
                    members.getMemail(),
-                   "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]"+members.getMid()+"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½", 
-                   parking.getPname()+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½:-)");
-          //ï¿½ï¿½ï¿½ï¿½Ï·á¹®ï¿½Ú¹ß¼ï¿½ ï¿½ï¿½
-         
-         return "redirect:/confirm.do";}
+                   "[³ë´ÂÁÖÂ÷Àå]"+members.getMid()+"´Ô¿¹¾à¿Ï·á", 
+                   parking.getPname()+" ÁÖÂ÷Àå ¿¹¾à¿Ï·áµÇ¾ú½À´Ï´Ù:-)");
+        
+         mv.setViewName("redirect:/confirm.do");
+         return mv;
+         }
       
       else{
          
-         
-         return "redirect:/pointcheck.do";
+         mv.setViewName("redirect:/pointcheck.do");
+         return mv;
       }
       
       
