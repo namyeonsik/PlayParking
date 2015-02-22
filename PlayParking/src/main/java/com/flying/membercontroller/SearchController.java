@@ -68,20 +68,6 @@ public class SearchController {
 				mv.addObject("parkinglist2", parkinglist2);
 			}else{}
 			
-			/*String[] selected = {"","","","","","" };
-			if(plocation.equals("강북구")) selected[0]="selected";
-			if(plocation.equals("강남구")) selected[1]="selected";
-			if(plocation.equals("마포구")) selected[2]="selected";
-			if(plocation.equals("종로구")) selected[3]="selected";
-			if(plocation.equals("은평구")) selected[4]="selected";
-			if(plocation.equals("서대문구")) selected[5]="selected";
-			mv.addObject("pp", plocation);
-			mv.addObject("selected", selected);
-			mv.addObject("parklistsize", parkinglist.size());		
-			for(String s : selected){
-				System.out.println(s);
-			}*/
-			
 			mv.setViewName("/members/search");
 			return mv;
 		}

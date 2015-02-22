@@ -45,12 +45,15 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 <style>
 .header {
-	height: 50px
+	height: 50px;
+	font-family: HU미드나잇120;
 }
 
 .body {
 	margin-top: 50px;
+	font-family: HU미드나잇120;
 	}
+
 </style>
 
 </head>
@@ -254,7 +257,7 @@
 				<div class="col-md-6 col-sm-6">
 					
 					<blockquote >
-					<h4>I'm Developer의 이야기입니다!</h4>
+					<h4>I'm Developer<font face="HU미드나잇120">의 이야기입니다!</font></h4>
 					<p>우리는 <span class="highlight lightblue">'노는 주차장'</span> 프로젝트를 시작하게 된 이유는 
 					서울의 주차 공간 부족을 직접 체험한 후 였습니다.</p>
 					<p>약속이 있는 주말! 차를 이용하여 약속장소에 간다는 것은 주차 공간을 항상 염두해둬야 한다는 어려움이 있습니다. 
@@ -278,8 +281,8 @@
 				<div class="col-md-6 col-sm-6">
 					
 					<blockquote >
-					<h4>'노는 주차장'을 소개합니다!</h4>
-					<h6>일반 사용자</h6>
+					<h4><font face="HU미드나잇120">'노는 주차장'을 소개합니다!</font></h4>
+					<h6><font face="HU미드나잇120">일반 사용자</font></h6>
 					<p>우리는 사용자가 최소한의 개인정보 입력을 통해서 우리의 Service를 이용하도록 사용자를 배려했습니다.지금 당장 <a href="join.do"
 							class="scrollto add-tooltip" data-placement="bottom"
 							title="Join Now!">Join</a> 해보세요! 
@@ -289,7 +292,7 @@
 					<p>	<span class="highlight lightblue">MyParking</span> 기능을 통해 나의정보, 예약확인, 포인트확인 등의 기능을 통해 당신의 정보를 관리 할 수 있습니다
 					</p>
 					<p></p>
-					<h6>주차장 관리자</h6>
+					<h6><font face="HU미드나잇120">주차장 관리자</font></h6>
 					<p>
 						오늘의 입차 차량 정보부터 출차확인까지 손 쉽게 주차장을 <span class="highlight yellow">관리</span> 할 수 있으며,
 						<span class="highlight lightblue">Report</span> 기능을 통해 내 주차장의 수익,내 주변 주차장 정보 등을 한 눈에 확인 할 수 있습니다!  

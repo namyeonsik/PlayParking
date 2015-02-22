@@ -41,8 +41,8 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 <style>
-.header {height: 50px}
-.body {height: 100px; margin-top: 16%}
+.header {height: 50px; font-family: HU미드나잇120;}
+.body {height: 100px; margin-top: 16%; font-family: HU미드나잇120;}
 </style>
 
 </head>
@@ -61,12 +61,12 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     
-                                                    <h4 class="modal-title" id="myModalLabel4">잠깐!</h4>
+                                                    <h4 class="modal-title" id="myModalLabel4"><font face="HU미드나잇120">잠깐!</font></h4>
                                                     </div><!-- End .modal-header -->
                                                     <div class="modal-body">
 
-                                                    <p><font face=""></font>주차장 검색과 예약 및 공지사항 확인 등 다양한 메뉴들은</p>
-                                                    <p>로그인을 한 후에 이용하실 수 있습니다!</p>
+                                                    <p><font face="HU미드나잇120" size="4">주차장 검색과 예약 및 공지사항 확인 등 다양한 메뉴들은</font></p>
+                                                    <p><font face="HU미드나잇120" size="4">로그인을 한 후에 이용하실 수 있습니다!</font></p>
                                                     
                                                 
                                                     </div><!-- End .modal-body -->

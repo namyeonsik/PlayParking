@@ -43,17 +43,18 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style type="text/css">
-.header {height: 50px}
-.body {margin-top: 100px;}
+.header {height: 50px;font-family: HU미드나잇120;}
+.body {margin-top: 100px;font-family: HU미드나잇120;}
 .col-md-6{
 width: 40%;
 	margin-top: 5%;
 	margin-left: 30%;
+	font-family: HU미드나잇120;
 
 }
 
 
-.modal{width: 100%;
+.modal{width: 100%;font-family: HU미드나잇120;
 	
 	}
 
@@ -61,12 +62,14 @@ width: 40%;
 width:100%;
 height:20%;
 margin-top: 50%;
+font-family: HU미드나잇120;
 	
 }
 
 .modal-header{
 
 size: 70%;
+font-family: HU미드나잇120;
 }
 .modal-body{
 width:100%;
@@ -74,6 +77,7 @@ height:10%;
 
 margin-left:5%;
 margin-bottom:3%;
+font-family: HU미드나잇120;
 
 }
 
@@ -81,7 +85,7 @@ margin-bottom:3%;
 .btn1{
 widhth:100%;
 margin-bottom: 10%;
-margin-left: 10%
+margin-left: 10%;font-family: HU미드나잇120;
  }
  
 </style>
@@ -328,7 +332,7 @@ margin-left: 10%
 		//alert(tempdate2);
 
 		if (date == tempdate2) {
-			msg1 = "당일예약입니다";
+			msg1 = "당일예약입니다.";
 			//포스트방식
 			viewData4();
 			xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
@@ -336,7 +340,7 @@ margin-left: 10%
 					"application/x-www-form-urlencoded");
 			xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
 		} else if (date < tempdate2) {
-			msg1 = "예약이 불가능한 날 입니다";
+			msg1 = "예약이 불가능한 날 입니다.";
 			//포스트방식
 			viewData4();
 			xhr.open("POST", "reserve.do", true);//POST방식 비동기통신

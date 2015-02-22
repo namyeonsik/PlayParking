@@ -3,7 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
-
+<title>주차장 검색</title>
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <!-- <meta charset="utf-8">
         <title>Geass - Creative Onepage Html5 Template</title> -->
@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -48,7 +48,7 @@
 	html, body {width:100%;height:100%;margin:0;padding:0;} 
 	/* .map_wrap {position:relative;overflow:hidden;width:100%;height:60%;} */
 	.radius_border{border:1px solid #919191;border-radius:5px;}     
-	.custom_zoomcontrol {position:absolute;top:1px;right:5px;width:40px;height:90px;overflow:hidden;z-index:1;background-color:#f5f5f5;padding-left:5px;} 
+	.custom_zoomcontrol {position:absolute;top:1px;right:5px;width:2%;height:10%;overflow:hidden;z-index:1;background-color:#f5f5f5;padding-left:5px;} 
 	.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
 	.custom_zoomcontrol span img {width:20px;height:42px;padding:12px 0;border:none;}             
 	.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}    
@@ -58,10 +58,10 @@
 
 .header {height: 30px}
 
-.map_wrap, .map_wrap * {margin-top:4%;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;}
+.map_wrap, .map_wrap * {margin-top:4%;padding:0;font-family:'HU미드나잇120';}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-.map_wrap {position:relative;width:100%;height:800px;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:350px;height:650px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
+.map_wrap {position:relative;width:100%;height:80%;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:20%;height:80%;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
 #menu_wrap hr {display: block; height: 1px;border:1; border-top: 5px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
@@ -69,6 +69,7 @@
 #menu_wrap .option button {margin-left:5px;}
 </style>
 </head>
+
 
 <body>
  <!-- 진짜헤더시작 -->
@@ -95,16 +96,16 @@
 	<div id="option">	
 		<form name="f">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<font size="8"><b>&nbsp;Search</b></font><br>
-				<font color="#5D5D5D" size="3"><b>&nbsp;&nbsp;지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
-				<font color="#5D5D5D" size="2">&nbsp;&nbsp;알맞은 맞춤형을 클릭하면 리스트의 순서가 바뀝니다.</font><br>
+				<font size="8"><b><strong>&nbsp;주차장 검색</strong></b></font><br>
+				<font face="HU미드나잇120" color="#5D5D5D" size="3" ><b>&nbsp;&nbsp;지역을 검색한 후 예약을 할 수 있습니다.</b></font><br>
+				<font face="HU미드나잇120" color="#5D5D5D" size="2" >&nbsp;&nbsp;알맞은 맞춤형을 <b>클릭</b>하면 리스트의 순서가 바뀝니다.</font><br>
 				<br>
 				<hr>
 				<br>
 				
 				
 				<div class="col-md-12 col-sm-12 col-xs-12 md-margin">
-					<span><font color="#5D5D5D" size="3"><b>&nbsp;1. 지역 선택</b></font></span>
+					<span><font face="HU미드나잇120" color="#5D5D5D" size="3"><b>&nbsp;1. 지역 선택</b></font></span>
 					<select onchange="change(value);change2();" name="plocation" style="height: 50px;width:335px;padding-top: 0px" class="form-control">
 						<option>Search Country</option>
 						<option value="강남구">강남구</option>
@@ -136,17 +137,17 @@
 				
 				
 				<br>   
-				<span><font color="#5D5D5D" size="3"><b>&nbsp;2. 맞춤형 선택</b></font></span>
+				<span><font face="HU미드나잇120" color="#5D5D5D" size="3"><b>&nbsp;<font face="HU미드나잇120">2. 맞춤형 선택</font></b></font></span>
 				<br>
-				<span><font color="#5D5D5D" size="2"><b>&nbsp;(맞춤형 이름을 클릭하시면 설명을 볼 수 있습니다!)</b></font></span>
-				<div class="radio" style="margin-top: 0px">					
-					<label>			
-					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();">
+				<span><font face="HU미드나잇120" color="#5D5D5D" size="2"><b>&nbsp;(맞춤형 이름을 클릭하시면 설명을 볼 수 있습니다!)</b></font></span>
+				<div class="radio" style="margin-top: 0px;">					
+					<label style="border:1px solid;">	
+					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();" >
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="절약형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
-						 data-placement="right" title="절약형이란?" 
-						 data-content="주차장 요금이 저렴한 순서로 리스트를 보여줍니다!" >		
+						 data-placement="right" title="&nbsp;절약형이란?" 
+						 data-content="&nbsp;주차장 요금이 저렴한 순서로 리스트를 보여줍니다!" >		
 					</font>
 					</label>
 				
@@ -157,8 +158,8 @@
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="지각형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
-						 data-placement="right" title="지각형이란?" 
-						 data-content="자주 주차장 예약 종료 시간 내에 오지않고 지각을 많이 하는 
+						 data-placement="right" title="&nbsp;지각형이란?" 
+						 data-content="&nbsp;자주 주차장 예약 종료 시간 내에 오지않고 지각을 많이 하는 
 						 분들을 위해서 주차장 추가 요금이 저렴한 순서로 리스트를 보여줍니다!">		
 					</font>
 					</label>
@@ -170,8 +171,8 @@
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="안전형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
-						 data-placement="right" title="안전형이란?" 
-						 data-content="주차하기 힘드신 분들을 위해서 너비와 길이가 다른 주차장보다
+						 data-placement="right" title="&nbsp;안전형이란?" 
+						 data-content="&nbsp;주차하기 힘드신 분들을 위해서 너비와 길이가 다른 주차장보다
 						 큰 순서로 리스트를 보여줍니다!">	
 					</font>
 					</label>
@@ -253,11 +254,10 @@
 					t1 = tlist[0];
 					t2 = tlist[1];
 					t3 = tlist[2];
-					
-								
+			
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML = null;
-							document.getElementById("t3").innerHTML = t3;
+							document.getElementById("t3").innerHTML = '<div style=padding-top:0px;border:1px solid>'+t3+'</div>';
 					}
 					else{
 						document.getElementById("t3").innerHTML = null;
@@ -348,7 +348,6 @@
 						 
 			 // 지도에 마커를 표시하는 함수입니다 positions.length
 			 function displayMarker() {
-				//alert( "*****"+markers[0].parkingimage);
 						
 				var marker = new Array();
 				var infowindow = new Array();

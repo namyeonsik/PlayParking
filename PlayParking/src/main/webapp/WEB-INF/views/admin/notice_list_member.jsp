@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- 헤더 부트스트랩 시작 -->
-        <title>Geass - Creative Onepage Html5 Template</title>
+        <title>주차장 공지사항</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -39,13 +39,13 @@
 
 <style>
 .header {
-	height: 50px
+	height: 50px;font-family:'HU미드나잇120';
 }
 .body {
-	margin-top: 50px;
+	margin-top: 50px;font-family:'HU미드나잇120';
 }
-.title {text-align:center; margin-top: 8%;}
-.table {margin-top:3%;}
+.title {text-align:center; margin-top: 8%;font-family:'HU미드나잇120';}
+.table {margin-top:3%;font-family:'HU미드나잇120';}
 </style>
 
 </head>
@@ -70,7 +70,7 @@
 	int nsize = 0;
 %>
 <div class="title">
-    <h2> Parking Notice </h2>
+    <h2> 주차장 공지사항 </h2>
 </div>
 
 <c:set var="cnt" value="1"></c:set>
