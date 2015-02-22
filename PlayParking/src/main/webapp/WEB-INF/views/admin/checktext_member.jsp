@@ -80,18 +80,17 @@
 								<img src="${pageContext.request.contextPath}/resources/images/user.png" alt="Author">
 							</figure>
 							<h4>
-								<a href="#">${title}</a>&nbsp;&nbsp;&nbsp;
+								<a href="#"><font face="HU미드나잇120">${title}</font></a>&nbsp;&nbsp;&nbsp;
 								
-								<font size=3>
-								-${aid}&nbsp;&nbsp;&nbsp;
+								<font size=3 face="HU미드나잇120">-${aid}&nbsp;&nbsp;&nbsp;
 									<c:set var="d" value="${date}"/>
 		    		 				<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
 		    		 			</font>
 		    		 			<div class="pull-right">
-		    		 			<a class="btn" href='noticelist1.do'>목록으로</a>
+		    		 			<a class="btn" href='noticelist1.do'><font face="HU미드나잇120">목록으로</font></a>
 		    		 			</div>
 							</h4>
-							<p>${text }</p>
+							<p><font face="HU미드나잇120">${text}</font></p>
 						</div>
 						<!-- End .article-author -->
 					</div>

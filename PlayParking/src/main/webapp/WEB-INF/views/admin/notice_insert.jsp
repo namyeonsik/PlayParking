@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>관리자</title>
+<title>공지사항</title>
 <link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css"
@@ -22,6 +22,7 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
@@ -45,8 +46,8 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">YourParking Profile</a></li>
-								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li><a href="parkinginfo.do">주차장 정보</a></li>
+								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
@@ -66,7 +67,7 @@
 				<div class="module message">
 					<div class="module-head" style="height: 30px">
 						<div class="pull-left">
-						<font size="4">Parking Notice Update</font>
+						<font size="4" face="HU미드나잇120">주차장 공지사항 등록</font>
 						</div>						
 						<div class="pull-right">
 						<input class="btn btn-primary" type="submit" value="등록 완료">

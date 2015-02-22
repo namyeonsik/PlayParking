@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,7 +71,7 @@
 	int nsize = 0;
 %>
 <div class="title">
-    <h2> 주차장 공지사항 </h2>
+    <h2> <font face="HU미드나잇120">주차장 공지사항</font> </h2>
 </div>
 
 <c:set var="cnt" value="1"></c:set>
@@ -86,10 +87,10 @@
                 <table class="table table-message">
                 <tbody>
                 	<tr style="background-color: #1CC5F6;font-weight : bold">
-	                    <td width="10%">No</td>    
-						<td width="45%">Notice Title</td>
-						<td width="20%">Parking owner</td> 
-						<td width="25%">Date</td>      
+	                    <td width="10%">번호</td>    
+						<td width="45%">공지사항 제목</td>
+						<td width="20%">주차장 관리인</td> 
+						<td width="25%">게시 날짜</td>      
 					</tr>     
                     
 					<c:forEach items="${noticelist}" var="n"> 
@@ -97,7 +98,10 @@
 					<td>${noticelistsize-cnt+1}</td>
 					<td><a href='checktextmem.do?nno=${n.nno}&aid=${n.aid}'>${n.ntitle}</a></td>
 					<td>${n.aid}</td>
-					<td>${n.ndate}</td>
+					<td>
+					<c:set var="d" value="${n.ndate}"/>
+		    		<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
+					</td>
 					<c:set var="cnt" value="${n.nno+1}"></c:set>
 					</tr>				
 					</c:forEach>

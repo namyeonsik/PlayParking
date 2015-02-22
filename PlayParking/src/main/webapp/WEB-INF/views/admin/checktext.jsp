@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>관리자</title>
+<title>공지사항</title>
 <link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css"
@@ -22,6 +22,8 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+	
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
@@ -45,8 +47,8 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">YourParking Profile</a></li>
-								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li><a href="parkinginfo.do">주차장 정보</a></li>
+								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
@@ -65,7 +67,7 @@
 				<div class="module message">
 					<div class="module-head" style="height: 30px">
 						<div class="pull-left">
-						<font size="4">Parking Notice View</font>
+						<font size="4" face="HU미드나잇120">주차장 공지사항 보기</font>
 						</div>						
 						<div class="pull-right">
 						<a class="btn btn-primary" href='noticeupdate.do?nno=${nno}'>수정</a>
@@ -82,14 +84,16 @@
                     <div class="media-body">
 						<div class="stream-headline">
 							<h5 class="stream-author">							
-								${title}
+								<font size="4" face="HU미드나잇120">${title}</font>
+								<font size="4" face="HU미드나잇120">
 								<small>
 									<c:set var="d" value="${date}"/>
 		    		 				<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
 		    		 			</small>
+		    		 			</font>
 							</h5>
                             <div class="stream-text">
-                            	${text}
+                            	<font size="4" face="HU미드나잇120">${text}</font>
                             </div>
 							
                         </div><!--/.stream-headline-->

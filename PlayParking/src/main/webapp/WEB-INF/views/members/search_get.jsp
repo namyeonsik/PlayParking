@@ -60,7 +60,7 @@
 
 .map_wrap, .map_wrap * {margin-top:4%;padding:0;font-family:'HU미드나잇120';}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-.map_wrap {position:relative;width:100%;height:80%;}
+.map_wrap {position:relative;width:100%;height:85%;}
 #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:20%;height:80%;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
 #menu_wrap hr {display: block; height: 1px;border:1; border-top: 5px solid #5F5F5F;margin:3px 0;}
@@ -141,7 +141,7 @@
 				<br>
 				<span><font face="HU미드나잇120" color="#5D5D5D" size="2"><b>&nbsp;(맞춤형 이름을 클릭하시면 설명을 볼 수 있습니다!)</b></font></span>
 				<div class="radio" style="margin-top: 0px;">					
-					<label style="border:1px solid;">	
+					<label style="margin-right: 10px;padding-right: 10px">	
 					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();" >
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="절약형" readonly="readonly" 
@@ -153,7 +153,7 @@
 				
 				<br>
 				
-					<label>			
+					<label style="margin-right: 10px;padding-right: 10px">			
 					<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="지각형" readonly="readonly" 
@@ -166,7 +166,7 @@
 				
 				<br>			
 				
-					<label>					
+					<label style="margin-right: 10px;padding-right: 10px">					
 					<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
 					<font size="3">
 					<input type="text" size="4" style="border:0;background:transparent;" value="안전형" readonly="readonly" 
