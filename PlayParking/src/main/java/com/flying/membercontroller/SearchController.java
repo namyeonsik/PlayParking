@@ -44,8 +44,7 @@ public class SearchController {
 			if(plocation==null)
 				plocation="";		
 			List<ParkingDTO> parkinglist = service.selectByplocation(plocation);
-			
-			
+						
 			List<ParkingDTO> parkinglist2 = null; 
 			String makchum = request.getParameter("makchum");
 			if(makchum==null)
@@ -63,11 +62,11 @@ public class SearchController {
 			ModelAndView mv = new ModelAndView();
 			
 			mv.addObject("parkinglist", parkinglist);
-			mv.addObject("parkinglistsize", parkinglist.size());
 			if(parkinglist2!=null){
 				mv.addObject("parkinglist2", parkinglist2);
 			}else{}
 			
+
 			mv.setViewName("/members/search");
 			return mv;
 		}

@@ -1,5 +1,7 @@
 package com.flying.model;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,5 +14,7 @@ public class AdminService implements AdminServiceInterface{
 	public AdminDTO selectByAdmin(String aid, String apwd) {
 		return dao.selectByAdmin(aid, apwd);
 	}
+	
+	
 
 }

@@ -10,6 +10,13 @@
 	select * from reservation where rid= #{aa}
   </select>
   
+  <select id="selectByMonth" parameterType="map"
+  	resultType="com.flying.model.ReservationDTO">
+    select pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as month,sysdate
+    from reservation
+	where pid=#{pid:INTEGER} and to_char(rstart,'MM')= #{month:VARCHAR};
+  </select>
+  
   <!-- <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
      <association property="pname" column="pid" select="getpname2"></association>
   </resultMap>
@@ -127,15 +134,45 @@
     select pamount from parking where pid = #{aa}
   </select>
   
-  <resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
-     <association property="pname" column="pid" select="getpname2"></association>
-  </resultMap>
-  <select id="selectReservation2" parameterType="Map" resultMap="parkresult2"> 
-  select * from (select pid,rid,rstart,rtime, ROWNUM num from reservation where mid = #{mid:VARCHAR} order by rid desc) where num between #{s:INTEGER} and #{l:INTEGER} 
-  </select>
   
   <select id="getpname2" resultType="String">
      select pname from parking where pid=#{aa}
   </select> 
+  <resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
+     <association property="pname" column="pid" select="getpname2"></association>
+  </resultMap>
+    <select id="selectReservation2" parameterType="Map" resultMap="parkresult2"> 
+  select * from (select pid,rid,rstart,rtime, ROWNUM num 
+ 				 from reservation 
+ 				 where mid = #{mid:VARCHAR} 
+ 				 order by rid desc) 
+  where num between #{s:INTEGER} and #{l:INTEGER} 
+  </select>
 
+
+    <!-- <select id="selectByPidJoin" parameterType="int"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where pid = #{pid:INTEGER}
+	</select>
+	<resultMap type="com.flying.model.ReservationDTO" id="reservemap">
+		<result property="pid" column="pid" />
+		<result property="rstart" column="rstart" />
+		<result property="rtime" column="rtime" />
+		<result property="mid" column="mid" />
+		<result property="rextrafare" column="rextrafare" />
+		<collection property="parkinglist" column="pid" select="selectByPidJoin"></collection>
+	</resultMap>
+	<select id="selectReserve" parameterType="int" resultMap="reservemap">
+		select * from Reservation where pid = #{pid:INTEGER}
+	</select> -->
+
+	<select id="selectReserve" parameterType="int"
+		resultType="map">
+		select sum(rtime) as sumrtime,to_char(rstart,'MM') as month
+		from reservation
+		where pid = #{pid:INTEGER} and to_char(rstart,'YYYY')=2015
+		group by to_char(rstart,'MM')
+		order by to_char(rstart,'MM')
+	</select>
+	
 </mapper>

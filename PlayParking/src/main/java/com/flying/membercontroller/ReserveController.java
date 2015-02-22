@@ -26,7 +26,7 @@ import com.flying.model.UsePointDTO;
 @Controller
 public class ReserveController {
 
-	@Autowired
+   @Autowired
    ReservationServiceInterface service;
    
    @Autowired
@@ -143,13 +143,13 @@ public class ReserveController {
          System.out.println("testtime="+testtime);
          if(testtime.equals("30"))
          {
-        	 testtimeint=Integer.parseInt(possibleTime)-30;
-        	 
-        	 
+            testtimeint=Integer.parseInt(possibleTime)-30;
+            
+            
          }
          else{
-        	 
-        	testtimeint=Integer.parseInt(possibleTime)-70;
+            
+           testtimeint=Integer.parseInt(possibleTime)-70;
          }
          //int testtimeint = Integer.parseInt(testtime);
          
@@ -204,43 +204,43 @@ public class ReserveController {
    
    @RequestMapping(value="/insert1.do", method=RequestMethod.POST)
    public String insertcom(){
-	   
-	   if(mpoint>minusMpoint){int ret = service.insertReservation(reserve);
-	      
-	      int countTemp = parking.getPcount()-1;
-	      parking.setPcount(countTemp);
-	      int ret2 = pservice.updateParkingPcount(parking);
-	      members.setMpoint(resultMpoint);
-	      int ret3 = service.updateMembersMpoint(members);
-	      
-	      usepoint.setMid(members.getMid());
-	      usepoint.setPid(parking.getPid());
-	      usepoint.setUsepoint(minusMpoint);
-	      int ret4 =service.insertUsepoint(usepoint);
-	      
-	      System.out.println(ret+"건의 예약정보 입력 완료");
-	      System.out.println(ret2+"건의 pcount정보 업데이트 완료");
-	      System.out.println(ret3+"건의 mpoint정보 업데이트 완료");
-	      System.out.println(ret4+"건의 usepoint정보 업데이트 완료");
-	      
-	    //email부분
-	      ApplicationContext context = 
-	                new ClassPathXmlApplicationContext("Spring-Mail.xml");
-	    
-	          MailMail mm = (MailMail) context.getBean("mailMail");
-	           mm.sendMail("playingparking@gmail.com",
-	                members.getMemail(),
-	                "[���������]"+members.getMid()+"�� ����Ϸ�", 
-	                parking.getPname()+"������ ����Ϸ�Ǿ����ϴ�:-)");
-	       //����ϷṮ�ڹ߼� ��
-	      
-	      return "redirect:/confirm.do";}
-	   
-	   else{
-		   
-		   
-		   return "redirect:/pointcheck.do";
-	   }
+      
+      if(mpoint>minusMpoint){int ret = service.insertReservation(reserve);
+         
+         int countTemp = parking.getPcount()-1;
+         parking.setPcount(countTemp);
+         int ret2 = pservice.updateParkingPcount(parking);
+         members.setMpoint(resultMpoint);
+         int ret3 = service.updateMembersMpoint(members);
+         
+         usepoint.setMid(members.getMid());
+         usepoint.setPid(parking.getPid());
+         usepoint.setUsepoint(minusMpoint);
+         int ret4 =service.insertUsepoint(usepoint);
+         
+         System.out.println(ret+"건의 예약정보 입력 완료");
+         System.out.println(ret2+"건의 pcount정보 업데이트 완료");
+         System.out.println(ret3+"건의 mpoint정보 업데이트 완료");
+         System.out.println(ret4+"건의 usepoint정보 업데이트 완료");
+         
+       //email부분
+         ApplicationContext context = 
+                   new ClassPathXmlApplicationContext("Spring-Mail.xml");
+       
+             MailMail mm = (MailMail) context.getBean("mailMail");
+              mm.sendMail("playingparking@gmail.com",
+                   members.getMemail(),
+                   "[���������]"+members.getMid()+"�� ����Ϸ�", 
+                   parking.getPname()+"������ ����Ϸ�Ǿ����ϴ�:-)");
+          //����ϷṮ�ڹ߼� ��
+         
+         return "redirect:/confirm.do";}
+      
+      else{
+         
+         
+         return "redirect:/pointcheck.do";
+      }
       
       
    }

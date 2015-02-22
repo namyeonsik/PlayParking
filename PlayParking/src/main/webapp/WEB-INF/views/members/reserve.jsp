@@ -65,7 +65,6 @@ margin-top: 50%;
 font-family: HU미드나잇120;
 	
 }
-
 .modal-header{
 
 size: 70%;
@@ -76,8 +75,11 @@ width:100%;
 height:10%;
 
 margin-left:5%;
+<<<<<<< HEAD
 margin-bottom:3%;
 font-family: HU미드나잇120;
+=======
+>>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
 
 }
 
@@ -125,15 +127,14 @@ margin-left: 10%;font-family: HU미드나잇120;
                                            <h4 class="modal-title" id="myModalLabel3">Message</h4>
                                        </div><!-- End .modal-header -->
                                   <div class="modal-body">
-                                      <div id="msg1"></div>
-                                      <button type="button" class="btn btn-lightblue btn-sm" data-dismiss="modal" style="float: right; margin-right: 10%; margin-bottom:50%;">Close</button>
+                                      <div id="msg1"></div><br><br><br><br>
                                   </div><!-- End .modal-body -->
-                                  
+                                  <button type="button" class="btn1 btn-orange" data-dismiss="modal">Close</button>
                                  </div><!-- End .modal-content -->
                              </div><!-- End .modal-dialog -->
                        </div><!-- End .modal -->
                                                         
-                                          
+                                                        
                   </div><!-- End .accordion-body-wrapper -->
                   </div><!-- End .accordion-body -->
             </div><!-- End .accordion-group -->
@@ -171,11 +172,12 @@ margin-left: 10%;font-family: HU미드나잇120;
 									</div>
 									<!-- End .modal-header -->
 									<div class="modal-body">
-                                     	<div id="msg2"></div><button type="button" class="btn btn-lightblue btn-sm" data-dismiss="modal" style="float: right; margin-right: 10%; margin-bottom:20%;">Close</button>
+                                     	<div id="msg2"></div><br><br><br><br>
                                     </div>
 									<!-- End .modal-body -->
 
-									
+									<button type="button" class="btn1 btn-orange"
+										data-dismiss="modal">Close</button>
 									<!-- <button class="btn btn-yellow">Action</button> -->
 
 								</div>
@@ -229,8 +231,8 @@ margin-left: 10%;font-family: HU미드나잇120;
 						</div>
 						<!-- End .modal-header -->
 						<div class="modal-body">
-							<div id="msg3"></div>
-							<button type="button" class="btn btn-lightblue btn-sm" data-dismiss="modal" style="float: right; margin-right: 10%; margin-bottom:20%;">Close</button>
+							<div id="msg3"></div><br><br><br><br>
+							<button type="button" class="btn btn-lightblue btn-sm" data-dismiss="modal" style="float: right; margin-right: 10%;">Close</button>
 						
 						</div>
 						<!-- End .modal-body -->
@@ -431,7 +433,6 @@ margin-left: 10%;font-family: HU미드나잇120;
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
    
    

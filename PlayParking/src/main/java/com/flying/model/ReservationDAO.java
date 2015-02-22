@@ -136,5 +136,22 @@ public class ReservationDAO implements ReservationDAOInterface {
       return session.selectList("flying.reservation.selectByaid11", mid);
    }
 
+/*	public List<ReservationDTO> selectByMonth(int pid, String month) {
+		List<ReservationDTO> reservelist = null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("pid", pid);
+		map.put("month", month);
+		reservelist = session.selectList("flying.reservation.selectByMonth", map);
+		return reservelist;
+	}*/
+   
+   /*public HashMap<String, Object> selectReserve(int pid){
+	   HashMap<String, Object> monthlylist = null;
+	   monthlylist.put("sumrtime", sumrtime);
+	   List<ReservationDTO> reservelist = null;
+	   reservelist = 
+	    session.selectList("flying.reservation.selectReserve", pid);
+	   return reservelist;
+   }*/
 
 }

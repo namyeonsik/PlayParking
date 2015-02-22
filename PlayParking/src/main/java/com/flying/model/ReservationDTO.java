@@ -1,6 +1,7 @@
 package com.flying.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class ReservationDTO {
 
@@ -15,7 +16,15 @@ public class ReservationDTO {
 	String rstarttimeback;
 	
 	String pname;
+	List<ParkingDTO> parkinglist;
 	
+	
+	public List<ParkingDTO> getParkinglist() {
+		return parkinglist;
+	}
+	public void setParkinglist(List<ParkingDTO> parkinglist) {
+		this.parkinglist = parkinglist;
+	}
 	public String getPname() {
 		return pname;
 	}

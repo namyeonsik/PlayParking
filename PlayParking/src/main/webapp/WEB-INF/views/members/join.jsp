@@ -49,15 +49,15 @@ function validationcheck(){
 	var mpwd = myfrm.mpwd.value;
 	var mpwdcheck = myfrm.mpwdcheck.value;
 	if(mid ==""||mid==null){
-		alert("아이디을 입력하세용");
+		alert("아이디을 입력하세요.");
 		myfrm.mid.focus();
 		return false; //list로 넘어가지마!		
 	}else if(mname==""||mname==null){
-		alert("이름을 입력해야해용~~");
+		alert("이름을 입력하세요.");
 		myfrm.mname.focus();
 		return false;
 	}else if(mpwd==""||mpwd==null){
-		alert("비밀번호 필수!!!!");
+		alert("비밀번호를 입력해주세요.");
 		myfrm.mpwd.focus();
 		return false;
 	}else if(mpwd!=mpwdcheck){
@@ -74,12 +74,12 @@ function validationlogin(){
 	var mid = loginfrm.mid.value;
 	var mpwd = loginfrm.mpwd.value;
 	if(mid ==""||mid==null){
-		alert("아이디을 입력하세용");
+		alert("아이디을 입력하세요.");
 		loginfrm.mid.focus();
 		return false; //list로 넘어가지마!
 		
 	}else if(mpwd==""||mpwd==null){
-		alert("비밀번호 필수!!!!");
+		alert("비밀번호를 입력하세요.");
 		loginfrm.mpwd.focus();
 		return false;
 	}else{
@@ -111,7 +111,7 @@ function validationlogin(){
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel1">Login Form</h4>
+							<h4 class="modal-title" id="myModalLabel1">Login</h4>
 						</div>
 						<!-- End .modal-header -->
 			<div class="modal-body">
@@ -147,13 +147,15 @@ function validationlogin(){
        
 
 <!-- 새로운 회원가입 -->
- <section id="contactus" class="section">
+ <section id="join" class="section">
            <!-- <div class="container" style="border:#6B71BD solid 1px"> -->
            <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-10 col-md-push-2 col-sm-push-1">
-                            <h2 class="text-center lg-margin">Create Account</h2>
-                            <form action="join.do" id="contact-form" onsubmit="return validationcheck();" name="myfrm" style="width: 90%"method="post" novalidate>
+                            <h2 class="text-center lg-margin">회원가입</h2>
+                            <form action="join.do" id="myfrm" 
+                                  onsubmit="validationcheck();" name="myfrm" 
+                                  style="width: 80%;margin-left:10%;"method="post" novalidate>
                                 <div class="form-group">
                                     <!-- <input type="text" name="mid" id="contactname" required class="form-control input-lg"> -->
                                      <input type="text" name="mid" id="mid" class="form-control" placeholder="">
@@ -172,41 +174,16 @@ function validationlogin(){
                                 <div class="form-group">
                                      <input type="text" name="mname" id="mname" class="form-control" placeholder="">
                                     <span class="animated-label">Your Name *</span>
-                                </div><!-- End .form-group -->				
+                                </div><!-- End .form-group -->	
+                                <div class="form-group">
+                                     <input type="text" name="mphone" id="mphone" class="form-control" placeholder="">
+                                    <span class="animated-label">Your Phone *</span>
+                                </div><!-- End .form-group -->			
                                 <div class="form-group">
                                      <input type="text" name="memail" id="memail" class="form-control" placeholder="">
                                     <span class="animated-label">Your Email *</span>
                                 </div><!-- End .form-group -->
-                                
-                                
-                                 <div class="row">
-							<div class="col-md-6 col-sm-12 col-xs-12">
-								<div class="normal-selectbox clearfix">
-									<label>Car Model</label>
-								 <select id="cbrand" name="cbrand"
-										class="selectbox" onchange="call();"
-										style="float: left; width: 30%;">
-										<option value="브랜드선택" selected="selected">브랜드선택</option>
-										<option value="현대">현대</option>
-										<option value="기아">기아</option>
-										<option value="쉐보레">쉐보레</option>
-										<option value="BMW">BMW</option>
-										<option value="아우디">아우디</option>
-									</select>
-								</div>
-								<!-- End .normal-selectbox-->
-								<h4>cnamediv 전</h4>
-								<div>
-								<h4>cnamediv 중</h4>
-	                            </div> 
-	                            <h4>cnamediv 후</h4>
-							</div>
-							<!-- End .col-md-6 -->
 
-							
-                                
-                             
-                            </div><!-- End .row --><div id="cnamediv"></div>
                             
 
 							   <div class="form-group text-center">
@@ -324,60 +301,6 @@ function validationlogin(){
             });
         </script>
 
-<script type="text/javascript">
-/* function btn(){
-	$.ajax({
-		type: "POST",
-		url: "cname.jsp",
-		success: function(html){
-			$("#cnamediv").append(html);
-		}
-	});
-} */
-
-
-var xhr;//전역변수
-
-function call(){
-	
-xhr = new XMLHttpRequest();
-xhr.onreadystatechange = resultParse; //함수등록후 재정의
-
-var data = document.getElementById("cbrand").value;
-/* alert(data);
-data="cbrand="+data;
-data.submit(); */
-
-xhr.open("POST", "carname.do", true); //POST방식.비동기통식.
-//POST일때는 아래추가.
-xhr.setRequestHeader("content-type", 
-		                   "application/x-www-form-urlencoded");
-xhr.send("cbrand="+data);//cbrand가 controller에게
-
-}
-
-//요청에 대한 응답을 받을때마다 호출됨. 콜백 함수 지정 속성.
-function resultParse(){
-	if(xhr.readyState==4){
-		//서버에서 전송이 끝낫는지.
-		if(xhr.status==200){
-			//정상적으로 응답을 받은 경우. 정상종료됨
-			viewData4(xhr.responseText); //=>html
-		}
-	}
-}
-
-function viewData4(data){
- //html
-	//document.getElementById("cnamediv").innerHTML =data;
- 	alert(data);
- 	/* $(document).ajaxSend(function(event,request,settings ) {
- 		  $("#cnamediv").append(data);
- 		}); */
- 	$("#cnamediv").append(data);
-}
-
-</script>
 
 
 <!-- Plugins -->

@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>About Us</title>
+<title>About</title>
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
-<!-- <title>회원정보수정</title> -->
-        <title>Geass - Creative Onepage Html5 Template</title>
+
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
@@ -36,7 +35,7 @@
         <!--- jQuery -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
 
-    <!-- Queryloader -->
+    	<!-- Queryloader -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
 
         <!-- Modernizr -->
@@ -83,7 +82,8 @@
 									src="${pageContext.request.contextPath}/resources/geass/images/team/eric.jpg"
 									alt="eric" class="img-responsive">
 							</figure>
-							<div class="back">
+			
+						<div class="back">
 								<div class="vcenter-container">
 									<div class="vcenter">
 										<h2>Kwon Minji</h2>
@@ -93,16 +93,6 @@
 											<li><a href="http://www.facebook.com/k91311" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" class="twitter add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="googleplus add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Google +"><i
-													class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" class="dribbble add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Find us at Dribbble"><i class="fa fa-dribbble"></i></a></li>
 										</ul>
 									</div>
 									<!-- End .vcenter -->
@@ -136,16 +126,7 @@
 											<li><a href="#" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" class="twitter add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="googleplus add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Google +"><i
-													class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" class="dribbble add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Find us at Dribbble"><i class="fa fa-dribbble"></i></a></li>
+											
 										</ul>
 									</div>
 									<!-- End .vcenter -->
@@ -179,13 +160,7 @@
 											<li><a href="#" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" class="twitter add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="googleplus add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Google +"><i
-													class="fa fa-google-plus"></i></a></li>
+											
 										</ul>
 									</div>
 									<!-- End .vcenter -->
@@ -219,16 +194,7 @@
 											<li><a href="#" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" class="twitter add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="googleplus add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Follow us on Google +"><i
-													class="fa fa-google-plus"></i></a></li>
-											<li><a href="#" class="dribbble add-tooltip"
-												data-placement="top" data-toggle="tooltip"
-												title="Find us at Dribbble"><i class="fa fa-dribbble"></i></a></li>
+											
 										</ul>
 									</div>
 									<!-- End .vcenter -->

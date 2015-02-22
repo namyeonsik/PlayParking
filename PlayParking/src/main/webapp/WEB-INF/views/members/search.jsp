@@ -4,17 +4,22 @@
 <!-- 주차장 검색 후 리스트! -->
 <font face="HU미드나잇120">
 <form method="post" action="reserve.do">
+<<<<<<< HEAD
 <table class="table table-striped table-hover">
    <thead align="center">   
+=======
+<table class="table table-striped table-hover ">
+   <thead>
+>>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
    <tr class="info" align="center">
-      <th align="center" class="th">번호</th>
+      <th align="center">번호</th>
       <th align="center">주차장 이름</th>
       <th align="center">주소</th>
       <th align="center">요금</th>
       <th align="center">추가요금</th>
       <th align="center">너비</th>
       <th align="center">길이</th>
-      <th align="center" class="th">Tip (고객님들이 도착지에 조금 더 빨리 찾아갈 수 있도록!)</th>
+      <th align="center">Tip</th>
       <th align="center">예약</th>
    </tr>
    </thead>
@@ -39,6 +44,11 @@
    </c:forEach>    
    </tbody>
 </table>
+<script type="text/javascript">
+function func(a){
+   <input type="hidden" name="piddd" id="piddd" value=a>
+}
+</script>
 </form>
 </font>
 ;
@@ -68,7 +78,7 @@
       <th align="center">추가요금</th>
       <th align="center">너비</th>
       <th align="center">길이</th>
-      <th align="center">Tip (고객님들이 도착지에 조금 더 빨리 찾아갈 수 있도록!)</th>
+      <th align="center">Tip</th>
       <th align="center">예약</th>
    </tr>
    </thead>
@@ -93,3 +103,4 @@
 </table>
 </form>
 </font>
+
