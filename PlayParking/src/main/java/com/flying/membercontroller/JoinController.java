@@ -26,6 +26,7 @@ public class JoinController {
 	}
 	
 	
+	
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
 	@Transactional(propagation=Propagation.REQUIRED)
 	public String joinPost(MembersDTO member, HttpServletRequest request){		

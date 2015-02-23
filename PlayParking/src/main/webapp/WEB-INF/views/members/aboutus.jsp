@@ -80,7 +80,7 @@
 									alt="eric" class="img-responsive">
 							</figure>
 			
-							<div class="back">
+						<div class="back">
 								<div class="vcenter-container">
 									<div class="vcenter">
 										<h2>Kwon Minji</h2>
