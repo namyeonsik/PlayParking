@@ -16,16 +16,15 @@
 				
 			</div>
 			
-			<h6>${msg}</h6>
-				
-		
-			
-			
+					
 		<input type="submit" class="btn btn-lightblue"
 			class="btn btn-lightblue" value="예약완료"> <input
 			type="button" class="btn btn-default" class="btn btn-default"
 			value="충전하기"
 			onclick="window.open('paypoint.do', 'window팝업', 'width=400,height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+	
+	
+	
 	</form>
 			
 			
@@ -39,10 +38,11 @@
 <script type="text/javascript">
 function pointmsg(){
 var dd = document.getElementById("mesa").value;
-if(dd!=''){
-   alert("*"+dd+"*");
+	if(dd!=''){
+		alert(dd);
+	}
 }
-}
+
  </script>
 	<!-- <div class="xlg-margin"></div> --> 
 	<!-- space -->
