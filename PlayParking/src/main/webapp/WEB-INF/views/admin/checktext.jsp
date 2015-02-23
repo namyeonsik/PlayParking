@@ -84,7 +84,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="content">
-				<div class="module message">
+				<div class="module message" style="width:90%; margin-left:5%">
 					<div class="module-head" style="height: 30px">
 						<div class="pull-left">
 						<font size="4" face="HU미드나잇120">주차장 공지사항 보기</font>
