@@ -286,7 +286,13 @@
              }
 		 }
 	}
-	function change(){			
+	function change(){	
+		//alert(infowindow.length);
+		 for (var i = 0; i < infowindow.length; i++) {
+		 infowindow[i].close();
+	 	} 
+		//alert("왓지?");
+		
 	    if(document.f.plocation.selectedIndex != 0){
 	        str = document.f.plocation.value; //구이름 받기	
 	   	}else{
@@ -308,6 +314,8 @@
 	    
 		sendRequest(param);		
 	 }
+	
+	var infowindow;
 	
 	function search(){
 				
@@ -352,11 +360,11 @@
 			 function displayMarker() {
 						
 				var marker = new Array();
-				var infowindow = new Array();
+				infowindow = new Array();
 										
 			 	for (var i = 0; i < markers.length; i ++) {				 		
 			 		   // 마커를 생성하고 지도에 표시합니다
-			 		 	 		   
+			 		 		   
 					    marker[i] = new daum.maps.Marker({
 					         position: markers[i].latlng,
 					         title:markers[i].title,
@@ -409,14 +417,10 @@
 					         content: realcontent,
 					         removable : true
 					     }); 
-			 						  	
-					     
+			 								     
 					 	// 마커에 클릭이벤트를 등록합니다
 					     daum.maps.event.addListener(marker[i], 'click', function() {
 					    	
-					    	 /* for (var i = 0; i < infowindow.length; i++) {
-					    		 infowindow[i].close();
-					    	 } */
 					    	 for ( var i = 0; i < marker.length ; i++) {
 					    		 infowindow[i].close();
 					    	}
