@@ -9,16 +9,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>관리자</title>
-<link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
+<link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-responsive.min.css"
+	href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap-responsive.min.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/theme.css"
+	href="${pageContext.request.contextPath}/resources/edmin/css/theme.css"
 	rel="stylesheet">
 <link type="text/css"
-	href="${pageContext.request.contextPath}/resources/images/icons/css/font-awesome.css"
+	href="${pageContext.request.contextPath}/resources/edmin/images/icons/css/font-awesome.css"
 	rel="stylesheet">
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
@@ -303,25 +303,25 @@ function loginfail(){
 	
 	
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/jquery-1.9.1.min.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-1.9.1.min.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/jquery-ui-1.10.1.custom.min.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/jquery-ui-1.10.1.custom.min.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"
+		src="${pageContext.request.contextPath}/resources/edmin/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/flot/jquery.flot.resize.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/flot/jquery.flot.resize.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/datatables/jquery.dataTables.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/datatables/jquery.dataTables.js"
 		type="text/javascript"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/scripts/common.js"
+		src="${pageContext.request.contextPath}/resources/edmin/scripts/common.js"
 		type="text/javascript"></script>
 	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
 		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->

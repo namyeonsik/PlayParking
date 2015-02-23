@@ -36,13 +36,12 @@ public class AdminLoginController {
 		System.out.println(admincheck);
 		session.setAttribute("admincheck", admincheck); 
 		if(admincheck!=null){
-			//ë¡œê·¸ì¸ ì„±ê³µ
 			mv.setViewName("redirect:/adminmain.do");
 
 		}else{
 			
 			mv.setViewName("admin/admin_login");
-			mv.addObject("adminmsg", "ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”!");
+			mv.addObject("adminmsg", "¾ÆÀÌµğ³ª ·Î±×ÀÎÀ» È®ÀÎÇØÁÖ¼¼¿ä!");
 		}
 		return mv;
 	}

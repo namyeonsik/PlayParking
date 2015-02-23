@@ -150,29 +150,8 @@
   </select>
 
 
-    <!-- <select id="selectByPidJoin" parameterType="int"
-		resultType="com.flying.model.ParkingDTO">
-		select * from parking where pid = #{pid:INTEGER}
-	</select>
-	<resultMap type="com.flying.model.ReservationDTO" id="reservemap">
-		<result property="pid" column="pid" />
-		<result property="rstart" column="rstart" />
-		<result property="rtime" column="rtime" />
-		<result property="mid" column="mid" />
-		<result property="rextrafare" column="rextrafare" />
-		<collection property="parkinglist" column="pid" select="selectByPidJoin"></collection>
-	</resultMap>
-	<select id="selectReserve" parameterType="int" resultMap="reservemap">
-		select * from Reservation where pid = #{pid:INTEGER}
-	</select> -->
 
-	<select id="selectReserve" parameterType="int"
-		resultType="map">
-		select sum(rtime) as sumrtime,to_char(rstart,'MM') as month
-		from reservation
-		where pid = #{pid:INTEGER} and to_char(rstart,'YYYY')=2015
-		group by to_char(rstart,'MM')
-		order by to_char(rstart,'MM')
-	</select>
+
+
 	
 </mapper>

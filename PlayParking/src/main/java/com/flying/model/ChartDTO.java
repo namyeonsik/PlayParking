@@ -2,15 +2,15 @@ package com.flying.model;
 
 public class ChartDTO {
 
-	private int pid;
+	//private int pid;
 	private int sumrtime;
 	private String month;
-	public int getPid() {
+	/*public int getPid() {
 		return pid;
 	}
 	public void setPid(int pid) {
 		this.pid = pid;
-	}
+	}*/
 	public int getSumrtime() {
 		return sumrtime;
 	}
@@ -25,7 +25,7 @@ public class ChartDTO {
 	}
 	public ChartDTO(int pid, int sumrtime, String month) {
 		super();
-		this.pid = pid;
+		//this.pid = pid;
 		this.sumrtime = sumrtime;
 		this.month = month;
 	}
@@ -33,7 +33,7 @@ public class ChartDTO {
 	}
 	@Override
 	public String toString() {
-		return "ChartDTO [pid=" + pid + ", sumrtime=" + sumrtime + ", month="
+		return "ChartDTO [sumrtime=" + sumrtime + ", month="
 				+ month + "]";
 	}
 	

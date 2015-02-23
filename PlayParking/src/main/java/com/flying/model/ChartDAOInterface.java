@@ -1,5 +1,7 @@
 package com.flying.model;
 
+import java.util.List;
+
 public interface ChartDAOInterface {
-	public AdminDTO selectByAdmin(String aid, String apwd);
+	public List<ChartDTO> selectReserve(int pid);
 }

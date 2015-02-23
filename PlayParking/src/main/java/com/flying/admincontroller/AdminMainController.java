@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.AdminDTO;
+import com.flying.model.ChartDTO;
+import com.flying.model.ChartServiceInterface;
 import com.flying.model.MembersDTO;
 import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
@@ -30,6 +32,9 @@ public class AdminMainController {
    @Autowired
    ReservationServiceInterface rservice;
 
+   @Autowired
+   ChartServiceInterface chartservice;
+   
    String thisMonth=null;
    
    
@@ -60,6 +65,39 @@ public class AdminMainController {
       }
       avg=sumfare/aroundpark.size();
       mv.addObject("avg", avg);
+      
+      //차트 구현부분
+      int parkingfare = parking.getPfare(); //주차장 요금
+      List<ChartDTO> chartlist = 
+    		  chartservice.selectReserve(admincheck.getPid());
+     /* System.out.println(chartlist.size()+"차트사이즈입니다.");
+      System.out.println(parkingfare+"주차장요금은 이거");
+      System.out.println(chartlist.get(0).getSumrtime()+"rtim은이거");*/
+      //월별 주차요금
+      List<Integer> summonthlyfare = new ArrayList<Integer>();
+      //월
+      List<String> monthlist = new ArrayList<String>();
+      for(ChartDTO c : chartlist){
+    	 
+    	 summonthlyfare.add(c.getSumrtime()*parkingfare);
+    	 monthlist.add(c.getMonth());
+      }
+      System.out.println(monthlist.get(0)+"monthlist입니다.");
+      System.out.println(summonthlyfare.get(0)+"돈입니다.");
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       System.out.println(parking.getPcount());
       int resultcount = parking.getPamount() - parking.getPcount();
       int todaycount=0;

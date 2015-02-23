@@ -1,5 +1,7 @@
 package com.flying.model;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,10 +11,9 @@ public class ChartService implements ChartServiceInterface{
 	@Autowired
 	ChartDAOInterface dao;
 
-	public AdminDTO selectByAdmin(String aid, String apwd) {
-		return dao.selectByAdmin(aid, apwd);
+	public List<ChartDTO> selectReserve(int pid) {
+		// TODO Auto-generated method stub
+		return dao.selectReserve(pid);
 	}
-	
-	
 
 }
