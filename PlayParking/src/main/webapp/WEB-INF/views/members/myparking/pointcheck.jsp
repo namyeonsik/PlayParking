@@ -232,6 +232,7 @@
 </head>
 
 <body>
+<div class="all">
    <!-- 진짜헤더시작 -->
    <div class="header">
       <%@ include file="../../Header.jsp"%>
@@ -365,6 +366,11 @@
       </div>
 </div>
    </div>
+
+</div>
+   <div id="footer" style="padding:13px;width: 100%; margin-top: 5%;">
+<%@ include file="../../Tail.jsp" %>
+</div>
    <!-- Plugins -->
    <script
       src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
@@ -384,5 +390,6 @@
       src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
    <script
       src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
 </body>
 </html>

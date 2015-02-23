@@ -116,7 +116,7 @@
 </style>
 
 </head>
-<body>
+<body style="height: 68%;">
 	<!-- 진짜헤더시작 -->
 	<div class="header">
 		<%@ include file="../Header.jsp"%>
@@ -192,5 +192,8 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
+<div id="footer" style="padding:13px;">
+<%@ include file="../Tail.jsp" %>
+</div>  
 </body>
 </html>
