@@ -34,14 +34,7 @@ public class JoinController {
 		System.out.println(ret+"건 입력");
 		System.out.println(member);
 		ModelAndView mv = new ModelAndView();
-		/*if(ret!=0){
-			request.setAttribute("joinok", "회원가입이 완료되었습니다.");
-			mv.setViewName("members/join");
-		}else{
-			request.setAttribute("joinok", "회원가입에 실패했습니다.");
-			mv.setViewName("members/join");
-		}*/
-		
+				
 		if(ret!=0){
 			//로그인성공
 			mv.setViewName("members/member_main");

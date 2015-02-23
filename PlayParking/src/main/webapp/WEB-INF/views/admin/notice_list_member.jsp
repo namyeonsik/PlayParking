@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 헤더 부트스트랩 시작 -->
+<!-- 헤더 부트스트랩 시작!! -->
         <title>주차장 공지사항</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
@@ -55,7 +55,7 @@
 	<div class="header">
 		<%@ include file="../Header.jsp"%>
 	</div>
-	<!-- 진짜헤더끝 -->
+	<!-- 진짜헤더 -->
 <%
 	int number=0;
 	int listSize = 10;
@@ -75,7 +75,7 @@
 </div>
 
 <c:set var="cnt" value="1"></c:set>
-<div class="wrapper">
+<div class="wrapper" style="margin-bottom:15%">
 	<div class="container">
 		<div class="row">
 			<div class="content">
@@ -155,5 +155,9 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
+<div id="footer" style="padding:0;">
+<%@ include file="../Tail.jsp" %>
+</div>  
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 
 
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 !!!!!!!!!!! -->
 <meta charset="utf-8">
 
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
@@ -76,7 +76,7 @@
 
 <div class="body">
 	<!-- About Us Section -->
-	<section id="aboutus" class="section">
+	<section id="aboutus" class="section" style="margin-bottom: 5%;">
 		<header class="container text-center">
 			<h1 class="section-title">About Us</h1>
 			<p class="section-desc">I'm Developer는 공유를 통한 가치 창출에 대해 고민하는 개발자들입니다. </p>
@@ -286,17 +286,7 @@
 				<div class="md-margin visible-xs clearfix"></div>
 				<!-- space -->
 
-				<div class="col-md-6 col-sm-6">
-					<div class="accordion-panel" id="accordion-panel2">
-						<div class="accordion-panel-group panel">
-							
-						</div>
-						<!-- End .accordion-group -->
-						
-					</div>
-					<!-- End .accordion-panel -->
-				</div>
-				<!-- End .col-md-6 -->
+				
 			</div>
 			<!-- End .row -->
 		</div>
@@ -320,6 +310,10 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
  
-  </div>  
+  </div>
+  
+<div id="footer" style="padding:0;">
+<%@ include file="../Tail.jsp" %>
+</div>  
 </body>
 </html>
