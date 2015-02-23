@@ -96,8 +96,8 @@
                   <!-- End .modal-body -->
                   
                   <div class="modal-footer">
-                     <button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">Join</button>
-                     <button type="submit" class="btn btn-blue">Login</button>
+                     <button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">JOIN</button>
+                     <button type="submit" class="btn btn-blue">LOGIN</button>
                      <button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
                   </div>
                   <!-- End .modal-footer -->
