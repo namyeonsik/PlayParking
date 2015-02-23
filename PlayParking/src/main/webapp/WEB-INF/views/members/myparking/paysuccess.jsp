@@ -35,12 +35,31 @@
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+       
+       <style type="text/css">
+       @font-face{
+   font-family:"HU미드나잇140";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
+
+
+.point{
+
+width: 100%; margin-top: 10%; margin-left: 15%; float: left;
+
+}
+     </style>
 </head>
 <body>
 
 <!-- 충전완료페이지 -->
-<h3>충전이 완료되었습니다.</h3>
-
+<div class="point">
+<h3><font face="HU미드나잇140">충전이 완료되었습니다.</font></h3>
+</div>
 <script type="text/javascript">
 window.opener.location.reload();
 </script>

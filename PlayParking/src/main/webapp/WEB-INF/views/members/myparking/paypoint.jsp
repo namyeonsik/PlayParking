@@ -42,11 +42,11 @@
 
 <!-- 포인트충전 -->
 <form class="form-horizontal" action="paypoint.do" method="post" style="width: 65%">
-    <div id="title" style="margin-left: 45%; width: 100%;">
+    <div id="title" style="margin-left: 40%; width: 100%;">
     <h3>Point 충전</h3>
     </div>
     
-    <div id="input" style="margin-left: 25%; width: 100%; size: 100%">
+    <div id="input" style="margin-left: 20%; width: 100%; size: 100%">
     
     <label for="inputId"></label>
       <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">

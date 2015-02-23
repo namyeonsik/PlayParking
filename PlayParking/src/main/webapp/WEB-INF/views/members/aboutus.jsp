@@ -90,7 +90,7 @@
 						<div class="member-wrapper">
 							<figure class="front">
 								<img
-									src="${pageContext.request.contextPath}/resources/geass/images/team/eric.jpg"
+									src="${pageContext.request.contextPath}/resources/minji.jpg"
 									alt="eric" class="img-responsive">
 							</figure>
 			
@@ -123,8 +123,9 @@
 					<div class="member left">
 						<div class="member-wrapper">
 							<figure class="front">
+								
 								<img
-									src="${pageContext.request.contextPath}/resources/geass/images/team/barbara.jpg"
+									src="${pageContext.request.contextPath}/resources/dayea.jpg"
 									alt="barbara" class="img-responsive">
 							</figure>
 							<div class="back">
@@ -134,7 +135,7 @@
 										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
-											<li><a href="#" class="facebook add-tooltip"
+											<li><a href="http://www.facebook.com/kim.dayea.92" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
 											
@@ -158,7 +159,7 @@
 						<div class="member-wrapper">
 							<figure class="front">
 								<img
-									src="${pageContext.request.contextPath}/resources/geass/images/team/steve.jpg"
+									src="${pageContext.request.contextPath}/resources/yeonsik.jpg"
 									alt="Stever" class="img-responsive">
 							</figure>
 							<div class="back">
@@ -168,7 +169,7 @@
 										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
-											<li><a href="#" class="facebook add-tooltip"
+											<li><a href="http://www.facebook.com/dustlr92" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
 											
@@ -192,7 +193,7 @@
 						<div class="member-wrapper">
 							<figure class="front">
 								<img
-									src="${pageContext.request.contextPath}/resources/geass/images/team/jane.jpg"
+									src="${pageContext.request.contextPath}/resources/insoo.jpg"
 									alt="Jane" class="img-responsive">
 							</figure>
 							<div class="back">
@@ -202,7 +203,7 @@
 										<p>Developer</p>
 										<hr>
 										<ul class="social-icons-container small-icons">
-											<li><a href="#" class="facebook add-tooltip"
+											<li><a href="https://www.facebook.com/insoo.shin.7" class="facebook add-tooltip"
 												data-placement="top" data-toggle="tooltip"
 												title="Follow us on Facebook"><i class="fa fa-facebook"></i></a></li>
 											

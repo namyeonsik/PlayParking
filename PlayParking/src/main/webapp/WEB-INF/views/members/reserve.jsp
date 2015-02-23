@@ -71,32 +71,32 @@ font-family:"HU미드나잇140";
 width: 40%;
 	/* margin-top: 5%; */
 	margin-left: 30%;
-	font-family:"HU미드나잇140"
+	font-family:"HU미드나잇140";
 
 }
 
 .title{
 margin-left:46%;
-font-family:"HU미드나잇120"
+font-family:"HU미드나잇140";
 }
 
 .modal{width: 100%;
-	font-family:"HU미드나잇120"
+	font-family:"HU미드나잇140";
 	}
 
 .modal-content{
 width:100%;
 height:20%;
 margin-top: 50%;
-font-family:"HU미드나잇120"
+font-family:"HU미드나잇120";
 	
 }
 .parkingname{
-margin-left:8%;
-font-family:"HU미드나잇140"
+margin-left:7%;
+font-family:"HU미드나잇140";
 }
 .modal-header{
-font-family:"HU미드나잇120";
+font-family:"HU미드나잇140";
 size: 70%;
 }
 .modal-body{
@@ -105,7 +105,7 @@ height:10%;
 
 margin-left:5%;
 margin-bottom:3%;
-font-family:"HU미드나잇120"
+font-family:"HU미드나잇120";
 }
 
 
