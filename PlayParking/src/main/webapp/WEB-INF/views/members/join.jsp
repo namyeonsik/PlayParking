@@ -164,27 +164,35 @@ function validationlogin(){
 
 <!-- 새로운 회원가입 -->
  <section id="join" class="section">
-           <!-- <div class="container" style="border:#6B71BD solid 1px"> -->
            <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-10 col-md-push-2 col-sm-push-1">
                             <h2 class="text-center lg-margin"><font face="HU미드나잇140">회원가입</font></h2>
-                            <form action="join.do" id="myfrm" 
+                            <form action="join.do" id="contact-form" 
                                   onsubmit="validationcheck();" name="myfrm" 
-                                  style="width: 80%;margin-left:10%;"method="post" novalidate>
-                                <div class="form-group">
-                                    <!-- <input type="text" name="mid" id="contactname" required class="form-control input-lg"> -->
-                                     <input type="text" name="mid" id="mid" class="form-control" placeholder="">
-                                    <span class="animated-label">Your Id *</span>
-                                </div><!-- End .form-group -->	
+                                  style="width: 80%;margin-left: 10%"method="post" novalidate>
+                                <div >
+                               <div class="form-group" style="">
+                                <table style="width:100%;margin-bottom: 3%">
+              					  <tbody>
+               					 	<tr style="">
+	                			    <td style="width:80%"><input type="text" name="mid" id="mid" class="form-control" placeholder="" style="margin-top:7%; width: 100%"><span class="animated-label">Your Id *</span></td>    
+									<td><button type="button" style=" float: right; font-family: HU미드나잇120;" class="btn btn-default" onclick="window.open('idcheck.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">ID중복확인</button></td>     
+									</tr>  
+									</tbody>
+								</table>
+						
+                                </div><!-- End .form-group -->
+                                
+                                </div>
                                 <div class="form-group">
                                     <!-- <input type="text" name="mid" id="contactname" required class="form-control input-lg"> -->
                                      <input type="password" name="mpwd" id="mpwd" class="form-control" placeholder="">
                                     <span class="animated-label">Your Password *</span>
                                 </div><!-- End .form-group -->
-                                <div class="form-group">
+                                <div class="form-group" style="margin-top: 5%;">
                                     <!-- <input type="text" name="mid" id="contactname" required class="form-control input-lg"> -->
-                                     <input type="password" name="mpwdcheck" id="mpwdcheck" class="form-control" placeholder="">
+                                     <input type="password" name="mpwdcheck" id="mpwdcheck" style="margin-top: 3%" class="form-control" placeholder="">
                                     <span class="animated-label">Password Check *</span>
                                 </div><!-- End .form-group -->		
                                 <div class="form-group">
@@ -199,10 +207,7 @@ function validationlogin(){
                                      <input type="text" name="memail" id="memail" class="form-control" placeholder="">
                                     <span class="animated-label">Your Email *</span>
                                 </div><!-- End .form-group -->
-
-                            
-
-							   <div class="form-group text-center">
+								 <div class="form-group text-center">
                                     <!-- <input type="submit" class="btn btn-lightblue btn-lg" onclick="call();"
                                           data-toggle="modal" data-target="#modal-text" value="Send"> -->
                                      <input type="submit" class="btn btn-lightblue btn-lg" value="Send">
@@ -251,7 +256,7 @@ function validationlogin(){
 
 
 <!-- Plugins -->
-		<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+
 		
         <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
@@ -392,18 +397,6 @@ function viewData4(data){
 	</script>
 
 
-
-<!-- Plugins -->
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-<script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 </body>
 </html>

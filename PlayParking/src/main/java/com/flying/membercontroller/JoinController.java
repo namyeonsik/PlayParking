@@ -45,11 +45,19 @@ public class JoinController {
 		return mv;
 	}
     
-    @RequestMapping(value="/joinok.do", method=RequestMethod.POST)
+    @RequestMapping(value="/idcheck.do", method=RequestMethod.GET)
+	@Transactional(propagation=Propagation.REQUIRED)
+	public ModelAndView idcheckGet(HttpServletRequest request,HttpSession session){		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("members/idcheck");
+		return mv;
+	}
+    
+    @RequestMapping(value="/idcheck.do", method=RequestMethod.POST)
 	@Transactional(propagation=Propagation.REQUIRED)
 	public ModelAndView joinmsgPost(HttpServletRequest request,HttpSession session){		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("members/join");
+		mv.setViewName("members/idcheck");
 		return mv;
 	}
 
