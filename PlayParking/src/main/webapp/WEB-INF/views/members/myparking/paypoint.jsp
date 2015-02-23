@@ -73,8 +73,8 @@
 
 <!-- 포인트충전 -->
 <form class="form-horizontal" action="paypoint.do" method="post" style="width: 65%">
-    <div id="title" style="margin-left: 50%; width: 100%;">
-    <h3><font face="HU미드나잇140">Point 충전</font></h3>
+    <div id="title" style="margin-left: 40%; width: 100%;">
+    <h2><font face="HU미드나잇140">Point 충전</font></h2>
     </div>
     
     <div id="input" style="margin-left: 20%; width: 100%; size: 100%">
@@ -87,7 +87,7 @@
     
     </div>
     
-    <div class="form-group" style="margin-left: 43%; width: 100%;">
+    <div class="form-group" style="margin-left: 37%; width: 100%;">
       <div class="col-lg-10 col-lg-offset-2">
         <button type="submit" class="btn btn-lightblue">충전</button>
         <button type="button" class="btn btn-lightblue" onclick="window.close();">닫기</button>
