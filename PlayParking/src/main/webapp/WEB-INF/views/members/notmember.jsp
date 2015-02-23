@@ -42,8 +42,8 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 <style>
-.header {height: 50px; font-family: HU미드나잇120;}
-.body {height: 100px; margin-top: 16%; font-family: HU미드나잇120;}
+.header {height: 10%; font-family: HU미드나잇120;}
+.body {font-family: HU미드나잇120;}
 </style>
 
 </head>
@@ -54,11 +54,7 @@
 </div>
 <!-- 진짜헤더끝 -->  
 
-<!-- <div class="body">
-<p><span class="dropcap-bg blue" >로</span> <span class="dropcap-bg blue" >그</span> <span class="dropcap-bg blue" >인</span> <span class="dropcap-bg blue" >후</span> <span class="dropcap-bg blue" >이</span></p>
-</div>
- -->
-                                           <div class="modal-dialog" style="margin-top:150px;">
+<div class="modal-dialog" style="margin-top:10%;margin-bottom:26%;">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     
@@ -76,12 +72,10 @@
                                                     <br><br>
                                                     </div><!-- End .modal-footer -->
                                                 </div><!-- End .modal-content -->
-                                            </div><!-- End .modal-dialog -->
+</div><!-- End .modal-dialog -->
                                       
 
-<div class="tail">
-<%@ include file="../Tail.jsp" %>
-</div>
+
 
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
@@ -94,5 +88,9 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
+<div id="footer" style="padding:0;">
+<%@ include file="../Tail.jsp" %>
+</div>
 </body>
+
 </html>

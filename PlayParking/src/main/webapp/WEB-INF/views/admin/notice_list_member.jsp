@@ -75,7 +75,7 @@
 </div>
 
 <c:set var="cnt" value="1"></c:set>
-<div class="wrapper">
+<div class="wrapper" style="margin-bottom:15%">
 	<div class="container">
 		<div class="row">
 			<div class="content">
@@ -155,5 +155,9 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
+<div id="footer" style="padding:0;">
+<%@ include file="../Tail.jsp" %>
+</div>  
 </body>
 </html>

@@ -40,28 +40,33 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
-	#selectform { float:left; width: 100%; height:30%;}
-	#listform { float:right; width: 100%; height:100%;}
-</style> 
 
-<style>
+@font-face{
+   font-family:"HU미드나잇120";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+	#selectform { float:left; width: 100%; height:30%;}
+	#listform { float:right; width: 100%; height:55%;}
+	#footerdiv {height:15%;}
+	
 	html, body {width:100%;height:100%;margin:0;padding:0;} 
 	/* .map_wrap {position:relative;overflow:hidden;width:100%;height:60%;} */
 	.radius_border{border:1px solid #919191;border-radius:5px;}     
-	.custom_zoomcontrol {position:absolute;top:1px;right:5px;width:2%;height:10%;overflow:hidden;z-index:1;background-color:#f5f5f5;padding-left:5px;} 
-	.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
+	.custom_zoomcontrol {position:absolute;top:1px;right:5px;width:3%;height:10%;overflow:hidden;z-index:1;background-color:#f5f5f5;padding-left:5px;} 
+	.custom_zoomcontrol span {display:block;width:100%;height:40px;text-align:center;cursor:pointer;}     
 	.custom_zoomcontrol span img {width:20px;height:42px;padding:12px 0;border:none;}             
 	.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}    
-</style> 
-
-<style>
 
 .header {height: 30px}
 
 .map_wrap, .map_wrap * {margin-top:4%;padding:0;font-family:'HU미드나잇120';}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:85%;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:20%;height:80%;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:27%;height:80%;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.8);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
 #menu_wrap hr {display: block; height: 1px;border:1; border-top: 5px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
@@ -78,7 +83,6 @@
 </div>
 <!-- 진짜헤더끝 -->      
 
-<!-- style="border:#6B71BD solid 1px" -->
 <!-- ---------------------------**지도**--------------------------- -->
 
 <div class="map_wrap">
@@ -101,8 +105,7 @@
 				<font face="HU미드나잇120" color="#5D5D5D" size="2" >&nbsp;&nbsp;알맞은 맞춤형을 <b>클릭</b>하면 리스트의 순서가 바뀝니다.</font><br>
 				<br>
 				<hr>
-				<br>
-				
+				<br>				
 				
 				<div class="col-md-12 col-sm-12 col-xs-12 md-margin">
 					<span><font face="HU미드나잇120" color="#5D5D5D" size="3"><b>&nbsp;1. 지역 선택</b></font></span>
@@ -141,10 +144,10 @@
 				<br>
 				<span><font face="HU미드나잇120" color="#5D5D5D" size="2"><b>&nbsp;(맞춤형 이름을 클릭하시면 설명을 볼 수 있습니다!)</b></font></span>
 				<div class="radio" style="margin-top: 0px;">					
-					<label style="margin-right: 10px;padding-right: 10px">	
+					<label style="margin-right: 10%;padding-right: 10%">	
 					<input type="radio" id="radio" name="radio" value="절약형" onclick="change();" >
 					<font size="3">
-					<input type="text" size="4" style="border:0;background:transparent;" value="절약형" readonly="readonly" 
+					<input type="text" size="6" style="border:0;background:transparent;" value="절약형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
 						 data-placement="right" title="&nbsp;절약형이란?" 
 						 data-content="&nbsp;주차장 요금이 저렴한 순서로 리스트를 보여줍니다!" >		
@@ -156,7 +159,7 @@
 					<label style="margin-right: 10px;padding-right: 10px">			
 					<input type="radio" id="radio" name="radio" value="지각형" onclick="change();">
 					<font size="3">
-					<input type="text" size="4" style="border:0;background:transparent;" value="지각형" readonly="readonly" 
+					<input type="text" size="6" style="border:0;background:transparent;" value="지각형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
 						 data-placement="right" title="&nbsp;지각형이란?" 
 						 data-content="&nbsp;자주 주차장 예약 종료 시간 내에 오지않고 지각을 많이 하는 
@@ -169,7 +172,7 @@
 					<label style="margin-right: 10px;padding-right: 10px">					
 					<input type="radio" id="radio" name="radio" value="안전형" onclick="change();">
 					<font size="3">
-					<input type="text" size="4" style="border:0;background:transparent;" value="안전형" readonly="readonly" 
+					<input type="text" size="6" style="border:0;background:transparent;" value="안전형" readonly="readonly" 
 						class="add-popover red" data-toggle="popover"
 						 data-placement="right" title="&nbsp;안전형이란?" 
 						 data-content="&nbsp;주차하기 힘드신 분들을 위해서 너비와 길이가 다른 주차장보다
@@ -465,6 +468,10 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>        
-  
+
+
+<div id="footer" style="padding:0;border:1px solid;">
+	<%@ include file="../Tail.jsp" %>
+</div>  
 </body>
 </html>
