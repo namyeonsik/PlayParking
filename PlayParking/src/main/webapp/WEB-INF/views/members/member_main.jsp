@@ -170,7 +170,7 @@
       </div>
       <!-- End .modal -->
  
-               <div class="footer-social-icons transparent">
+            <!--    <div class="footer-social-icons transparent">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -182,19 +182,22 @@
                                     <li><a href="#" class="tumblr add-tooltip" data-placement="top" data-toggle="tooltip" title="Find us at Tumblr"><i class="fa fa-tumblr"></i></a></li>
                                     <li><a href="#" class="flickr add-tooltip" data-placement="top" data-toggle="tooltip" title="Find us at Flickr"><i class="fa fa-flickr"></i></a></li>
                                 </ul>
-                            </div><!-- End .col-md-12 -->
-                        </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End .footer-social-icons -->
+                            </div>End .col-md-12
+                        </div>End .row
+                    </div>End .container
+                </div>End .footer-social-icons -->
          <footer>
-                <div class="container">
+               <!--  <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <p>All rights reserved &copy; <a href="//wrapbootstrap.com/user/eony" title="Eonythemes">Eonythemes&trade;</a></p>
                             <span class="footer-date highlight yellow">2014</span>
-                        </div><!-- End .col-md-12 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
+                        </div>End .col-md-12
+                    </div>End .row
+                </div>End .container -->
+                <div class="tail">
+				<%@ include file="../Tail.jsp" %>
+				</div>
             </footer>
             
         </div><!-- End #wrapper -->
@@ -216,6 +219,9 @@
 
 <input id="mm" value="${msg}" type="hidden"> 
 <input id="joinmsg" value="${joinok}" type="hidden"> 
+
+
+
 <script>
 var dd = document.getElementById("mm").value;
 if(dd!=''){
