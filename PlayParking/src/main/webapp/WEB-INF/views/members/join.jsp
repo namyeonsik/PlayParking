@@ -74,7 +74,7 @@ function validationlogin(){
 	var mid = loginfrm.mid.value;
 	var mpwd = loginfrm.mpwd.value;
 	if(mid ==""||mid==null){
-		alert("아이디을 입력하세요.");
+		alert("아이디를 입력하세요.");
 		loginfrm.mid.focus();
 		return false; //list로 넘어가지마!
 		

@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>내 주차장 정보</title>
+<title> 주차장 정보</title>
 <style>
 
-#updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 2%; width: 55%; height: 50%}
+#updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 7%;margin-bottom: 15%; width: 55%; height: 55%; }
 
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>관리자</title>
 
 <link type="text/css" href="${pageContext.request.contextPath}/resources/edmin/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -65,7 +64,7 @@
 
 <div class="module" id="updateform">
 <div class="module-head">
-<font size="4">MyParking Info</font>
+<font size="4">주차장 정보</font>
 </div>
 <form class="form-horizontal row-fluid" action="parkinginfo.do" method="get">
 <!-- 주차장정보수정 -->
