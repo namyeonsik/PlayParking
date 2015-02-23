@@ -94,7 +94,7 @@
 
 .form {
 	float: left;
-	margin-left: 39%;
+	margin-left: 27%;
 	margin-top: 3%;
 	width: 80%;
 	font-family: HU미드나잇120;
@@ -119,14 +119,13 @@
 
 	<div class="title">
 		<h2>
-			<font face="HU미드나잇140">내정보수정</font>
+			<font face="HU미드나잇140">내 정보 수정</font>
 		</h2>
 	</div>
 
 	<div class="form">
-		<div class="col-md-6 col-sm-12 col-xs-12 lg-margin">
-			<form class="form-horizontal" action="memberupdate.do" method="post"
-				style="width: 60%">
+		<div class="col-md-12 col-sm-12 col-xs-12 lg-margin">
+			<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
 
 				<label for="inputId"></label> <input type="hidden"
 					class="form-control" name="mid" placeholder="Id"
@@ -145,7 +144,7 @@
 		<br> <br>
 
 		<div class="form-group">
-			<div class="col-lg-10 col-lg-offset-2" style="margin-left: 7%">
+			<div class="col-lg-10 col-lg-offset-2" style="margin-left: 23%">
 				<button type="reset" class="btn btn-default">취소</button>
 				<button type="submit" class="btn btn-lightblue">완료</button>
 			</div>

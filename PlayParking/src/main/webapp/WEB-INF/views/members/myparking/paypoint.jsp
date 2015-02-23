@@ -35,6 +35,37 @@
 
 <style>
 	.form-horizontal {width: 100%; margin-top: 20%; margin-left: 5%; float: left;}
+	@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: "HU미드나잇140";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff')
+		format('woff');
+}
 </style>	
 
 </head>
@@ -42,8 +73,8 @@
 
 <!-- 포인트충전 -->
 <form class="form-horizontal" action="paypoint.do" method="post" style="width: 65%">
-    <div id="title" style="margin-left: 40%; width: 100%;">
-    <h3>Point 충전</h3>
+    <div id="title" style="margin-left: 50%; width: 100%;">
+    <h3><font face="HU미드나잇140">Point 충전</font></h3>
     </div>
     
     <div id="input" style="margin-left: 20%; width: 100%; size: 100%">
@@ -56,9 +87,10 @@
     
     </div>
     
-    <div class="form-group" style="margin-left: 45%; width: 100%;">
+    <div class="form-group" style="margin-left: 43%; width: 100%;">
       <div class="col-lg-10 col-lg-offset-2">
         <button type="submit" class="btn btn-lightblue">충전</button>
+        <button type="button" class="btn btn-lightblue" onclick="window.close();">닫기</button>
       </div>
     </div>
 </form>

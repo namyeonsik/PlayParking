@@ -245,7 +245,8 @@
          <div class="mypoint">
             <h3><font face="HU미드나잇120">나의 포인트</font></h3>
             <div class="mpoint">
-               <h1>${point.mpoint}P</h1>
+            <fmt:formatNumber value="${point.mpoint}" type="number" var="mpoint"/>
+               <h1>${mpoint}P</h1>
             </div>
          </div>
 		<div class="non">
