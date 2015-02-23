@@ -5,8 +5,9 @@
 
 	
 		
-		<form action="insert1.do" method="post" onsubmit="pointmsg()">
-<input id="mesa" value="${msg}" type="hidden"> 
+			<form action="insert1.do" method="post" onsubmit="pointmsg()">
+					<input id="mesa" value="${msg}" type="hidden"> 
+
           <div class="alert alert-info">
 			당신의 포인트는	<strong><span class="highlight lightblue">${mpoint}</span></strong> 입니다.
 				
@@ -15,8 +16,7 @@
 			결제하실 포인트는	<strong><span class="highlight red">${minusMpoint}</span></strong> 입니다.
 				
 			</div>
-			
-					
+		
 		<input type="submit" class="btn btn-lightblue"
 			class="btn btn-lightblue" value="예약완료"> <input
 			type="button" class="btn btn-default" class="btn btn-default"

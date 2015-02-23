@@ -6,7 +6,7 @@
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
-<title>예약</title>
+<title>주차장 예약</title>
 <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
@@ -110,7 +110,7 @@
 }
 
 .title {
-	margin-left: 46%;
+	margin-left: 41%;
 	font-family: "HU미드나잇140";
 }
 
@@ -127,7 +127,7 @@
 }
 
 .parkingname {
-	margin-left: 29%;
+	margin-left: 19%;
 	font-family: "HU미드나잇140";
 }
 
@@ -166,7 +166,7 @@
 		<div class="title">
 
 			<h2>
-				<font face="HU미드나잇140">예약</font>
+				<font face="HU미드나잇140">주차장 예약</font>
 			</h2>
 
 		</div>
@@ -176,9 +176,11 @@
 			<!--space -->
 			<div class="parkingname">
 				<h6>
-				<font face="HU미드나잇120" color="red">${pname}</font>
-					 <font face="HU미드나잇120">주차장 예약</font>
+				<font face="HU미드나잇120" color="red">${pname}(</font> <font face="HU미드나잇120">1시간 요금: </font>
+				<font face="HU미드나잇120">${parkingMpoint}원)</font>
+					 
 				</h6>
+				
 
 			</div>
 			<div class="accordion" id="accordion">
@@ -512,6 +514,7 @@
 		}
 		function viewData3(d) {
 			//alert("viewData2:"+d);
+			/* $("#submitPrint").html(d); */
 			$("#submitPrint").html(d);
 
 		}

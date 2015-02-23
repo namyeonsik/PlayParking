@@ -44,6 +44,12 @@ public class ReserveController {
          System.out.println("pid:"+pid);         
          System.out.println("get방식");
          ParkingDTO parking = pservice.selectBypid(pid);
+         
+         
+         ParkingDTO park1 =  service.selectBypid(pid);
+         
+         
+         mv.addObject("parkingMpoint",park1.getPfare());
          mv.addObject("pname", parking.getPname());
          mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
@@ -121,6 +127,7 @@ public class ReserveController {
    int parkingMpoint=0;
    int minusMpoint=0;
    int resultMpoint=0;
+   int calselectTime=0;
    @RequestMapping(value="/insert.do", method=RequestMethod.POST)
    public ModelAndView insert(String date, String possibleTime, String selectTime, HttpServletRequest request){
       HttpSession session = request.getSession();
@@ -159,12 +166,17 @@ public class ReserveController {
          reserve.setRstarttimeback(String.valueOf(testtimeint));
         // reserve.setRstarttimeback(testtimeint);
         
+         //selectTime.substring((selectTime.length()-1));
+        // System.out.println(Integer.parseInt(selectTime));
+         System.out.println("selectTime.length()="+selectTime.length());
+         calselectTime=Integer.parseInt(selectTime.substring((selectTime.length()-1)));
+         System.out.println("calselectTime=="+calselectTime);
          reserve.setMid(mid);  
          reserve.setPid(pid);   
          reserve.setRstart(d);
          reserve.setRend(null);
          reserve.setRstarttime(possibleTime);  
-         reserve.setRtime(Integer.parseInt(selectTime));
+         reserve.setRtime(calselectTime);
          reserve.setRextrafare(0);
          
          
@@ -180,12 +192,12 @@ public class ReserveController {
          
          
         mpoint = members.getMpoint();
-         minusMpoint = parkingMpoint*Integer.parseInt(selectTime);
-         
+         minusMpoint = parkingMpoint*calselectTime;
+         System.out.println("차감액="+minusMpoint);
          resultMpoint = members.getMpoint()-minusMpoint;
          mv.addObject("mpoint", mpoint); // submit.jsp에 보여줄 애들
          mv.addObject("minusMpoint",minusMpoint);
-         
+        
          
          
        
@@ -200,6 +212,7 @@ public class ReserveController {
     	  mv.addObject("msg", msg);
     	  
       }
+   
       mv.setViewName("members/submit");
       return mv;
       
