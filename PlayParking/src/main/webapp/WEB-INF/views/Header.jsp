@@ -6,6 +6,18 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+@font-face{
+	font-family:"HU미드나잇120";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+.dropdown {font-family:"HU미드나잇120";}
+</style>
 </head>
 <body>
 <div class="header">
