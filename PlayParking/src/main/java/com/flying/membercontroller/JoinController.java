@@ -20,7 +20,7 @@ import com.flying.model.MembersServiceInterface;
 
 @Controller
 public class JoinController {
-	//¸â¹öÄÁÆ®·Ñ·¯¸¦ ÇÏ·Á¸é ¼­ºñ½º¸¦ ¾Ë¾Æ¾ßÇÔ
+	//íšŒì›ê°€ì…í˜ì´ì§€
 	@Autowired
 	MembersServiceInterface service; 
 	
@@ -33,14 +33,15 @@ public class JoinController {
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
 	@Transactional(propagation=Propagation.REQUIRED)
 	public String joinPost(MembersDTO member, HttpServletRequest request){		
+		System.out.println(member.getMid()+"mid ì™”ë‚˜ìš”????");
 		int ret = service.insertMembers(member);
-		System.out.println(ret+"°Ç ÀÔ·Â");		
+		System.out.println(ret+"ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");		
 		System.out.println(member);			
 		return "redirect:/membermain.do";
 	}
 	
 	
-	@RequestMapping(value="/carname.do", method=RequestMethod.POST)
+	/*@RequestMapping(value="/carname.do", method=RequestMethod.POST)
 	public ModelAndView carnamePost(String cbrand){
 		
 		List<CarDTO> car = service.selectByCbrand(cbrand);
@@ -48,6 +49,6 @@ public class JoinController {
 		mv.addObject("car", car);
 		mv.setViewName("/members/cname");
 		return mv;
-	}
+	}*/
 	
 }

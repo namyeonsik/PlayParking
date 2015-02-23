@@ -116,7 +116,7 @@
 								<div class="slider-range"></div>
 							</div>
 						</div>
-						<form action="adminmain.do">
+						<form action="adminmain.do" style="text-align: center;">
 						 <div class="module">
 							<div class="module-head">
 							

@@ -26,13 +26,13 @@ import com.flying.model.UsePointDTO;
 @Controller
 public class ReserveController {
 
-	@Autowired
+   @Autowired
    ReservationServiceInterface service;
    
    @Autowired
    ParkingServiceInterface pservice;
    int pid=0;
-   
+   int mpoint=0;
    @RequestMapping(value = "/reserve.do", method = RequestMethod.POST)
    public ModelAndView test(HttpSession session, HttpServletRequest request) {
       ModelAndView mv = new ModelAndView();
@@ -41,8 +41,8 @@ public class ReserveController {
          return mv;
       }else{
          pid = Integer.parseInt(request.getParameter("pid"));      
-         System.out.println("pid값**************:"+pid);         
-         System.out.println("get방식****");
+         System.out.println("pid��**************:"+pid);         
+         System.out.println("get���****");
          mv.addObject("pid", pid);
          mv.setViewName("members/reserve");
          return mv;
@@ -51,8 +51,8 @@ public class ReserveController {
 
    @RequestMapping(value = "/reserve1.do", method = RequestMethod.POST)
    public ModelAndView test2() {
-      // 가는시간을 조회해서 data를 저장
-      // 원래는 pid값을 받아와야한다.      
+      // ���½ð��� ��ȸ�ؼ� data�� ����
+      // ������ pid���� �޾ƿ;��Ѵ�.      
       
       
       ModelAndView mv = new ModelAndView();
@@ -61,18 +61,17 @@ public class ReserveController {
 
       if (pcountcheck > (pamountcheck * 0.1)) {
 
-         String check = "예약가능";
+         String check = "예약 가능";
          mv.addObject("check", check);
-
       } else {
-         String check = "예약불가능";
+         String check = "예약 불가능";
          mv.addObject("check", check);
 
       }
 
       mv.setViewName("members/possibletime");
 
-      System.out.println("post방식");
+      System.out.println("post���");
       return mv;
    }
 
@@ -83,13 +82,13 @@ public class ReserveController {
       MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck");
       System.out.println(memcheck);
       
-      // 가는시간을 조회해서 data를 저장
+      // ���½ð��� ��ȸ�ؼ� data�� ����
       ModelAndView mv = new ModelAndView();
       System.out.println("p"+possibleTime);
       int rstarttime = Integer.parseInt(possibleTime);
 
-      int limit = 23;// 오전9시에 예약하면 최대 14시간까지 가능
-      int num = rstarttime / 100; // 주차예약가능시간 값을 가질 num
+      int limit = 23;// ����9�ÿ� �����ϸ� �ִ� 14�ð����� ����
+      int num = rstarttime / 100; // �������డ�ɽð� ���� ���� num
       int temp = limit-num;
       int[] numArray = new int[temp];
       
@@ -109,14 +108,14 @@ public class ReserveController {
 
       mv.setViewName("members/selecttime");
 
-      System.out.println("post방식");
+      System.out.println("post���");
       return mv;
    }
    ReservationDTO reserve  = new ReservationDTO();
    MembersDTO members = new MembersDTO();
    ParkingDTO parking = new ParkingDTO();
    UsePointDTO usepoint = new UsePointDTO();
-   int temp=0;//pid값을 받아오는변수 temp
+   int temp=0;//pid���� �޾ƿ��º��� temp
    int parkingMpoint=0;
    int minusMpoint=0;
    int resultMpoint=0;
@@ -129,12 +128,12 @@ public class ReserveController {
       System.out.println(memcheck);
        possibleTime = request.getParameter("possibleTime");
       System.out.println("possibleTime:" + possibleTime);
-      System.out.println("아이디는="+memcheck.getMid()); //여기서 에러가난다.
+      System.out.println("���̵��="+memcheck.getMid()); //���⼭ ����������.
       
       try {
          SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
          Date d = sf.parse(date);
-         System.out.println(d+"일"+possibleTime+"시"+selectTime+"시간");
+         System.out.println(d+"��"+possibleTime+"��"+selectTime+"�ð�");
          
          String mid = memcheck.getMid();
          
@@ -144,53 +143,53 @@ public class ReserveController {
          System.out.println("testtime="+testtime);
          if(testtime.equals("30"))
          {
-        	 testtimeint=Integer.parseInt(possibleTime)-30;
-        	 
-        	 
+            testtimeint=Integer.parseInt(possibleTime)-30;
+            
+            
          }
          else{
-        	 
-        	testtimeint=Integer.parseInt(possibleTime)-70;
+            
+           testtimeint=Integer.parseInt(possibleTime)-70;
          }
          //int testtimeint = Integer.parseInt(testtime);
          
          System.out.println("rstarttimeback="+testtimeint);
          reserve.setRstarttimeback(String.valueOf(testtimeint));
         // reserve.setRstarttimeback(testtimeint);
-         // ReservationDTO에 값을 입력해주는 부분
-         reserve.setMid(mid);  // request에서 받아와야한다.
-         reserve.setPid(pid);   //request에서 받아와야한다.
+         // ReservationDTO�� ���� �Է����ִ� �κ�
+         reserve.setMid(mid);  // request���� �޾ƿ;��Ѵ�.
+         reserve.setPid(pid);   //request���� �޾ƿ;��Ѵ�.
          reserve.setRstart(d);
          reserve.setRend(null);
-         reserve.setRstarttime(possibleTime);  //시작 날짜 정보를 변형해서 줘야한다.
+         reserve.setRstarttime(possibleTime);  //���� ��¥ ������ �����ؼ� ����Ѵ�.
          reserve.setRtime(Integer.parseInt(selectTime));
          reserve.setRextrafare(0);
          
          
-         //pid값을 받아와서 넣어주는 부분
+         //pid���� �޾ƿͼ� �־��ִ� �κ�
          temp = reserve.getPid();
          parking = service.selectBypid(temp);
-         parkingMpoint = parking.getPfare(); //주차장의 요금 정보를 받아온다.
-         System.out.println("주차장 기본요금= "+parkingMpoint);
+         parkingMpoint = parking.getPfare(); //�������� ��� ������ �޾ƿ´�.
+         System.out.println("������ �⺻���= "+parkingMpoint);
          
-         //members의 아이디값을 받아서 Mpoint값을 받아오는 부분
+         //members�� ���̵��� �޾Ƽ� Mpoint���� �޾ƿ��� �κ�
          members = service.searchBymid(mid);
          System.out.println(members.getMpoint());
          
          
-         int mpoint = members.getMpoint();//members의 mpoint값을 가진아이
+        mpoint = members.getMpoint();//members�� mpoint���� ��������
          minusMpoint = parkingMpoint*Integer.parseInt(selectTime);
          
          resultMpoint = members.getMpoint()-minusMpoint;
-         mv.addObject("mpoint", mpoint); // submit.jsp에 값을 넣어준다.
+         mv.addObject("mpoint", mpoint); // submit.jsp�� ���� �־��ش�.
          mv.addObject("minusMpoint",minusMpoint);
          
          
          
-         //rid는 db에서 sequence로 값을 줘야한다.
-         //reserve.setRid(1); //Test용으로 우선 1을 줘본다 
+         //rid�� db���� sequence�� ���� ����Ѵ�.
+         //reserve.setRid(1); //Test������ �켱 1�� �ົ�� 
       /*int ret = service.insertReservation(reserve);
-         System.out.println(ret+"건 입력 받았습니다.");*/
+         System.out.println(ret+"�� �Է� �޾ҽ��ϴ�.");*/
       } catch (ParseException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
@@ -205,36 +204,44 @@ public class ReserveController {
    
    @RequestMapping(value="/insert1.do", method=RequestMethod.POST)
    public String insertcom(){
-      int ret = service.insertReservation(reserve);
       
-      int countTemp = parking.getPcount()-1;
-      parking.setPcount(countTemp);
-      int ret2 = pservice.updateParkingPcount(parking);
-      members.setMpoint(resultMpoint);
-      int ret3 = service.updateMembersMpoint(members);
+      if(mpoint>minusMpoint){int ret = service.insertReservation(reserve);
+         
+         int countTemp = parking.getPcount()-1;
+         parking.setPcount(countTemp);
+         int ret2 = pservice.updateParkingPcount(parking);
+         members.setMpoint(resultMpoint);
+         int ret3 = service.updateMembersMpoint(members);
+         
+         usepoint.setMid(members.getMid());
+         usepoint.setPid(parking.getPid());
+         usepoint.setUsepoint(minusMpoint);
+         int ret4 =service.insertUsepoint(usepoint);
+         
+         System.out.println(ret+"건의 예약정보 입력 완료");
+         System.out.println(ret2+"건의 pcount정보 업데이트 완료");
+         System.out.println(ret3+"건의 mpoint정보 업데이트 완료");
+         System.out.println(ret4+"건의 usepoint정보 업데이트 완료");
+         
+       //email부분
+         ApplicationContext context = 
+                   new ClassPathXmlApplicationContext("Spring-Mail.xml");
+       
+             MailMail mm = (MailMail) context.getBean("mailMail");
+              mm.sendMail("playingparking@gmail.com",
+                   members.getMemail(),
+                   "[���������]"+members.getMid()+"�� ����Ϸ�", 
+                   parking.getPname()+"������ ����Ϸ�Ǿ����ϴ�:-)");
+          //����ϷṮ�ڹ߼� ��
+         
+         return "redirect:/confirm.do";}
       
-      usepoint.setMid(members.getMid());
-      usepoint.setPid(parking.getPid());
-      usepoint.setUsepoint(minusMpoint);
-      int ret4 =service.insertUsepoint(usepoint);
+      else{
+         
+         
+         return "redirect:/pointcheck.do";
+      }
       
-      System.out.println(ret+"건 입력 받았습니다.");
-      System.out.println(ret2+"건의 pcount수정했습니다.");
-      System.out.println(ret3+"건의 mpoint수정했습니다.");
-      System.out.println(ret4+"건의 usepoint수정했습니다.");
-      
-    //예약완료문자발송 시작
-      ApplicationContext context = 
-                new ClassPathXmlApplicationContext("Spring-Mail.xml");
-    
-          MailMail mm = (MailMail) context.getBean("mailMail");
-           mm.sendMail("playingparking@gmail.com",
-                members.getMemail(),
-                "[노는주차장]"+members.getMid()+"님 예약완료", 
-                parking.getPname()+"주차장 예약완료되었습니다:-)");
-       //예약완료문자발송 끝
-      
-      return "redirect:/confirm.do";
       
    }
    
