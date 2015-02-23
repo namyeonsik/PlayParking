@@ -156,7 +156,7 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-<div id="footer" style="padding:0;">
+<div id="footer" style="padding:13px;">
 <%@ include file="../Tail.jsp" %>
 </div>  
 </body>

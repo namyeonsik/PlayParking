@@ -312,7 +312,7 @@
  
   </div>
   
-<div id="footer" style="padding:0;">
+<div id="footer" style="padding:13px;">
 <%@ include file="../Tail.jsp" %>
 </div>  
 </body>

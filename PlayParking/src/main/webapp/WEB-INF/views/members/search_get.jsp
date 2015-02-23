@@ -51,8 +51,7 @@
 }
 	#selectform { float:left; width: 100%; height:30%;}
 	#listform { float:right; width: 100%; height:55%;}
-	#footerdiv {height:15%;}
-	
+		
 	html, body {width:100%;height:100%;margin:0;padding:0;} 
 	/* .map_wrap {position:relative;overflow:hidden;width:100%;height:60%;} */
 	.radius_border{border:1px solid #919191;border-radius:5px;}     
@@ -457,6 +456,9 @@
 	<!-- 주차장 검색 후 리스트 -->	
 	<p id="t1"></p>
 	<p id="t3"></p>
+	<div id="footer" style="padding:13px;">
+	<%@ include file="../Tail.jsp" %>
+</div>  
 </div>	
 
 		<!-- Plugins -->
@@ -470,8 +472,6 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>        
 
 
-<div id="footer" style="padding:0;border:1px solid;">
-	<%@ include file="../Tail.jsp" %>
-</div>  
+
 </body>
 </html>
