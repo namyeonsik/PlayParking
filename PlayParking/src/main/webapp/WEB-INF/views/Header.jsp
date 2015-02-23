@@ -16,7 +16,7 @@
 	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
 	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
 }
-.dropdown {font-family:"HU미드나잇120";}
+.dropdown-menu {font-family:"HU미드나잇120";}
 </style>
 </head>
 <body>
