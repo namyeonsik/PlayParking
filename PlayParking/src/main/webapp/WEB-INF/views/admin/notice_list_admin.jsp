@@ -6,6 +6,7 @@
 <html>
 <head>
 
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공지사항</title>
@@ -66,17 +67,18 @@
 					
 				 <ul class="nav pull-right"> 
 						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">주차장 정보</a></li>
-								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
+								<li><a href="parkinginfo.do"><font face="HU미드나잇120">주차장 정보</font></a></li>
+								<li><a href="parkingupdate.do"><font face="HU미드나잇120">주차장 정보 수정</font></a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->
@@ -105,9 +107,9 @@
 <div class="wrapper" style="background-color: #ffffff;">
 	<div class="container">
 		<div class="row">
-			<div class="content">
-				<div class="module message">
-					<div class="module-head" style="height: 30px">
+			<div class="content" style="width:100%;">
+				<div class="module message" style="width:90%; margin-left:5%">
+					<div class="module-head" style="height:30px;">
 						<div class="pull-left">
 						<font size="4" face="HU미드나잇120">주차장 공지사항</font>
 						</div>						
@@ -178,7 +180,7 @@
                 </div>
             </div>
             <!--/.container-->
-        </div>
+</div>
         <!--/.wrapper-->
         <div class="footer">
             <div class="container">

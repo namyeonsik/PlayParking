@@ -93,7 +93,7 @@ function validationlogin(){
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input type="text" id="aid" name="aid" required
-							class="form-control input-lg" placeholder="Admin ID" maxlength="50">
+							class="form-control input-lg" placeholder="Manager ID" maxlength="50">
 					</div>
 					<!-- End .input-group -->
 					<br>
@@ -101,7 +101,7 @@ function validationlogin(){
 						<span class="input-group-addon">Password&#42;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						<input type="password" id="apwd" name="apwd" required
-							class="form-control input-lg" placeholder="Admin Password">
+							class="form-control input-lg" placeholder="Manager Password">
 					</div>
 					<!-- End .input-group -->
 

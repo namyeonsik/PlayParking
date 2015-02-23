@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- 헤더 부트스트랩 시작 -->
-        <title>공지사항</title>
+        <title>주차장 공지사항</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 
@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -57,9 +57,14 @@
 	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
 }
 
-.header{height: 50px;}
-.title {text-align:center; margin-top: 8%;}
-.table {margin-top:100px;}
+.header {
+	height: 50px;font-family:'HU미드나잇120';
+}
+.body {
+	margin-top: 50px;font-family:'HU미드나잇120';
+}
+.title {text-align:center; margin-top: 10%;font-family:'HU미드나잇140';}
+.table {margin-top:10%;font-family:'HU미드나잇120';}
 </style>
 
 </head>
@@ -83,7 +88,7 @@
 	int nsize = 0;
 %>
 <div class="title">
-    <h2>Parking Notice View</h2>
+    <h2><font face="HU미드나잇140">주차장 공지사항</font></h2>
 </div>
 
 <div id="wrapper">
@@ -130,6 +135,10 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+
+<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
+<%@ include file="../Tail.jsp" %>
+</div> 
 </body>
 </html>
 

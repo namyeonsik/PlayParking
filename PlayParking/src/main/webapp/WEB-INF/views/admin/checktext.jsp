@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,26 +53,23 @@
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
-					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Manager</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
-					<ul class="nav nav-icons">
-						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
-						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
-					</ul>
+					
 				 <ul class="nav pull-right"> 
 						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">주차장 정보</a></li>
-								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
+								<li><a href="parkinginfo.do"><font face="HU미드나잇120">주차장 정보</font></a></li>
+								<li><a href="parkingupdate.do"><font face="HU미드나잇120">주차장 정보 수정</font></a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->
@@ -84,7 +82,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="content">
-				<div class="module message">
+				<div class="module message" style="width:90%; margin-left:5%">
 					<div class="module-head" style="height: 30px">
 						<div class="pull-left">
 						<font size="4" face="HU미드나잇120">주차장 공지사항 보기</font>
