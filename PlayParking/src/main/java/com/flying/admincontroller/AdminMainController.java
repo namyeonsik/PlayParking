@@ -81,8 +81,8 @@ public class AdminMainController {
     	 summonthlyfare.add(c.getSumrtime()*parkingfare);
     	 monthlist.add(c.getMonth());
       }
-      System.out.println(monthlist.get(0)+"monthlist입니다.");
-      System.out.println(summonthlyfare.get(1)+"돈입니다.");
+      //System.out.println(monthlist.get(0)+"monthlist입니다.");
+      //System.out.println(summonthlyfare.get(1)+"돈입니다.");
       
       String[][] charttable = new String[2][8];
       //int s = 0;
