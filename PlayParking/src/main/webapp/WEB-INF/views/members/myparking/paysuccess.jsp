@@ -49,9 +49,15 @@
 
 .point{
 
-width: 100%; margin-top: 10%; margin-left: 15%; float: left;
+width: 100%; margin-top: 25%; margin-left: 15%; float: left; heith:40%;
 
 }
+
+.btn{
+margin-top:10%; float:left; margin-left:23%;
+
+}
+
      </style>
 </head>
 <body>
