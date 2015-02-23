@@ -66,17 +66,18 @@
 					
 				 <ul class="nav pull-right"> 
 						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">주차장 정보</a></li>
-								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
+								<li><a href="parkinginfo.do"><font face="HU미드나잇120">주차장 정보</font></a></li>
+								<li><a href="parkingupdate.do"><font face="HU미드나잇120">주차장 정보 수정</font></a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->

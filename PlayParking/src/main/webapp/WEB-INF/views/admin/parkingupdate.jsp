@@ -64,8 +64,8 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">주차장 정보</a></li>
-								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
+								<li><a href="parkinginfo.do"><font face="HU미드나잇120">주차장 정보</font></a></li>
+								<li><a href="parkingupdate.do"><font face="HU미드나잇120">주차장 정보 수정</font></a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
@@ -82,30 +82,30 @@
 
 <div class="module" id="updateform">
 <div class="module-head">
-<font size="4">주차장 정보 수정</font>
+<font size="4" face="HU미드나잇120">주차장 정보 수정</font>
 </div>
 <form class="form-horizontal row-fluid" action="parkingupdate.do" method="post" style="width: 100%;">
 <!-- 주차장정보수정 -->
 <div class="controls">
 <input type="hidden" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pid}" name="pid" class="span8">
 </div>
-<label class="control-label" for="basicinput" style="margin-top: 6%">Name</label>
+<label class="control-label" for="basicinput" style="margin-top: 6%"><font face="HU미드나잇120" size="3">이름</font></label>
 <div class="controls">
 <input type="text" id="basicinput" style="margin-bottom: 5%;margin-top: 8%" value="${parking.pname}" name="pname" class="span8">
 </div>
-<label class="control-label" for="basicinput">Fare</label>
+<label class="control-label" for="basicinput"><font face="HU미드나잇120" size="3">주차요금</font></label>
 <div class="controls">
 <input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pfare}" name="pfare" class="span8">
 </div>
-<label class="control-label" for="basicinput">Additional Fee</label>
+<label class="control-label" for="basicinput"><font face="HU미드나잇120" size="3">추가요금</font></label>
 <div class="controls">
 <input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.platefare}" name="platefare" class="span8">
 </div>
-<label class="control-label" for="basicinput">Phone</label>
+<label class="control-label" for="basicinput"><font face="HU미드나잇120" size="3">연락처</font></label>
 <div class="controls">
 <input type="text" id="basicinput" style="margin-bottom: 5%" value="${parking.pphone}" name="pphone" class="span8">
 </div>
-<label class="control-label" for="basicinput">Capacity</label>
+<label class="control-label" for="basicinput"><font face="HU미드나잇120" size="3">수용차수</font></label>
 <div class="controls">
 <input type="text" id="basicinput" style="margin-bottom: 10%" value="${parking.pamount}" name="pamount" class="span8">
 </div>
