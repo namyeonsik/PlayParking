@@ -18,14 +18,7 @@ public class MemberLoginController {
 	@Autowired
 	MembersServiceInterface service; 
 	
-	/*@RequestMapping(method = RequestMethod.GET)
-	public String loginGet(MembersDTO member){
-		return "members/member_main";
-	}*/
-
-
 	@RequestMapping(method = RequestMethod.POST)
-	// ï¿½ï¿½Ã»ï¿½Ï´ï¿½ ï¿½Ì¸ï¿½.
 	public ModelAndView loginPost(MembersDTO member, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(member);
@@ -33,13 +26,13 @@ public class MemberLoginController {
 		MembersDTO memcheck = 
 				service.selectByUser(member.getMid(), member.getMpwd());
 		
-		session.setAttribute("memcheck", memcheck); //jspë¡œ ë³´ë‚´ì¤Œ
+		session.setAttribute("memcheck", memcheck); 
 		if(memcheck!=null){
 			mv.setViewName("members/loginConfirmMain");
 			
 		}else{
 			mv.setViewName("members/member_main");
-			mv.addObject("msg", "ë¡œê·¸ì¸ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
+			mv.addObject("msg", "¾ÆÀÌµğ³ª ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 		}
 		return mv;
 	}
