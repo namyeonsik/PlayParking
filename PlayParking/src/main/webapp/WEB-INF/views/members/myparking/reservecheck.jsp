@@ -53,9 +53,9 @@
 	src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
 
 <!-- Modernizr -->
-<%-- <script
+<script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
- --%>
+
 <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
@@ -232,20 +232,20 @@
 	</div>
 
 	<!-- Plugins -->
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script> --%>
-	<%-- <script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script> --%>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 	<%-- <script
