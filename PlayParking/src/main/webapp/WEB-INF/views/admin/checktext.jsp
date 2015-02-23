@@ -52,16 +52,12 @@
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
-					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Manager</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
-					<ul class="nav nav-icons">
-						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
-						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
-					</ul>
+					
 				 <ul class="nav pull-right"> 
 						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
@@ -72,6 +68,7 @@
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->

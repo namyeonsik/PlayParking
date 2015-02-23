@@ -66,7 +66,7 @@
 					
 				 <ul class="nav pull-right"> 
 						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
@@ -77,6 +77,7 @@
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+						<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->

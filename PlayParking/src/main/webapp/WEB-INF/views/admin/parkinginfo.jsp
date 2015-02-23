@@ -8,7 +8,22 @@
 <style>
 
 #updateform { float: left; margin-left: 20%; margin-right:20%; margin-top: 7%;margin-bottom: 15%; width: 55%; height: 55%; }
-
+@font-face{
+	font-family:"HU미드나잇120";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+	font-family:"HU미드나잇140";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,24 +45,7 @@
 	rel='stylesheet'>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 
-<style type="text/css">
-@font-face{
-	font-family:"HU미드나잇120";
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
-	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
-}
-@font-face{
-	font-family:"HU미드나잇140";
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
-	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
-}
-</style>
+
 
 </head>
 
@@ -66,8 +64,8 @@
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">주차장 정보</a></li>
-								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
+								<li><a href="parkinginfo.do"><font face="HU미드나잇120">주차장 정보</font></a></li>
+								<li><a href="parkingupdate.do"><font face="HU미드나잇120">주차장 정보 수정</font></a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
@@ -84,23 +82,23 @@
 
 <div class="module" id="updateform">
 <div class="module-head">
-<font size="4">주차장 정보</font>
+<font size="4" face="HU미드나잇120">주차장 정보</font>
 </div>
 <form class="form-horizontal row-fluid" action="parkinginfo.do" method="get">
 <!-- 주차장정보수정 -->
-<label class="control-label" for="basicinput" style="margin-top: 6%;margin-right: 5%;"><font size="3">Name</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 6%;margin-right: 5%;"><font size="3" face="HU미드나잇120">이름</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pname}</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Fare</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3" face="HU미드나잇120">주차요금</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pfare} 원</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Additional Fee</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3" face="HU미드나잇120">추가요금</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.platefare} 원</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3">Phone</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;"><font size="3" face="HU미드나잇120">연락처</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;">${parking.pphone}</p>
 
-<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;margin-bottom: 5%;"><font size="3">Capacity</font></label>
+<label class="control-label" for="basicinput" style="margin-top: 4%;margin-right: 5%;margin-bottom: 5%;"><font size="3" face="HU미드나잇120">수용차수</font></label>
 <p class="text-success" style="margin-top: 6%; margin-left: 5%;margin-bottom: 5%;">${parking.pamount}</p>
 
 </form>
