@@ -127,7 +127,7 @@
 }
 
 .parkingname {
-	margin-left: 7%;
+	margin-left: 29%;
 	font-family: "HU미드나잇140";
 }
 
@@ -176,7 +176,8 @@
 			<!--space -->
 			<div class="parkingname">
 				<h6>
-					<font face="HU미드나잇120">${pname} 주차장 예약</font>
+				<font face="HU미드나잇120" color="red">${pname}</font>
+					 <font face="HU미드나잇120">주차장 예약</font>
 				</h6>
 
 			</div>
