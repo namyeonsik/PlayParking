@@ -113,7 +113,7 @@
                     
 					<c:forEach items="${noticelist}" var="n"> 
 					<tr>						
-					<td>${noticelistsize-cnt+1}</td>
+					<td>${noticelist}</td>
 					<td><a href='checktextmem.do?nno=${n.nno}&aid=${n.aid}'>${n.ntitle}</a></td>
 					<td>${n.aid}</td>
 					<td>
