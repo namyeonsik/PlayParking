@@ -71,7 +71,7 @@
 </div>
 <!-- 진짜헤더끝 -->  
 
-<div class="modal-dialog" style="margin-top:10%;margin-bottom:33%;">
+<div class="modal-dialog" style="margin-top:20%;margin-bottom:23%;">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                     

@@ -160,7 +160,7 @@
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
 								data-endspeed="600" data-x="center" data-y="205"
-								data-speed="1200">Play Parking</div></li>
+								data-speed="600">Play Parking</div></li>
 						<li data-transition="random" data-slotamount="8"
 							data-masterspeed="500" data-saveperformance="off"><img
 							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
@@ -175,7 +175,7 @@
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="80" data-speed="1200">WHY?</div>
+								data-endspeed="600" data-x="100" data-y="80" data-speed="200" style="filter:alpha(opacity=100);">WHY?</div>
 							<!-- <div class="tp-caption rev-title sft stt" data-x="100" data-hoffset="-150" data-y="145" data-start="950" data-speed="1200">왜</div>
 								<div class="tp-caption rev-title sfb stb" data-x="200" data-hoffset="150" data-y="145" data-start="950" data-speed="1200">?</div> -->
 							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.3" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-y="295" data-speed="1200">Awesome Designs</div> -->
@@ -186,7 +186,7 @@
 							alt="slidebg4"
 							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.jpg"
 							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="5200" data-bgfit="115" data-bgfitend="100"
+							data-duration="200" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
 							<!-- <div class="tp-caption rev-title rev-border sft stb" data-x="100" data-y="145" data-start="1000" data-speed="1000">HOW<span class="yellow-color"></span></div> -->
 							<div
@@ -216,7 +216,7 @@
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="100" data-speed="1200">EFFECT</div>
+								data-endspeed="600" data-x="100" data-y="100" data-speed="200">EFFECT</div>
 							<!-- <div class="tp-caption rev-title sfb stb" data-x="100" data-hoffset="150" data-y="145" data-start="700" data-speed="1200">Expectation</div> -->
 
 							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.3" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-y="295" data-speed="1200">Expectation</div> -->
