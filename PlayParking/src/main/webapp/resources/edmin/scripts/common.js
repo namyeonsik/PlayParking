@@ -64,6 +64,7 @@
 		}
 
 		
+		
 		var previousPoint = null;
 		$('#placeholder2').bind('plothover', function (event, pos, item) {
 			$('#x').text(pos.x.toFixed(2));
