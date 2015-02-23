@@ -26,8 +26,7 @@
   
   <insert id="insertMembers" parameterType="com.flying.model.MembersDTO">
 	insert into Members(mid,mpwd,mname,mphone,memail,mpoint,cid)
-	values(#{mid:VARCHAR},#{mpwd:VARCHAR}, #{mname:VARCHAR},
-	                  #{mphone:VARCHAR},#{memail:VARCHAR},0,0)
+	values(#{mid:VARCHAR},#{mpwd:VARCHAR},#{mname:VARCHAR},#{mphone:VARCHAR},#{memail:VARCHAR},0,0)
   </insert>
   
   <select id="selectByUser" parameterType="map"
