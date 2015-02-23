@@ -61,21 +61,46 @@
 <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
+@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: "HU미드나잇140";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff')
+		format('woff');
+}
 .header {
 	height: 50px
 }
-/* .body {margin-top: 120px; margin-left: 40%;} */
+
 .title {
 	margin-top: 10%;
 	margin-left: 45%;
 }
 
-/* .total {
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-bottom: 10%;
-	background-color: light-gray;
-} */
 .container {margin-left: 10%;
 	margin-right: 20%;}
 .container .img {
@@ -108,7 +133,7 @@
 
 			<div class="row">
 				<div class="col-md-12 single">
-					<div class="article-author">
+					<div class="article-author" style="width: 90%">
 
 						<div class="img">
 							<div class="col-md-6 col-sm-6 col-xs-12">

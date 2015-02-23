@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주차장 관리자</title>
@@ -45,14 +46,21 @@ function validationlogin(){
 	}
 </script>
 
-
-
 <title>관리자 로그인</title>
+<style type="text/css">
+@font-face{
+   font-family:"HU미드나잇120";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+</style>
+
 </head>
 <body>
-
-	
-	<form id="loginform" class="form-horizontal row-fluid"
+   <form id="loginform" class="form-horizontal row-fluid"
 		action="adminlogin.do" method="post"
 		onsubmit="return validationlogin();" name="adminloginfrm">
 				
