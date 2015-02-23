@@ -8,9 +8,12 @@
 
 
 <head>
-<!-- <style type="text/css">
-@import url("theme.css");
-</style> -->
+<style type="text/css">
+/* @import url("theme.css"); */
+
+
+
+</style> 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +49,9 @@
 	
 
 </head>
+
+
+
 
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
@@ -98,7 +104,8 @@
 								<i class="icon-group"></i><b>${todaycount}</b>
 								<p class="text-muted">오늘의 예약자 수</p></a>
 								<a href="#"	class="btn-box big span4">
-								<i class="icon-money"></i><b>${todaypoint }</b>
+								<fmt:formatNumber value="${todaypoint }" type="number" var="todaypointview"/>
+								<i class="icon-money"></i><b>${todaypointview }</b>
 									<p class="text-muted">오늘 얻은 point</p> </a>
 							</div>
 						</div><!--상단btn-controls-->
@@ -124,14 +131,15 @@
 							</div>
 							<div class="module-body table">
 								<table cellpadding="0" cellspacing="0" border="0"
-									class="datatable-1 table table-bordered table-striped	 display"
-									width="100%" >
-									<thead>
-										<tr>
+									class="datatable-1 table table-bordered table-striped display"
+									width="100%"  style="text-align:right"  >
+									
+									<thead >
+										<tr >
 											<th>예약번호</th>
 											<th>예약자ID</th>
 											<th>예약 입차시간</th>
-											<th>사용시간</th>
+											<th >사용시간</th>
 											<th>출차여부</th>
 											<th>입,출차관리</th>
 										</tr>
@@ -158,7 +166,7 @@
 									
 									<td><input type="button" value="출차확인"
 									class="btn btn-info" 
-									data-toggle="modal" data-target="#modal-login-form" onclick="call(${num.rid})" ></td>
+									data-toggle="modal" data-target="#modal-login-form" onclick="call(${num.rid})"  ></td>
 									
 									<!-- Modal Login Form-->
 		<div class="modal fade" id="modal-login-form" tabindex="-1"
