@@ -33,6 +33,7 @@
   	resultType="com.flying.model.MembersDTO">
     select * from Members 
     where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
+  
   </select>
   
   <select id="selectByCbrand" 

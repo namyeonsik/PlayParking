@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>About Us</title>
+<title>About</title>
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
-<!-- <title>회원정보수정</title> -->
-        <title>About us</title>
+
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 

@@ -49,15 +49,15 @@ function validationcheck(){
 	var mpwd = myfrm.mpwd.value;
 	var mpwdcheck = myfrm.mpwdcheck.value;
 	if(mid ==""||mid==null){
-		alert("아이디을 입력하세용");
+		alert("아이디을 입력하세요.");
 		myfrm.mid.focus();
 		return false; //list로 넘어가지마!		
 	}else if(mname==""||mname==null){
-		alert("이름을 입력해야해용~~");
+		alert("이름을 입력하세요.");
 		myfrm.mname.focus();
 		return false;
 	}else if(mpwd==""||mpwd==null){
-		alert("비밀번호 필수!!!!");
+		alert("비밀번호를 입력해주세요.");
 		myfrm.mpwd.focus();
 		return false;
 	}else if(mpwd!=mpwdcheck){
@@ -74,12 +74,12 @@ function validationlogin(){
 	var mid = loginfrm.mid.value;
 	var mpwd = loginfrm.mpwd.value;
 	if(mid ==""||mid==null){
-		alert("아이디을 입력하세용");
+		alert("아이디을 입력하세요.");
 		loginfrm.mid.focus();
 		return false; //list로 넘어가지마!
 		
 	}else if(mpwd==""||mpwd==null){
-		alert("비밀번호 필수!!!!");
+		alert("비밀번호를 입력하세요.");
 		loginfrm.mpwd.focus();
 		return false;
 	}else{
@@ -300,52 +300,6 @@ function validationlogin(){
                   });
             });
         </script>
-
-<!-- <script type="text/javascript">
-
-var xhr;//전역변수
-
-function call(){
-	
-xhr = new XMLHttpRequest();
-xhr.onreadystatechange = resultParse; //함수등록후 재정의
-
-var data = document.getElementById("cbrand").value;
-/* alert(data);
-data="cbrand="+data;
-data.submit(); */
-
-xhr.open("POST", "carname.do", true); //POST방식.비동기통식.
-//POST일때는 아래추가.
-xhr.setRequestHeader("content-type", 
-		                   "application/x-www-form-urlencoded");
-xhr.send("cbrand="+data);//cbrand가 controller에게
-
-}
-
-//요청에 대한 응답을 받을때마다 호출됨. 콜백 함수 지정 속성.
-function resultParse(){
-	if(xhr.readyState==4){
-		//서버에서 전송이 끝낫는지.
-		if(xhr.status==200){
-			//정상적으로 응답을 받은 경우. 정상종료됨
-			viewData4(xhr.responseText); //=>html
-		}
-	}
-}
-
-function viewData4(data){
- //html
-	//document.getElementById("cnamediv").innerHTML =data;
- 	alert(data);
- 	/* $(document).ajaxSend(function(event,request,settings ) {
- 		  $("#cnamediv").append(data);
- 		}); */
- 	$("#cnamediv").append(data);
-}
-
-</script> -->
-
 
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
