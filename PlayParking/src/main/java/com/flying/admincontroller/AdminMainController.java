@@ -57,6 +57,34 @@ public class AdminMainController {
       }
       avg=sumfare/aroundpark.size();
       mv.addObject("avg", avg);
+      
+      //rservice.selectByMonth(admincheck.getPid(), month);
+      
+      /*int monthlypoint=0;
+      for(int i=0; i<10;i++){
+    	  monthlypoint += 1;
+      }*/
+      
+     /* int parkingfare = parking.getPfare(); //주차장 요금 
+      List<ReservationDTO> reserveparking = 
+    		        rservice.selectReserve(admincheck.getPid());
+      //월별 주차장이용시간의 합계 
+      for(ReservationDTO r : reserveparking ){
+    	  System.out.println(r+"resdto");
+      }*/
+      
+      /*List<String> monthlist = null;
+      for(int i=0;i<reserveparking.size();i++){
+    	  monthlist.add(reserveparking.get(1));
+      }*/
+      
+  /* //reserve parking join
+      List<ReservationDTO> reserveparking =
+    		         rservice.selectReserve(admincheck.getPid());
+ 		System.out.println(reserveparking.size()); */
+      
+      
+      
       System.out.println(parking.getPcount());
       int resultcount = parking.getPamount() - parking.getPcount();
       int todaycount=0;

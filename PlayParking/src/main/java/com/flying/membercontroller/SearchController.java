@@ -50,31 +50,30 @@ public class SearchController {
 			String makchum = request.getParameter("makchum");
 			if(makchum==null)
 				makchum="";
-			else if(makchum.equals("Àı¾àÇü")){
+			else if(makchum.equals("ì ˆì•½í˜•")){
 				parkinglist2 = service.selectBymakchum_1(plocation);
 			}
-			else if(makchum.equals("Áö°¢Çü")){
+			else if(makchum.equals("ì§€ê°í˜•")){
 				parkinglist2 = service.selectBymakchum_2(plocation);
 			}
-			else if(makchum.equals("¾ÈÀüÇü")){
+			else if(makchum.equals("ì•ˆì „í˜•")){
 				parkinglist2 = service.selectBymakchum_3(plocation);
 			}
 			
 			ModelAndView mv = new ModelAndView();
 			
 			mv.addObject("parkinglist", parkinglist);
-			mv.addObject("parkinglistsize", parkinglist.size());
 			if(parkinglist2!=null){
 				mv.addObject("parkinglist2", parkinglist2);
 			}else{}
 			
 			/*String[] selected = {"","","","","","" };
-			if(plocation.equals("°­ºÏ±¸")) selected[0]="selected";
-			if(plocation.equals("°­³²±¸")) selected[1]="selected";
-			if(plocation.equals("¸¶Æ÷±¸")) selected[2]="selected";
-			if(plocation.equals("Á¾·Î±¸")) selected[3]="selected";
-			if(plocation.equals("ÀºÆò±¸")) selected[4]="selected";
-			if(plocation.equals("¼­´ë¹®±¸")) selected[5]="selected";
+			if(plocation.equals("ê°•ë¶êµ¬")) selected[0]="selected";
+			if(plocation.equals("ê°•ë‚¨êµ¬")) selected[1]="selected";
+			if(plocation.equals("ë§ˆí¬êµ¬")) selected[2]="selected";
+			if(plocation.equals("ì¢…ë¡œêµ¬")) selected[3]="selected";
+			if(plocation.equals("ì€í‰êµ¬")) selected[4]="selected";
+			if(plocation.equals("ì„œëŒ€ë¬¸êµ¬")) selected[5]="selected";
 			mv.addObject("pp", plocation);
 			mv.addObject("selected", selected);
 			mv.addObject("parklistsize", parkinglist.size());		

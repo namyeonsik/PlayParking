@@ -100,4 +100,11 @@ public class ReservationService implements ReservationServiceInterface{
       // TODO Auto-generated method stub
       return dao.selectByaid(mid, s, l);
    }
+   
+   /*public List<ReservationDTO> selectByMonth(int pid, String month) {
+	   return dao.selectByMonth(pid, month);
+   }
+   public List<ReservationDTO> selectReserve(int pid){
+	   return dao.selectReserve(pid);
+   }*/
 }

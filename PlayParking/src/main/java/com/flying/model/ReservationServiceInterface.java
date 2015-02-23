@@ -22,4 +22,6 @@ public interface ReservationServiceInterface {
    public ReservationDTO searchReservationByrid(int rid);
    
    public int updateReservationEndByrid(ReservationDTO reserve);
+   //public List<ReservationDTO> selectByMonth(int pid, String month);
+   //public List<ReservationDTO> selectReserve(int pid);
 }
