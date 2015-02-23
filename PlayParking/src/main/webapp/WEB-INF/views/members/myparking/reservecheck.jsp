@@ -81,6 +81,7 @@
 
 .body {
 	margin-top: 100px;
+	
 }
 
 .title {
@@ -89,14 +90,15 @@
 }
 
 .tail {
-	margin-left: 3%;
+	 text-align: center;
+	/* margin-left: 3%; */
 	margin-top: 5%;
 }
 
 .reservecheck {
 	width: 90%;
 	margin-top: 10%;
-	margin-left: 15%;
+	margin-left: 12.75%;
 	font-family: HU미드나잇120;
 }
 
