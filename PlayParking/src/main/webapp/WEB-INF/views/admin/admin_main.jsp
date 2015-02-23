@@ -277,6 +277,8 @@
 				</div><!--/.container-->
 			</div><!--/.wrapper-->
 
+
+
 	<div class="footer">
 		<div class="container">
 			<b class="copyright">&copy; 2015 PlayParking </b>All rights

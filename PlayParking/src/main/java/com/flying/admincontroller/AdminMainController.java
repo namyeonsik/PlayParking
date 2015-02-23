@@ -88,6 +88,7 @@ public class AdminMainController {
 
       String graph ="[ ";
  
+      
       for(int j=0; j<12;j++){
     	   for(int s=0; s<2; s++){  
     		   if(s==0){

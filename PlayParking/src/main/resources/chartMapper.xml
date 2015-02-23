@@ -9,61 +9,8 @@
 	resultType="com.flying.model.ReservationDTO">
 	select * from reservation where rid= #{aa}
   </select>
-  
-  <select id="selectByMonth" parameterType="map"
-  	resultType="com.flying.model.ReservationDTO">
-    select pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as month,sysdate
-    from reservation
-	where pid=#{pid:INTEGER} and to_char(rstart,'MM')= #{month:VARCHAR};
-  </select>
-  
-  <!-- <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
-     <association property="pname" column="pid" select="getpname2"></association>
-  </resultMap>
-  <select id="selectByaid" parameterType="Map" resultMap="parkresult"> 
-  select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc
-  </select>
-  
-  <select id="getpname2" resultType="String">
-  	select pname from parking where pid=#{aa}
-  </select> -->
-  
-  <select id="selectByaid" 
-  	parameterType="Map"
-  	resultType="com.flying.model.ReservationDTO">
-    select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc 
-  </select>
-  
 
-  <select id="selectMaxrid" 
-  	parameterType="String"
-  	resultType="com.flying.model.ReservationDTO">
-    select * from reservation where rid in (select max(rid) from reservation where mid = #{aa})
-  </select>
-  
- <update id="updateReservationEndByrid" parameterType="com.flying.model.ReservationDTO">
-  update reservation set
-  rextrafare = #{rextrafare:INTEGER},
-  rend = sysdate
-  where rid=#{rid:INTEGER}
-  
-  </update>
-  
-    <!-- <select id="selectByPidJoin" parameterType="int"
-		resultType="com.flying.model.ParkingDTO">
-		select * from parking where pid = #{pid:INTEGER}
-	</select>
-	<resultMap type="com.flying.model.ReservationDTO" id="reservemap">
-		<result property="pid" column="pid" />
-		<result property="rstart" column="rstart" />
-		<result property="rtime" column="rtime" />
-		<result property="mid" column="mid" />
-		<result property="rextrafare" column="rextrafare" />
-		<collection property="parkinglist" column="pid" select="selectByPidJoin"></collection>
-	</resultMap>
-	<select id="selectReserve" parameterType="int" resultMap="reservemap">
-		select * from Reservation where pid = #{pid:INTEGER}
-	</select> -->
+
 	
 <select id="selectReserve" parameterType="int" 
         resultType="com.flying.model.ChartDTO">
