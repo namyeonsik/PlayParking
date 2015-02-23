@@ -84,39 +84,33 @@ public class AdminMainController {
       System.out.println(monthlist.get(0)+"monthlist입니다.");
       System.out.println(summonthlyfare.get(1)+"돈입니다.");
       
-      String[][] charttable = new String[2][8];
-      //int s = 0;
-      
-/*      if(s==0){
-    	  for(int j=0; j<8;j++){
-    		  
-    		  charttable[s][j] = monthlist.get(j);
-    		  graph +="["+charttable[s][j] +",";
-    		  //s++;
-    	  }
-    	  s++; 
-      } 
-      
-      if(s==1){
-    	  for(int j=0; j<8;j++){
-    		  charttable[s][j] = summonthlyfare.get(j).toString();
-    		  graph += charttable[s][j]+"]";
-    	  }
-    	 
-      }*/
+      String[][] charttable = new String[2][12];
+
       String graph ="[ ";
  
-      for(int j=0; j<monthlist.size();j++){
+      for(int j=0; j<12;j++){
     	   for(int s=0; s<2; s++){  
     		   if(s==0){
-    			   charttable[s][j] = monthlist.get(j);
-    			   graph +="["+charttable[s][j] +",";
+					if (j < monthlist.size()) {
+						charttable[s][j] = monthlist.get(j);
+						graph += "[" + charttable[s][j] + ",";
+					}else{
+						
+						if(j+1>=10){
+							charttable[s][j] = "2015"+(j+1);
+						}else{
+							charttable[s][j] = "20150"+(j+1);
+						}
+						graph += "[" + charttable[s][j] + ",";
+					}
     		   }else{
-    			   charttable[s][j] = summonthlyfare.get(j).toString();
-    			   if(j!=7){
+    			   
+    			   if(j<monthlist.size()){
+    				   charttable[s][j] = summonthlyfare.get(j).toString();
     				   graph += charttable[s][j]+"], ";
     			   }else{
-    				   graph += charttable[s][j]+"] ";
+    				   charttable[s][j] = "0";
+    				   graph += charttable[s][j]+"], ";
     			   }
     		   }
 		

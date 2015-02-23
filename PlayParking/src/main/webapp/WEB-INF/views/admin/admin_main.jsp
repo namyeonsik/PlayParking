@@ -37,8 +37,8 @@
 					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Manager</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					<ul class="nav nav-icons">
-						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
 						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
+						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
 					</ul>
 				 <ul class="nav pull-right">
 						<li class="nav-user dropdown"><a href="#"
@@ -284,7 +284,7 @@
 		</div>
 	</div>
 <input id="mm" value="${adminmsg}" type="hidden"> 	
-<input id="graph" value="${graph}" type="text"> 	
+<input id="graph" value="${graph}" type="hidden"> 	
 <!-- <script type="text/javascript">
 var dd = document.getElementById("mm").value;
 if(dd!=''){

@@ -72,7 +72,7 @@ from reservation
 where pid = #{pid:INTEGER} 
 and to_char(rstart,'YYYY') = to_char(sysdate,'YYYY')
 group by to_char(rstart,'YYYYMM')
-order by to_char(rstart,'YYYYMM') desc
+order by to_char(rstart,'YYYYMM') 
 </select>
 	
 </mapper>
