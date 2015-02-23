@@ -10,9 +10,6 @@
 	select * from reservation where rid= #{aa}
   </select>
 
-
-
-
 	
 <select id="selectReserve" parameterType="int" 
         resultType="com.flying.model.ChartDTO">

@@ -265,9 +265,7 @@
 							</form>
 						<div class="btn-box-row row-fluid">
 						<div class="btn-controls"> 
-						<!-- <div style="width: 100%"> -->
-						<!--  <div class="btn-box-row row-fluid"> -->
-						<section id="myfare">
+					    <section id="myfare">
 								<a href="#"	class="btn-box big span4" style="width: 25%;margin-bottom: 6%;">
 								<i class="icon-user"></i><b>${parking.pamount}</b>
 								<p class="text-muted">주차장 수용차수</p></a>								
