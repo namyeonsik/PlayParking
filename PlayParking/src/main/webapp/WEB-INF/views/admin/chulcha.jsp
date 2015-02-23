@@ -19,20 +19,21 @@
 	  document.chulfrm.action="reservationupdate1.do";
 	  document.chulfrm.method = "post";
 	  document.chulfrm.submit();
+	  
 	  	  
   }
 </script>
 
 
-<script type="text/javascript">
 
-/* function call(){
+
+<!-- /* function call(){
 window.opener.location.reload();
 
   window.close(); 
   
   
 
-} */
-</script>
+} */ -->
+
 

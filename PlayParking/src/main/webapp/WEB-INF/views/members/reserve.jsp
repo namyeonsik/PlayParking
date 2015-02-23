@@ -43,34 +43,60 @@
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style type="text/css">
-.header {height: 50px}
-.body {margin-top: 100px;}
+
+@font-face{
+   font-family:"HU미드나잇120";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+   font-family:"HU미드나잇140";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
+
+.header {height: 50px;
+font-family:"HU미드나잇120"
+}
+.body {margin-top: 100px;
+font-family:"HU미드나잇120";
+}
 .col-md-6{
 width: 40%;
 	/* margin-top: 5%; */
 	margin-left: 30%;
+	font-family:"HU미드나잇120"
 
 }
 
 .title{
 margin-left:46%;
+font-family:"HU미드나잇120"
 }
 
 .modal{width: 100%;
-	
+	font-family:"HU미드나잇120"
 	}
 
 .modal-content{
 width:100%;
 height:20%;
 margin-top: 50%;
+font-family:"HU미드나잇120"
 	
 }
 .parkingname{
 margin-left:9%;
+font-family:"HU미드나잇120"
 }
 .modal-header{
-
+font-family:"HU미드나잇120";
 size: 70%;
 }
 .modal-body{
@@ -79,14 +105,15 @@ height:10%;
 
 margin-left:5%;
 margin-bottom:3%;
-
+font-family:"HU미드나잇120"
 }
 
 
 .btn1{
 widhth:100%;
 margin-bottom: 10%;
-margin-left: 10%
+margin-left: 10%;
+font-family:"HU미드나잇120";
  }
  
 </style>
@@ -102,14 +129,16 @@ margin-left: 10%
 
 <div class="body">
 	<div class="title">
-			<h2>예약</h2>
+			
+			<h2><font face="HU미드나잇140">예약</font></h2>
 			
 		</div>
 <div class="col-md-6 col-sm-6 col-xs-6 xlg-margin">
 
  <div class="md-margin"></div><!--space -->
  <div class="parkingname">
- <h6>${pname} 주차장 예약</h6>
+ <h6><font face="HU미드나잇120">${pname} 주차장 예약</font></h6>
+ 
  </div>
      <div class="accordion" id="accordion">
             <div class="accordion-group panel">
@@ -217,6 +246,7 @@ margin-left: 10%
 								<input type="button" value="Select Time"
 									class="btn btn-lightblue" onclick="getsTime()"
 									data-toggle="modal" data-target="#modal-text2" />
+									
 								<h1></h1>
 							</div>
 						</div>
@@ -270,7 +300,7 @@ margin-left: 10%
 	var stime;
 	var data;
 	var msg1;
-
+	
 	function getsTime() {
 		//alert(data);
 		stime = document.getElementById("selectTime").value;
@@ -415,19 +445,19 @@ margin-left: 10%
 
 	function viewData4() {
 
-		document.getElementById("msg1").innerHTML = '<h6>' + msg1 + '</h6>';
+		document.getElementById("msg1").innerHTML = '<h6><font face="HU미드나잇120">' + msg1 + '</font></h6>';
 
 	}
 	function viewData5() {
 
-		document.getElementById("msg2").innerHTML = '<h6>' + msg1
-				+ ' 까지 입차를 선택하셨습니다</h6>';
+		document.getElementById("msg2").innerHTML = '<h6><font face="HU미드나잇120">' + msg1
+				+ ' 까지 입차를 선택하셨습니다</font></h6>';
 
 	}
 	function viewData6() {
 
-		document.getElementById("msg3").innerHTML = '<h6>' + msg1
-				+ ' 시간을 선택하셨습니다</h6>';
+		document.getElementById("msg3").innerHTML = '<h6><font face="HU미드나잇120">' + msg1
+				+ ' 시간을 선택하셨습니다</font></h6>';
 
 	}
 </script>

@@ -146,7 +146,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
+							<button type="button" class="close" data-dismiss="modal" onclick="deleteAppend()">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
 							<h4 class="modal-title" id="myModalLabel1">Message</h4>
@@ -389,10 +389,17 @@ function loginfail(){
 		//alert(d);
 		//document.getElementById("msg3").innerHTML ='<h6>'+ msg1+' 시간을 선택하셨습니다</h6>';
 		//document.getElementById("modalPrint").innerHTML=d;
-		$("#modalPrint").append(d);
+		$('#modalPrint').append(d);
+		/* $("#modalPrint *").remove(); */
+		/*  */
+		
 	}
-	
-	
+	function deleteAppend(){
+		
+		$('#modalPrint').empty();
+		
+	}
+	/* $("#modalPrint").empty(); */
 	
 		var _gaq = _gaq || [];
 
