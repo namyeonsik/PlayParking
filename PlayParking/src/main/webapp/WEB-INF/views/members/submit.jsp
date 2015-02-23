@@ -5,8 +5,8 @@
 
 	
 		
-		<form action="insert1.do" method="post">
-
+		<form action="insert1.do" method="post" onsubmit="pointmsg()">
+<input id="mesa" value="${msg}" type="hidden"> 
           <div class="alert alert-info">
 			당신의 포인트는	<strong><span class="highlight lightblue">${mpoint}</span></strong> 입니다.
 				
@@ -20,7 +20,7 @@
 				
 		
 			
-			<input id="mesa" value="${msg}" type="hidden"> 
+			
 		<input type="submit" class="btn btn-lightblue"
 			class="btn btn-lightblue" value="예약완료"> <input
 			type="button" class="btn btn-default" class="btn btn-default"
@@ -37,14 +37,13 @@
 	<!-- End .row -->
 </div>
 <script type="text/javascript">
+function pointmsg(){
 var dd = document.getElementById("mesa").value;
-/* if(dd!=''){
+if(dd!=''){
    alert("*"+dd+"*");
 }
- */
- alert(dd);
-
-</script>
+}
+ </script>
 	<!-- <div class="xlg-margin"></div> --> 
 	<!-- space -->
 
