@@ -95,7 +95,7 @@
 
 .reservecheck {
 	width: 90%;
-	margin-top: 5%;
+	margin-top: 10%;
 	margin-left: 15%;
 	font-family: HU미드나잇120;
 }
@@ -130,7 +130,7 @@
 </style>
 
 </head>
-<body>
+<body style="height: 100%;">
 	<!-- 진짜헤더시작 -->
 	<div class="header">
 		<%@ include file="../../Header.jsp"%>
@@ -245,6 +245,8 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
-
+<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
+<%@ include file="../../Tail.jsp" %>
+</div>
 </body>
 </html>

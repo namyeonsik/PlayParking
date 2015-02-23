@@ -113,9 +113,11 @@
 	margin-left: 43%;
 	margin-top: 10%;
 }
+
 </style>
 
 </head>
+<body style="height: 100%;">
 <%@ include file="../../Header.jsp"%>
 
 <!-- 회원정보수정 -->
@@ -158,7 +160,9 @@
 	</div>
 
 	</form>
+ 
 </div>
+ 	
 </div>
 <!-- 회원정보수정 -->
 
@@ -182,5 +186,8 @@
 <script
 	src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
+<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
+<%@ include file="../../Tail.jsp" %>
+</div>
 </body>
 </html>
