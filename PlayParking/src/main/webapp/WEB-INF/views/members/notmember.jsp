@@ -42,6 +42,21 @@
 
        <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 <style>
+@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
+}
 .header {height: 50px; font-family: HU미드나잇120;}
 .body {height: 100px; margin-top: 16%; font-family: HU미드나잇120;}
 </style>
