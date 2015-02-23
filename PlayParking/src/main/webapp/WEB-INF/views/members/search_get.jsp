@@ -74,7 +74,6 @@
 </style>
 </head>
 
-
 <body>
  <!-- 진짜헤더시작 -->
 <div class="header">
@@ -257,6 +256,8 @@
 					t2 = tlist[1];
 					t3 = tlist[2];
 			
+					//alert(t1);
+					
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML = null;
 							document.getElementById("t3").innerHTML = t3;
@@ -291,8 +292,7 @@
 		 for (var i = 0; i < infowindow.length; i++) {
 		 infowindow[i].close();
 	 	} 
-		//alert("왓지?");
-		
+
 	    if(document.f.plocation.selectedIndex != 0){
 	        str = document.f.plocation.value; //구이름 받기	
 	   	}else{
@@ -428,7 +428,7 @@
 					   		 /****** 클릭한 마커의 좌표를 받아와서 그 좌표의 이름을 뿌려줘라! ******/	
 					         infowindow[this.index].open(map, marker[this.index]);	
 					   		 
-					   		 tablechange(this.index);
+					   		 tablechange(markers[this.index]);
 					     });
 					 	
 			 		}
@@ -438,25 +438,18 @@
 			}
 	}
 
-	 function tablechange(index){
-		var index2 = (index+1);
-		
-		if(index2 == document.getElementById('cnt'+index2).value){
-			//document.getElementById('tr'+index2).style.backgroundColor = "#627bfc";		
-			for(var i=1; i<11; i++){
-				if(i!=index2){
-					document.getElementById('tr'+i).style.backgroundColor = "#ffffff";
-					document.getElementById('cnt'+i).style.backgroundColor="#ffffff";
-				}
-				else{//#D9EDF7
-					document.getElementById('tr'+i).style.backgroundColor = "#EAEAEA";
-					document.getElementById('cnt'+i).style.backgroundColor="#EAEAEA";
-				}
-			}
-		}else{
-			
-		}
+	function tablechange(a){
+				
+		if((a.title)==(document.getElementById('pname'+a.title).value)){	
+					
+				$('tr').css("backgroundColor" , "#ffffff");
+				$('input').css("backgroundColor" , "#ffffff");
+						
+			 document.getElementById('tr'+(a.title)).style.backgroundColor = "#D9EDF7";	
+			 document.getElementById('pname'+(a.title)).style.backgroundColor = "#D9EDF7";
+		}else{}
 	}
+	
 	</script>
 
 <div id="listform">

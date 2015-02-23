@@ -24,9 +24,9 @@
    <c:set var="cnt" value="0"></c:set>
    <c:forEach items="${parkinglist}" var="p">
       <c:set var="cnt" value="${cnt+1}"></c:set>
-         <tr class="info1" id="tr${cnt}">
-            <td><input type="text" size="2" id="cnt${cnt}" value="${cnt}" readonly="readonly" style="border:0"></td>
-            <td>${p.pname}</td>
+         <tr class="info1" id="tr${p.pname}">
+            <td>${cnt}</td>
+            <td><input  type="text" size="10"   id="pname${p.pname}" value="${p.pname}" readonly="readonly" style="border:0"></td>
             <td>${p.paddress}</td>
             <td>${p.pfare}</td>
             <td>${p.platefare}</td>
@@ -39,11 +39,6 @@
    </c:forEach>    
    </tbody>
 </table>
-<script type="text/javascript">
-function func(a){
-   <input type="hidden" name="piddd" id="piddd" value=a>
-}
-</script>
 </form>
 </font>
 ;
@@ -79,23 +74,24 @@ function func(a){
    </thead>
 
    <tbody id="tbody">   
+   <c:set var="pid" value="0"></c:set>
    <c:set var="cnt" value="0"></c:set>
    <c:forEach items="${parkinglist2}" var="p">
-   <c:set var="cnt" value="${cnt+1}"></c:set>
-      <tr class="info1" id="tr${cnt}">
-         <td><input type="text" size="2" id="cnt${cnt}" value="${cnt}" readonly="readonly" style="border:0"></td>
-         <td>${p.pname}</td>
-         <td>${p.paddress}</td>
-         <td>${p.pfare}</td>
-         <td>${p.platefare}</td>
-         <td>${p.pwidth}</td>
-         <td>${p.plength}</td>
-         <td>${p.ptip}</td>
-         <td><input type="image" width="70" id="pid" name="pid" value="${p.pid}" src="resources/reservation_btn.png"></td>
-      </tr>      
-   </c:forEach>   
+      <c:set var="cnt" value="${cnt+1}"></c:set>
+         <tr class="info1" id="tr${p.pname}">
+            <td>${cnt}</td>
+            <td><input  type="text" size="10"   id="pname${p.pname}" value="${p.pname}" readonly="readonly" style="border:0"></td>
+            <td>${p.paddress}</td>
+            <td>${p.pfare}</td>
+            <td>${p.platefare}</td>
+            <td>${p.pwidth}</td>
+            <td>${p.plength}</td>
+            <td>${p.ptip}</td>
+            <td><input type="image" width="70" id="pid" name="pid" value="${p.pid}" src="resources/reservation_btn.png">
+            </td>
+         </tr>     
+   </c:forEach>    
    </tbody>
 </table>
 </form>
 </font>
-

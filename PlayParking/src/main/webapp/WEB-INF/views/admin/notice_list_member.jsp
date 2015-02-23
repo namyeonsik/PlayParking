@@ -86,7 +86,7 @@
                 <div class="list-group">
                 <table class="table table-message">
                 <tbody>
-                	<tr style="background-color: #1CC5F6;font-weight : bold">
+                	<tr style="background-color: #D9EDF7;font-weight : bold">
 	                    <td width="10%">번호</td>    
 						<td width="45%">공지사항 제목</td>
 						<td width="20%">주차장 관리인</td> 
