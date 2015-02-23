@@ -29,7 +29,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse navbar-right" id="main-menu">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="membermain.do">Home</a></li>
+                                <li><a href="membermain.do">Home</a></li>
                                 <li><a href="aboutus.do">About</a></li>
                                 <li><a href="search.do">Reservation</a></li>
                                 <li><a href="noticelist1.do">Notice</a></li>
@@ -84,7 +84,7 @@
                   <!-- End .modal-body -->
                   
                   <div class="modal-footer">
-                     <button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
+                     <button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">Join</button>
                      <button type="submit" class="btn btn-blue">Login</button>
                      <button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
                   </div>

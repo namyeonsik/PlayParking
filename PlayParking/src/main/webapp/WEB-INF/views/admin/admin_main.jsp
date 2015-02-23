@@ -23,6 +23,7 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 </head>
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">

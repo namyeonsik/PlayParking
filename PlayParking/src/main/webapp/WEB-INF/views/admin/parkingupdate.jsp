@@ -28,7 +28,7 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
-
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
 </head>
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
@@ -36,22 +36,22 @@
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
-					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Manager</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					
 				 <ul class="nav pull-right"> 
-						 
-						<li><a href="membermain.do">UserPage</a></li>
+						
 						<li class="nav-user dropdown"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
 								src="resources/images/user.png" class="nav-avatar" /> <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="parkinginfo.do">YourParking Profile</a></li>
-								<li><a href="parkingupdate.do">EditParking Profile</a></li>
+								<li><a href="parkinginfo.do">주차장 정보</a></li>
+								<li><a href="parkingupdate.do">주차장 정보 수정</a></li>
 								<li class="divider"></li>
 								<li><a href="adminlogout.do">Logout</a></li>
 							</ul></li>
+							<li><a href="membermain.do">UserPage</a></li>
 					</ul>
 				</div>
 				<!-- /.nav-collapse -->

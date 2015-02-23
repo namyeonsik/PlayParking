@@ -24,24 +24,22 @@ public class MemberLoginController {
 	}*/
 
 
-	// ¿©·¯°³°ªÀ» ¹ŞÀ»°æ¿ì DTO¸¦ ¸¸µé¾î¼­ ¹Ş´Â´Ù.
 	@RequestMapping(method = RequestMethod.POST)
-	// ¿äÃ»ÇÏ´Â ÀÌ¸§.
+	// ï¿½ï¿½Ã»ï¿½Ï´ï¿½ ï¿½Ì¸ï¿½.
 	public ModelAndView loginPost(MembersDTO member, HttpSession session) {
-		// ÆÄ¶ó¹ÌÅÍ¹Ş¾Æ¼­ µğºñ¿¡°¡¼­ È®ÀÎÀÛ¾÷ÇÏ´Â ³»¿ë
 		ModelAndView mv = new ModelAndView();
 		System.out.println(member);
 		System.out.println(member.getMid());
 		MembersDTO memcheck = 
 				service.selectByUser(member.getMid(), member.getMpwd());
 		
-		session.setAttribute("memcheck", memcheck); //jsp¿¡¼­ ³Ñ°Ü¹Ş±âÀ§ÇÔ
+		session.setAttribute("memcheck", memcheck); //jspë¡œ ë³´ë‚´ì¤Œ
 		if(memcheck!=null){
 			mv.setViewName("members/loginConfirmMain");
 			
 		}else{
 			mv.setViewName("members/member_main");
-			mv.addObject("msg", "¾ÆÀÌµğ³ª ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+			mv.addObject("msg", "ë¡œê·¸ì¸ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		return mv;
 	}

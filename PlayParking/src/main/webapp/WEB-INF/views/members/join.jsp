@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
 
@@ -132,7 +132,7 @@ function validationlogin(){
 						<!-- End .modal-body -->
 						
 						<div class="modal-footer">
-							<button type="button" style="float: left;" class="btn btn-default"><a href="join.do">Join</a></button>
+							<button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">Join</button>
 							<button type="submit" class="btn btn-blue">Login</button>
 							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
 						</div>
