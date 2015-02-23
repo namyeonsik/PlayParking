@@ -284,7 +284,7 @@
 		</div>
 	</div>
 <input id="mm" value="${adminmsg}" type="hidden"> 	
-	
+<input id="graph" value="${graph}" type="text"> 	
 <!-- <script type="text/javascript">
 var dd = document.getElementById("mm").value;
 if(dd!=''){

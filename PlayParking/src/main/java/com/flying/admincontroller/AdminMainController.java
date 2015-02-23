@@ -46,8 +46,7 @@ public class AdminMainController {
       session = request.getSession();
       AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
       
-   
-      
+ 
       // ParkingDTO admincheck =
       // (ParkingDTO)session.getAttribute("admincheck");
       System.out.println("pid:" + admincheck);
@@ -83,11 +82,59 @@ public class AdminMainController {
     	 monthlist.add(c.getMonth());
       }
       System.out.println(monthlist.get(0)+"monthlist입니다.");
-      System.out.println(summonthlyfare.get(0)+"돈입니다.");
+      System.out.println(summonthlyfare.get(1)+"돈입니다.");
+      
+      String[][] charttable = new String[2][8];
+      //int s = 0;
+      
+/*      if(s==0){
+    	  for(int j=0; j<8;j++){
+    		  
+    		  charttable[s][j] = monthlist.get(j);
+    		  graph +="["+charttable[s][j] +",";
+    		  //s++;
+    	  }
+    	  s++; 
+      } 
+      
+      if(s==1){
+    	  for(int j=0; j<8;j++){
+    		  charttable[s][j] = summonthlyfare.get(j).toString();
+    		  graph += charttable[s][j]+"]";
+    	  }
+    	 
+      }*/
+      String graph ="[ ";
+ 
+      for(int j=0; j<monthlist.size();j++){
+    	   for(int s=0; s<2; s++){  
+    		   if(s==0){
+    			   charttable[s][j] = monthlist.get(j);
+    			   graph +="["+charttable[s][j] +",";
+    		   }else{
+    			   charttable[s][j] = summonthlyfare.get(j).toString();
+    			   if(j!=7){
+    				   graph += charttable[s][j]+"], ";
+    			   }else{
+    				   graph += charttable[s][j]+"] ";
+    			   }
+    		   }
+		
+    	  }
+    	  
+      }
+     
+      graph +="]"; 
+      System.out.println(graph+"그래프!!");
+      /* for(int i=0; i<2;i++){
+    	  for(int j=0; j<8;j++){
+    		 System.out.println(charttable[i][j]+" charttable");
+    	  }
+    	  
+      }*/
       
       
-      
-      
+      mv.addObject("graph", graph);
       
       
       
