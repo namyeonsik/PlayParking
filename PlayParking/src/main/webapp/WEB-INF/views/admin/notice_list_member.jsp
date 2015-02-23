@@ -110,17 +110,17 @@
 						<td width="20%">주차장 관리인</td> 
 						<td width="25%">게시 날짜</td>      
 					</tr>     
-                    
+                   <%--  //${noticelistsize-cnt} --%>
 					<c:forEach items="${noticelist}" var="n"> 
-					<tr>						
-					<td>${noticelist}</td>
-					<td><a href='checktextmem.do?nno=${n.nno}&aid=${n.aid}'>${n.ntitle}</a></td>
-					<td>${n.aid}</td>
-					<td>
-					<c:set var="d" value="${n.ndate}"/>
-		    		<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
-					</td>
-					<c:set var="cnt" value="${n.nno+1}"></c:set>
+					<tr>					
+						<td>${noticelistsize-cnt+1}</td>
+						<td><a href='checktextmem.do?nno=${n.nno}&aid=${n.aid}'>${n.ntitle}</a></td>
+						<td>${n.aid}</td>
+						<td>
+						<c:set var="d" value="${n.ndate}"/>
+			    		<fmt:formatDate value="${d}" pattern="yyyy-MM-dd a h:mm"/>
+						</td>
+						<c:set var="cnt" value="${cnt+1}"></c:set>
 					</tr>				
 					</c:forEach>
 				</tbody>
