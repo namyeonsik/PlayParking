@@ -315,6 +315,6 @@
   
 <div id="footer" style="padding:13px;">
 <%@ include file="../Tail.jsp" %>
-</div>  
+</div>
 </body>
 </html>

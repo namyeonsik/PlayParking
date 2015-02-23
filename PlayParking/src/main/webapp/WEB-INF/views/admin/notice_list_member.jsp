@@ -39,14 +39,32 @@
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
 <style>
+
+@font-face{
+	font-family:"HU미드나잇120";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+	font-family:"HU미드나잇140";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
+
 .header {
 	height: 50px;font-family:'HU미드나잇120';
 }
 .body {
 	margin-top: 50px;font-family:'HU미드나잇120';
 }
-.title {text-align:center; margin-top: 8%;font-family:'HU미드나잇120';}
-.table {margin-top:3%;font-family:'HU미드나잇120';}
+.title {text-align:center; margin-top: 10%;font-family:'HU미드나잇140';}
+.table {margin-top:10%;font-family:'HU미드나잇120';}
 </style>
 
 </head>
@@ -71,7 +89,7 @@
 	int nsize = 0;
 %>
 <div class="title">
-    <h2> <font face="HU미드나잇120">주차장 공지사항</font> </h2>
+    <h2> <font face="HU미드나잇140">주차장 공지사항</font> </h2>
 </div>
 
 <c:set var="cnt" value="1"></c:set>
@@ -156,8 +174,8 @@
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-<div id="footer" style="padding:13px;">
+<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
 <%@ include file="../Tail.jsp" %>
-</div>  
+</div> 
 </body>
 </html>

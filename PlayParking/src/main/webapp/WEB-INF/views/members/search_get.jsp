@@ -42,12 +42,20 @@
 <style>
 
 @font-face{
-   font-family:"HU미드나잇120";
-   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
-   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
-   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
-   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
-   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+	font-family:"HU미드나잇120";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+	font-family:"HU미드나잇140";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
 }
 	#selectform { float:left; width: 100%; height:30%;}
 	#listform { float:right; width: 100%; height:55%;}
@@ -456,9 +464,9 @@
 	<!-- 주차장 검색 후 리스트 -->	
 	<p id="t1"></p>
 	<p id="t3"></p>
-	<div id="footer" style="padding:13px;">
+	 <div id="footer" style="padding:13px;">
 	<%@ include file="../Tail.jsp" %>
-</div>  
+	</div>
 </div>	
 
 		<!-- Plugins -->
