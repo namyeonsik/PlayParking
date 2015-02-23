@@ -79,6 +79,7 @@
 									src="${pageContext.request.contextPath}/resources/geass/images/team/eric.jpg"
 									alt="eric" class="img-responsive">
 							</figure>
+			
 							<div class="back">
 								<div class="vcenter-container">
 									<div class="vcenter">
