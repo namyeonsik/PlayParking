@@ -215,17 +215,22 @@
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 <input id="mm" value="${msg}" type="hidden"> 
-<input id="joinmsg" value="${joinok}" type="hidden"> 
+<input id="joinok" value="${joinok}" type="text"> 
+<%
+request.setAttribute("joinok",null);
+%>
 <script>
 var dd = document.getElementById("mm").value;
 if(dd!=''){
 	alert(""+dd+"");
 }
 
-var joinmsg = document.getElementById("joinmsg").value;
-if(joinmsg!=''){
-	alert(""+joinmsg+"");
-}
+/* //var joinmsg = document.getElementById("joinok").value;
+if(document.getElementById("joinok").value!=""){
+	alert("+"+document.getElementById("joinok").value+"+");
+	//joinmsg ="";
+	document.getElementById("joinok").value ="";
+} */
 
 var elem = document.getElementById('loginmodal');
 elem.onclick = showModal;

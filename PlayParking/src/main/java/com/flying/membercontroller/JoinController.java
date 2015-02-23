@@ -17,7 +17,7 @@ import com.flying.model.MembersServiceInterface;
 
 @Controller
 public class JoinController {
-	//íšŒì›ê°€ì…í˜ì´ì§€
+	
 	@Autowired
 	MembersServiceInterface service; 
 	
@@ -27,19 +27,36 @@ public class JoinController {
 		return "/members/join";
 	}
 	
-	
-	
-	@RequestMapping(value="/join.do", method=RequestMethod.POST)
+    @RequestMapping(value="/join.do", method=RequestMethod.POST)
 	@Transactional(propagation=Propagation.REQUIRED)
 	public ModelAndView joinPost(MembersDTO member, HttpServletRequest request,HttpSession session){		
 		int ret = service.insertMembers(member);
-		ModelAndView mv = new ModelAndView();
-		if(ret!=0){
-			session.setAttribute("joinok", "íšŒì›ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
-		}
-		System.out.println(ret+"ê±´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");		
+		System.out.println(ret+"°Ç ÀÔ·Â");
 		System.out.println(member);
-		mv.setViewName("members/member_main");
+		ModelAndView mv = new ModelAndView();
+		/*if(ret!=0){
+			request.setAttribute("joinok", "È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			mv.setViewName("members/join");
+		}else{
+			request.setAttribute("joinok", "È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+			mv.setViewName("members/join");
+		}*/
+		
+		if(ret!=0){
+			//·Î±×ÀÎ¼º°ø
+			mv.setViewName("members/member_main");
+		}else{
+			mv.setViewName("members/join");
+		}
+
+		return mv;
+	}
+    
+    @RequestMapping(value="/joinok.do", method=RequestMethod.POST)
+	@Transactional(propagation=Propagation.REQUIRED)
+	public ModelAndView joinmsgPost(HttpServletRequest request,HttpSession session){		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("members/join");
 		return mv;
 	}
 
