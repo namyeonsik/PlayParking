@@ -8,15 +8,14 @@
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
 <title>예약확인</title>
-<!-- <title>Geass - Creative Onepage Html5 Template</title> -->
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
 
 <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
 
@@ -26,19 +25,20 @@
 	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/animate.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/revslider.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/style.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css"> --%>
 
 <!-- Favicon and Apple Icons -->
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/logo_small.png">
 <link rel="apple-touch-icon" sizes="57x57"
 	href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
@@ -53,35 +53,50 @@
 	src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
 
 <!-- Modernizr -->
-<script
+<%-- <script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
-
+ --%>
 <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
-@font-face{
-	font-family:"HU미드나잇120";
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
-	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
 }
-@font-face{
-	font-family:"HU미드나잇140";
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
-	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
-	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
-	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+
+@font-face {
+	font-family: "HU미드나잇140";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff')
+		format('woff');
 }
+
 .header {
 	height: 50px
 }
 
 .body {
 	margin-top: 100px;
-	
 }
 
 .title {
@@ -90,8 +105,7 @@
 }
 
 .tail {
-	 text-align: center;
-	/* margin-left: 3%; */
+	text-align: center;
 	margin-top: 5%;
 }
 
@@ -157,7 +171,9 @@
 
 	<div class="body">
 		<div class="title">
-			<h2><font face="HU미드나잇140">예약 내역</font></h2>
+			<h2>
+				<font face="HU미드나잇140">예약 내역</font>
+			</h2>
 		</div>
 		<div class="reservecheck">
 			<ul class="title">
@@ -205,50 +221,38 @@
 				</c:choose>
 
 				<c:forEach var="i" begin="1" end="${savenum}">
-					
+
 					<a href="reservecheck.do?pageno=${i}">${i}</a>
-					
+
 				</c:forEach>
 
-			<!-- 	<div class="pagination-container text-right clearfix">
-                                <ul class="pagination">
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                </ul>
-                            </div>End pagination-container
-				 -->
-				
-				
 			</div>
 		</div>
 
 	</div>
 
 	<!-- Plugins -->
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script> --%>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script> --%>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
-<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
-<%@ include file="../../Tail.jsp" %>
-</div>
+	<%-- <script
+		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script> --%>
+	<div id="footer"
+		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
+		<%@ include file="../../Tail.jsp"%>
+	</div>
 </body>
 </html>

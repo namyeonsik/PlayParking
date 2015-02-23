@@ -5,14 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>내정보수정</title>
-<!-- <style>
-#updateform { float: left; margin-left: 30%; margin-top:5%; width: 60%;}
-</style> -->
 
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
-<!-- <title>회원정보수정</title> -->
-<title>Geass - Creative Onepage Html5 Template</title>
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -31,17 +26,17 @@
 	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/animate.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/geass/css/revslider.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/style.css">
-<link rel="stylesheet"
+<%-- <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
-
+ --%>
 <!-- Favicon and Apple Icons -->
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/resources/logo_small.png">
@@ -113,81 +108,79 @@
 	margin-left: 43%;
 	margin-top: 10%;
 }
-
 </style>
 
 </head>
 <body style="height: 100%;">
-<%@ include file="../../Header.jsp"%>
+	<%@ include file="../../Header.jsp"%>
 
-<!-- 회원정보수정 -->
-<!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
+	<!-- 회원정보수정 -->
+	<!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
 
-<div class="title">
-	<h2>
-		<font face="HU미드나잇140">내정보수정</font>
-	</h2>
-</div>
-
-<div class="form">
-	<div class="col-md-6 col-sm-12 col-xs-12 lg-margin">
-		<form class="form-horizontal" action="memberupdate.do" method="post"
-			style="width: 60%">
-
-			<label for="inputId"></label> <input type="hidden"
-				class="form-control" name="mid" placeholder="Id"
-				value="${memcheck.mid}"> <label for="inputName">Name</label>
-			<input type="text" class="form-control" name="mname"
-				placeholder="Name" value="${memcheck.mname}"> <label
-				for="inputPassword">Password</label> <input type="password"
-				class="form-control" name="mpwd" placeholder="Password"
-				value="${memcheck.mpwd}"> <label for="inputPhone">Phone</label>
-			<input type="text" class="form-control" name="mphone"
-				placeholder="Phone" value="${memcheck.mphone}"> <label
-				for="inputEmail">Email</label> <input type="text"
-				class="form-control" name="memail" placeholder="Email"
-				value="${memcheck.memail}">
-
+	<div class="title">
+		<h2>
+			<font face="HU미드나잇140">내정보수정</font>
+		</h2>
 	</div>
-	<br>
-	<br>
 
-	<div class="form-group">
-		<div class="col-lg-10 col-lg-offset-2" style="margin-left: 7%">
-			<button type="reset" class="btn btn-default">취소</button>
-			<button type="submit" class="btn btn-lightblue">완료</button>
+	<div class="form">
+		<div class="col-md-6 col-sm-12 col-xs-12 lg-margin">
+			<form class="form-horizontal" action="memberupdate.do" method="post"
+				style="width: 60%">
+
+				<label for="inputId"></label> <input type="hidden"
+					class="form-control" name="mid" placeholder="Id"
+					value="${memcheck.mid}"> <label for="inputName">Name</label>
+				<input type="text" class="form-control" name="mname"
+					placeholder="Name" value="${memcheck.mname}"> <label
+					for="inputPassword">Password</label> <input type="password"
+					class="form-control" name="mpwd" placeholder="Password"
+					value="${memcheck.mpwd}"> <label for="inputPhone">Phone</label>
+				<input type="text" class="form-control" name="mphone"
+					placeholder="Phone" value="${memcheck.mphone}"> <label
+					for="inputEmail">Email</label> <input type="text"
+					class="form-control" name="memail" placeholder="Email"
+					value="${memcheck.memail}">
 		</div>
+		<br> <br>
+
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2" style="margin-left: 7%">
+				<button type="reset" class="btn btn-default">취소</button>
+				<button type="submit" class="btn btn-lightblue">완료</button>
+			</div>
+		</div>
+
+		</form>
+
 	</div>
 
-	</form>
- 
-</div>
- 	
-</div>
-<!-- 회원정보수정 -->
+	</div>
+	<!-- 회원정보수정 -->
 
-<!-- Plugins -->
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-<script
+	<!-- Plugins -->
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+	<%-- <script
 	src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
-
-<div id="footer" style="padding:13px;position:absolute; bottom:0px; width: 100%;">
-<%@ include file="../../Tail.jsp" %>
-</div>
+ --%>
+	<div id="footer"
+		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
+		<%@ include file="../../Tail.jsp"%>
+	</div>
 </body>
 </html>
