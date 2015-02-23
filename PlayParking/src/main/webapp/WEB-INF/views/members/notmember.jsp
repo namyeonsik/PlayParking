@@ -40,7 +40,7 @@
         <!-- Modernizr -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+       <!-- 부트스트랩 끝!!!!!!!!!! -->
 <style>
 .header {height: 10%; font-family: HU미드나잇120;}
 .body {font-family: HU미드나잇120;}
