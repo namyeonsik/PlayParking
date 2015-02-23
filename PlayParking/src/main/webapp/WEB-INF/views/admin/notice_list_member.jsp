@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 헤더 부트스트랩 시작! -->
+<!-- 헤더 부트스트랩 시작!! -->
         <title>주차장 공지사항</title>
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">

@@ -8,7 +8,7 @@
 
 
 
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 !!!!!!!!!!! -->
 <meta charset="utf-8">
 
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">

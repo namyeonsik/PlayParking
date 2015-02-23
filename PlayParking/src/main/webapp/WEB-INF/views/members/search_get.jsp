@@ -37,7 +37,7 @@
         <!-- Modernizr -->
         <script src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-       <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+       <!-- 부트스트랩 끝!!!!!!!!! -->
 
 <style>
 
