@@ -74,7 +74,7 @@
                                 </li>
                                 <li><a id="loginmodal" href=${sessionScope.memcheck.mname==null?"memberlogin.do":"memberlogout.do"}> 
              ${sessionScope.memcheck.mname==null?"Login":"Logout"}</a></li>
-                         <li><a href="adminlogin.do">Admin</a></li>
+                         <li><a href="adminlogin.do">Manager</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

@@ -24,11 +24,8 @@ public class AdminLoginController {
 	}
 
 
-	// ¿©·¯°³°ªÀ» ¹ŞÀ»°æ¿ì DTO¸¦ ¸¸µé¾î¼­ ¹Ş´Â´Ù.
 	@RequestMapping(method = RequestMethod.POST)
-	// ¿äÃ»ÇÏ´Â ÀÌ¸§.
 	public ModelAndView loginPost(AdminDTO admin, HttpSession session) {
-		// ÆÄ¶ó¹ÌÅÍ¹Ş¾Æ¼­ µğºñ¿¡°¡¼­ È®ÀÎÀÛ¾÷ÇÏ´Â ³»¿ë
 		ModelAndView mv = new ModelAndView();
 		System.out.println(admin);
 		System.out.println(admin.getAid());
@@ -37,15 +34,15 @@ public class AdminLoginController {
 				adminservice.selectByAdmin(admin.getAid(), admin.getApwd());
 		
 		System.out.println(admincheck);
-		session.setAttribute("admincheck", admincheck); //jsp¿¡¼­ ³Ñ°Ü¹Ş±âÀ§ÇÔ
+		session.setAttribute("admincheck", admincheck); 
 		if(admincheck!=null){
-			//·Î±×ÀÎ ¼º°ø
+			//ë¡œê·¸ì¸ ì„±ê³µ
 			mv.setViewName("redirect:/adminmain.do");
 
 		}else{
 			
 			mv.setViewName("admin/admin_login");
-			mv.addObject("adminmsg", "¾ÆÀÌµğ¿Í ·Î±×ÀÎÀ» È®ÀÎÇØÁÖ¼¼¿ä!");
+			mv.addObject("adminmsg", "ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”!");
 		}
 		return mv;
 	}

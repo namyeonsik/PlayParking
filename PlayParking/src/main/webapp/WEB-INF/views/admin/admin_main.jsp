@@ -5,16 +5,7 @@
     <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
-
-
 <head>
-<style type="text/css">
-/* @import url("theme.css"); */
-
-
-
-</style> 
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>관리자</title>
@@ -32,27 +23,7 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
-
-<%-- <!-- 스크롤 -->
- <!-- BOOTSTRAP STYLE SHEET -->
- <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
-<!-- FONT AWESOME ICONS STYLE SHEET -->
-<link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-<!-- CUSTOM STYLES -->
- <link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet" />
-<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]--> --%>
-	
-
 </head>
-
-
-
-
 
 <body data-post="http://www.egrappler.com/responsive-bootstrap-admin-template-edmin/">
 	 <div class="navbar navbar-fixed-top">
@@ -62,10 +33,9 @@
 			<div class="container" style="margin-top: 50px;">
 				<a class="btn btn-navbar" data-toggle="collapse"
 					data-target=".navbar-inverse-collapse"> <i
-					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Admin</a>
+					class="icon-reorder shaded"></i></a><a class="brand" href="adminmain.do">Manager</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
 					<ul class="nav nav-icons">
-						<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
 						<li><a href="#myfare"><i class="icon-eye-open"></i></a></li>
 						<li><a href="#saleschart"><i class="icon-bar-chart"></i></a></li>
 					</ul>
@@ -278,7 +248,7 @@
 						<!-- <div style="width: 100%"> -->
 						<!--  <div class="btn-box-row row-fluid"> -->
 						<section id="myfare">
-								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<a href="#"	class="btn-box big span4" style="width: 25%;margin-bottom: 6%;">
 								<i class="icon-user"></i><b>${parking.pamount}</b>
 								<p class="text-muted">주차장 수용차수</p></a>								
 						</section>
@@ -287,14 +257,14 @@
 						<!-- <div style="width: 100%"> -->
 						<!--  <div class="btn-box-row row-fluid"> -->
 						<section id="myfare">
-								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<a href="#"	class="btn-box big span4" style="width: 25%;margin-bottom: 6%;">
 								<i class="icon-user"></i><b><fmt:formatNumber value="${parking.pfare}" type="number" var="parkingfare"/>${parkingfare}</b>
 								<p class="text-muted">나의 주차장 요금</p></a>								
 						</section>
 						</div><!--상단btn-controls-->
 						<div class="btn-controls">
 						<section id="myfare">
-								<a href="#"	class="btn-box big span4" style="width: 25%">
+								<a href="#"	class="btn-box big span4" style="width: 25%;margin-bottom: 6%;">
 								<i class="icon-user"></i><b><fmt:formatNumber value="${avg}" type="number" var="avgfare"/>${avgfare}</b>
 								<p class="text-muted">주변 주차장 평균요금</p></a>								
 						</section>

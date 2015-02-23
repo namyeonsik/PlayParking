@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>관리자</title>
+<title>주차장 관리자</title>
 <link type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css"
@@ -21,16 +21,12 @@
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
 
-
-
-
 <script type="text/javascript">
-var adminmsg = ${adminmsg}
 function validationlogin(){
 	var aid = adminloginfrm.aid.value;
-	var apwd = loginfrm.apwd.value;
+	var apwd = adminloginfrm.apwd.value;
 	if(aid ==""||aid==null){
-		alert("아이디을 입력하세요");
+		alert("아이디를 입력하세요");
 		adminloginfrm.aid.focus();
 		return false; //list로 넘어가지마!
 		
@@ -54,69 +50,62 @@ function validationlogin(){
 <title>관리자 로그인</title>
 </head>
 <body>
-<form id="loginform" class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
-onsubmit="return validationlogin();" name="adminloginfrm" >
 
-<div class="modal-dialog modal-lg" style="margin-left:20%;margin-top:15%;width:60%">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel2"><font size="5">Admin Login</font></h4>
-                                                    </div><!-- End .modal-header -->
-                                                    <div class="modal-body">
-
-                                                    
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">ID&#42;
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                            <input type="text" id="aid" name="aid" required class="form-control input-lg" placeholder="Admin ID">
-                                                        </div><!-- End .input-group -->
-                                                        <br>
-                                                         <div class="input-group">
-                                                            <span class="input-group-addon">Password&#42;&nbsp;
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                            <input type="password" id="apwd" name="apwd"  required class="form-control input-lg" placeholder="Admin Password">
-                                                        </div><!-- End .input-group -->
-
-                                                    </div><!-- End .modal-body -->
-                                                    <div class="modal-footer">
-                                                    <button type="submit" onclick="logincheck();" class="btn btn-lightblue" data-dismiss="modal">LOGIN</button>
-                                                    
-                                                    </div><!-- End .modal-footer -->
-
-                                                </div><!-- End .modal-content -->
-                                            </div><!-- End .modal-dialog -->
-                                            
- </form>                                    
-<!-- <div style="text-align: center;margin-top:300px">
-<h1>관리자 로그인페이지입니다!</h1>
 	
-로그인폼
+	<form id="loginform" class="form-horizontal row-fluid"
+		action="adminlogin.do" method="post"
+		onsubmit="return validationlogin();" name="adminloginfrm">
+				
+		<div class="modal-dialog modal-lg"
+			style="margin-left: 20%; margin-top: 15%; width: 60%">
+			<div class="modal-content">
+			<!-- <h3 style="margin-bottom: 10%"><font face="HU미드나잇120" size="8">주차장관리자 전용 페이지 입니다.</font></h3> -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel2">
+						<font size="5">Manager Login    <font face="HU미드나잇120" size="3" style="float: right; margin-right: 40%">주차장관리자 전용 페이지 입니다.</font></font>
+					</h4>
+				</div>
+				<!-- End .modal-header -->
+				<div class="modal-body">
 
-<form id="loginform" class="form-horizontal row-fluid" action="adminlogin.do" method="post" 
-onsubmit="return validationlogin();" name="adminloginfrm" >
 
-<label class="control-label" for="basicinput" style="border:2px solid">Id</label>
-<div class="controls">
-<input type="text" id="aid" name="aid"  placeholder="Id" class="span3">
-</div>
+					<div class="input-group">
+						<span class="input-group-addon">ID&#42;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" id="aid" name="aid" required
+							class="form-control input-lg" placeholder="Admin ID">
+					</div>
+					<!-- End .input-group -->
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">Password&#42;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="password" id="apwd" name="apwd" required
+							class="form-control input-lg" placeholder="Admin Password">
+					</div>
+					<!-- End .input-group -->
 
-<label class="control-label" for="basicinput" style="border:2px solid">Password</label>
-<div class="controls" style="margin-top:10px">
-<input type="text" id="apwd" name="apwd"  placeholder="Password" class="span3">
-</div>
+				</div>
+				<!-- End .modal-body -->
+				<div class="modal-footer">
+					<button type="submit" onclick="logincheck();"
+						class="btn btn-lightblue" data-dismiss="modal">LOGIN</button>
 
-<div class="form-group" style="text-align: center;margin-top:50px">
-<div class="col-lg-10 col-lg-offset-2">
-    <button type="submit" onclick="logincheck();" class="btn btn-primary" >Login</button>
-</div>
-</div>
-</form>
-	
-로그인끝
+				</div>
+				<!-- End .modal-footer -->
 
- --><input id="mm" value="${adminmsg}" type="hidden"> 
+			</div>
+			<!-- End .modal-content -->
+		</div>
+		<!-- End .modal-dialog -->
+
+	</form>
+
+<input id="mm" value="${adminmsg}" type="hidden"> 
 <script type="text/javascript">
 var dd = document.getElementById("mm").value;
 if(dd!=''){
@@ -124,8 +113,5 @@ if(dd!=''){
 }
 </script>
 
-
-
-</div>
 </body>
 </html>
