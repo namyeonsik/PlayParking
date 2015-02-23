@@ -195,7 +195,11 @@ public class ReserveController {
          // TODO Auto-generated catch block
          e.printStackTrace();
       }
-     
+      if(mpoint<minusMpoint){
+    	  String msg = "포인트 부족으로 충전페이지로 이동합니다";
+    	  mv.addObject("msg", msg);
+    	  
+      }
       mv.setViewName("members/submit");
       return mv;
       

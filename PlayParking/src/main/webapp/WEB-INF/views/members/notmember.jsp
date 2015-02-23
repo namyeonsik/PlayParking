@@ -79,7 +79,9 @@
                                             </div><!-- End .modal-dialog -->
                                       
 
-
+<div class="tail">
+<%@ include file="../Tail.jsp" %>
+</div>
 
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>

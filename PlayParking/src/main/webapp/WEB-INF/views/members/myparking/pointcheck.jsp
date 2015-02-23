@@ -63,6 +63,22 @@
 <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
+@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
+}
+
 .header {
    height: 50px
 }
@@ -93,13 +109,7 @@
    margin-right: 5%;
    font-family: HU미드나잇120;
 }
-/* .non {
-	width: 10%;
-	margin-top: 5%;
-   margin-left: 40%;
-   float: left;
-   border:1px gray solid;
-} */
+
 .charge {
    width: 30%;
    margin-top: 5%;

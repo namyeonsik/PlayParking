@@ -5,7 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
 <meta charset="utf-8">
 <title>예약확인</title>
@@ -60,6 +59,22 @@
 <!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
 
 <style>
+@font-face{
+	font-family:"HU미드나잇120";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+	font-family:"HU미드나잇140";
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+	src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+	url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+	src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
 .header {
 	height: 50px
 }
@@ -188,9 +203,24 @@
 				</c:choose>
 
 				<c:forEach var="i" begin="1" end="${savenum}">
+					
 					<a href="reservecheck.do?pageno=${i}">${i}</a>
+					
 				</c:forEach>
 
+			<!-- 	<div class="pagination-container text-right clearfix">
+                                <ul class="pagination">
+                                    <li class="active"><span>1</span></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>End pagination-container
+				 -->
+				
+				
 			</div>
 		</div>
 

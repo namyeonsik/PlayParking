@@ -15,7 +15,12 @@
 			결제하실 포인트는	<strong><span class="highlight red">${minusMpoint}</span></strong> 입니다.
 				
 			</div>
-
+			
+			<h6>${msg}</h6>
+				
+		
+			
+			<input id="mesa" value="${msg}" type="hidden"> 
 		<input type="submit" class="btn btn-lightblue"
 			class="btn btn-lightblue" value="예약완료"> <input
 			type="button" class="btn btn-default" class="btn btn-default"
@@ -31,6 +36,15 @@
 	
 	<!-- End .row -->
 </div>
+<script type="text/javascript">
+var dd = document.getElementById("mesa").value;
+/* if(dd!=''){
+   alert("*"+dd+"*");
+}
+ */
+ alert(dd);
+
+</script>
 	<!-- <div class="xlg-margin"></div> --> 
 	<!-- space -->
 
