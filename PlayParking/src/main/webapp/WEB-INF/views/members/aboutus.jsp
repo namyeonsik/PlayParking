@@ -53,6 +53,14 @@
    url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
    src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
 }
+@font-face{
+   font-family:"HU미드나잇140";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
 
 .header {
 	height: 50px;

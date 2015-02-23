@@ -90,6 +90,22 @@ function validationlogin(){
 
 <style type="text/css">
 .header {height: 50px}
+@font-face{
+   font-family:"HU미드나잇120";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
+@font-face{
+   font-family:"HU미드나잇140";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
+}
 </style>
 
 </head>
@@ -152,7 +168,7 @@ function validationlogin(){
            <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-10 col-md-push-2 col-sm-push-1">
-                            <h2 class="text-center lg-margin">회원가입</h2>
+                            <h2 class="text-center lg-margin"><font face="HU미드나잇140">회원가입</font></h2>
                             <form action="join.do" id="myfrm" 
                                   onsubmit="validationcheck();" name="myfrm" 
                                   style="width: 80%;margin-left:10%;"method="post" novalidate>
