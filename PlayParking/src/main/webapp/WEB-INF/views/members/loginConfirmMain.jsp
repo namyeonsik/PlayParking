@@ -163,7 +163,7 @@
 							data-masterspeed="450" data-saveperformance="off"><img
 							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
 							alt="slidebg2"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_1.jpg"
+							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_1.1.png"
 							data-kenburns="on" data-bgposition="center bottom"
 							data-duration="4200" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
@@ -179,7 +179,7 @@
 							data-masterspeed="450" data-saveperformance="off"><img
 							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
 							alt="slidebg4"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.jpg"
+							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.png"
 							data-kenburns="on" data-bgposition="center bottom"
 							data-duration="5200" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
@@ -196,7 +196,7 @@
 							data-masterspeed="450" data-saveperformance="off"><img
 							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
 							alt="slidebg5"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_3.jpg"
+							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_3.png"
 							data-kenburns="on" data-bgposition="center bottom"
 							data-duration="4200" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
