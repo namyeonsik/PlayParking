@@ -259,7 +259,7 @@
 			
 					if(t3.length>1000){
 							document.getElementById("t1").innerHTML = null;
-							document.getElementById("t3").innerHTML = '<div style=padding-top:0px;border:1px solid>'+t3+'</div>';
+							document.getElementById("t3").innerHTML = t3;
 					}
 					else{
 						document.getElementById("t3").innerHTML = null;
@@ -413,7 +413,10 @@
 					     
 					 	// 마커에 클릭이벤트를 등록합니다
 					     daum.maps.event.addListener(marker[i], 'click', function() {
-					    	 
+					    	
+					    	 /* for (var i = 0; i < infowindow.length; i++) {
+					    		 infowindow[i].close();
+					    	 } */
 					    	 for ( var i = 0; i < marker.length ; i++) {
 					    		 infowindow[i].close();
 					    	}
