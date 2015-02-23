@@ -116,17 +116,17 @@
 </style>
 
 </head>
-<body style="height: 68%;">
+<body>
 	<!-- 진짜헤더시작 -->
-	<div class="header">
+	<div class="header" style="margin-left: -1%">
 		<%@ include file="../Header.jsp"%>
 	</div>
 	<!-- 진짜헤더끝 -->
-
+<div style="height: 68%;">	
 	<div class="title">
 		<h2><font face="HU미드나잇140">예약 완료</font></h2>
 	</div>
-	
+ 
 	<div id="wrapper">
 		<section id="content">
 		<div class="container">
@@ -192,8 +192,12 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-<div id="footer" style="padding:13px;">
-<%@ include file="../Tail.jsp" %>
-</div>  
+<div class="all"
+			style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
+			<div id="footer" style="padding: 13px; width: 100%; margin-top: 5%;">
+				<%@ include file="../Tail.jsp"%>
+			</div>
+		</div>
+</div>
 </body>
 </html>
