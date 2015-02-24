@@ -66,6 +66,6 @@ public class MemberUpdateController {
 		System.out.println("mem값은?"+mid);
 		int ret = service.deleteMembers(mid);
 		System.out.println(ret+"건 으로 수정");
-		return "redirect:/membermain.do";
+		return "redirect:/memberlogout.do";
 	}
 }

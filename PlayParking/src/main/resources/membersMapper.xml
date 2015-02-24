@@ -38,7 +38,7 @@
   <select id="selectByUser" parameterType="map"
   	resultType="com.flying.model.MembersDTO">
     select * from Members 
-    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR} and mcheck = 0
+    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
  </select>
   
 

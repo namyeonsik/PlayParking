@@ -26,10 +26,14 @@ public class MemberLoginController {
 		MembersDTO memcheck = 
 				service.selectByUser(member.getMid(), member.getMpwd());
 		
-		session.setAttribute("memcheck", memcheck); 
 		if(memcheck!=null){
-			mv.setViewName("members/loginConfirmMain");
-			
+			if(memcheck.getMcheck()==0){
+				mv.setViewName("members/loginConfirmMain");
+				session.setAttribute("memcheck", memcheck); 
+			}else{
+				mv.setViewName("members/member_main");
+				mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");
+			}
 		}else{
 			mv.setViewName("members/member_main");
 			mv.addObject("msg", "아이디나 비밀번호를 확인해주세요.");

@@ -9,7 +9,15 @@ public class MembersDTO {
 	private String mphone;
 	private String memail;
 	private int mpoint;
+	private int mcheck;
 	
+	
+	public int getMcheck() {
+		return mcheck;
+	}
+	public void setMcheck(int mcheck) {
+		this.mcheck = mcheck;
+	}
 	public MembersDTO(){};
 	public MembersDTO(String mid, int cid, String mpwd, String mname,
 			String mphone, String memail, int mpoint) {
@@ -21,6 +29,7 @@ public class MembersDTO {
 		this.mphone = mphone;
 		this.memail = memail;
 		this.mpoint = mpoint;
+		this.mcheck = mcheck;
 	}
 	public String getMid() {
 		return mid;
