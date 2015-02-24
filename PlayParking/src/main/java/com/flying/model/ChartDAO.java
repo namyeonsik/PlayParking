@@ -12,6 +12,11 @@ public class ChartDAO implements ChartDAOInterface{
 	@Autowired
 	SqlSession session;
 
+	public List<ChartDTO> selectBeforeReserve(int pid) {
+		List<ChartDTO> chartlist =
+				session.selectList("flying.chart.selectBeforeReserve", pid);
+		return chartlist;
+	}
 
 	public List<ChartDTO> selectReserve(int pid) {
 		List<ChartDTO> chartlist =

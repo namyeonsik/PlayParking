@@ -15,5 +15,9 @@ public class ChartService implements ChartServiceInterface{
 		// TODO Auto-generated method stub
 		return dao.selectReserve(pid);
 	}
+	
+	public List<ChartDTO> selectBeforeReserve(int pid){
+		return dao.selectBeforeReserve(pid);
+	}
 
 }

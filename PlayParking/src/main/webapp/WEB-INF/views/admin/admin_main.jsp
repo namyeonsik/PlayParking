@@ -303,6 +303,7 @@
 	</div>
 <input id="mm" value="${adminmsg}" type="hidden"> 	
 <input id="graph" value="${graph}" type="hidden"> 	
+<input id="beforegraph" value="${beforegraph}" type="hidden">
 <!-- <script type="text/javascript">
 var dd = document.getElementById("mm").value;
 if(dd!=''){

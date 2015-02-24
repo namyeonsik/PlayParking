@@ -42,7 +42,7 @@ public class AdminMainController {
    public ModelAndView adminMain(HttpServletRequest request,
                                    HttpSession session) {
       ModelAndView mv = new ModelAndView();
-      System.out.println("¿©±â°¡ main ½ÃÀÛÁ¡");
+      System.out.println("ï¿½ï¿½ï¿½â°¡ main ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
       session = request.getSession();
       AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
       
@@ -65,24 +65,21 @@ public class AdminMainController {
       avg=sumfare/aroundpark.size();
       mv.addObject("avg", avg);
       
-      //Â÷Æ® ±¸ÇöºÎºÐ
-      int parkingfare = parking.getPfare(); //ÁÖÂ÷Àå ¿ä±Ý
+      //ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½
+      int parkingfare = parking.getPfare(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
       List<ChartDTO> chartlist = 
     		  chartservice.selectReserve(admincheck.getPid());
-     /* System.out.println(chartlist.size()+"Â÷Æ®»çÀÌÁîÀÔ´Ï´Ù.");
-      System.out.println(parkingfare+"ÁÖÂ÷Àå¿ä±ÝÀº ÀÌ°Å");
-      System.out.println(chartlist.get(0).getSumrtime()+"rtimÀºÀÌ°Å");*/
-      //¿ùº° ÁÖÂ÷¿ä±Ý
+     
       List<Integer> summonthlyfare = new ArrayList<Integer>();
-      //¿ù
+      //ï¿½ï¿½
       List<String> monthlist = new ArrayList<String>();
       for(ChartDTO c : chartlist){
     	 
     	 summonthlyfare.add(c.getSumrtime()*parkingfare);
     	 monthlist.add(c.getMonth());
       }
-      //System.out.println(monthlist.get(0)+"monthlistÀÔ´Ï´Ù.");
-      //System.out.println(summonthlyfare.get(1)+"µ·ÀÔ´Ï´Ù.");
+      //System.out.println(monthlist.get(0)+"monthlistï¿½Ô´Ï´ï¿½.");
+      //System.out.println(summonthlyfare.get(1)+"ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
       
       String[][] charttable = new String[2][12];
 
@@ -118,7 +115,7 @@ public class AdminMainController {
       }
      
       graph +="]"; 
-      System.out.println(graph+"±×·¡ÇÁ!!");
+      System.out.println(graph+"ê·¸ëž˜í”„!!");
       /* for(int i=0; i<2;i++){
     	  for(int j=0; j<8;j++){
     		 System.out.println(charttable[i][j]+" charttable");
@@ -129,6 +126,60 @@ public class AdminMainController {
       
       mv.addObject("graph", graph);
       
+      
+      //2014ì°¨íŠ¸
+      List<ChartDTO> beforechartlist = 
+    		  chartservice.selectBeforeReserve(admincheck.getPid());
+     
+      List<Integer> beforesummonthlyfare = new ArrayList<Integer>();
+      //ï¿½ï¿½
+      List<String>	beforemonthlist = new ArrayList<String>();
+      for(ChartDTO c : beforechartlist){
+    	 
+    	  beforesummonthlyfare.add(c.getSumrtime()*parkingfare);
+    	  beforemonthlist.add(c.getMonth());
+      }
+      //System.out.println(monthlist.get(0)+"monthlistï¿½Ô´Ï´ï¿½.");
+      //System.out.println(summonthlyfare.get(1)+"ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+      
+      String[][] beforecharttable = new String[2][12];
+
+      String beforegraph ="[ ";
+      for(int j=0; j<12;j++){
+    	   for(int s=0; s<2; s++){  
+    		   if(s==0){
+					if (j < beforemonthlist.size()) {
+						beforecharttable[s][j] = beforemonthlist.get(j);
+						beforegraph += "[" + beforecharttable[s][j] + ",";
+					}else{
+						
+						if(j+1>=10){
+							beforecharttable[s][j] = "2014"+(j+1);
+						}else{
+							beforecharttable[s][j] = "20140"+(j+1);
+						}
+						beforegraph += "[" + beforecharttable[s][j] + ",";
+					}
+    		   }else{
+    			   
+    			   if(j<beforemonthlist.size()){
+    				   beforecharttable[s][j] = beforesummonthlyfare.get(j).toString();
+    				   beforegraph += beforecharttable[s][j]+"], ";
+    			   }else{
+    				   beforecharttable[s][j] = "0";
+    				   beforegraph += beforecharttable[s][j]+"], ";
+    			   }
+    		   }
+		
+    	  }
+    	  
+      }
+     
+      beforegraph +="]"; 
+      System.out.println(beforegraph+"2014ê·¸ëž˜í”„!!");
+    
+      
+      mv.addObject("beforegraph", beforegraph);
       
       
       
@@ -146,7 +197,7 @@ public class AdminMainController {
       
       
       Date d1 = new Date();
-      System.out.println("ÇöÀçÀÇ½Ã°£="+d1.getHours()+"ºÐ="+d1.getMinutes());
+      System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ç½Ã°ï¿½="+d1.getHours()+"ï¿½ï¿½="+d1.getMinutes());
       String test1 = toString().format("", d1.getHours())+toString().format("", d1.getMinutes());
       
       SimpleDateFormat sf = new SimpleDateFormat("HHmm");
@@ -162,12 +213,12 @@ public class AdminMainController {
       SimpleDateFormat formatForchart = new SimpleDateFormat("yyyy-MM");
       //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
       //Date d2 = sf.parse(d1);
-      System.out.println("ÀüÃ¼¿¹¾à°Ç¼ö="+i);
+      System.out.println("ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½="+i);
       String today = format.format(d1);
       String reserveday=null;
      
      thisMonth = formatForchart.format(d1);
-      System.out.println("ÀÌ¹ø³âµµ¿Í ´ÞÀº = "+thisMonth);
+      System.out.println("ï¿½Ì¹ï¿½âµµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = "+thisMonth);
       
   
       
@@ -244,7 +295,7 @@ public class AdminMainController {
       mv.addObject("reservelist", reservelist2);
       mv.addObject("todaypoint",todaypoint);
    //   mv.addObject("plus30", reservelist3);
-      System.out.println("¿À´ÃÀÇ ¿¹¾à°¹¼ö="+todaycount);
+      System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½à°¹ï¿½ï¿½="+todaycount);
 
       mv.setViewName("admin/admin_main");
       return mv;
@@ -353,9 +404,9 @@ public class AdminMainController {
     parking.setPcount(countTemp);
     int ret = rservice.updateReservationEndByrid(reserve);
     int ret2 = service.updateParkingPcount(parking);
-   System.out.println("¾÷µ¥ÀÌÆ®ÇÑ reserve==="+reserve);
-      System.out.println(ret+"°ÇÀÇ End ¾÷µ¥ÀÌÆ® ¼º°ø");
-      System.out.println(ret2+"°ÇÀÇ pcount¾øµ¥ÀÌÆ® ¼º°ø");
+   System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ reserve==="+reserve);
+      System.out.println(ret+"ï¿½ï¿½ï¿½ï¿½ End ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½");
+      System.out.println(ret2+"ï¿½ï¿½ï¿½ï¿½ pcountï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½");
       mv.setViewName("redirect:/adminmain.do");
       return mv;
       

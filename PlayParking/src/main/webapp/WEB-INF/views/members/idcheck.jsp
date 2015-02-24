@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
         <!-- Favicon and Apple Icons -->
-        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
         <link rel="apple-touch-icon" sizes="57x57" href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
     
