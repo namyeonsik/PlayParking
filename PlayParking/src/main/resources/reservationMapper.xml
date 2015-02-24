@@ -4,154 +4,158 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.reservation">
 
-  <select id="searchReservationByrid" 
-	parameterType="int"
-	resultType="com.flying.model.ReservationDTO">
-	select * from reservation where rid= #{aa}
-  </select>
-  
-  <select id="selectByMonth" parameterType="map"
-  	resultType="com.flying.model.ReservationDTO">
-    select pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as month,sysdate
-    from reservation
-	where pid=#{pid:INTEGER} and to_char(rstart,'MM')= #{month:VARCHAR};
-  </select>
-  
-  <!-- <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
-     <association property="pname" column="pid" select="getpname2"></association>
-  </resultMap>
-  <select id="selectByaid" parameterType="Map" resultMap="parkresult"> 
-  select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc
-  </select>
-  
-  <select id="getpname2" resultType="String">
-  	select pname from parking where pid=#{aa}
-  </select> -->
-  
-  <select id="selectByaid" 
-  	parameterType="Map"
-  	resultType="com.flying.model.ReservationDTO">
-    select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between #{s:INTEGER} and #{l:INTEGER} order by rid desc 
-  </select>
-  
-  <select id="selectByaid11" 
-  	parameterType="String"
-  	resultType="com.flying.model.ReservationDTO">
-    select * from reservation where mid = #{mid:VARCHAR} order by rid desc 
-  </select>
-  
-  <select id="selectBymid" 
-  	parameterType="String"
-  	resultType="com.flying.model.ReservationDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from reservation where mid = #{aa}
-  </select>
- 
-  <select id="selectBypid" parameterType="int" resultType="com.flying.model.ParkingDTO"> 
-  select * from parking where pid = #{aa}
-  </select>
-  
-  <resultMap type="com.flying.model.ReservationDTO" id="parkresult">
-     <association property="pname" column="pid" select="getpname"></association>
-  </resultMap>
-  <select id="selectReservation" parameterType="int" resultMap="parkresult"> 
-  select * from reservation where mid = #{aa} order by rid desc
-  </select>
-  
-  <select id="getpname" resultType="String">
-  	select pname from parking where pid=#{aa}
-  </select>
-  
-   <select id="searchBymid" 
-  	parameterType="String"
-  	resultType="com.flying.model.MembersDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from members where mid = #{aa}
-  </select>
-  
-  <select id="selectMaxrid" 
-  	parameterType="String"
-  	resultType="com.flying.model.ReservationDTO">
-    select * from reservation where rid in (select max(rid) from reservation where mid = #{aa})
-  </select>
-  
-  <insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">
-  insert into reservation (rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime,rstarttimeback)
-  values(rid_seq.nextval,
-  #{pid:INTEGER},
-  #{rstart:DATE},
-  #{rtime:INTEGER},
-  #{mid:VARCHAR},
-  #{rend:DATE},
-  #{rextrafare:INTEGER},
-  #{rstarttime:VARCHAR},
-  #{rstarttimeback:VARCHAR}
-    )
-   
-  </insert>
-  <insert id="insertUsepoint" parameterType="com.flying.model.UsePointDTO">
-  insert into usepoint (usedate,mid,pid,usepoint)
-  values(sysdate,
-  #{mid:VARCHAR},
-  #{pid:INTEGER},
-  #{usepoint:INTEGER}
-  )
-  
-  </insert>
-  <update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
-  update parking set
-  pcount = #{pcount:INTEGER}
-  where pid= #{pid:INTEGER}
-  
-  </update>
-  <update id="updateMembersMpoint" parameterType="com.flying.model.MembersDTO">
-  update members set
-  mpoint = #{mpoint:INTEGER}
-  where mid= #{mid:VARCHAR}
-  
-  </update>
-  <update id="updateReservationEndByrid" parameterType="com.flying.model.ReservationDTO">
-  update reservation set
-  rextrafare = #{rextrafare:INTEGER},
-  rend = sysdate
-  where rid=#{rid:INTEGER}
-  
-  </update>
-  
-    <select id="checkCount" 
-  	parameterType="int"
-  	resultType="int">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select pcount from parking where pid = #{aa}
-  </select>
+	<select id="searchReservationByrid" parameterType="int"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where rid= #{aa}
+	</select>
+
+	<select id="selectByMonth" parameterType="map"
+		resultType="com.flying.model.ReservationDTO">
+		select pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as
+		month,sysdate
+		from reservation
+		where pid=#{pid:INTEGER} and to_char(rstart,'MM')= #{month:VARCHAR};
+	</select>
+
+	<select id="selectByaid" parameterType="Map"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between
+		#{s:INTEGER} and #{l:INTEGER} order by rid desc
+	</select>
+
+	<select id="selectByaid11" parameterType="String"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where mid = #{mid:VARCHAR} order by rid desc
+	</select>
+
+	<select id="selectByaid12" parameterType="String"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where mid = #{mid:VARCHAR} and rstart &gt; sysdate
+		order by rid desc
+	</select>
+
+	<select id="selectBymid" parameterType="String"
+		resultType="com.flying.model.ReservationDTO">
+		<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+		select * from reservation where mid = #{aa}
+	</select>
+
+	<select id="selectBypid" parameterType="int"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where pid = #{aa}
+	</select>
+
+	<resultMap type="com.flying.model.ReservationDTO" id="parkresult">
+		<association property="pname" column="pid" select="getpname"></association>
+	</resultMap>
+	<select id="selectReservation" parameterType="int" resultMap="parkresult">
+		select * from reservation where mid = #{aa} order by rid desc
+	</select>
+
+	<select id="getpname" resultType="String">
+		select pname from parking where pid=#{aa}
+	</select>
+
+	<select id="searchBymid" parameterType="String"
+		resultType="com.flying.model.MembersDTO">
+		<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+		select * from members where mid = #{aa}
+	</select>
+
+	<select id="selectMaxrid" parameterType="String"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where rid in (select max(rid) from reservation
+		where mid = #{aa})
+	</select>
+
+	<insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">
+		insert into reservation
+		(rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime,rstarttimeback)
+		values(rid_seq.nextval,
+		#{pid:INTEGER},
+		#{rstart:DATE},
+		#{rtime:INTEGER},
+		#{mid:VARCHAR},
+		#{rend:DATE},
+		#{rextrafare:INTEGER},
+		#{rstarttime:VARCHAR},
+		#{rstarttimeback:VARCHAR}
+		)
+
+	</insert>
+	<insert id="insertUsepoint" parameterType="com.flying.model.UsePointDTO">
+		insert into usepoint (usedate,mid,pid,usepoint)
+		values(sysdate,
+		#{mid:VARCHAR},
+		#{pid:INTEGER},
+		#{usepoint:INTEGER}
+		)
+
+	</insert>
+	<update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
+		update parking set
+		pcount = #{pcount:INTEGER}
+		where pid= #{pid:INTEGER}
+
+	</update>
+	<update id="updateMembersMpoint" parameterType="com.flying.model.MembersDTO">
+		update members set
+		mpoint = #{mpoint:INTEGER}
+		where mid= #{mid:VARCHAR}
+
+	</update>
+	<update id="updateReservationEndByrid" parameterType="com.flying.model.ReservationDTO">
+		update reservation set
+		rextrafare = #{rextrafare:INTEGER},
+		rend = sysdate
+		where rid=#{rid:INTEGER}
+
+	</update>
+
+	<select id="checkCount" parameterType="int" resultType="int">
+		<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+		select pcount from parking where pid = #{aa}
+	</select>
 
 
 
- <select id="checkAmount" 
-  	parameterType="int"
-  	resultType="int">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select pamount from parking where pid = #{aa}
-  </select>
-  
-  
-  <select id="getpname2" resultType="String">
-     select pname from parking where pid=#{aa}
-  </select> 
-  <resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
-     <association property="pname" column="pid" select="getpname2"></association>
-  </resultMap>
-    <select id="selectReservation2" parameterType="Map" resultMap="parkresult2"> 
-  select * from (select pid,rid,rstart,rtime, ROWNUM num 
- 				 from reservation 
- 				 where mid = #{mid:VARCHAR} 
- 				 order by rid desc) 
-  where num between #{s:INTEGER} and #{l:INTEGER} 
-  </select>
+	<select id="checkAmount" parameterType="int" resultType="int">
+		<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
+		select pamount from parking where pid = #{aa}
+	</select>
+
+
+	<select id="getpname2" resultType="String">
+		select pname from parking where pid=#{aa}
+	</select>
+	<resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
+		<association property="pname" column="pid" select="getpname2"></association>
+	</resultMap>
+	<select id="selectReservation2" parameterType="Map" resultMap="parkresult2">
+		select * from (select pid,rid,rstart,rtime, ROWNUM num
+		from reservation
+		where mid = #{mid:VARCHAR}
+		order by rid desc)
+		where num between #{s:INTEGER} and #{l:INTEGER}
+	</select>
+
+
+	<resultMap type="com.flying.model.ReservationDTO" id="parkresult3">
+		<association property="pname" column="pid" select="getpname3"></association>
+	</resultMap>
+	<select id="selectReservation3" parameterType="Map" resultMap="parkresult3">
+		select * from (select pid,rid,rstart,rtime, ROWNUM num
+		from reservation
+		where mid = #{mid:VARCHAR} and rstart &gt; sysdate
+		order by rid desc)
+		where num between #{s:INTEGER} and #{l:INTEGER}
+	</select>
+
+	<select id="getpname3" resultType="String">
+		select pname from parking where pid=#{aa}
+	</select>
 
 
 
 
-
-	
 </mapper>

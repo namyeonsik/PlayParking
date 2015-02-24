@@ -116,6 +116,14 @@ public class ReservationDAO implements ReservationDAOInterface {
       map.put("l", l); 
       return session.selectList("flying.reservation.selectReservation2", map);
    }
+   
+   public List<ReservationDTO> selectReservation3(String mid, int s, int l) {
+	      Map<String,Object> map = new HashMap<String,Object>();         
+	      map.put("mid", mid);
+	      map.put("s", s); 
+	      map.put("l", l); 
+	      return session.selectList("flying.reservation.selectReservation3", map);
+	   }
 
    public List<ReservationDTO> selectReservation(String mid) {
       // TODO Auto-generated method stub
@@ -136,6 +144,11 @@ public class ReservationDAO implements ReservationDAOInterface {
       return session.selectList("flying.reservation.selectByaid11", mid);
    }
 
+   public List<ReservationDTO> selectByaid12(String mid) {
+	      // TODO Auto-generated method stub
+	      return session.selectList("flying.reservation.selectByaid12", mid);
+	   }
+   
 /*	public List<ReservationDTO> selectByMonth(int pid, String month) {
 		List<ReservationDTO> reservelist = null;
 		Map<String, Object> map = new HashMap<String, Object>();

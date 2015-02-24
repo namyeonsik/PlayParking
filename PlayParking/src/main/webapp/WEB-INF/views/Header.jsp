@@ -50,6 +50,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="memberupdate.do">내 정보 수정</a></li>
                                         <li><a href="reservecheck.do">예약 확인</a></li>
+                                        <li><a href="reservecancel.do">예약 취소</a></li>
                                         <li><a href="pointcheck.do">포인트 확인</a></li>
                                     </ul>
                                 </li>
