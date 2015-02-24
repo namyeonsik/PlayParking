@@ -127,7 +127,8 @@ public class ReserveController {
    int parkingMpoint=0;
    int minusMpoint=0;
    int resultMpoint=0;
-   int calselectTime=0;
+   int calselectTime;
+   String[] calselectTime2;
    @RequestMapping(value="/insert.do", method=RequestMethod.POST)
    public ModelAndView insert(String date, String possibleTime, String selectTime, HttpServletRequest request){
       HttpSession session = request.getSession();
@@ -169,7 +170,13 @@ public class ReserveController {
          //selectTime.substring((selectTime.length()-1));
         // System.out.println(Integer.parseInt(selectTime));
          System.out.println("selectTime.length()="+selectTime.length());
-         calselectTime=Integer.parseInt(selectTime.substring((selectTime.length()-1)));
+         System.out.println("selectTime==="+selectTime);
+         calselectTime2=selectTime.split(",");
+        // System.out.println(selectTime.split(","));
+         calselectTime = Integer.parseInt(calselectTime2[calselectTime2.length-1]);
+     //   System.out.println("selectTime.split().length="+selectTime.split(",").length);
+    
+        // calselectTime=Integer.parseInt(selectTime.substring((selectTime.length()-1)));
          System.out.println("calselectTime=="+calselectTime);
          reserve.setMid(mid);  
          reserve.setPid(pid);   
