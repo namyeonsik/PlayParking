@@ -28,7 +28,8 @@ public class MembersDAO implements MembersDAOInterface{
 	}
 	
 	public int deleteMembers(String mid){
-		return session.delete("flying.members.deleteByMid", mid);
+		//Å»ÅğÇÏ¸é mcheckÀÌ 1·Î set
+		return session.update("flying.members.deleteByMid", mid);
 	}
 
 	public MembersDTO selectByUser(String mid, String mpwd) {

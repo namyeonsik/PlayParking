@@ -65,7 +65,7 @@ public class MemberUpdateController {
 	public String deletePost(String mid){
 		System.out.println("mem값은?"+mid);
 		int ret = service.deleteMembers(mid);
-		System.out.println(ret+"건 삭제");
+		System.out.println(ret+"건 으로 수정");
 		return "redirect:/membermain.do";
 	}
 }

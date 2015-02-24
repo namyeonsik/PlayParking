@@ -4,17 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.members">
 
-  <delete id="deleteByMid" parameterType="String">
-  	delete from members
-   where mid = #{mid:VARCHAR}
-  </delete>
+  <update id="deleteByMid" parameterType="String">
+  	update members set mcheck = 1
+  	where mid= #{mid:VARCHAR} 
+  </update>
    
    
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.MembersDTO">
   	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from members where mid = #{aa:VARCHAR}
+    select * from members where mid = #{aa:VARCHAR} and mcheck = 0
   </select>
  
   <update id="updateMembers">
@@ -38,14 +38,8 @@
   <select id="selectByUser" parameterType="map"
   	resultType="com.flying.model.MembersDTO">
     select * from Members 
-    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR}
+    where mid = #{mid:VARCHAR} and mpwd = #{mpwd:VARCHAR} and mcheck = 0
  </select>
   
-  <select id="selectByCbrand" 
-  	parameterType="String"
-  	resultType="com.flying.model.CarDTO">
-    select * from CAR where cbrand= #{cbrand:VARCHAR}
-  </select>
-  
-  
+
 </mapper>

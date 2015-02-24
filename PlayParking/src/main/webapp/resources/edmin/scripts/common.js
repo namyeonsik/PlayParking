@@ -19,7 +19,13 @@
 	
         $( '#amount' ).val( '$' + $( '.slider-range' ).slider( 'values', 0 ) + ' - $' + $( '.slider-range' ).slider( 'values', 1 ) );
     
-        alert("왜안떠!!!");
+ 
+        
+    $('#before').onclick = showplot();
+    
+    function showplot(){
+    	alert("됐다!!");
+    }
     //Graph/Chart index.html
     //d1=chart보여줄것, d2=x
     //var d1 = "[ [0, 1], [1, 14], [2, 5], [3, 4], [4, 5], [5, 1], [6, 14], [7, 5],  [8, 5] ]";
