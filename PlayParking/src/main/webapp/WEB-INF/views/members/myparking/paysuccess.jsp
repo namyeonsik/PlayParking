@@ -45,7 +45,14 @@
    url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.ttf') format('truetype');
    src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff') format('woff');
 }
-
+@font-face{
+   font-family:"HU미드나잇120";
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+   src:url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix') format('embedded-opentype'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('woff'),
+   url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf') format('truetype');
+   src:local(※), url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff') format('woff');
+}
 
 .point{
 
@@ -55,13 +62,15 @@ width: 100%; margin-top: 25%; margin-left: 15%; float: left; heith:40%;
 
 .btn{
 margin-top:10%; float:left; margin-left:23%;
+font-family: "HU미드나잇120";
 
 }
 
+.all{font-family: "HU미드나잇120";}
      </style>
 </head>
 <body>
-
+<div class="all">
 <!-- 충전완료페이지 -->
 <div class="point">
 <h3><font face="HU미드나잇140">충전이 완료되었습니다.</font></h3>
@@ -71,10 +80,10 @@ window.opener.location.reload();
 </script>
 
 <div class="btn">
-<input type="button" value="close" onClick="window.close()" class="btn btn-lightblue">
+<input type="button" value="닫기" onClick="window.close()" class="btn btn-lightblue">
 </div>
 <!-- 충전완료페이지 끝-->
-
+</div>
 <!-- Plugins -->
 <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>

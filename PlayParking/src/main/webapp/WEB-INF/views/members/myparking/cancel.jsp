@@ -62,34 +62,55 @@
 		format('woff');
 }
 
+@font-face {
+	font-family: "HU미드나잇120";
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
+	src:
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
+		format('embedded-opentype'),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
+		woff '),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
+		format('truetype');
+	src: local(※),
+		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
+		format('woff');
+}
+
 .cancel {
 	width: 100%;
-	margin-top: 25%;
-	margin-left: 15%;
+	margin-top: 15%;
+	margin-left: 2%;
 	float: left;
 	heith: 40%;
-}
+} 
 
 .btn {
 	margin-top: 10%;
 	float: left;
-	margin-left: 23%;
+	margin-left: 8%;
+	font-family: "HU미드나잇120";
 }
+
 </style>
 </head>
 <body>
-	<div class="cancel"></div>
+	<div class="cancel">
 	<form name="chulfrm2" action="cancel.do" method="post">
 		<input type="hidden" name="rid" value="${rid }">
 		<div class="btn">
-			<h6>
+			<h2>
 				<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
-			</h6>
+			</h2>
+			<h6><font face="HU미드나잇120">포인트는 자동 환불됩니다.</font></h6>
 			<label for="inputId"></label>
       <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
-			<input type="submit" class="btn btn-lightblue" value="네!">
+			<div class="btn1" style="margin-left: 25%;">
+			<input type="submit" class="btn btn-lightblue" value="예약취소"></div>
 		</div>
 	</form>
+	</div>
 	<script type="text/javascript">
 		
 	</script>

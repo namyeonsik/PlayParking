@@ -67,11 +67,14 @@
 		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff')
 		format('woff');
 }
+.all{
+font-family: "HU미드나잇120";
+}
 </style>	
 
 </head>
 <body>
-
+<div class="all">
 <!-- 포인트충전 -->
 <form class="form-horizontal" action="paypoint.do" method="post" style="width: 65%">
     <div id="title" style="margin-left: 40%; width: 100%;">
@@ -95,6 +98,7 @@
       </div>
     </div>
 </form>
+</div>
 <!-- 포인트충전 -->
 
 <!-- Plugins -->
