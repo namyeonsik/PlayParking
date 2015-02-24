@@ -19,6 +19,7 @@
         $( '#amount' ).val( '$' + $( '.slider-range' ).slider( 'values', 0 ) + ' - $' + $( '.slider-range' ).slider( 'values', 1 ) );
     
  
+        
 var elem1 = document.getElementById('before');
     elem1.onclick = showpp;    
  

@@ -213,8 +213,7 @@
 							 <div class="module">
                  	    <div class="module-head">
                  	       <h3>매출 차트 <input id="present" name="present" type="button" style="float: right;" value=">" class="btn btn-info"><input id="before" name="before" type="button" style="float: right;" value="<" class="btn btn-info"> </h3> 
-                 	       
-              	       </div>
+                 	  </div>
               	       <div class="module-body">
                  	       <div class="chart inline-legend grid">
                		            <div id="placeholder2" class="graph" style="height: 500px">
