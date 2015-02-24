@@ -115,8 +115,8 @@
 		<!-- Tab nav -->
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="active"><a href="#details8" role="tab"
-				data-toggle="tab">회원 정보수정</a></li>
-			<li><a href="#details7" role="tab" data-toggle="tab">회원 탈퇴</a></li>
+				data-toggle="tab"><font face="HU미드나잇120">회원 정보수정</font></a></li>
+			<li><a href="#details7" role="tab" data-toggle="tab"><font face="HU미드나잇120">회원 탈퇴</font></a></li>
 		</ul>
 
 		<!-- Tab panes -->
@@ -144,8 +144,8 @@
 
 					<div class="form-group">
 						<div class="col-lg-10 col-lg-offset-2" style="margin-left: 23%">
-							<button type="submit" class="btn btn-lightblue">완료</button>
-							<button type="reset" class="btn btn-default">취소</button>
+							<button type="submit" class="btn btn-lightblue"><font face="HU미드나잇120">완료</font></button>
+							<button type="reset" class="btn btn-default"><font face="HU미드나잇120">취소</font></button>
 					    </div>
 					</div>
 					</form>
@@ -153,10 +153,10 @@
 			    
 			<!-- End .tab-pane -->
 			<div class="tab-pane fade" id="details7">
-				<p class="list-margin">탈퇴할 경우 복구가 불가능 합니다.</p><br>
+				<p class="list-margin"><font face="HU미드나잇120">탈퇴할 경우 복구가 불가능 합니다.</font></p><br>
 				<form action="deletemember.do" method="post">
 				<ul class="list-style list-square">
-					<li> 탈퇴 하시겠습니까? <button type="submit" class="btn btn-lightblue" style="margin-left: 5%">탈퇴</button> </li>
+					<li><font face="HU미드나잇120"> 탈퇴 하시겠습니까?</font> <button type="submit" class="btn btn-lightblue" style="margin-left: 5%"><font face="HU미드나잇120">탈퇴</font></button> </li>
 				</ul>
 				<label for="inputId"></label> <input type="hidden"
 								class="form-control" name="mid" placeholder="Id"
