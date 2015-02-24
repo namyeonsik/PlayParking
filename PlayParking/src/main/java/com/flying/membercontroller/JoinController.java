@@ -31,12 +31,11 @@ public class JoinController {
 	@Transactional(propagation=Propagation.REQUIRED)
 	public ModelAndView joinPost(MembersDTO member, HttpServletRequest request,HttpSession session){		
 		int ret = service.insertMembers(member);
-		System.out.println(ret+"�� �Է�");
+		System.out.println(ret+"건 입력");
 		System.out.println(member);
 		ModelAndView mv = new ModelAndView();
 				
 		if(ret!=0){
-			//�α��μ���
 			mv.setViewName("members/member_main");
 		}else{
 			mv.setViewName("members/join");
@@ -55,8 +54,16 @@ public class JoinController {
     
     @RequestMapping(value="/idcheck.do", method=RequestMethod.POST)
 	@Transactional(propagation=Propagation.REQUIRED)
-	public ModelAndView joinmsgPost(HttpServletRequest request,HttpSession session){		
+	public ModelAndView joinmsgPost(String mid,HttpServletRequest request,HttpSession session){		
 		ModelAndView mv = new ModelAndView();
+		MembersDTO member = service.selectBymid(mid);
+		if(member!=null){
+			//중복아이디있음
+			mv.addObject("idcheckmsg", "사용할 수 없는 id입니다.");
+			
+		}else{
+			mv.addObject("idcheckmsg", "사용할 수 있는 id입니다.");
+		}
 		mv.setViewName("members/idcheck");
 		return mv;
 	}

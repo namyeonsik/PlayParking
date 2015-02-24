@@ -118,48 +118,48 @@ function validationlogin(){
 <!-- 진짜헤더끝 -->  
        
  <!-- Modal Login Form-->
-		<div class="modal fade" id="modal-login-form" tabindex="-1"
-			role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-			<form id="login-form" method="post" action="memberlogin.do">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel1">Login</h4>
-						</div>
-						<!-- End .modal-header -->
-			<div class="modal-body">
-				<div class="form-group">
-						<label for="email2" class="form-label">Your Id<span
-									class="required">*</span></label> <input type="text" name="mid"
-									id="mid" class="form-control input-lg">
-							</div>
-							<!-- End .form-group -->
-							<div class="form-group">
-								<label for="password2" class="form-label">Your Passowrd<span
-									class="required">*</span></label> <input type="password"
-									name="mpwd" id="mpwd" class="form-control input-lg">
-							</div>
-							<!-- End .form-group -->
+      <div class="modal fade" id="modal-login-form" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+         <form id="login-form" method="post" action="memberlogin.do">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel1">Login</h4>
+                  </div>
+                  <!-- End .modal-header -->
+         <div class="modal-body">
+            <div class="form-group">
+                  <label for="email2" class="form-label">Your Id<span
+                           class="required">*</span></label> <input type="text" name="mid"
+                           id="mid" class="form-control input-lg">
+                     </div>
+                     <!-- End .form-group -->
+                     <div class="form-group">
+                        <label for="password2" class="form-label">Your Passowrd<span
+                           class="required">*</span></label> <input type="password"
+                           name="mpwd" id="mpwd" class="form-control input-lg">
+                     </div>
+                     <!-- End .form-group -->
 
-						</div>
-						<!-- End .modal-body -->
-						
-						<div class="modal-footer">
-							<button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">Join</button>
-							<button type="submit" class="btn btn-blue">Login</button>
-							<button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
-						</div>
-						<!-- End .modal-footer -->
-					</div>
-					<!-- End .modal-content -->
-				</div>
-				<!-- End .modal-dialog -->
-			</form>
-		</div>
-		<!-- End .modal -->
+                  </div>
+                  <!-- End .modal-body -->
+                  
+                  <div class="modal-footer">
+                     <button type="button" style="float: left;" class="btn btn-default" onClick="location.href='join.do';">JOIN</button>
+                     <button type="submit" class="btn btn-blue">LOGIN</button>
+                     <button type="button" class="btn btn-yellow" data-dismiss="modal">CLOSE</button>
+                  </div>
+                  <!-- End .modal-footer -->
+               </div>
+               <!-- End .modal-content -->
+            </div>
+            <!-- End .modal-dialog -->
+         </form>
+      </div>
+      <!-- End .modal -->
        
 
 <!-- 새로운 회원가입 -->
@@ -177,7 +177,7 @@ function validationlogin(){
               					  <tbody>
                					 	<tr style="">
 	                			    <td style="width:80%"><input type="text" name="mid" id="mid" class="form-control" placeholder="" style="margin-top:7%; width: 100%"><span class="animated-label">Your Id *</span></td>    
-									<td><button type="button" style=" float: right; font-family: HU미드나잇120;" class="btn btn-default" onclick="window.open('idcheck.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">ID중복확인</button></td>     
+									<td><button type="button" style=" float: right; font-family: HU미드나잇120;" class="btn btn-default" onclick="checkID();">ID중복확인</button></td>     
 									</tr>  
 									</tbody>
 								</table>
@@ -265,8 +265,36 @@ function validationlogin(){
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-
 <script>
+
+var elem = document.getElementById('loginmodal');
+elem.onclick = showModal;
+
+function showModal() {
+	var val = elem.toString().split("/");
+	if(val[val.length-1]=="memberlogout.do"){
+		$('#myModal').modal('hide');
+		return true;
+	}else{
+		$('#modal-login-form').modal('show');
+		return false;
+	}
+}
+
+function checkID()
+{
+      var mid = document.myfrm.mid.value;
+      //alert(mid);
+      if( mid == '' )
+      {
+            alert('아이디를 입력하세요');
+            return;
+      } 
+      
+      var url ='idcheck.do?mid=' + mid;
+      
+      window.open('idcheck.do?mid=' + mid, 'window팝업',  'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');
+}
 var xhr;//전역변수
 function call() {
 
