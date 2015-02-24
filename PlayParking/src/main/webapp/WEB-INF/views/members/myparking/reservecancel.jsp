@@ -196,7 +196,7 @@
 					<li class="list-group-item">${reservation.rtime}</li>
 					<li class="list-group-item">${reservation.pname}</li>
 					<li class="list-group-item">
-						<input class="btn btn-lightblue" type="button" value="취소하기" onclick="window.open('cancel.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+						<input type="button" class="btn btn-lightblue" value="예약취소" onclick="cancel(${reservation.rid});">
 					</li>
 				</ul>
 			</c:forEach>
@@ -254,6 +254,28 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 	<%-- <script
 		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script> --%>
+	<script>
+	var data;
+	var xhr =null;
+	function cancel(rid){
+		data = "rid=" + rid;
+		/* alert(typeof(rid)); */
+		/* var rid =  document.rid.value; */
+		window.open('cancel.do?rid='+rid,'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');
+/* 		xhr = new XMLHttpRequest();
+		//xhr.onreadystatechange = resultParse1;
+		xhr.open("POST", "cancel.do", true);//POST방식 비동기통신
+		xhr.setRequestHeader("content-type",
+				"application/x-www-form-urlencoded");
+		xhr.send(data); */
+	
+	
+	}
+	
+	
+	</script>
+	
+	
 	<div id="footer"
 		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
 		<%@ include file="../../Tail.jsp"%>

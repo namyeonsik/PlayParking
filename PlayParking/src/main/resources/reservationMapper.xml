@@ -11,26 +11,31 @@
 
 	<select id="selectByMonth" parameterType="map"
 		resultType="com.flying.model.ReservationDTO">
-		select pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as
+		select
+		pid,rstart,rtime,mid,rid,rend,rextrafare,to_char(rstart,'MM') as
 		month,sysdate
 		from reservation
-		where pid=#{pid:INTEGER} and to_char(rstart,'MM')= #{month:VARCHAR};
+		where pid=#{pid:INTEGER} and
+		to_char(rstart,'MM')= #{month:VARCHAR};
 	</select>
 
 	<select id="selectByaid" parameterType="Map"
 		resultType="com.flying.model.ReservationDTO">
-		select * from reservation where mid = #{mid:VARCHAR} and ROWNUM between
+		select * from reservation where mid = #{mid:VARCHAR} and
+		ROWNUM between
 		#{s:INTEGER} and #{l:INTEGER} order by rid desc
 	</select>
 
 	<select id="selectByaid11" parameterType="String"
 		resultType="com.flying.model.ReservationDTO">
-		select * from reservation where mid = #{mid:VARCHAR} order by rid desc
+		select * from reservation where mid = #{mid:VARCHAR} order
+		by rid desc
 	</select>
 
 	<select id="selectByaid12" parameterType="String"
 		resultType="com.flying.model.ReservationDTO">
-		select * from reservation where mid = #{mid:VARCHAR} and rstart &gt; sysdate
+		select * from reservation where mid = #{mid:VARCHAR} and
+		rstart &gt; sysdate
 		order by rid desc
 	</select>
 
@@ -53,7 +58,8 @@
 	</select>
 
 	<select id="getpname" resultType="String">
-		select pname from parking where pid=#{aa}
+		select pname from parking where
+		pid=#{aa}
 	</select>
 
 	<select id="searchBymid" parameterType="String"
@@ -64,12 +70,14 @@
 
 	<select id="selectMaxrid" parameterType="String"
 		resultType="com.flying.model.ReservationDTO">
-		select * from reservation where rid in (select max(rid) from reservation
+		select * from reservation where rid in (select max(rid)
+		from reservation
 		where mid = #{aa})
 	</select>
 
 	<insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">
-		insert into reservation
+		insert into
+		reservation
 		(rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime,rstarttimeback)
 		values(rid_seq.nextval,
 		#{pid:INTEGER},
@@ -84,7 +92,8 @@
 
 	</insert>
 	<insert id="insertUsepoint" parameterType="com.flying.model.UsePointDTO">
-		insert into usepoint (usedate,mid,pid,usepoint)
+		insert into usepoint
+		(usedate,mid,pid,usepoint)
 		values(sysdate,
 		#{mid:VARCHAR},
 		#{pid:INTEGER},
@@ -93,22 +102,26 @@
 
 	</insert>
 	<update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
-		update parking set
+		update parking
+		set
 		pcount = #{pcount:INTEGER}
 		where pid= #{pid:INTEGER}
 
 	</update>
 	<update id="updateMembersMpoint" parameterType="com.flying.model.MembersDTO">
-		update members set
+		update members
+		set
 		mpoint = #{mpoint:INTEGER}
 		where mid= #{mid:VARCHAR}
 
 	</update>
 	<update id="updateReservationEndByrid" parameterType="com.flying.model.ReservationDTO">
-		update reservation set
+		update
+		reservation set
 		rextrafare = #{rextrafare:INTEGER},
 		rend = sysdate
-		where rid=#{rid:INTEGER}
+		where
+		rid=#{rid:INTEGER}
 
 	</update>
 
@@ -126,7 +139,8 @@
 
 
 	<select id="getpname2" resultType="String">
-		select pname from parking where pid=#{aa}
+		select pname from parking
+		where pid=#{aa}
 	</select>
 	<resultMap type="com.flying.model.ReservationDTO" id="parkresult2">
 		<association property="pname" column="pid" select="getpname2"></association>
@@ -136,7 +150,8 @@
 		from reservation
 		where mid = #{mid:VARCHAR}
 		order by rid desc)
-		where num between #{s:INTEGER} and #{l:INTEGER}
+		where num between
+		#{s:INTEGER} and #{l:INTEGER}
 	</select>
 
 
@@ -152,10 +167,13 @@
 	</select>
 
 	<select id="getpname3" resultType="String">
-		select pname from parking where pid=#{aa}
+		select pname from parking
+		where pid=#{aa}
 	</select>
 
-
-
+	<delete id="deleteReservation">
+		delete from reservation
+		where rid=#{rid:INTEGER}
+	</delete>
 
 </mapper>

@@ -78,15 +78,20 @@
 </style>
 </head>
 <body>
-	<div class="cancel">
-	<h6>
-		<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
-	</h6>
-	</div>
-	
-	<div class="btn">
-	<input class="btn btn-lightblue" type="button" value="네!">
-	</div>
+	<div class="cancel"></div>
+	<form name="chulfrm2" action="cancel.do" method="post">
+		<input type="hidden" name="rid" value="${rid }">
+		<div class="btn">
+			<h6>
+				<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
+			</h6>
+
+			<input type="submit" class="btn btn-lightblue" value="네!">
+		</div>
+	</form>
+	<script type="text/javascript">
+		
+	</script>
 	<!-- Plugins -->
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>

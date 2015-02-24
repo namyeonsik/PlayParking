@@ -10,7 +10,11 @@ public class ReservationService implements ReservationServiceInterface{
 
    @Autowired
    public ReservationDAOInterface dao;
-
+   
+   public int deleteReservation(int rid){
+	   return dao.deleteReservation(rid);
+   }
+   
    public List<ReservationDTO> selectBymid(String mid) {
       return dao.selectBymid(mid);
    }

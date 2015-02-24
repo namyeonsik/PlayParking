@@ -3,6 +3,7 @@ package com.flying.model;
 import java.util.List;
 
 public interface ReservationServiceInterface {
+   public int deleteReservation(int rid);
    public List<ReservationDTO> selectByaid11(String mid);
    public List<ReservationDTO> selectByaid12(String mid);
    public List<ReservationDTO> selectByaid(String mid, int s, int l);
