@@ -34,5 +34,9 @@ public class MembersService implements MembersServiceInterface{
 	public List<CarDTO> selectByCbrand(String cbrand) {
 		return dao.selectByCbrand(cbrand);
 	}
+	
+	public int deleteMembers(String mid){
+		return dao.deleteMembers(mid);
+	}
 
 }

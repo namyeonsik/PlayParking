@@ -12,7 +12,7 @@
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
 
-<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">  -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
@@ -92,70 +92,86 @@
 		format('woff');
 }
 
-.form {
+/* .form {
 	float: left;
 	margin-left: 27%;
 	margin-top: 3%;
 	width: 80%;
 	font-family: HU미드나잇120;
-}
+} */
 
 .header {
 	height: 50px
 }
 
-.title {
-	margin-left: 43%;
-	margin-top: 10%;
-}
+
 </style>
 
 </head>
 <body style="height: 100%;">
 	<%@ include file="../../Header.jsp"%>
 
-	<!-- 회원정보수정 -->
-	<!-- <div class="col-md-10 col-sm-9 col-xs-12" id="updateform"> -->
+	<div class="tab-container left clearfix" style="margin-left:15%; margin-top: 10%; width: 70%;">
+		<!-- Tab nav -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#details8" role="tab"
+				data-toggle="tab">회원 정보수정</a></li>
+			<li><a href="#details7" role="tab" data-toggle="tab">회원 탈퇴</a></li>
+		</ul>
 
-	<div class="title">
-		<h2>
-			<font face="HU미드나잇140">내 정보 수정</font>
-		</h2>
-	</div>
+		<!-- Tab panes -->
+		<div class="tab-content" style="">
+		
+           <div class="tab-pane fade in active" id="details8" >
+						<form class="form-horizontal" action="memberupdate.do"
+							method="post" style="width: 60%; margin-left: 13%">
 
-	<div class="form">
-		<div class="col-md-12 col-sm-12 col-xs-12 lg-margin">
-			<form class="form-horizontal" action="memberupdate.do" method="post" style="width: 60%">
+							<label for="inputId"></label> <input type="hidden"
+								class="form-control" name="mid" placeholder="Id"
+								value="${memcheck.mid}"> <label for="inputName">Name</label>
+							<input type="text" class="form-control" name="mname"
+								placeholder="Name" value="${memcheck.mname}"> <label
+								for="inputPassword">Password</label> <input type="password"
+								class="form-control" name="mpwd" placeholder="Password"
+								value="${memcheck.mpwd}"> <label for="inputPhone">Phone</label>
+							<input type="text" class="form-control" name="mphone"
+								placeholder="Phone" value="${memcheck.mphone}"> <label
+								for="inputEmail">Email</label> <input type="text"
+								class="form-control" name="memail" placeholder="Email"
+								value="${memcheck.memail}">
+					
+					<br> <br>
 
+					<div class="form-group">
+						<div class="col-lg-10 col-lg-offset-2" style="margin-left: 23%">
+							<button type="submit" class="btn btn-lightblue">완료</button>
+							<button type="reset" class="btn btn-default">취소</button>
+					    </div>
+					</div>
+					</form>
+			    </div>
+			<!-- End .tab-pane -->
+			<div class="tab-pane fade" id="details7">
+				<p class="list-margin">탈퇴할 경우 복구가 불가능 합니다.</p><br>
+				<form action="deletemember.do" method="post">
+				<ul class="list-style list-square">
+					<li> 탈퇴 하시겠습니까? <button type="submit" class="btn btn-lightblue" style="margin-left: 5%">탈퇴</button> </li>
+				</ul>
 				<label for="inputId"></label> <input type="hidden"
-					class="form-control" name="mid" placeholder="Id"
-					value="${memcheck.mid}"> <label for="inputName">Name</label>
-				<input type="text" class="form-control" name="mname"
-					placeholder="Name" value="${memcheck.mname}"> <label
-					for="inputPassword">Password</label> <input type="password"
-					class="form-control" name="mpwd" placeholder="Password"
-					value="${memcheck.mpwd}"> <label for="inputPhone">Phone</label>
-				<input type="text" class="form-control" name="mphone"
-					placeholder="Phone" value="${memcheck.mphone}"> <label
-					for="inputEmail">Email</label> <input type="text"
-					class="form-control" name="memail" placeholder="Email"
-					value="${memcheck.memail}">
-		</div>
-		<br> <br>
-
-		<div class="form-group">
-			<div class="col-lg-10 col-lg-offset-2" style="margin-left: 23%">
-				<button type="reset" class="btn btn-default">취소</button>
-				<button type="submit" class="btn btn-lightblue">완료</button>
+								class="form-control" name="mid" placeholder="Id"
+								value="${memcheck.mid}">
+				</form>
+			</div>
+			<!-- End .tab-pane -->
+			
+			
+			
 			</div>
 		</div>
+		<!-- End .tab-content -->
 
-		</form>
 
-	</div>
-
-	</div>
-	<!-- 회원정보수정 -->
+	<!-- End .tab-container -->
 
 	<!-- Plugins -->
 	<script
@@ -174,12 +190,7 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-	<%-- <script
-	src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
- --%>
-	<div id="footer"
-		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
-		<%@ include file="../../Tail.jsp"%>
-	</div>
+
+
 </body>
 </html>

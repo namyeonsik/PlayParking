@@ -25,6 +25,10 @@ public class MembersDAO implements MembersDAOInterface{
 	public int insertMembers(MembersDTO member) {
 		return session.insert("flying.members.insertMembers",member);
 	}
+	
+	public int deleteMembers(String mid){
+		return session.delete("flying.members.deleteByMid", mid);
+	}
 
 	public MembersDTO selectByUser(String mid, String mpwd) {
 		MembersDTO member = null;

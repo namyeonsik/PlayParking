@@ -4,6 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.members">
 
+  <delete id="deleteByMid" parameterType="String">
+  	delete from members
+   where mid = #{mid:VARCHAR}
+  </delete>
+   
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.MembersDTO">

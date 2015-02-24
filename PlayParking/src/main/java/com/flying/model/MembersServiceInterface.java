@@ -9,4 +9,5 @@ public interface MembersServiceInterface {
 	public int insertMembers(MembersDTO member);
 	public MembersDTO selectByUser(String mid,String mpwd);
 	public List<CarDTO> selectByCbrand(String cbrand);
+	public int deleteMembers(String mid);
 }

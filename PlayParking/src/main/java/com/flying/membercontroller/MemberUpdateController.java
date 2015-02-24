@@ -46,7 +46,8 @@ public class MemberUpdateController {
 		System.out.println("mem값은?"+mem);
 		int ret = service.updateMembers(mem);
 		System.out.println(ret+"건 수정.."+mem);
-		return "redirect:/membermain.do";
+		
+		return "redirect:/memberupdate.do";
 	}	
 	
 	@RequestMapping(value="/carname_update.do", method=RequestMethod.POST)
@@ -57,5 +58,13 @@ public class MemberUpdateController {
 		mv.addObject("car", car);
 		mv.setViewName("/members/myparking/cname_update");
 		return mv;
+	}
+	
+	@RequestMapping(value="/deletemember.do", method=RequestMethod.POST)
+	public String deletePost(String mid){
+		System.out.println("mem값은?"+mid);
+		int ret = service.deleteMembers(mid);
+		System.out.println(ret+"건 삭제");
+		return "redirect:/membermain.do";
 	}
 }
