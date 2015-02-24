@@ -385,7 +385,7 @@
 			xhr.onreadystatechange = resultParse3;
 
 			data = data + "&selectTime=" + stime;
-			//   alert(data);
+			// alert(data);
 
 			msg1 = stime;
 			viewData6();

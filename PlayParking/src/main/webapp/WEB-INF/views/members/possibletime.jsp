@@ -2,13 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 
 <div class="input-group">
-	<span class="input-group-addon">이용시간 선택</span>
+	<span class="input-group-addon">입차시간 선택</span>
 	<div class="clearfix">
-		<select name="possibleTime" id="possibleTime" class="selectbox">
+		<%-- <select name="possibleTime" id="possibleTime" class="selectbox">
 			<option value="0930">09:00~09:30 ${check}</option>
 			<option value="1000">09:30~10:00 ${check}</option>
 			<option value="1030">10:00~10:30 ${check}</option>
@@ -40,7 +42,15 @@
 
 
 		</select>
+		 --%>
 		
+		<select multiple class="form-control"
+			name="possibleTime" id="possibleTime">
+			<c:forEach items="${check}" var="num1">
+				<option value="${num1}">${fn:substring(num1,0,2)}:${fn:substring(num1,2,4) }${fn:substring(num1,4,8) }</option>
+
+			</c:forEach>
+		</select>
 		
 	</div>
 	
