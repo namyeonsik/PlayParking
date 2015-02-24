@@ -2,6 +2,7 @@ package com.flying.model;
 
 import java.util.List;
 
+
 public interface MembersDAOInterface {
 	public MembersDTO selectBymid(String mid);
 	public int updateMembers(MembersDTO mem);

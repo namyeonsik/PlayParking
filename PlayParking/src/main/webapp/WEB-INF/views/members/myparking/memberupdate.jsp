@@ -150,6 +150,7 @@
 					</div>
 					</form>
 			    </div>
+			    
 			<!-- End .tab-pane -->
 			<div class="tab-pane fade" id="details7">
 				<p class="list-margin">탈퇴할 경우 복구가 불가능 합니다.</p><br>

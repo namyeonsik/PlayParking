@@ -41,6 +41,7 @@ public class MemberUpdateController {
 		}
 	}
 	
+	
 	@RequestMapping(value="/memberupdate.do", method=RequestMethod.POST)
 	public String updatePost(MembersDTO mem){
 		System.out.println("mem°ªÀº?"+mem);

@@ -9,6 +9,7 @@
    where mid = #{mid:VARCHAR}
   </delete>
    
+   
   <select id="selectBymid" 
   	parameterType="String"
   	resultType="com.flying.model.MembersDTO">
