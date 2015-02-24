@@ -17,6 +17,10 @@ public class ReservationDAO implements ReservationDAOInterface {
    @Autowired
    SqlSession session;
    
+   public int deleteReservation(int rid){
+	   return session.delete("flying.reservation.deleteReservation", rid);
+   }
+   
    public int insertReservation(ReservationDTO reserve) {
       // TODO Auto-generated method stub
       return session.insert("flying.reservation.insertReservation", reserve);
