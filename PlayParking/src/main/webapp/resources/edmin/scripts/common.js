@@ -176,7 +176,7 @@ function showpp2(){
 }
     
     var d1 =$('#graph').val();
-    alert(d1);
+    //alert(d1);
     d1 = eval("(" + d1+")");
     //var d2 = [ [0, 8], [1, 2], [2, 10], [3, 1], [4, 9],  [5, 5], [6, 2], [7, 10], [8, 8] ];
     //var d2 = $('#beforegraph').val();
