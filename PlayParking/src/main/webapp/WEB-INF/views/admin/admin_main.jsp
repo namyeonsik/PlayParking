@@ -212,7 +212,8 @@
 							 <section id="saleschart">
 							 <div class="module">
                  	    <div class="module-head">
-                 	       <h3>매출 차트</h3>
+                 	       <h3>매출 차트  <input id="before" name="before" type="button" style="float: right;" value="작년 매출" class="btn btn-info"></h3> 
+                 	       
               	       </div>
               	       <div class="module-body">
                  	       <div class="chart inline-legend grid">
@@ -302,8 +303,8 @@
 		</div>
 	</div>
 <input id="mm" value="${adminmsg}" type="hidden"> 	
-<input id="graph" value="${graph}" type="hidden"> 	
-<input id="beforegraph" value="${beforegraph}" type="hidden">
+<input id="graph" value="${graph}" type="text"> 	
+<input id="beforegraph" value="${beforegraph}" type="text">
 <!-- <script type="text/javascript">
 var dd = document.getElementById("mm").value;
 if(dd!=''){
@@ -342,9 +343,7 @@ function loginfail(){
 	<script
 		src="${pageContext.request.contextPath}/resources/edmin/scripts/common.js"
 		type="text/javascript"></script>
-	<!-- 		 <script type="text/javascript" src="../wp-content/themes/piha/js/top-bar.js" ></script>
-		<script type="text/javascript" src="../wp-content/themes/piha/js/bsa-ads.js" ></script> -->
-	<!--Dynamically creates analytics markup-->
+
 	
 	<script type="text/javascript">
 /* 	$('#modal-text1').on('show', function() {

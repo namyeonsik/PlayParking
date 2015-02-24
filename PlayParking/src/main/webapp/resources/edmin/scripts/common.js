@@ -1,4 +1,5 @@
-﻿$(document).ready(function () { /*function func(d1,d2) { */ 
+﻿$(document).ready(function () { 
+	 alert("왜안떠!!!");
     if($('.datatable-1').length>0){
         $('.datatable-1').dataTable();
         $('.dataTables_paginate').addClass('btn-group datatable-pagination');
@@ -18,16 +19,18 @@
 	
         $( '#amount' ).val( '$' + $( '.slider-range' ).slider( 'values', 0 ) + ' - $' + $( '.slider-range' ).slider( 'values', 1 ) );
     
-
+        alert("왜안떠!!!");
     //Graph/Chart index.html
-        //d1=chart보여줄것, d2=x
-  // var d1 = "[ [0, 1], [1, 14], [2, 5], [3, 4], [4, 5], [5, 1], [6, 14], [7, 5],  [8, 5] ]";
+    //d1=chart보여줄것, d2=x
+    //var d1 = "[ [0, 1], [1, 14], [2, 5], [3, 4], [4, 5], [5, 1], [6, 14], [7, 5],  [8, 5] ]";
     //d1 = eval("(" + d1+")");
     var d1 =$('#graph').val();
-    //alert(d1);
+    alert(d1);
     d1 = eval("(" + d1+")");
     //var d2 = [ [0, 8], [1, 2], [2, 10], [3, 1], [4, 9],  [5, 5], [6, 2], [7, 10], [8, 8] ];
-
+    //var d2 = $('#beforegraph').val();
+    //d2 = eval("(" + d2+")");
+    //alert(d2);
 	var plot = $.plot($('#placeholder2'),
 			   [ { data: d1, label: '매출'}, { data: d2, label: 'Expenses' } ], {
 					lines: {

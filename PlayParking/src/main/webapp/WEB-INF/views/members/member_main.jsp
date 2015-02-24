@@ -185,7 +185,7 @@
 							alt="slidebg4"
 							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.png"
 							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="200" data-bgfit="115" data-bgfitend="100"
+							data-duration="200" data-bgfit="100" data-bgfitend="98"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
 							<!-- <div class="tp-caption rev-title rev-border sft stb" data-x="100" data-y="145" data-start="1000" data-speed="1000">HOW<span class="yellow-color"></span></div> -->
 							<div
@@ -194,7 +194,7 @@
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0.3;transformPerspective:600;transformOrigin:50% 50%;"
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="90" data-speed="1200"
+								data-endspeed="600" data-x="100" data-y="80" data-speed="1200"
 								style="filter: alpha(opacity=30); opacity:0.3;">HOW</div>
 							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">Waiting to</div>
 

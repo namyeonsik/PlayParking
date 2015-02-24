@@ -151,9 +151,8 @@ public class AdminMainController {
 						beforecharttable[s][j] = beforemonthlist.get(j);
 						beforegraph += "[" + beforecharttable[s][j] + ",";
 					}else{
-						
 						if(j+1>=10){
-							beforecharttable[s][j] = "2014"+(j+1);
+							beforecharttable[s][j] = "2014"+(j-1);
 						}else{
 							beforecharttable[s][j] = "20140"+(j+1);
 						}
@@ -169,22 +168,14 @@ public class AdminMainController {
     				   beforegraph += beforecharttable[s][j]+"], ";
     			   }
     		   }
-		
-    	  }
-    	  
-      }
+    	   }
+    }
      
       beforegraph +="]"; 
       System.out.println(beforegraph+"2014±×·¡ÇÁ!");
     
       
       mv.addObject("beforegraph", beforegraph);
-      
-      
-      
-      
-      
-      
       
       
       
