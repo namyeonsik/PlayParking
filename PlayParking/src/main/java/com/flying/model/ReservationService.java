@@ -90,12 +90,23 @@ public class ReservationService implements ReservationServiceInterface{
       return dao.selectReservation2(mid, s, l);
 
    }
+   
+   public List<ReservationDTO> selectReservation3(String mid, int s, int l) {
+	      // TODO Auto-generated method stub
+	      return dao.selectReservation3(mid, s, l);
+
+	   }
 
    public List<ReservationDTO> selectByaid11(String mid) {
       // TODO Auto-generated method stub
       return dao.selectByaid11(mid);
    }
 
+   public List<ReservationDTO> selectByaid12(String mid) {
+	      // TODO Auto-generated method stub
+	      return dao.selectByaid12(mid);
+	   }
+   
    public List<ReservationDTO> selectByaid(String mid, int s, int l) {
       // TODO Auto-generated method stub
       return dao.selectByaid(mid, s, l);

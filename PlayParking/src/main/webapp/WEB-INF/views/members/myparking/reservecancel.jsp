@@ -135,7 +135,7 @@
 	margin: 0;
 	padding: 2px, 1px;
 	width: 240px;
-	height: 50px;
+	height: 55px;
 }
 
 .reservecheck ul .list-group-item list-group-item-lightblue {
@@ -195,7 +195,9 @@
 							pattern="yy-MM-dd" /></li>
 					<li class="list-group-item">${reservation.rtime}</li>
 					<li class="list-group-item">${reservation.pname}</li>
-					<li class="list-group-item">버튼</li>
+					<li class="list-group-item">
+						<input class="btn btn-lightblue" type="button" value="취소하기" onclick="window.open('cancel.do', 'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');">
+					</li>
 				</ul>
 			</c:forEach>
 		</div>
