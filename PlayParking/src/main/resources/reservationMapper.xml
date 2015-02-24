@@ -78,7 +78,7 @@
 	<insert id="insertReservation" parameterType="com.flying.model.ReservationDTO">
 		insert into
 		reservation
-		(rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime,rstarttimeback)
+		(rid,pid,rstart,rtime,mid,rend,rextrafare,rstarttime,rstarttimeback,rpoint)
 		values(rid_seq.nextval,
 		#{pid:INTEGER},
 		#{rstart:DATE},
@@ -87,7 +87,8 @@
 		#{rend:DATE},
 		#{rextrafare:INTEGER},
 		#{rstarttime:VARCHAR},
-		#{rstarttimeback:VARCHAR}
+		#{rstarttimeback:VARCHAR},
+		#{rpoint:INTEGER}
 		)
 
 	</insert>

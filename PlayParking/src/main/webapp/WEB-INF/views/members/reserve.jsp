@@ -176,7 +176,7 @@
 			<!--space -->
 			<div class="parkingname">
 				<h6>
-				<font face="HU미드나잇120" color="red">${pname}(</font> <font face="HU미드나잇120">1시간 요금: </font>
+				<font face="HU미드나잇120" color="red">${pname}</font> <font face="HU미드나잇120">(1시간 요금: </font>
 				<font face="HU미드나잇120">${parkingMpoint}원)</font>
 					 
 				</h6>
@@ -446,9 +446,10 @@
 			//alert(tempdate2);
 
 			if (date == tempdate2) {
-				msg1 = "당일예약입니다";
+				msg1 = "당일 예약입니다";
+				
 				//포스트방식
-				viewData4();
+				viewData7();
 				xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
 				xhr.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
@@ -535,6 +536,12 @@
 
 			document.getElementById("msg3").innerHTML = '<h6><font face="HU미드나잇120">'
 					+ msg1 + ' 시간을 선택하셨습니다</font></h6>';
+
+		}
+		function viewData7() {
+
+			document.getElementById("msg1").innerHTML = '<h6><font face="HU미드나잇120">'
+					+ msg1 + '</font></h6><h6><font face="HU미드나잇120">당일 예약은 <font face="HU미드나잇120" color="red">취소</font>가 안됩니다.</font></h6>';
 
 		}
 	</script>

@@ -201,6 +201,8 @@ public class ReserveController {
         mpoint = members.getMpoint();
          minusMpoint = parkingMpoint*calselectTime;
          System.out.println("차감액="+minusMpoint);
+         
+         reserve.setRpoint(minusMpoint);
          resultMpoint = members.getMpoint()-minusMpoint;
          mv.addObject("mpoint", mpoint); // submit.jsp에 보여줄 애들
          mv.addObject("minusMpoint",minusMpoint);

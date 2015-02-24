@@ -14,11 +14,18 @@ public class ReservationDTO {
 	int rextrafare;
 	String rstarttime;
 	String rstarttimeback;
+	int rpoint;
 	
 	String pname;
 	List<ParkingDTO> parkinglist;
 	
 	
+	public int getRpoint() {
+		return rpoint;
+	}
+	public void setRpoint(int rpoint) {
+		this.rpoint = rpoint;
+	}
 	public List<ParkingDTO> getParkinglist() {
 		return parkinglist;
 	}
@@ -103,7 +110,7 @@ public class ReservationDTO {
 	public String toString() {
 		return "ReservationDTO [rid=" + rid + ", pid=" + pid + ", mid=" + mid
 				+ ", rstart=" + rstart + ", rend=" + rend + ", rtime=" + rtime
-				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+"rstarttimeback=" + rstarttimeback+ "]";
+				+ ", rextrafare=" + rextrafare +", rstarttime=" + rstarttime+"rstarttimeback=" + rstarttimeback+"rpoint=" + rpoint+ "]";
 	
 	}
 }
