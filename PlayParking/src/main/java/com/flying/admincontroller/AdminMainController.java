@@ -42,7 +42,6 @@ public class AdminMainController {
    public ModelAndView adminMain(HttpServletRequest request,
                                    HttpSession session) {
       ModelAndView mv = new ModelAndView();
-      System.out.println("ï¿½ï¿½ï¿½â°¡ main ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
       session = request.getSession();
       AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
       
@@ -65,21 +64,21 @@ public class AdminMainController {
       avg=sumfare/aroundpark.size();
       mv.addObject("avg", avg);
       
-      //ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½
-      int parkingfare = parking.getPfare(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+      //ÁÖÂ÷Àå¿ä±Ý
+      int parkingfare = parking.getPfare(); 
       List<ChartDTO> chartlist = 
     		  chartservice.selectReserve(admincheck.getPid());
      
       List<Integer> summonthlyfare = new ArrayList<Integer>();
-      //ï¿½ï¿½
+    
       List<String> monthlist = new ArrayList<String>();
       for(ChartDTO c : chartlist){
     	 
     	 summonthlyfare.add(c.getSumrtime()*parkingfare);
     	 monthlist.add(c.getMonth());
       }
-      //System.out.println(monthlist.get(0)+"monthlistï¿½Ô´Ï´ï¿½.");
-      //System.out.println(summonthlyfare.get(1)+"ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+      //System.out.println(monthlist.get(0));
+      //System.out.println(summonthlyfare.get(1));
       
       String[][] charttable = new String[2][12];
 
@@ -115,7 +114,7 @@ public class AdminMainController {
       }
      
       graph +="]"; 
-      System.out.println(graph+"ê·¸ëž˜í”„!!");
+      System.out.println(graph+"±×·¡ÇÁ!");
       /* for(int i=0; i<2;i++){
     	  for(int j=0; j<8;j++){
     		 System.out.println(charttable[i][j]+" charttable");
@@ -127,20 +126,20 @@ public class AdminMainController {
       mv.addObject("graph", graph);
       
       
-      //2014ì°¨íŠ¸
+      //2014
       List<ChartDTO> beforechartlist = 
     		  chartservice.selectBeforeReserve(admincheck.getPid());
      
       List<Integer> beforesummonthlyfare = new ArrayList<Integer>();
-      //ï¿½ï¿½
+      //
       List<String>	beforemonthlist = new ArrayList<String>();
       for(ChartDTO c : beforechartlist){
     	 
     	  beforesummonthlyfare.add(c.getSumrtime()*parkingfare);
     	  beforemonthlist.add(c.getMonth());
       }
-      //System.out.println(monthlist.get(0)+"monthlistï¿½Ô´Ï´ï¿½.");
-      //System.out.println(summonthlyfare.get(1)+"ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+      //System.out.println(monthlist.get(0));
+      //System.out.println(summonthlyfare.get(1));
       
       String[][] beforecharttable = new String[2][12];
 
@@ -176,7 +175,7 @@ public class AdminMainController {
       }
      
       beforegraph +="]"; 
-      System.out.println(beforegraph+"2014ê·¸ëž˜í”„!!");
+      System.out.println(beforegraph+"2014±×·¡ÇÁ!");
     
       
       mv.addObject("beforegraph", beforegraph);
@@ -197,7 +196,7 @@ public class AdminMainController {
       
       
       Date d1 = new Date();
-      System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ç½Ã°ï¿½="+d1.getHours()+"ï¿½ï¿½="+d1.getMinutes());
+      System.out.println("ÀÔ·ÂÇØÁÖ¼¼¿ä="+d1.getHours()+"="+d1.getMinutes());
       String test1 = toString().format("", d1.getHours())+toString().format("", d1.getMinutes());
       
       SimpleDateFormat sf = new SimpleDateFormat("HHmm");
@@ -213,12 +212,12 @@ public class AdminMainController {
       SimpleDateFormat formatForchart = new SimpleDateFormat("yyyy-MM");
       //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
       //Date d2 = sf.parse(d1);
-      System.out.println("ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½="+i);
+      System.out.println(""+i);
       String today = format.format(d1);
       String reserveday=null;
      
      thisMonth = formatForchart.format(d1);
-      System.out.println("ï¿½Ì¹ï¿½âµµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = "+thisMonth);
+      System.out.println(""+thisMonth);
       
   
       
@@ -295,7 +294,7 @@ public class AdminMainController {
       mv.addObject("reservelist", reservelist2);
       mv.addObject("todaypoint",todaypoint);
    //   mv.addObject("plus30", reservelist3);
-      System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½à°¹ï¿½ï¿½="+todaycount);
+      System.out.println("¿À´Ã Æ÷ÀÎÆ®="+todaycount);
 
       mv.setViewName("admin/admin_main");
       return mv;
@@ -404,9 +403,9 @@ public class AdminMainController {
     parking.setPcount(countTemp);
     int ret = rservice.updateReservationEndByrid(reserve);
     int ret2 = service.updateParkingPcount(parking);
-   System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ reserve==="+reserve);
-      System.out.println(ret+"ï¿½ï¿½ï¿½ï¿½ End ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½");
-      System.out.println(ret2+"ï¿½ï¿½ï¿½ï¿½ pcountï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½");
+   System.out.println(" reserve==="+reserve);
+      System.out.println(ret+" End ");
+      System.out.println(ret2+"pcount");
       mv.setViewName("redirect:/adminmain.do");
       return mv;
       

@@ -111,7 +111,8 @@ function validationcheck(){
 <script type="text/javascript">
 function idconfirm(){
 	
-	var mid = idcheckform.mid.value;
+	opener.document.contact-form.mid.value="<%=mid%>";
+	self.close();
 	//여기만하면된다. 확인버튼 눌렀을때 값을 join.jsp로 넘겨주기 
 }
 </script>

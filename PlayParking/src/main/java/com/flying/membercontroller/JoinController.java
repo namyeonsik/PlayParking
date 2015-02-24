@@ -31,7 +31,7 @@ public class JoinController {
 	@Transactional(propagation=Propagation.REQUIRED)
 	public ModelAndView joinPost(MembersDTO member, HttpServletRequest request,HttpSession session){		
 		int ret = service.insertMembers(member);
-		System.out.println(ret+"ê±´ ì…ë ¥");
+		System.out.println(ret+"°Ç ÀÔ·Â");
 		System.out.println(member);
 		ModelAndView mv = new ModelAndView();
 				
@@ -58,11 +58,10 @@ public class JoinController {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO member = service.selectBymid(mid);
 		if(member!=null){
-			//ì¤‘ë³µì•„ì´ë””ìˆìŒ
-			mv.addObject("idcheckmsg", "ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” idì…ë‹ˆë‹¤.");
+			mv.addObject("idcheckmsg", "»ç¿ëÇÒ ¼ö ÀÖ´Â idÀÔ´Ï´Ù.");
 			
 		}else{
-			mv.addObject("idcheckmsg", "ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” idì…ë‹ˆë‹¤.");
+			mv.addObject("idcheckmsg", "»ç¿ëÇÒ ¼ö ¾ø´Â idÀÔ´Ï´Ù.");
 		}
 		mv.setViewName("members/idcheck");
 		return mv;
