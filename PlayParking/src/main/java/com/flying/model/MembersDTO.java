@@ -20,7 +20,7 @@ public class MembersDTO {
 	}
 	public MembersDTO(){};
 	public MembersDTO(String mid, int cid, String mpwd, String mname,
-			String mphone, String memail, int mpoint) {
+			String mphone, String memail, int mpoint,int mcheck) {
 		super();
 		this.mid = mid;
 		this.cid = cid;
@@ -77,7 +77,9 @@ public class MembersDTO {
 	public String toString() {
 		return "MembersDTO [mid=" + mid + ", cid=" + cid + ", mpwd=" + mpwd
 				+ ", mname=" + mname + ", mphone=" + mphone + ", memail="
-				+ memail + ", mpoint=" + mpoint + "]";
+				+ memail + ", mpoint=" + mpoint + ", mcheck=" + mcheck + "]";
 	}
+	
+	
 	
 }
