@@ -58,10 +58,16 @@ public class JoinController {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO member = service.selectBymid(mid);
 		if(member!=null){
-			mv.addObject("idcheckmsg", "사용할 수 있는 id입니다.");
+			mv.addObject("idcheckmsg", "사용할 수 없는 id입니다.");
 			
 		}else{
-			mv.addObject("idcheckmsg", "사용할 수 없는 id입니다.");
+			if(mid.length()<5){
+				mv.addObject("idcheckmsg", "사용할 수 없는 id입니다.");
+			}else if(mid.length()>16){
+				mv.addObject("idcheckmsg", "사용할 수 없는 id입니다.");
+			}else{
+				mv.addObject("idcheckmsg", "사용할 수 있는 id입니다.");
+			}
 		}
 		mv.setViewName("members/idcheck");
 		return mv;

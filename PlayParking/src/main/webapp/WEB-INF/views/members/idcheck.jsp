@@ -60,7 +60,6 @@ String mid=request.getParameter("mid");
 %>
 
 <script type="text/javascript">
-<script type="text/javascript">
 
 function validationcheck(){
 	var mid = idcheckform.mid.value;
@@ -77,11 +76,15 @@ function validationcheck(){
 	}
 }
 
+function idconfirm(){
+	opener.document.myfrm.mid.value = "<%=mid%>";
+	self.close();
+}
 </script>
 </head>
 <body>
 
-<form class="form-horizontal" name="idcheckform" action="idcheck.do" method="post" style="width: 85%;margin-left: 5%;">
+<form class="form-horizontal" id="idcheckform" name="idcheckform" action="idcheck.do" method="post" style="width: 85%;margin-left: 5%;">
     <div id="title" style="margin-left: 5%;margin-bottom: 13%;">
     <h3><font face="HU미드나잇120" style="text-align: center;">ID 중복확인</font></h3>
     <h6><font size="3"; face="HU미드나잇120" style="text-align: center;">ID는 영문, 숫자로 4-16자 이내로 입력해 주세요.</font></h6>
@@ -107,14 +110,5 @@ function validationcheck(){
 <script src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-
-<script type="text/javascript">
-function idconfirm(){
-	
-	opener.document.contact-form.mid.value="<%=mid%>";
-	self.close();
-	//여기만하면된다. 확인버튼 눌렀을때 값을 join.jsp로 넘겨주기 
-}
-</script>
 </body>
 </html>
