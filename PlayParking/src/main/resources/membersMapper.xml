@@ -29,6 +29,11 @@
   	where mid=#{mid:VARCHAR} 
   	</update>
   
+  	<!-- <update id="updatePoint2">
+  	update members 
+  	set mpoint=mpoint+#{mpoint:INTEGER}
+  	where mid=#{mid:VARCHAR} 
+  	</update> -->
   
   <insert id="insertMembers" parameterType="com.flying.model.MembersDTO">
 	insert into Members(mid,mpwd,mname,mphone,memail,mpoint,cid)

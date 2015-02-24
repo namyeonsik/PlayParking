@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -84,7 +85,7 @@
     
     <label for="inputPoint"></label>
       <input type="text" class="form-control" name="mpoint" placeholder="금액을 입력하세요(단위:천원)">    
-    
+     
     </div>
     
     <div class="form-group" style="margin-left: 37%; width: 100%;">

@@ -85,7 +85,8 @@
 			<h6>
 				<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
 			</h6>
-
+			<label for="inputId"></label>
+      <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
 			<input type="submit" class="btn btn-lightblue" value="네!">
 		</div>
 	</form>

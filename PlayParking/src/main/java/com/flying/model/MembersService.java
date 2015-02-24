@@ -1,6 +1,8 @@
 package com.flying.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,6 +33,11 @@ public class MembersService implements MembersServiceInterface{
 	public int updatePoint(MembersDTO point) {
 		return dao.updatePoint(point);
 	}
+	
+	/*public int updatePoint2(int point, String mid) {
+		return dao.updatePoint2(point, mid);
+	}*/
+
 
 	public List<CarDTO> selectByCbrand(String cbrand) {
 		return dao.selectByCbrand(cbrand);

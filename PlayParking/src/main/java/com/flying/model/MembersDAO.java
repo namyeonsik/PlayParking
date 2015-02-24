@@ -51,5 +51,14 @@ public class MembersDAO implements MembersDAOInterface{
 		return session.update("flying.members.updatePoint", point);
 	}
 
+	/*public int updatePoint2(int point, String mid) {
+		Map<Object, Object> map = new HashMap<Object, Object>();         
+		map.put("point", point);
+		map.put("mid", mid); 
+		
+	      
+		return session.update("flying.members.updatePoint2", point, mid);
+	}*/
+
 
 }
