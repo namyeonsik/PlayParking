@@ -210,10 +210,6 @@ public class AdminMainController {
      thisMonth = formatForchart.format(d1);
       System.out.println(""+thisMonth);
       
-  
-      
-      
-      
       for (int a = 0; a < i; a++) {
 
          reserveday=format.format(reservelist.get(a).getRstart());
