@@ -23,34 +23,34 @@
 <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/jquery.selectbox.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/bootstrap-switch.css">
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/fonts.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/font-awesome.min.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/animate.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/prettyPhoto.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/revslider.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/style.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/style.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+	href="${pageContext.request.contextPath}/resources/geass2/css/responsive.css">
 
 <!-- Favicon and Apple Icons -->
 <link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/resources/geass/images/favicon.png">
+	href="${pageContext.request.contextPath}/resources/geass2/images/favicon.png">
 <link rel="apple-touch-icon" sizes="57x57"
-	href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
+	href="${pageContext.request.contextPath}/resources/geass2/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
-	href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
+	href="${pageContext.request.contextPath}/resources/geass2/images/faviconx72.png">
 <!-- 부트스트랩 끝-->
 
 <style type="text/css">
@@ -126,21 +126,21 @@
 	</div>
 	<!-- Plugins -->
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/jquery.selectbox.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/bootstrap.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/plugins.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/jquery.prettyPhoto.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/twitter/jquery.tweet.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/jquery.themepunch.tools.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/jquery.themepunch.revolution.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+		src="${pageContext.request.contextPath}/resources/geass2/js/main.js"></script>
 
 </body>
 </html>

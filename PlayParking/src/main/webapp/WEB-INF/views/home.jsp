@@ -17,43 +17,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/fonts.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/bootstrap.min.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/bootstrap.min.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/font-awesome.min.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/font-awesome.min.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/animate.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/animate.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/prettyPhoto.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/prettyPhoto.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/revslider.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/revslider.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/style.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/style.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/responsive.css">
 <link rel="stylesheet"
-   href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
+   href="${pageContext.request.contextPath}/resources/geass2/css/jquery.selectbox.css">
 
 <!-- Favicon and Apple Icons -->
 <link rel="shortcut icon"
    href="${pageContext.request.contextPath}/resources/logo_small.png">
 <link rel="apple-touch-icon" sizes="57x57"
-   href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
+   href="${pageContext.request.contextPath}/resources/geass2/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
-   href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
+   href="${pageContext.request.contextPath}/resources/geass2/images/faviconx72.png">
 
 <!--- jQuery -->
 <script
-   src="${pageContext.request.contextPath}/resources/geass/js/jquery-1.11.1.min.js"></script>
+   src="${pageContext.request.contextPath}/resources/geass2/js/jquery-1.11.1.min.js"></script>
 
 <!-- Queryloader -->
 <script
-   src="${pageContext.request.contextPath}/resources/geass/js/queryloader2.min.js"></script>
+   src="${pageContext.request.contextPath}/resources/geass2/js/queryloader2.min.js"></script>
 
 <!-- Modernizr -->
 <script
-   src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
+   src="${pageContext.request.contextPath}/resources/geass2/js/modernizr.js"></script>
 <style>
 @font-face {
    font-family: "HU미드나잇120";
@@ -139,9 +139,9 @@
                         <ul>
                             <li data-transition="random" data-slotamount="8"
 							data-masterspeed="400" data-saveperformance="off"><img
-							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
+							src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"
 							alt="slidebg1"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg"
+							data-lazyload="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg"
 							data-kenburns="off" data-bgposition="center center"
 							data-duration="4800" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center top" data-bgrepeat="no-repeat">
@@ -161,20 +161,20 @@
 								data-speed="600">Play Parking</div>
 						</li>
 						
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Why?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
-                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/people.png"></div>
-                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/car.png"></div>                                
-                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/building.png"></div>
+                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/people.png"></div>
+                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/car.png"></div>                                
+                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/building.png"></div>
                                 
                                 <div class="tp-caption rev-title title why sft stt" data-x="150" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">주말마다 붐비는 도심</div>
                                 <div class="tp-caption rev-title title why sft stt" data-x="500" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">가득찬 공영 주차장</div>
                                 <div class="tp-caption rev-title title why sft stt" data-x="850" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">텅 빈 기업 주차장</div>
 							</li>
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off" >
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off" >
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">How?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
                                 <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">검색부터 예약까지 한번에,</div>
@@ -185,8 +185,8 @@
                                 <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="620" data-hoffset="125" data-y="470" data-start="600" data-speed="1000">고객과 주차장의 win-win</div>
 							</li>
 							
-							<li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+							<li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Effect?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
                                 <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">사용자 -</div>
@@ -200,20 +200,20 @@
                 </div><!-- End revslider-container -->
             </section><!-- End #home -->
                   
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Why?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
-                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/people.png"></div>
-                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/car.png"></div>                                
-                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/building.png"></div>
+                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/people.png"></div>
+                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/car.png"></div>                                
+                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/building.png"></div>
                                 
                                 <div class="tp-caption rev-title title why sft stt" data-x="150" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">주말마다 붐비는 도심</div>
                                 <div class="tp-caption rev-title title why sft stt" data-x="500" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">가득찬 공영 주차장</div>
                                 <div class="tp-caption rev-title title why sft stt" data-x="850" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">텅 빈 기업 주차장</div>
                      </li>
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off" >
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off" >
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">How?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
                                 <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">검색부터 예약까지 한번에,</div>
@@ -224,8 +224,8 @@
                                 <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="620" data-hoffset="125" data-y="470" data-start="600" data-speed="1000">고객과 주차장의 win-win</div>
                      </li>
                      
-                     <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                     <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Effect?</div>
                                 <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
                                 <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">사용자 -</div>
@@ -302,19 +302,19 @@
 
    <!-- Plugins -->
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/bootstrap.min.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/plugins.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/jquery.prettyPhoto.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/twitter/jquery.tweet.min.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/jquery.themepunch.tools.min.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/jquery.themepunch.revolution.min.js"></script>
    <script
-      src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+      src="${pageContext.request.contextPath}/resources/geass2/js/main.js"></script>
 
    <!-- Google map javascript api v3 -->
    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
