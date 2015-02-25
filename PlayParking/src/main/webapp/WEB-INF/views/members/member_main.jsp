@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <!--[if IE 9]> <html class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -10,6 +8,7 @@
 <head>
 <meta charset="utf-8">
 <title>PlayParking</title>
+
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -153,7 +152,7 @@
 								<span class="white-color">Welcome</span> <span
 									class="lightblue-color">to</span>
 							</div>
- 						<div
+							<div
 								class="tp-caption rev-title rev-title-biggest customin customout"
 								data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
@@ -175,8 +174,8 @@
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="80" data-speed="200" style="filter:alpha(opacity=100);">WHY?</div>
-							<!-- <div class="tp-caption rev-title sft stt" data-x="100" data-hoffset="-150" data-y="145" data-start="950" data-speed="1200">왜</div>
+								data-endspeed="600" data-x="100" data-y="80" data-speed="200"
+								style="filter: alpha(opacity = 100);">WHY?</div> <!-- <div class="tp-caption rev-title sft stt" data-x="100" data-hoffset="-150" data-y="145" data-start="950" data-speed="1200">왜</div>
 								<div class="tp-caption rev-title sfb stb" data-x="200" data-hoffset="150" data-y="145" data-start="950" data-speed="1200">?</div> -->
 							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.3" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-y="295" data-speed="1200">Awesome Designs</div> -->
 						</li>
@@ -196,8 +195,7 @@
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
 								data-endspeed="600" data-x="100" data-y="80" data-speed="1200"
-								style="filter: alpha(opacity=30); opacity:0.3;">HOW</div>
-							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">Waiting to</div>
+								style="filter: alpha(opacity = 30); opacity: 0.3;">HOW</div> <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">Waiting to</div>
 
                                 <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="2600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="100" data-y="306" data-speed="1200">work with you</div>
 
@@ -318,13 +316,6 @@
 			alert("" + dd + "");
 		}
 
-		/* //var joinmsg = document.getElementById("joinok").value;
-		 if(document.getElementById("joinok").value!=""){
-		 alert("+"+document.getElementById("joinok").value+"+");
-		 //joinmsg ="";
-		 document.getElementById("joinok").value ="";
-		 } */
-
 		var elem = document.getElementById('loginmodal');
 		elem.onclick = showModal;
 
@@ -338,52 +329,6 @@
 				return false;
 			}
 		}
-		/*----------------------------------------------------*/
-		//* Google javascript api v3  -- map */
-		/*----------------------------------------------------*/
-		(function() {
-			"use strict";
-
-			if (document.getElementById("map")) {
-				var locations = [
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>',
-								38.396652, 27.090560, 9 ],
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>',
-								38.432742, 27.159140, 8 ] ];
-
-				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom : 13,
-					center : new google.maps.LatLng(38.414592, 27.143122),
-					scrollwheel : false,
-					mapTypeId : google.maps.MapTypeId.ROADMAP
-				});
-
-				var infowindow = new google.maps.InfoWindow();
-
-				var marker, i;
-
-				for (i = 0; i < locations.length; i++) {
-					marker = new google.maps.Marker({
-						position : new google.maps.LatLng(locations[i][1],
-								locations[i][2]),
-						map : map,
-						animation : google.maps.Animation.DROP,
-						icon : 'images/pin.png',
-					});
-
-					google.maps.event.addListener(marker, 'click', (function(
-							marker, i) {
-						return function() {
-							infowindow.setContent(locations[i][0]);
-							infowindow.open(map, marker);
-						}
-					})(marker, i));
-				}
-			}
-
-		}());
 
 		$(function() {
 			// Slider Revolution for Home Section

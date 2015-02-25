@@ -6,10 +6,10 @@
 <html>
 <head>
 
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩-->
 <meta charset="utf-8">
 <title>포인트 확인 및 이용내역</title>
-<!-- <title>Geass - Creative Onepage Html5 Template</title> -->
+
 <meta name="description"
    content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">

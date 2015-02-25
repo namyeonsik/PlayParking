@@ -5,10 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<meta charset="utf-8">
 <title>예약 완료</title>
+
+<!-- 부트스트랩-->
+<meta charset="utf-8">
+
 <!-- <title>Geass - Creative Onepage Html5 Template</title> -->
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
@@ -40,7 +41,8 @@
 	href="${pageContext.request.contextPath}/resources/geass/css/responsive.css">
 
 <!-- Favicon and Apple Icons -->
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/logo_small.png">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/logo_small.png">
 <link rel="apple-touch-icon" sizes="57x57"
 	href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
@@ -58,7 +60,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-<!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 끝-->
 
 <style>
 @font-face {
@@ -92,6 +94,7 @@
 		url('${pageContext.request.contextPath}/resources/font/HU미드나잇140.woff')
 		format('woff');
 }
+
 .header {
 	height: 50px
 }
@@ -101,8 +104,11 @@
 	margin-left: 45%;
 }
 
-.container {margin-left: 10%;
-	margin-right: 20%;}
+.container {
+	margin-left: 10%;
+	margin-right: 20%;
+}
+
 .container .img {
 	margin-top: 3%;
 	margin-left: 5%;
@@ -122,82 +128,85 @@
 		<%@ include file="../Header.jsp"%>
 	</div>
 	<!-- 진짜헤더끝 -->
-<div style="height: 68%;">	
-	<div class="title">
-		<h2><font face="HU미드나잇140">예약 완료</font></h2>
-	</div>
- 
-	<div id="wrapper">
-		<section id="content">
-		<div class="container">
+	<!-- 예약완료 -->
+	<div style="height: 68%;">
+		<div class="title">
+			<h2>
+				<font face="HU미드나잇140">예약 완료</font>
+			</h2>
+		</div>
 
-			<div class="row">
-				<div class="col-md-12 single">
-					<div class="article-author" style="width: 90%">
+		<div id="wrapper">
+			<section id="content">
+			<div class="container">
 
-						<div class="img">
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<p>
-									<img src="${pname.pimage}" alt="boy"
-										class="wow rubberBand pull-left lg-separator-right2x"
-										data-wow-delay="0.9s" style="width: 90%; height: auto;">
-								</p>
+				<div class="row">
+					<div class="col-md-12 single">
+						<div class="article-author" style="width: 90%">
+
+							<div class="img">
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<p>
+										<img src="${pname.pimage}" alt="boy"
+											class="wow rubberBand pull-left lg-separator-right2x"
+											data-wow-delay="0.9s" style="width: 90%; height: auto;">
+									</p>
+								</div>
 							</div>
-						</div>
 
 
-						<div class="ticket">
-							<blockquote class="lightblue">
-								
-									예약자ID : ${reservation.mid} <br> 
-									주차장 : ${pname.pname} <br>
-									위치 : ${pname.paddress} <br> 
-									Tip : ${pname.ptip} <br>
+							<div class="ticket">
+								<blockquote class="lightblue">
+
+									예약자ID : ${reservation.mid} <br> 주차장 : ${pname.pname} <br>
+									위치 : ${pname.paddress} <br> Tip : ${pname.ptip} <br>
 									예약날짜 :
 									<c:set var="d" value="${reservation.rstart}" />
 									<fmt:formatDate value="${d}" pattern="yyyy/MM/dd" />
-								<br><br>
-								<cite>예약 내용이</cite><br> <cite>메일로 발송되었습니다!</cite>
-							</blockquote>
+									<br>
+									<br> <cite>예약 내용이</cite><br> <cite>메일로
+										발송되었습니다!</cite>
+								</blockquote>
+							</div>
 						</div>
+						<!-- End .article-author -->
 					</div>
-					<!-- End .article-author -->
+					<!-- End .col-md-8 -->
 				</div>
-				<!-- End .col-md-8 -->
+				<!-- End .row -->
 			</div>
-			<!-- End .row -->
+			<!-- End .container --> </section>
+			<!-- End #content -->
 		</div>
-		<!-- End .container --> </section>
-		<!-- End #content -->
-	</div>
 
 
-	<!-- Plugins -->
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
+		<!-- Plugins -->
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/bootstrap.min.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/plugins.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/jquery.prettyPhoto.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/twitter/jquery.tweet.min.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.tools.min.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
+		<script
+			src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script>
 
-<div class="all"
+		<div class="all"
 			style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
 			<div id="footer" style="padding: 13px; width: 100%; margin-top: 5%;">
 				<%@ include file="../Tail.jsp"%>
 			</div>
 		</div>
-</div>
+	</div>
+	<!-- 예약완료 -->
 </body>
 </html>

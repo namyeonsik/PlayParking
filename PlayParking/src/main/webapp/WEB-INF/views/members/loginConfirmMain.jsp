@@ -307,52 +307,6 @@
 				return false;
 			}
 		}
-		/*----------------------------------------------------*/
-		//* Google javascript api v3  -- map */
-		/*----------------------------------------------------*/
-		(function() {
-			"use strict";
-
-			if (document.getElementById("map")) {
-				var locations = [
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>',
-								38.396652, 27.090560, 9 ],
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>',
-								38.432742, 27.159140, 8 ] ];
-
-				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom : 13,
-					center : new google.maps.LatLng(38.414592, 27.143122),
-					scrollwheel : false,
-					mapTypeId : google.maps.MapTypeId.ROADMAP
-				});
-
-				var infowindow = new google.maps.InfoWindow();
-
-				var marker, i;
-
-				for (i = 0; i < locations.length; i++) {
-					marker = new google.maps.Marker({
-						position : new google.maps.LatLng(locations[i][1],
-								locations[i][2]),
-						map : map,
-						animation : google.maps.Animation.DROP,
-						icon : 'images/pin.png',
-					});
-
-					google.maps.event.addListener(marker, 'click', (function(
-							marker, i) {
-						return function() {
-							infowindow.setContent(locations[i][0]);
-							infowindow.open(map, marker);
-						}
-					})(marker, i));
-				}
-			}
-
-		}());
 
 		$(function() {
 			// Slider Revolution for Home Section

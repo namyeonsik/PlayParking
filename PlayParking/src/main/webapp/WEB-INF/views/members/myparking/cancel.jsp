@@ -5,9 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예약 취소</title>
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<!-- <meta charset="utf-8">
-        <title>Geass - Creative Onepage Html5 Template</title> -->
+<!-- 부트스트랩 -->
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -43,7 +41,7 @@
 	href="${pageContext.request.contextPath}/resources/geass/images/faviconx57.png">
 <link rel="apple-touch-icon" sizes="72x72"
 	href="${pageContext.request.contextPath}/resources/geass/images/faviconx72.png">
-<!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 끝-->
 
 <style type="text/css">
 @font-face {
@@ -84,7 +82,7 @@
 	margin-left: 2%;
 	float: left;
 	heith: 40%;
-} 
+}
 
 .btn {
 	margin-top: 10%;
@@ -92,24 +90,27 @@
 	margin-left: 8%;
 	font-family: "HU미드나잇120";
 }
-
 </style>
 </head>
 <body>
 	<div class="cancel">
-	<form name="chulfrm2" action="cancel.do" method="post">
-		<input type="hidden" name="rid" value="${rid }">
-		<div class="btn">
-			<h2>
-				<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
-			</h2>
-			<h6><font face="HU미드나잇120">포인트는 자동 환불됩니다.</font></h6>
-			<label for="inputId"></label>
-      <input type="hidden" class="form-control" name="mid" placeholder="Id" value="${memcheck.mid}">
-			<div class="btn1" style="margin-left: 25%;">
-			<input type="submit" class="btn btn-lightblue" value="예약취소"></div>
-		</div>
-	</form>
+		<form name="chulfrm2" action="cancel.do" method="post">
+			<input type="hidden" name="rid" value="${rid }">
+			<div class="btn">
+				<h2>
+					<font face="HU미드나잇140">예약을 취소하시겠습니까?</font>
+				</h2>
+				<h6>
+					<font face="HU미드나잇120">포인트는 자동 환불됩니다.</font>
+				</h6>
+				<label for="inputId"></label> <input type="hidden"
+					class="form-control" name="mid" placeholder="Id"
+					value="${memcheck.mid}">
+				<div class="btn1" style="margin-left: 25%;">
+					<input type="submit" class="btn btn-lightblue" value="예약취소">
+				</div>
+			</div>
+		</form>
 	</div>
 	<script type="text/javascript">
 		
@@ -131,7 +132,6 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-
 
 </body>
 </html>

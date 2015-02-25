@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<meta charset="utf-8">
 <title>예약취소</title>
+<!-- 부트스트랩-->
+<meta charset="utf-8">
+
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -56,7 +57,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-<!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 끝-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예약 취소</title>
 <style>
@@ -153,6 +154,7 @@
 	</div>
 	<!-- 진짜헤더끝 -->
 
+	<!-- 예약취소 -->
 	<%
 		int number = 0;
 		int listSize = 5;
@@ -188,16 +190,14 @@
 
 			<c:forEach items="${reservationlist}" var="reservation">
 				<ul>
-					<%-- <jsp:useBean id="now" class="java.util.Date" />
-					<li class="list-group-item">${reservation.rstart>now?'<i class="fa fa-car"></i>':'<span class="glyphicon glyphicon-ok"></span>'}</li> --%>
 					<li class="list-group-item"><c:set var="d"
 							value="${reservation.rstart}" /> <fmt:formatDate value="${d}"
 							pattern="yy-MM-dd" /></li>
 					<li class="list-group-item">${reservation.rtime}</li>
 					<li class="list-group-item">${reservation.pname}</li>
-					<li class="list-group-item">
-						<input type="button" class="btn btn-lightblue" value="예약취소" onclick="cancel(${reservation.rid});">
-					</li>
+					<li class="list-group-item"><input type="button"
+						class="btn btn-lightblue" value="예약취소"
+						onclick="cancel(${reservation.rid});"></li>
 				</ul>
 			</c:forEach>
 		</div>
@@ -234,7 +234,7 @@
 		</div>
 
 	</div>
-
+	<!-- 예약취소 -->
 	<!-- Plugins -->
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>
@@ -254,31 +254,18 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
 	<%-- <script
 		src="${pageContext.request.contextPath}/resources/geass/js/bootstrap-switch.min.js"></script> --%>
+
 	<script>
-	var data;
 	var xhr =null;
 	function cancel(rid){
-		data = "rid=" + rid;
-		/* alert(typeof(rid)); */
-		/* var rid =  document.rid.value; */
 		window.open('cancel.do?rid='+rid,'window팝업', 'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');
-/* 		xhr = new XMLHttpRequest();
-		//xhr.onreadystatechange = resultParse1;
-		xhr.open("POST", "cancel.do", true);//POST방식 비동기통신
-		xhr.setRequestHeader("content-type",
-				"application/x-www-form-urlencoded");
-		xhr.send(data); */
-	
-	
-	}
-	
-	
+	}	
 	</script>
-	
-	
+
 	<div id="footer"
 		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
 		<%@ include file="../../Tail.jsp"%>
 	</div>
+
 </body>
 </html>
