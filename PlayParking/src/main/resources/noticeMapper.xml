@@ -3,88 +3,75 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.notice">
-  
-  <resultMap type="com.flying.model.NoticeDTO" id="noticeresult">
-     <association property="pname" column="pid" select="getpname"></association>
-  </resultMap>
-  
-  <select id="selectByaid2" parameterType="String" resultMap="noticeresult"> 
-  select * from admin where pid = #{aa} order by ndate desc
-  </select>
-  
-  <select id="getpname" resultType="String">
-  	select pname from parking where pid=#{aa} order by ndate desc
-  </select>
-    
-  <select id="selectMembernotice"
- 	 parameterType="Map"
-  	resultType="com.flying.model.NoticeDTO">
-  	select * from (
- 	select rownum r, aa.*
-	from (select * from notice order by ndate desc) aa 
-	) where r between #{s:INTEGER} and #{l:INTEGER}
-  </select>
-  
-  <select id="selectMembernotice2"
-  	resultType="com.flying.model.NoticeDTO">
-  	select * from notice order by ndate desc
-  </select>
 
-  <select id="selectnoticeAll"
-  	resultType="com.flying.model.NoticeDTO">
-  	select nno,ntitle,ntext,ndate,aid from notice where nno = #{nno:INTEGER} order by ndate desc
-  </select>
-  
-  <select id="selectByaid" 
-  	parameterType="Map"
-  	resultType="com.flying.model.NoticeDTO">
-    select * from (
- 	select rownum r, aa.*
-	from (select * from notice where aid = #{aid:VARCHAR} order by ndate desc) aa 
-	) where r between #{s:INTEGER} and #{l:INTEGER}
-  </select>
-  
-  <select id="selectByaid11" 
-  	parameterType="String"
-  	resultType="com.flying.model.NoticeDTO">
-    select * from notice where aid = #{aid:VARCHAR} order by ndate desc 
-  </select>
-  
-  <select id="selectBynno" 
-  	parameterType="Map"
-  	resultType="com.flying.model.NoticeDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from notice where aid = #{aid:VARCHAR} and nno = #{nno:INTEGER} order by ndate desc
-  </select>
- 
-  <select id="selectText" 
-  	parameterType="Map"
-  	resultType="com.flying.model.NoticeDTO">
-    select ntext from notice where aid = #{aid:VARCHAR} and nno = #{nno:INTEGER} order by ndate desc
-  </select>
-  
-  <update id="updateNotice">
-  	update notice 
-  	set ndate=sysdate, ntitle=#{ntitle:VARCHAR}, ntext=#{ntext:VARCHAR}
-  	where aid = #{aid:INTEGER} and nno = #{nno:INTEGER}
-  </update>
+	<select id="selectMembernotice" parameterType="Map"
+		resultType="com.flying.model.NoticeDTO">
+		select * from (
+		select rownum r, aa.*
+		from (select * from
+		notice order by ndate desc) aa
+		) where r between #{s:INTEGER} and
+		#{l:INTEGER}
+	</select>
 
-  <delete id="deleteNotice" parameterType="Integer">
-  	delete from notice
- 	where nno = #{nno:INTEGER}
-  </delete>
-   
-  <insert id="insertNotice" parameterType="com.flying.model.NoticeDTO">
-	insert into Notice(nno,ntitle,ntext,ndate,aid)
-	values(#{nno:INTEGER},#{ntitle:VARCHAR}, #{ntext:VARCHAR},sysdate,#{aid:VARCHAR})
-  </insert>
-  
-   <select id="selectMaxnno" 
-  	parameterType="String"
-  	resultType="String">
-    select max(nno) from notice where aid = #{aid:VARCHAR}
-  </select>
-  
- 
-  
+	<select id="selectMembernotice2" resultType="com.flying.model.NoticeDTO">
+		select * from notice
+		order by ndate desc
+	</select>
+
+	<select id="selectByaid" parameterType="Map"
+		resultType="com.flying.model.NoticeDTO">
+		select * from (
+		select rownum r, aa.*
+		from (select * from
+		notice where aid = #{aid:VARCHAR} order by ndate desc)
+		aa
+		) where r
+		between #{s:INTEGER} and #{l:INTEGER}
+	</select>
+
+	<select id="selectByaid11" parameterType="String"
+		resultType="com.flying.model.NoticeDTO">
+		select * from notice where aid = #{aid:VARCHAR} order by
+		ndate desc
+	</select>
+
+	<select id="selectBynno" parameterType="Map"
+		resultType="com.flying.model.NoticeDTO">
+		select * from notice where aid = #{aid:VARCHAR} and nno =
+		#{nno:INTEGER} order by ndate desc
+	</select>
+
+	<select id="selectText" parameterType="Map"
+		resultType="com.flying.model.NoticeDTO">
+		select ntext from notice where aid = #{aid:VARCHAR} and nno
+		= #{nno:INTEGER}
+		order by ndate desc
+	</select>
+
+	<update id="updateNotice">
+		update notice
+		set ndate=sysdate,
+		ntitle=#{ntitle:VARCHAR}, ntext=#{ntext:VARCHAR}
+		where aid =
+		#{aid:INTEGER} and nno = #{nno:INTEGER}
+	</update>
+
+	<delete id="deleteNotice" parameterType="Integer">
+		delete from notice
+		where
+		nno = #{nno:INTEGER}
+	</delete>
+
+	<insert id="insertNotice" parameterType="com.flying.model.NoticeDTO">
+		insert into
+		Notice(nno,ntitle,ntext,ndate,aid)
+		values(#{nno:INTEGER},#{ntitle:VARCHAR},
+		#{ntext:VARCHAR},sysdate,#{aid:VARCHAR})
+	</insert>
+
+	<select id="selectMaxnno" parameterType="String" resultType="String">
+		select max(nno) from notice where aid = #{aid:VARCHAR}
+	</select>
+
 </mapper>

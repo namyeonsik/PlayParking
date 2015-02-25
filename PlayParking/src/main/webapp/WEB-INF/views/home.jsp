@@ -131,13 +131,12 @@
 		<!-- 헤더끝 -->
 
 
-		<!-- Home Section -->
-		<section id="home" class="section">
-			<div id="revslider-container">
-				<div id="revslider">
-					<ul>
-						<!-- data-lazyload: 홈배경 -->
-						<li data-transition="random" data-slotamount="8"
+		 <!-- Home Section -->
+            <section id="home" class="section">
+                <div id="revslider-container">
+                    <div id="revslider">
+                        <ul>
+                            <li data-transition="random" data-slotamount="8"
 							data-masterspeed="400" data-saveperformance="off"><img
 							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
 							alt="slidebg1"
@@ -145,89 +144,60 @@
 							data-kenburns="off" data-bgposition="center center"
 							data-duration="4800" data-bgfit="115" data-bgfitend="100"
 							data-bgpositionend="center top" data-bgrepeat="no-repeat">
-							<div class="tp-caption rev-title rev-uppercase sft stt"
+							<div class="tp-caption rev-title rev-title-main sft stt"
 								data-x="center" data-hoffset="25" data-y="170" data-start="1000"
 								data-speed="1000">
 								<span class="white-color">Welcome</span> <span
 									class="lightblue-color">to</span>
 							</div>
  						<div
-								class="tp-caption rev-title rev-title-biggest customin customout"
+								class="tp-caption rev-title rev-title-main main customin customout"
 								data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								data-start="600" data-splitin="chars" data-splitout="chars"
 								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="center" data-y="205"
-								data-speed="600">Play Parking</div></li>
-						<li data-transition="random" data-slotamount="8"
-							data-masterspeed="500" data-saveperformance="off"><img
-							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
-							alt="slidebg2"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_1.1.png"
-							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="4200" data-bgfit="115" data-bgfitend="100"
-							data-bgpositionend="center center" data-bgrepeat="no-repeat">
-							<div
-								class="tp-caption rev-title rev-title-biggest customin customout"
-								data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-start="600" data-splitin="chars" data-splitout="chars"
-								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="80" data-speed="200" style="filter:alpha(opacity=100);">WHY?</div>
-							<!-- <div class="tp-caption rev-title sft stt" data-x="100" data-hoffset="-150" data-y="145" data-start="950" data-speed="1200">왜</div>
-								<div class="tp-caption rev-title sfb stb" data-x="200" data-hoffset="150" data-y="145" data-start="950" data-speed="1200">?</div> -->
-							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.3" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-y="295" data-speed="1200">Awesome Designs</div> -->
+								data-endspeed="600" data-x="center" data-y="305"
+								data-speed="600">Play Parking</div>
 						</li>
-						<li data-transition="random" data-slotamount="8"
-							data-masterspeed="450" data-saveperformance="off"><img
-							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
-							alt="slidebg4"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.png"
-							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="200" data-bgfit="115" data-bgfitend="100"
-							data-bgpositionend="center center" data-bgrepeat="no-repeat">
-							<!-- <div class="tp-caption rev-title rev-border sft stb" data-x="100" data-y="145" data-start="1000" data-speed="1000">HOW<span class="yellow-color"></span></div> -->
-							<div
-								class="tp-caption rev-title rev-title-biggest customin customout"
-								data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0.3;transformPerspective:600;transformOrigin:50% 50%;"
-								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0.3;transformPerspective:600;transformOrigin:50% 50%;"
-								data-start="600" data-splitin="chars" data-splitout="chars"
-								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="90" data-speed="1200"
-								style="filter: alpha(opacity=30); opacity:0.3;">HOW</div>
-							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">Waiting to</div>
-
-                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="2600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="100" data-y="306" data-speed="1200">work with you</div>
-
-                                <div class="tp-caption rev-title-big randomrotate randomrotateout" data-x="center" data-y="460" data-start="3200" data-speed="1000"><a href="#" class="btn btn-lightblue">Contact Now</a></div> -->
-						</li>
-						<li data-transition="random" data-slotamount="8"
-							data-masterspeed="450" data-saveperformance="off"><img
-							src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"
-							alt="slidebg5"
-							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_3.png"
-							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="4200" data-bgfit="115" data-bgfitend="100"
-							data-bgpositionend="center center" data-bgrepeat="no-repeat">
-							<div
-								class="tp-caption rev-title rev-title-biggest customin customout"
-								data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-start="600" data-splitin="chars" data-splitout="chars"
-								data-elementdelay="0.3" data-endelementdelay="0.1"
-								data-endspeed="600" data-x="100" data-y="100" data-speed="200">EFFECT</div>
-							<!-- <div class="tp-caption rev-title sfb stb" data-x="100" data-hoffset="150" data-y="145" data-start="700" data-speed="1200">Expectation</div> -->
-
-							<!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-start="600" data-splitin="chars" data-splitout="chars" data-elementdelay="0.3" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-y="295" data-speed="1200">Expectation</div> -->
-						</li>
-					</ul>
-				</div>
-				<!-- End revslider -->
-			</div>
-			<!-- End revslider-container -->
-		</section>
-		<!-- End #home -->
-
+						
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Why?</div>
+                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
+                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/people.png"></div>
+                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/car.png"></div>                                
+                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass/images/building.png"></div>
+                                
+                                <div class="tp-caption rev-title title why sft stt" data-x="150" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">주말마다 붐비는 도심</div>
+                                <div class="tp-caption rev-title title why sft stt" data-x="500" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">가득찬 공영 주차장</div>
+                                <div class="tp-caption rev-title title why sft stt" data-x="850" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">텅 빈 기업 주차장</div>
+							</li>
+                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off" >
+                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">How?</div>
+                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
+                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">검색부터 예약까지 한번에,</div>
+                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="720" data-hoffset="125" data-y="330" data-start="600" data-speed="1000">원-스톱서비스</div>
+                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="400" data-start="600" data-speed="1000">유휴 주차장 활용,</div>
+                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="600" data-hoffset="125" data-y="400" data-start="600" data-speed="1000">폭넓어진 선택</div>
+                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="470" data-start="600" data-speed="1000">편리한 주차장 관리,</div>
+                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="620" data-hoffset="125" data-y="470" data-start="600" data-speed="1000">고객과 주차장의 win-win</div>
+							</li>
+							
+							<li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00.jpg" data-saveperformance="off">
+                                <img src="${pageContext.request.contextPath}/resources/geass/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
+                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Effect?</div>
+                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
+                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">사용자 -</div>
+                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="460" data-hoffset="125" data-y="330" data-start="600" data-speed="1000">주말에 내 주차공간 미리 확보</div>
+                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="400" data-start="600" data-speed="1000">기업 -</div>
+                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="420" data-hoffset="125" data-y="400" data-start="600" data-speed="1000">공유가치창출(CSV) 및 이미지 제고</div>
+							</li>
+                            
+                        </ul>
+                    </div><!-- End revslider -->
+                </div><!-- End revslider-container -->
+            </section><!-- End #home -->
 
 		<!-- Modal Login Form-->
 		<div class="modal fade" id="modal-login-form" tabindex="-1"
@@ -336,53 +306,7 @@
 				return false;
 			}
 		}
-		/*----------------------------------------------------*/
-		//* Google javascript api v3  -- map */
-		/*----------------------------------------------------*/
-		(function() {
-			"use strict";
-
-			if (document.getElementById("map")) {
-				var locations = [
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Mimar Sinan Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (232) 324 11 83</li></ul></div>',
-								38.396652, 27.090560, 9 ],
-						[
-								'<div class="map-info-box"><ul class="contact-info-list"><li><span><i class="fa fa-home fa-fw"></i></span> Kültür Mh., Konak/İzmir, Türkiye</li><li><span><i class="fa fa-phone fa-fw"></i></span> +90 0 (538) 324 11 84</li></ul></div>',
-								38.432742, 27.159140, 8 ] ];
-
-				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom : 13,
-					center : new google.maps.LatLng(38.414592, 27.143122),
-					scrollwheel : false,
-					mapTypeId : google.maps.MapTypeId.ROADMAP
-				});
-
-				var infowindow = new google.maps.InfoWindow();
-
-				var marker, i;
-
-				for (i = 0; i < locations.length; i++) {
-					marker = new google.maps.Marker({
-						position : new google.maps.LatLng(locations[i][1],
-								locations[i][2]),
-						map : map,
-						animation : google.maps.Animation.DROP,
-						icon : 'images/pin.png',
-					});
-
-					google.maps.event.addListener(marker, 'click', (function(
-							marker, i) {
-						return function() {
-							infowindow.setContent(locations[i][0]);
-							infowindow.open(map, marker);
-						}
-					})(marker, i));
-				}
-			}
-
-		}());
-
+		
 		$(function() {
 			// Slider Revolution for Home Section
 			jQuery('#revslider').revolution({

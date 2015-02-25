@@ -9,9 +9,11 @@ public class NoticeDTO {
 	private String ntext;
 	private Date ndate;
 	private String aid;
-	private String npname;
 
-	public NoticeDTO(){}
+	/* private String npname; */
+
+	public NoticeDTO() {
+	}
 
 	public int getNno() {
 		return nno;

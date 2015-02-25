@@ -5,9 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<meta charset="utf-8">
 <title>예약확인</title>
+
+<!-- 부트스트랩-->
+<meta charset="utf-8">
+
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -56,7 +58,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-<!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 끝-->
 
 <style>
 @font-face {
@@ -168,7 +170,7 @@
 		int nsize = 0;
 	%>
 
-
+	<!-- 예약확인 -->
 	<div class="body">
 		<div class="title">
 			<h2>
@@ -230,7 +232,7 @@
 		</div>
 
 	</div>
-
+	<!-- 예약확인 -->
 	<!-- Plugins -->
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.selectbox.min.js"></script>

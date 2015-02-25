@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ChargeController {
 
 	@RequestMapping("/charge.do")
-	public String test(){
+	public String test() {
 		return "members/charge";
 	}
-	
+
 }

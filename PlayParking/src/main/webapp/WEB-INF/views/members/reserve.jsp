@@ -3,11 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<meta charset="utf-8">
 <title>주차장 예약</title>
-<!-- <title>Geass - Creative Onepage Html5 Template</title> -->
+
+<!-- 부트스트랩-->
+<meta charset="utf-8">
 <meta name="description"
 	content="Geass is premium and creative multipurpose onepage template">
 <meta name="author" content="Eon">
@@ -18,8 +17,6 @@
 	href="${pageContext.request.contextPath}/resources/geass/css/jquery.selectbox.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/bootstrap-switch.css">
-
-
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/geass/css/fonts.css">
 <link rel="stylesheet"
@@ -57,7 +54,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/geass/js/modernizr.js"></script>
 
-<!-- 부트스트랩 끝!!!!!!!!!!!!!!!!!!!! -->
+<!-- 부트스트랩 끝-->
 
 <style type="text/css">
 @font-face {
@@ -151,24 +148,19 @@
 	font-family: "HU미드나잇120";
 }
 </style>
-
-
 </head>
 <body style="height: 120%;">
 	<!-- 진짜헤더시작 -->
-
 	<div class="header">
 		<%@ include file="../Header.jsp"%>
 	</div>
 	<!-- 진짜헤더끝 -->
-
+	<!-- 예약 -->
 	<div class="body">
 		<div class="title">
-
 			<h2>
 				<font face="HU미드나잇140">주차장 예약</font>
 			</h2>
-
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-6 xlg-margin">
 
@@ -176,12 +168,9 @@
 			<!--space -->
 			<div class="parkingname">
 				<h6>
-				<font face="HU미드나잇120" color="red">${pname}</font> <font face="HU미드나잇120">(1시간 요금: </font>
-				<font face="HU미드나잇120">${parkingMpoint}원)</font>
-					 
+					<font face="HU미드나잇120" color="red">${pname}</font> <font
+						face="HU미드나잇120">(1시간 요금: </font> <font face="HU미드나잇120">${parkingMpoint}원)</font>
 				</h6>
-				
-
 			</div>
 			<div class="accordion" id="accordion">
 				<div class="accordion-group panel">
@@ -339,35 +328,28 @@
 									<button type="button" class="btn btn-lightblue btn-sm"
 										data-dismiss="modal"
 										style="float: right; margin-right: 10%; margin-bottom: 20%;">Close</button>
-
 								</div>
 								<!-- End .modal-body -->
-
-
 								<!-- <button class="btn btn-yellow">Action</button> -->
-
 							</div>
 							<!-- End .modal-content -->
 						</div>
 						<!-- End .modal-dialog -->
 					</div>
 					<!-- End .modal -->
-
 				</div>
 				<!-- End .accordion-body-wrapper -->
 			</div>
 			<!-- col-md-6 col-sm-12 col-xs-12 xlg-margin -->
-
 		</div>
-		
-
 	</div>
-<div class="all"
-			style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
-			<div id="footer" style="padding: 13px; width: 100%; margin-top: 5%;">
-				<%@ include file="../Tail.jsp"%>
-			</div>
+	<!-- 예약 -->
+	<div class="all"
+		style="padding: 13px; position: absolute; bottom: 0px; width: 100%;">
+		<div id="footer" style="padding: 13px; width: 100%; margin-top: 5%;">
+			<%@ include file="../Tail.jsp"%>
 		</div>
+	</div>
 	<script type="text/javascript">
 		var date;
 		var xhr = null;
@@ -447,7 +429,7 @@
 
 			if (date == tempdate2) {
 				msg1 = "당일 예약입니다";
-				
+
 				//포스트방식
 				viewData7();
 				xhr.open("POST", "reserve1.do", true);//POST방식 비동기통신
@@ -470,82 +452,60 @@
 				xhr.setRequestHeader("content-type",
 						"application/x-www-form-urlencoded");
 				xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
-
 			}
-			//   if(data)
-
 		}
 		function resultParse1() {
 			if (xhr.readyState == 4) {//서버에서 전송이 끝남?
 				if (xhr.status == 200) {//정상종료
-
 					viewData1(xhr.responseText);//HTML
 				}
 			}
-
 		}
 		function resultParse2() {
 			if (xhr.readyState == 4) {//서버에서 전송이 끝남?
 				if (xhr.status == 200) {//정상종료
-
 					viewData2(xhr.responseText);//HTML
 				}
 			}
-
 		}
 		function resultParse3() {
 			if (xhr.readyState == 4) {//서버에서 전송이 끝남?
 				if (xhr.status == 200) {//정상종료
-
 					viewData3(xhr.responseText);//HTML
 				}
 			}
-
 		}
 		function viewData1(d) {
 			//alert("viewData1:"+d);
-
 			document.getElementById("timePrint").innerHTML = d;
-
 		}
 		function viewData2(d) {
 			//alert("viewData2:"+d);
 			document.getElementById("selecttimePrint").innerHTML = d;
-
 		}
 		function viewData3(d) {
 			//alert("viewData2:"+d);
-			/* $("#submitPrint").html(d); */
 			$("#submitPrint").html(d);
-
 		}
 
 		function viewData4() {
-
 			document.getElementById("msg1").innerHTML = '<h6><font face="HU미드나잇120">'
 					+ msg1 + '</font></h6>';
-
 		}
 		function viewData5() {
-
 			document.getElementById("msg2").innerHTML = '<h6><font face="HU미드나잇120">'
 					+ msg1 + ' 까지 입차를 선택하셨습니다</font></h6>';
-
 		}
 		function viewData6() {
-
 			document.getElementById("msg3").innerHTML = '<h6><font face="HU미드나잇120">'
 					+ msg1 + ' 시간을 선택하셨습니다</font></h6>';
-
 		}
 		function viewData7() {
-
 			document.getElementById("msg1").innerHTML = '<h6><font face="HU미드나잇120">'
-					+ msg1 + '</font></h6><h6><font face="HU미드나잇120">당일 예약은 <font face="HU미드나잇120" color="red">취소</font>가 안됩니다.</font></h6>';
-
+					+ msg1
+					+ '</font></h6><h6><font face="HU미드나잇120">당일 예약은 <font face="HU미드나잇120" color="red">취소</font>가 안됩니다.</font></h6>';
 		}
 	</script>
-
 
 	<!-- Plugins -->
 	<script
@@ -566,7 +526,6 @@
 		src="${pageContext.request.contextPath}/resources/geass/js/jquery.themepunch.revolution.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/geass/js/main.js"></script>
-
 
 </body>
 </html>

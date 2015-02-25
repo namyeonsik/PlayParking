@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.flying.model.AdminDTO;
@@ -17,80 +16,85 @@ import com.flying.model.NoticeDTO;
 import com.flying.model.NoticeServiceInterface;
 import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
+
 @Controller
 public class NoticeListController {
-   
-   @Autowired
-   NoticeServiceInterface service;  
-   
-   @Autowired
-   ParkingServiceInterface parkingservice;
-   
-   
-   @RequestMapping(value="/noticelist1.do")
-   public ModelAndView listGet1(HttpServletRequest request, HttpSession session, String pageno){
-      ModelAndView mv = new ModelAndView();
-      if(session.getAttribute("memcheck")==null){			
+
+	@Autowired
+	NoticeServiceInterface service;
+
+	@Autowired
+	ParkingServiceInterface parkingservice;
+
+	@RequestMapping(value = "/noticelist1.do")
+	public ModelAndView listGet1(HttpServletRequest request,
+			HttpSession session, String pageno) {
+		ModelAndView mv = new ModelAndView();
+		if (session.getAttribute("memcheck") == null) {
 			mv.setViewName("members/notmember");
 			return mv;
-		}else{
-		
-		if(pageno==null)
-			pageno="1";
+		} else {
 
-			
-	   	session = request.getSession();
-    	MembersDTO memcheck = (MembersDTO)session.getAttribute("memcheck"); 
-    	
-    	int last_num = Integer.parseInt(pageno)*10;
-     	int start_num = last_num-9;
-     	
-     	System.out.println(last_num+"***"+start_num);
-     	
-  		List<NoticeDTO> noticelist = service.selectMembernotice(start_num,last_num); //다 가져오기  		
-  		List<NoticeDTO> noticelist2 = service.selectMembernotice2();
-  		
-  		System.out.println("노티스 리스트"+noticelist);
-  		
-  		mv.addObject("noticelist", noticelist); 
-  		mv.addObject("noticelistsize", noticelist2.size());
-  		mv.addObject("memberid", memcheck.getMid());
-  		mv.setViewName("/admin/notice_list_member");
-  		return mv;
-      }
-   }
-   
-   @RequestMapping(value="/noticelist2.do")
-   public ModelAndView listGet2(HttpServletRequest request, HttpSession session, String pageno){
-      ModelAndView mv = new ModelAndView();
-      if(session.getAttribute("admincheck")==null){         
-	         mv.setViewName("admin/admin_login");
-	         return mv;
-		}else{
-			
-		if(pageno==null)
-			pageno="1";
-		
-    	session = request.getSession();
-    	AdminDTO admincheck = (AdminDTO)session.getAttribute("admincheck");      
-    	 
-    	int last_num = Integer.parseInt(pageno)*10;
-    	int start_num = last_num-9;
-    	
-    	List<NoticeDTO> noticelist = service.selectByaid(admincheck.getAid(),start_num,last_num);
-    	
-    	List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck.getAid()); 
-    	
-    	String maxnno = service.selectMaxnno(admincheck.getAid());
-    	
-  		ParkingDTO parking = parkingservice.selectBypid(admincheck.getPid());
-  		mv.addObject("pname",parking.getPname());
-  		mv.addObject("noticelist", noticelist);
-  		mv.addObject("noticelistsize", noticelist2.size());
-  		mv.addObject("maxnno", maxnno);
-  		mv.setViewName("/admin/notice_list_admin");
-  		return mv;
-      }
-   }
-   
+			if (pageno == null)
+				pageno = "1";
+
+			session = request.getSession();
+			MembersDTO memcheck = (MembersDTO) session.getAttribute("memcheck");
+
+			int last_num = Integer.parseInt(pageno) * 10;
+			int start_num = last_num - 9;
+
+			System.out.println(last_num + "***" + start_num);
+
+			List<NoticeDTO> noticelist = service.selectMembernotice(start_num,
+					last_num); // 다 가져오기
+			List<NoticeDTO> noticelist2 = service.selectMembernotice2();
+
+			System.out.println("노티스 리스트" + noticelist);
+
+			mv.addObject("noticelist", noticelist);
+			mv.addObject("noticelistsize", noticelist2.size());
+			mv.addObject("memberid", memcheck.getMid());
+			mv.setViewName("/admin/notice_list_member");
+			return mv;
+		}
+	}
+
+	@RequestMapping(value = "/noticelist2.do")
+	public ModelAndView listGet2(HttpServletRequest request,
+			HttpSession session, String pageno) {
+		ModelAndView mv = new ModelAndView();
+		if (session.getAttribute("admincheck") == null) {
+			mv.setViewName("admin/admin_login");
+			return mv;
+		} else {
+
+			if (pageno == null)
+				pageno = "1";
+
+			session = request.getSession();
+			AdminDTO admincheck = (AdminDTO) session.getAttribute("admincheck");
+
+			int last_num = Integer.parseInt(pageno) * 10;
+			int start_num = last_num - 9;
+
+			List<NoticeDTO> noticelist = service.selectByaid(
+					admincheck.getAid(), start_num, last_num);
+
+			List<NoticeDTO> noticelist2 = service.selectByaid11(admincheck
+					.getAid());
+
+			String maxnno = service.selectMaxnno(admincheck.getAid());
+
+			ParkingDTO parking = parkingservice
+					.selectBypid(admincheck.getPid());
+			mv.addObject("pname", parking.getPname());
+			mv.addObject("noticelist", noticelist);
+			mv.addObject("noticelistsize", noticelist2.size());
+			mv.addObject("maxnno", maxnno);
+			mv.setViewName("/admin/notice_list_admin");
+			return mv;
+		}
+	}
+
 }

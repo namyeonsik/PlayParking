@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MemberMainController {
 
 	@RequestMapping("/membermain.do")
-	public ModelAndView test(){
+	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("msg", "");
 		mv.setViewName("members/member_main");

@@ -10,9 +10,8 @@
 	.btn {width: 50%; margin-top: 30%; margin-left: 40%;}
 </style>	
 
-<!-- 부트스트랩 !!!!!!!!!!!!!!!!!!!! -->
-<!-- <meta charset="utf-8">
-        <title>Geass - Creative Onepage Html5 Template</title> -->
+<!-- 부트스트랩-->
+<!-- <meta charset="utf-8">-->
         <meta name="description" content="Geass is premium and creative multipurpose onepage template">
         <meta name="author" content="Eon">
 

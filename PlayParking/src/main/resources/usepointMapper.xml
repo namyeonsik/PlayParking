@@ -6,7 +6,8 @@
 
 	<select id="selectBymid" parameterType="String"
 		resultType="com.flying.model.UsePointDTO">
-		select * from usepoint where mid = #{aa:VARCHAR} order by usedate
+		select * from usepoint where mid = #{aa:VARCHAR} order by
+		usedate
 	</select>
 
 	<select id="selectBytenmid" parameterType="String"
@@ -14,15 +15,10 @@
 		select e.*
 		from (select *
 		from usepoint
-		where mid = #{aa:VARCHAR}
+		where mid =
+		#{aa:VARCHAR}
 		order by usedate desc)e
 		where ROWNUM &lt;= 5
 	</select>
-
-	<insert id="insertUsePoint" parameterType="com.flying.model.UsePointDTO">
-		insert into PayPoint(usedate,mid,pid,usepoint)
-		values(sysdate,#{mid:VARCHAR},#{pid:INTEGER},
-		#{paypoint:INTEGER})
-	</insert>
 
 </mapper>

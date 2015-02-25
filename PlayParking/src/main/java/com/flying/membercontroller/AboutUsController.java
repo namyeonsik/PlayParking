@@ -7,12 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AboutUsController {
 
-    @RequestMapping("/aboutus.do")
-	public ModelAndView aboutGet(){
+	@RequestMapping("/aboutus.do")
+	public ModelAndView aboutGet() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("members/aboutus");
 		return mv;
 	}
-
 
 }
