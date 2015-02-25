@@ -25,6 +25,7 @@ public class MemberLoginController {
 		System.out.println(member.getMid());
 		MembersDTO memcheck = service.selectByUser(member.getMid(),
 				member.getMpwd());
+		
 
 		if (memcheck != null) {
 			if (memcheck.getMcheck() == 0) {
