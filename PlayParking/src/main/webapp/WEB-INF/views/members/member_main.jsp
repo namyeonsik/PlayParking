@@ -186,7 +186,7 @@
 							alt="slidebg4"
 							data-lazyload="${pageContext.request.contextPath}/resources/geass/images/homeslider/slide00_2.png"
 							data-kenburns="on" data-bgposition="center bottom"
-							data-duration="200" data-bgfit="100" data-bgfitend="98"
+							data-duration="200" data-bgfit="100" data-bgfitend="115"
 							data-bgpositionend="center center" data-bgrepeat="no-repeat">
 							<!-- <div class="tp-caption rev-title rev-border sft stb" data-x="100" data-y="145" data-start="1000" data-speed="1000">HOW<span class="yellow-color"></span></div> -->
 							<div
