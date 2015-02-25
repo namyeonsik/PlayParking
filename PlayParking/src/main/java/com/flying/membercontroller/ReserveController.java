@@ -321,14 +321,6 @@ public class ReserveController {
 			System.out.println(ret3 + "success updateMpoint");
 			System.out.println(ret4 + "success insert usepoint");
 
-			ApplicationContext context = new ClassPathXmlApplicationContext(
-					"Spring-Mail.xml");
-
-			MailMail mm = (MailMail) context.getBean("mailMail");
-			mm.sendMail("playingparking@gmail.com", members.getMemail(),
-					"[노는주차장]" + members.getMid() + "님예약완료", parking.getPname()
-							+ " 주차장 예약완료되었습니다:-)");
-
 			mv.setViewName("redirect:/confirm.do");
 			return mv;
 		}
