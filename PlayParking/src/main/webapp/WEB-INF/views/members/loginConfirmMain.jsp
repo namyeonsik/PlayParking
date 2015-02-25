@@ -291,6 +291,7 @@
 				return false;
 			}
 		}
+		
 
 		$(function() {
 			// Slider Revolution for Home Section
