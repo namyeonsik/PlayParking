@@ -9,7 +9,8 @@
 		select e.*
 		from (select *
 		from paypoint
-		where mid = #{aa:VARCHAR}
+		where mid =
+		#{aa:VARCHAR}
 		order by paydate desc)e
 		where ROWNUM &lt;= 5
 	</select>
@@ -19,11 +20,13 @@
 		select *
 		from paypoint
 		where mid = #{aa:VARCHAR}
-		order by paydate
+		order by
+		paydate
 	</select>
 
 	<insert id="insertPoint" parameterType="com.flying.model.PayPointDTO">
-		insert into PayPoint(paydate,mid,paypoint)
+		insert into
+		PayPoint(paydate,mid,paypoint)
 		values(sysdate,#{mid:VARCHAR},
 		#{paypoint:INTEGER})
 	</insert>

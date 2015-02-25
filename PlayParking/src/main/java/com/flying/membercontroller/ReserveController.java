@@ -2,9 +2,7 @@ package com.flying.membercontroller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,7 +21,6 @@ import com.flying.model.ParkingDTO;
 import com.flying.model.ParkingServiceInterface;
 import com.flying.model.ReservationDTO;
 import com.flying.model.ReservationServiceInterface;
-
 import com.flying.model.UsePointDTO;
 
 @Controller
@@ -49,9 +46,7 @@ public class ReserveController {
 			System.out.println("get방식");
 			ParkingDTO parking = pservice.selectBypid(pid);
 
-			ParkingDTO park1 = service.selectBypid(pid);
-
-			mv.addObject("parkingMpoint", park1.getPfare());
+			mv.addObject("parkingMpoint", parking.getPfare());
 			mv.addObject("pname", parking.getPname());
 			mv.addObject("pid", pid);
 			mv.setViewName("members/reserve");
@@ -67,12 +62,12 @@ public class ReserveController {
 		int pamountcheck = pservice.checkAmount(pid);
 		Date d = new Date();
 		System.out.println(d.getHours() + "시" + d.getMinutes() + "분");
-		int cal1 = 0;
+
 		String[] hue1 = { "0930", "1000", "1030", "1100", "1130", "1200",
 				"1230", "1300", "1330", "1400", "1430", "1500", "1530", "1600",
 				"1630", "1700", "1730", "1800", "1830", "1900", "1930", "2000",
 				"2030", "2100", "2130", "2200", "2230", "2300" };
-		
+
 		String ss1 = null;
 		String ss2 = null;
 		String ss3 = null;
@@ -84,10 +79,10 @@ public class ReserveController {
 		System.out.println("today=" + today);
 		System.out.println(today.equals(date));
 		ss1 = Integer.toString(d.getHours());
-		if(d.getMinutes()<10){
-			ss2 ="0"+ Integer.toString(d.getMinutes());
-		}else{
-		ss2 = Integer.toString(d.getMinutes());
+		if (d.getMinutes() < 10) {
+			ss2 = "0" + Integer.toString(d.getMinutes());
+		} else {
+			ss2 = Integer.toString(d.getMinutes());
 		}
 		ss3 = ss1 + ss2;
 		System.out.println("ss3===" + ss3);
@@ -96,42 +91,28 @@ public class ReserveController {
 		int z = 0;
 		System.out.println("hue1size=" + hue1.length);
 
-		if (today.equals(date)){
+		if (today.equals(date)) {
 			for (int i = 0; i < hue1.length; i++) {
 				int k = Integer.parseInt(hue1[i]);
-
 				if (k > cal3) {
-
-					// System.out.println("hue1="+hue1[i]);
-				/*	hue2[z] = hue1[i];
-					System.out.println("hue2=" + hue2[z]);*/
 					z = z + 1;
-
 				}
-				
-
 			}
-			System.out.println("z==="+z);
+			System.out.println("z===" + z);
 			String[] hue2 = new String[z];
-			int p=0;
+			int p = 0;
 			for (int i = 0; i < hue1.length; i++) {
 				int k = Integer.parseInt(hue1[i]);
-
 				if (k > cal3) {
-
-					// System.out.println("hue1="+hue1[i]);
 					hue2[p] = hue1[i];
 					System.out.println("hue2=" + hue2[p]);
-					p=p+1;
-
+					p = p + 1;
 				}
-				
-
 			}
 
 			if (pcountcheck > (pamountcheck * 0.1)) {
 				String check = "예약가능";
-				System.out.println("hue2 length=="+hue2.length);
+				System.out.println("hue2 length==" + hue2.length);
 				for (int i = 0; i < hue2.length; i++) {
 
 					hue2[i] = hue2[i] + check;
@@ -140,7 +121,7 @@ public class ReserveController {
 				mv.addObject("check", hue2);
 			} else {
 				String check = "예약불가능";
-				System.out.println("hue2 length=="+hue2.length);
+				System.out.println("hue2 length==" + hue2.length);
 				for (int i = 0; i < hue2.length; i++) {
 
 					hue2[i] = hue2[i] + check;
@@ -187,51 +168,38 @@ public class ReserveController {
 		System.out.println(memcheck);
 
 		possibleTime2 = possibleTime.split(",");
-		
+
 		calpossibleTime = Integer
-				.parseInt(possibleTime2[possibleTime2.length - 1].substring(0, 4));
+				.parseInt(possibleTime2[possibleTime2.length - 1].substring(0,
+						4));
 		ModelAndView mv = new ModelAndView();
 		System.out.println("p" + possibleTime);
 		int rstarttime = calpossibleTime;
 
 		int limit = 23;
 		int num = rstarttime / 100;
-		String kk=Integer.toString(rstarttime);
-		
+		String kk = Integer.toString(rstarttime);
+
 		int temp = limit - num;
-		System.out.println("rstarttime=="+rstarttime);
-		/*if(temp==0){
-			temp=temp+1;
-			
-		}else{
-			
-			temp=temp;
-			
-		}*/
-		String k2="30";
-		System.out.println("kk=="+kk.substring(kk.length()-2, kk.length()));
-		if(kk.substring(kk.length()-2, kk.length()).equals(k2)){
-			temp=temp;
-			
-		}else{
-			temp=temp+1;
-			
+		System.out.println("rstarttime==" + rstarttime);
+
+		String k2 = "30";
+		System.out.println("kk==" + kk.substring(kk.length() - 2, kk.length()));
+		if (kk.substring(kk.length() - 2, kk.length()).equals(k2)) {
+			temp = temp;
+
+		} else {
+			temp = temp + 1;
+
 		}
-		
-		
+
 		int[] numArray = new int[temp];
 		for (int a = 0; a < temp; a++) {
 
 			numArray[a] = a + 1;
 
 		}
-		/*
-		 * for(int i = 0; i<temp;i++){
-		 * 
-		 * if(numArray[i]==0){ numArray[i]=(Integer) null; }
-		 * 
-		 * }
-		 */
+
 		mv.addObject("numArray", numArray);
 
 		mv.setViewName("members/selecttime");
@@ -282,23 +250,17 @@ public class ReserveController {
 
 				testtimeint = Integer.parseInt(possibleTime) - 70;
 			}
-			// int testtimeint = Integer.parseInt(testtime);
 
 			System.out.println("rstarttimeback=" + testtimeint);
 			reserve.setRstarttimeback(String.valueOf(testtimeint));
-			// reserve.setRstarttimeback(testtimeint);
 
-			// selectTime.substring((selectTime.length()-1));
-			// System.out.println(Integer.parseInt(selectTime));
 			System.out.println("selectTime.length()=" + selectTime.length());
 			System.out.println("selectTime===" + selectTime);
 			calselectTime2 = selectTime.split(",");
-			// System.out.println(selectTime.split(","));
+
 			calselectTime = Integer
 					.parseInt(calselectTime2[calselectTime2.length - 1]);
-			// System.out.println("selectTime.split().length="+selectTime.split(",").length);
 
-			// calselectTime=Integer.parseInt(selectTime.substring((selectTime.length()-1)));
 			System.out.println("calselectTime==" + calselectTime);
 			reserve.setMid(mid);
 			reserve.setPid(pid);
@@ -310,7 +272,7 @@ public class ReserveController {
 
 			// pid의 갑을 가질 temp
 			temp = reserve.getPid();
-			parking = service.selectBypid(temp);
+			parking = pservice.selectBypid(temp);
 			parkingMpoint = parking.getPfare();
 			System.out.println("사용할" + parkingMpoint);
 
@@ -326,22 +288,15 @@ public class ReserveController {
 			mv.addObject("mpoint", mpoint); // submit.jsp에 보여줄 애들
 			mv.addObject("minusMpoint", minusMpoint);
 
-			/*
-			 * int ret = service.insertReservation(reserve);
-			 */
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if (mpoint < minusMpoint) {
 			String msg = "포인트 부족으로 충전페이지로 이동합니다";
 			mv.addObject("msg", msg);
-
 		}
-
 		mv.setViewName("members/submit");
 		return mv;
-
 	}
 
 	@RequestMapping(value = "/insert1.do", method = RequestMethod.POST)
@@ -379,7 +334,6 @@ public class ReserveController {
 		}
 
 		else {
-
 			mv.setViewName("redirect:/pointcheck.do");
 			return mv;
 		}

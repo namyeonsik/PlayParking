@@ -7,24 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("chartdao")
-public class ChartDAO implements ChartDAOInterface{
+public class ChartDAO implements ChartDAOInterface {
 
 	@Autowired
 	SqlSession session;
 
 	public List<ChartDTO> selectBeforeReserve(int pid) {
-		List<ChartDTO> chartlist =
-				session.selectList("flying.chart.selectBeforeReserve", pid);
+		List<ChartDTO> chartlist = session.selectList(
+				"flying.chart.selectBeforeReserve", pid);
 		return chartlist;
 	}
 
 	public List<ChartDTO> selectReserve(int pid) {
-		List<ChartDTO> chartlist =
-				session.selectList("flying.chart.selectReserve", pid);
+		List<ChartDTO> chartlist = session.selectList(
+				"flying.chart.selectReserve", pid);
 		return chartlist;
 	}
-	
-
-
-
 }

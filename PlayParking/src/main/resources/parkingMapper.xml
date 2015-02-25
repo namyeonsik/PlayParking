@@ -4,80 +4,62 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="flying.parking">
 
-  <select id="selectByplocation" 
-  	parameterType="String"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where plocation = #{aa:VARCHAR}
-  </select>
-  
-  <select id="selectByAround" 
-  	parameterType="map"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where plocation = #{plocation:VARCHAR}
-    minus
-    select * from parking where pid=#{pid:INTEGER}
-  </select>
+	<select id="selectByplocation" parameterType="String"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where plocation = #{aa:VARCHAR}
+	</select>
 
-<select id="selectBymakchum_1" 
-  	parameterType="String"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where plocation = #{aa:VARCHAR} order by pfare
-  </select> 
-  
-  <select id="selectBymakchum_2" 
-  	parameterType="String"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where plocation = #{aa:VARCHAR} order by platefare
-  </select> 
-  
-   <select id="selectBymakchum_3" 
-  	parameterType="String"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where plocation = #{aa:VARCHAR} order by pwidth desc, plength desc
-  </select> 
+	<select id="selectByAround" parameterType="map"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where plocation = #{plocation:VARCHAR}
+		minus
+		select * from parking where pid=#{pid:INTEGER}
+	</select>
 
- 
-  <select id="selectBypid" 
-  	parameterType="String"
-  	resultType="com.flying.model.ParkingDTO">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select * from parking where pid = #{pid:INTEGER}
-  </select>
- 
-  <update id="updateParking">
-  	update parking
-  	set pname=#{pname:VARCHAR},pfare=#{pfare:INTEGER},pphone=#{pphone:VARCHAR},pcount=#{pcount:INTEGER}
-  	where pid=#{pid:INTEGER} 
-  </update>
- 
- <update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
-  update parking set
-  pcount = #{pcount:INTEGER}
-  where pid= #{pid:INTEGER}
-  
-  </update>
-   <select id="checkCount" 
-  	parameterType="int"
-  	resultType="int">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select pcount from parking where pid = #{aa}
-  </select>
+	<select id="selectBymakchum_1" parameterType="String"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where plocation = #{aa:VARCHAR} order by pfare
+	</select>
 
+	<select id="selectBymakchum_2" parameterType="String"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where plocation = #{aa:VARCHAR} order by platefare
+	</select>
 
- <select id="checkAmount" 
-  	parameterType="int"
-  	resultType="int">
-  	<!-- MemberDTO default 생성자 수행, setter()에 의해 할당 -->
-    select pamount from parking where pid = #{aa}
-  </select>
- <select id="seachReservationBypid"
- parameterType="int"
- resultType="com.flying.model.ReservationDTO">
- select * from reservation where pid=#{pid:INTEGER}
- </select>
+	<select id="selectBymakchum_3" parameterType="String"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where plocation = #{aa:VARCHAR} order by pwidth desc,
+		plength desc
+	</select>
+
+	<select id="selectBypid" parameterType="String"
+		resultType="com.flying.model.ParkingDTO">
+		select * from parking where pid = #{pid:INTEGER}
+	</select>
+
+	<update id="updateParking">
+		update parking
+		set
+		pname=#{pname:VARCHAR},pfare=#{pfare:INTEGER},pphone=#{pphone:VARCHAR},pcount=#{pcount:INTEGER}
+		where pid=#{pid:INTEGER}
+	</update>
+
+	<update id="updateParkingPcount" parameterType="com.flying.model.ParkingDTO">
+		update parking set
+		pcount = #{pcount:INTEGER}
+		where pid= #{pid:INTEGER}
+
+	</update>
+	<select id="checkCount" parameterType="int" resultType="int">
+		select pcount from parking where pid = #{aa}
+	</select>
+
+	<select id="checkAmount" parameterType="int" resultType="int">
+		select pamount from parking where pid = #{aa}
+	</select>
+
+	<select id="seachReservationBypid" parameterType="int"
+		resultType="com.flying.model.ReservationDTO">
+		select * from reservation where pid=#{pid:INTEGER}
+	</select>
 </mapper>

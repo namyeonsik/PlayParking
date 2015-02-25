@@ -63,21 +63,6 @@
 <!-- 부트스트랩 끝-->
 
 <style>
-@font-face {
-	font-family: "HU미드나잇120";
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot');
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.eot?#iefix')
-		format('embedded-opentype'),
-		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff) format('
-		woff '),
-		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.ttf')
-		format('truetype');
-	src: local(※),
-		url('${pageContext.request.contextPath}/resources/font/HU미드나잇120.woff')
-		format('woff');
-}
 
 @font-face {
 	font-family: "HU미드나잇140";
@@ -117,7 +102,7 @@
 .container .ticket {
 	margin-top: 5%;
 	margin-left: 55%;
-	font-family: HU미드나잇120;
+	font-family: HU미드나잇140;
 }
 </style>
 
@@ -157,15 +142,18 @@
 
 							<div class="ticket">
 								<blockquote class="lightblue">
-
-									예약자ID : ${reservation.mid} <br> 주차장 : ${pname.pname} <br>
-									위치 : ${pname.paddress} <br> Tip : ${pname.ptip} <br>
-									예약날짜 :
+									<!-- 간격 조정 수정 금지 -->
+									예약자 ID : ${reservation.mid} <br> 
+									주　차 장 : ${pname.pname} <br>
+									위　 　치 : ${pname.paddress} <br> 
+									<i class="fa fa-star"></i>T i p<i class="fa fa-star"></i> : ${pname.ptip} <br>
+									예약 날짜 :
 									<c:set var="d" value="${reservation.rstart}" />
 									<fmt:formatDate value="${d}" pattern="yyyy/MM/dd" />
 									<br>
 									<br> <cite>예약 내용이</cite><br> <cite>메일로
 										발송되었습니다!</cite>
+									<!-- 간격 조정 수정 금지 -->	
 								</blockquote>
 							</div>
 						</div>
