@@ -120,35 +120,35 @@
 }
 
 @font-face {
-	font-family: "HUë¯¸ë“œë‚˜ìž‡120";
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡120.eot');
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡120.eot?#iefix')
-		format('embedded-opentype'),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡120.woff) format('
-		woff '),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡120.ttf')
-		format('truetype');
-	src: local(â€»),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡120.woff')
-		format('woff');
+   font-family: "HU¹Ìµå³ªÀÕ120";
+   src:
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ120.eot');
+   src:
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ120.eot?#iefix')
+      format('embedded-opentype'),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ120.woff) format('
+      woff '),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ120.ttf')
+      format('truetype');
+   src: local(¡Ø),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ120.woff')
+      format('woff');
 }
 
 @font-face {
-	font-family: "HUë¯¸ë“œë‚˜ìž‡140";
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡140.eot');
-	src:
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡140.eot?#iefix')
-		format('embedded-opentype'),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡140.woff) format('
-		woff '),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡140.ttf')
-		format('truetype');
-	src: local(â€»),
-		url('${pageContext.request.contextPath}/resources/font/HUë¯¸ë“œë‚˜ìž‡140.woff')
-		format('woff');
+   font-family: "HU¹Ìµå³ªÀÕ140";
+   src:
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ140.eot');
+   src:
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ140.eot?#iefix')
+      format('embedded-opentype'),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ140.woff) format('
+      woff '),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ140.ttf')
+      format('truetype');
+   src: local(¡Ø),
+      url('${pageContext.request.contextPath}/resources/font/HU¹Ìµå³ªÀÕ140.woff')
+      format('woff');
 }
 
 @font-face {
