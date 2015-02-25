@@ -199,47 +199,6 @@
                     </div><!-- End revslider -->
                 </div><!-- End revslider-container -->
             </section><!-- End #home -->
-                  
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
-                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Why?</div>
-                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
-                                <div class="tp-caption rev-title title" data-x="130" data-hoffset="-125" data-y="350" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/people.png"></div>
-                                <div class="tp-caption rev-title title" data-x="480" data-hoffset="-125" data-y="360" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/car.png"></div>                                
-                                <div class="tp-caption rev-title title" data-x="830" data-hoffset="-125" data-y="250" data-start="600" data-speed="1000"><img src="${pageContext.request.contextPath}/resources/geass2/images/building.png"></div>
-                                
-                                <div class="tp-caption rev-title title why sft stt" data-x="150" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">주말마다 붐비는 도심</div>
-                                <div class="tp-caption rev-title title why sft stt" data-x="500" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">가득찬 공영 주차장</div>
-                                <div class="tp-caption rev-title title why sft stt" data-x="850" data-hoffset="-125" data-y="550" data-start="600" data-speed="1000">텅 빈 기업 주차장</div>
-                     </li>
-                            <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off" >
-                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
-                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">How?</div>
-                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
-                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">검색부터 예약까지 한번에,</div>
-                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="720" data-hoffset="125" data-y="330" data-start="600" data-speed="1000">원-스톱서비스</div>
-                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="400" data-start="600" data-speed="1000">유휴 주차장 활용,</div>
-                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="600" data-hoffset="125" data-y="400" data-start="600" data-speed="1000">폭넓어진 선택</div>
-                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="470" data-start="600" data-speed="1000">편리한 주차장 관리,</div>
-                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="620" data-hoffset="125" data-y="470" data-start="600" data-speed="1000">고객과 주차장의 win-win</div>
-                     </li>
-                     
-                     <li data-transition="random" data-slotamount="8" data-masterspeed="450" data-thumb="${pageContext.request.contextPath}/resources/geass2/images/homeslider/slide00.jpg" data-saveperformance="off">
-                                <img src="${pageContext.request.contextPath}/resources/geass2/images/revslider/dummy.png"  alt="slidebg3" data-lazyload="${pageContext.request.contextPath}/resources/slide_test.jpg" data-kenburns="on" data-bgposition="center bottom" data-duration="5200" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center center" data-bgrepeat="no-repeat">
-                                <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="100" data-hoffset="-180" data-color="#d5d5d5" data-y="50" data-start="600" data-speed="1200">Effect?</div>
-                                <!-- <div class="tp-caption rev-title rev-title-big customin customout" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-splitin="chars" data-splitout="chars" data-elementdelay="0.2" data-endelementdelay="0.1" data-endspeed="600" data-x="center" data-hoffset="-180" data-y="206" data-start="600" data-speed="1200">How?</div> -->
-                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="330" data-start="600" data-speed="1000">사용자 -</div>
-                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="460" data-hoffset="125" data-y="330" data-start="600" data-speed="1000">주말에 내 주차공간 미리 확보</div>
-                                <div class="tp-caption rev-title title sft stt" data-x="300" data-hoffset="-125" data-y="400" data-start="600" data-speed="1000">기업 -</div>
-                                <div class="tp-caption rev-title title lightblue-color sfb stb" data-x="420" data-hoffset="125" data-y="400" data-start="600" data-speed="1000">공유가치창출(CSV) 및 이미지 제고</div>
-                     </li>
-                            
-                        </ul>
-                    </div><!-- End revslider -->
-                </div><!-- End revslider-container -->
-            </section><!-- End #home -->
->>>>>>> branch 'master' of https://github.com/namyeonsik/PlayParking
-
 
       <!-- Modal Login Form-->
       <div class="modal fade" id="modal-login-form" tabindex="-1"
