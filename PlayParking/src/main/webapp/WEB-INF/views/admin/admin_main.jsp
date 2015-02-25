@@ -221,7 +221,7 @@
 										매출 차트 <input id="present" name="present" type="button"
 											style="float: right;" value=">" class="btn btn-info"><input
 											id="before" name="before" type="button" style="float: right;"
-											value="<" class="btnbtn-info">
+											value="<" class="btn btn-info">
 									</h3>
 								</div>
 								<div class="module-body">
