@@ -14,7 +14,7 @@
 					<th align="center">추가요금</th>
 					<th align="center">너비</th>
 					<th align="center">길이</th>
-					<th align="center">Tip</th>
+					<th align="center">Tip (보다 빠른 주차장 찾기를 위한 팁!)</th>
 					<th align="center">예약</th>
 				</tr>
 			</thead>
@@ -69,7 +69,7 @@
 					<th align="center">추가요금</th>
 					<th align="center">너비</th>
 					<th align="center">길이</th>
-					<th align="center">Tip</th>
+					<th align="center">Tip (보다 빠른 주차장 찾기를 위한 팁!)</th>
 					<th align="center">예약</th>
 				</tr>
 			</thead>
