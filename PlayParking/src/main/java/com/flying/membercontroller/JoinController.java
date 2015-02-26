@@ -29,12 +29,14 @@ public class JoinController {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public ModelAndView joinPost(MembersDTO member, HttpServletRequest request,
 			HttpSession session) {
-		int ret = service.insertMembers(member);
-		System.out.println(ret + "건 입력");
-		System.out.println(member);
+		System.out.println("왔니!!");
+		
 		ModelAndView mv = new ModelAndView();
 
-		if (ret != 0) {
+		if (member != null) {
+			int ret = service.insertMembers(member);
+			System.out.println(ret + "건 입력");
+			System.out.println(member);
 			mv.setViewName("members/member_main");
 		} else {
 			mv.setViewName("members/join");

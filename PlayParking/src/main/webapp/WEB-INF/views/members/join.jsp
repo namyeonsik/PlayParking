@@ -68,17 +68,25 @@
 			alert("아이디을 입력하세요.");
 			myfrm.mid.focus();
 			return false; //list로 넘어감 방지	
-		} else if (mname == "" || mname == null) {
+		} else if (memail == "" || memail == null) {
+			alert("이메일을 입력하세요.");
+			myfrm.memail.focus();
+			return false;
+		} else if (mphone == "" || mphone == null) {
+			alert("연락처를 입력하세요.");
+			myfrm.mphone.focus();
+			return false;
+		}else if (mname == "" || mname == null) {
 			alert("이름을 입력하세요.");
 			myfrm.mname.focus();
 			return false;
-		} else if (mpwd == "" || mpwd == null) {
+		}else if (mpwd == "" || mpwd == null) {
 			alert("비밀번호를 입력해주세요.");
 			myfrm.mpwd.focus();
 			return false;
 		} else if (mpwd != mpwdcheck) {
 			alert("비밀번호가 일치하지 않습니다.");
-			loginfrm.mpwd.focus();
+			myfrm.mpwd.focus();
 			return false;
 		} else {
 			return true;
@@ -153,7 +161,7 @@
 	<!-- Modal Login Form-->
 	<div class="modal fade" id="modal-login-form" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-		<form id="login-form" method="post" action="memberlogin.do">
+		<form id="login-form" name="loginfrm" method="post" action="memberlogin.do">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -204,9 +212,7 @@
 					<h2 class="text-center lg-margin">
 						<font face="HU미드나잇140">회원가입</font>
 					</h2>
-					<form action="join.do" id="contact-form"
-						onsubmit="validationcheck();" name="myfrm"
-						style="width: 80%; margin-left: 10%" method="post" novalidate>
+					<form action="join.do" id="contactform" onsubmit="validationcheck();" name="myfrm" style="width: 80%; margin-left: 10%" method="post" novalidate>
 						<div>
 							<div class="form-group" style="">
 								<table style="width: 100%; margin-bottom: 3%">
@@ -215,7 +221,7 @@
 											<td style="width: 80%"><input type="text" name="mid"
 												id="mid" class="form-control" placeholder=""
 												style="margin-top: 7%; width: 100%"><span
-												class="animated-label">Your Id *</span></td>
+												 class="animated-label">Your Id *</span></td>
 											<td><button type="button"
 													style="float: right; font-family: HU미드나잇120;"
 													class="btn btn-default" onclick="checkID();">ID중복확인</button></td>
@@ -260,11 +266,8 @@
 						</div>
 						<!-- End .form-group -->
 						<div class="form-group text-center">
-							<!-- <input type="submit" class="btn btn-lightblue btn-lg" onclick="call();"
-                                          data-toggle="modal" data-target="#modal-text" value="Send"> -->
-							<input type="submit" class="btn btn-lightblue btn-lg"
-								value="Send"> <input type="reset"
-								class="btn btn-yellow btn-lg" value="Reset">
+							<input type="submit" class="btn btn-lightblue btn-lg" value="Send">
+							<input type="reset" class="btn btn-yellow btn-lg" value="Reset">
 						</div>
 						<!-- End .form-group -->
 					</form>
@@ -277,41 +280,6 @@
 	</section>
 
 	<!-- 새로운 회원가입 -->
-
-	<div id="joinmodal"></div>
-
-	<!-- small From 2-->
-	<div class="modal fade" id="modal-text" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel3" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel3">회원가입</h4>
-				</div>
-				<!-- End .modal-header -->
-				<div class="modal-body">
-
-					<p>
-					<div id="msg3"></div>
-					</p>
-
-
-				</div>
-				<!-- End .modal-body -->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-orange" data-dismiss="modal">Close</button>
-					<button class="btn btn-yellow">Action</button>
-				</div>
-				<!-- End .modal-footer -->
-			</div>
-			<!-- End .modal-content -->
-		</div>
-		<!-- End .modal-dialog -->
-	</div>
-	<!-- End .modal -->
 
 
 	<!-- Plugins -->
@@ -356,39 +324,10 @@
 
 			var url = 'idcheck.do?mid=' + mid;
 
-			window
-					.open('idcheck.do?mid=' + mid, 'window팝업',
+			window.open('idcheck.do?mid=' + mid, 'window팝업',
 							'width=400, height=400, menubar=no, status=no, toolbar=no, top=200, left=200');
 		}
-		var xhr;//전역변수
-		function call() {
-
-			xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = resultParse; //함수등록후 재정의
-			/* var data = document.getElementById("joinok").value;
-			data = "joinok=" + data; */
-			//메소드방식,url,비동기 = true
-			xhr.open("POST", "joinok.do", true); //POST방식.비동기통신.
-			//POST일때는 아래추가.
-			xhr.setRequestHeader("content-type",
-					"application/x-www-form-urlencoded");
-			xhr.send(data);//post방식일때는 요청body에 데이터를 담는다.
-			alert(data);
-
-		}
-		//요청에 대한 응답을 받을때마다 호출됨. 콜백 함수 지정 속성.
-		function resultParse() {
-			if (xhr.readyState == 4) {
-				//서버에서 전송이 끝낫는지.
-				if (xhr.status == 200) {
-
-					viewData4(xhr.responseText); //=>html
-				}
-			}
-		}
-		function viewData4(data) {
-			document.getElementById("msg3").innerHTML = data;
-		}
+		
 
 		var elem = document.getElementById('loginmodal');
 		elem.onclick = showModal;

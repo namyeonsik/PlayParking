@@ -115,8 +115,7 @@ function validationcheck(){
 }
 
 function idconfirm(){
-	opener.document.myfrm.mid.value = "<%=mid%>
-	";
+	opener.document.myfrm.mid.value = "<%=mid%>";
 		self.close();
 	}
 </script>
